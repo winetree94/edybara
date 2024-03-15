@@ -1,15 +1,15 @@
-import { EdimMenubarContext } from '../context';
+import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
-import { EdimParagraph, EdimSelect, classes, html } from '@edim-editor/ui';
+import { EdybaraParagraph, EdybaraSelect, classes, html } from '@edybara-editor/ui';
 import {
-  EdimFontFamilyAttrs,
-  EdimFontFamilyMarkType,
+  EdybaraFontFamilyAttrs,
+  EdybaraFontFamilyMarkType,
   toggleFontFamily,
-} from '@edim-editor/font-family';
-import { markActive } from '@edim-editor/core';
+} from '@edybara-editor/font-family';
+import { markActive } from '@edybara-editor/core';
 
-export const EdimMenubarFontFamilySelect = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarFontFamilySelect = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options?.fontFamily) {
     return null;
@@ -17,10 +17,10 @@ export const EdimMenubarFontFamilySelect = () => {
 
   const fontFamilyMarkType = context.editorView.state.schema.marks[
     'font_family'
-  ] as EdimFontFamilyMarkType;
+  ] as EdybaraFontFamilyMarkType;
   const currentMark = markActive(context.editorView.state, fontFamilyMarkType);
   const currentFont =
-    (currentMark?.attrs as EdimFontFamilyAttrs | null)?.fontFamily || 'default';
+    (currentMark?.attrs as EdybaraFontFamilyAttrs | null)?.fontFamily || 'default';
 
   const fontOptions = [
     {
@@ -43,26 +43,26 @@ export const EdimMenubarFontFamilySelect = () => {
     })),
   ];
   return html`
-    <${EdimSelect.Root} 
-      className="${classes('edim-menubar-font-select')}"
+    <${EdybaraSelect.Root} 
+      className="${classes('edybara-menubar-font-select')}"
       value="${currentFont}">
-      <${EdimSelect.Text}>
-        <${EdimParagraph}>
+      <${EdybaraSelect.Text}>
+        <${EdybaraParagraph}>
           ${
             fontOptions.find((option) => option.value === currentFont)?.value ||
             ''
           }
-        </${EdimParagraph}>
-      </${EdimSelect.Text}>
-      <${EdimSelect.OptionGroup}>
+        </${EdybaraParagraph}>
+      </${EdybaraSelect.Text}>
+      <${EdybaraSelect.OptionGroup}>
         ${fontOptions.map((option) => {
           return html`
-            <${EdimSelect.Option} value="${option.value}" onClick=${option.command}>
-              <${EdimParagraph} style="font-family: ${option.value};">${option.value}</${EdimParagraph}> 
-            </${EdimSelect.Option}>
+            <${EdybaraSelect.Option} value="${option.value}" onClick=${option.command}>
+              <${EdybaraParagraph} style="font-family: ${option.value};">${option.value}</${EdybaraParagraph}> 
+            </${EdybaraSelect.Option}>
           `;
         })}
-      </${EdimSelect.OptionGroup}>
-    </${EdimSelect.Root}>
+      </${EdybaraSelect.OptionGroup}>
+    </${EdybaraSelect.Root}>
   `;
 };

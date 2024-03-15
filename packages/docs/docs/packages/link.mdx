@@ -5,18 +5,18 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 # Link
 
-`@edim-editor/paragraph` 에디터에 **문단**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
+`@edybara-editor/paragraph` 에디터에 **문단**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
 
 ## 설치
 
 ```bash
-npm install @edim-editor/paragraph
+npm install @edybara-editor/paragraph
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/paragraph/styles/paragraph.scss";
+@import "@edybara-editor/paragraph/styles/paragraph.scss";
 ```
 
 ## 사용 예시
@@ -25,14 +25,14 @@ npm install @edim-editor/paragraph
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins, mac } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+import { edybaraBaseNodes, edybaraCorePlugins, mac } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes({
       allowAlign: true,
       nodeName: 'paragraph',
     }),
@@ -40,13 +40,13 @@ const schema = new Schema({
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes.paragraph,
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 const view = new EditorView(document.querySelector('#editor'), {

@@ -1,11 +1,11 @@
 import { NodeSpec } from 'prosemirror-model';
 
-export interface EdimBaseNodeConfigs {
+export interface EdybaraBaseNodeConfigs {
   docNodeName?: string;
   textNodeName?: string;
 }
 
-export const edimBaseNodes = (): Record<string, NodeSpec> => ({
+export const edybaraBaseNodes = (): Record<string, NodeSpec> => ({
   doc: {
     group: 'block-container',
     content: 'block+',

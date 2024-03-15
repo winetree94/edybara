@@ -1,5 +1,5 @@
 {
-  "name": "@edim-editor/image",
+  "name": "@edybara-editor/image",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,16 +17,16 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "prosemirror-state": "*",
-    "prosemirror-view": "*",
+    "@edybara-editor/core": "*",
+    "@edybara-editor/ui": "*",
     "prosemirror-model": "*",
-    "@edim-editor/core": "*",
-    "@edim-editor/ui": "*"
+    "prosemirror-state": "*",
+    "prosemirror-view": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",
+    "sass": "^1.69.5",
     "tsup": "^8.0.1",
-    "typescript": "^5.2.2",
-    "sass": "^1.69.5"
+    "typescript": "^5.2.2"
   }
 }

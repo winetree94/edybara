@@ -10,18 +10,18 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edim-editor/font-family
+npm install @edybara-editor/font-family
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/font-family/styles/font-family.scss";
+@import "@edybara-editor/font-family/styles/font-family.scss";
 ```
 
 ## 서식
 
-#### `edimFontFamilyMarks`
+#### `edybaraFontFamilyMarks`
 
 텍스트 색상 서식을 제공합니다.
 
@@ -31,18 +31,18 @@ npm install @edim-editor/font-family
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins, mac } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
-import { edimFontFamilyMarks } from '@edim-editor/font-family';
+import { edybaraBaseNodes, edybaraCorePlugins, mac } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraFontFamilyMarks } from '@edybara-editor/font-family';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edimFontFamilyMarks({
+    ...edybaraFontFamilyMarks({
       markName: 'font_family',
       fonts: ['Arial', 'Verdana', 'Tahoma', 'Trebuchet MS'].map((font) => ({
         fontFamily: font,
@@ -52,15 +52,15 @@ const schema = new Schema({
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes.paragraph,
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     fontFamily: {
       fontFamilyMarkType: schema.marks.fontFamily,
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 const view = new EditorView(document.querySelector('#editor'), {

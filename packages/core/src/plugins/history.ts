@@ -2,7 +2,7 @@ import { history, redo, undo } from 'prosemirror-history';
 import { keymap } from 'prosemirror-keymap';
 import { Plugin } from 'prosemirror-state';
 
-export const edimHistoryPlugins = (): Plugin[] => {
+export const edybaraHistoryPlugins = (): Plugin[] => {
   return [
     history(),
     keymap({

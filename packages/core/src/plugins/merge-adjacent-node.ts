@@ -3,21 +3,21 @@ import { NodeType } from 'prosemirror-model';
 import { canJoin } from 'prosemirror-transform';
 import { NodePair } from '../types';
 
-export interface EdimMergeAdjacentNodeOption {
+export interface EdybaraMergeAdjacentNodeOption {
   nodeType: NodeType;
   beforeMergeTransaction?: (tr: Transaction, joinPos: number) => Transaction;
 }
 
-export interface EdimMergeAdjacentNodePluginConfigs {
-  specs: EdimMergeAdjacentNodeOption[];
+export interface EdybaraMergeAdjacentNodePluginConfigs {
+  specs: EdybaraMergeAdjacentNodeOption[];
 }
 
 /**
  * @description
  * 인접한 동일한 타입의 Node 가 Join 가능한 경우 자동 Join
  */
-export const edimMergeAdjacentNodePlugins = (
-  configs: EdimMergeAdjacentNodePluginConfigs,
+export const edybaraMergeAdjacentNodePlugins = (
+  configs: EdybaraMergeAdjacentNodePluginConfigs,
 ): PMPlugin[] => {
   // const types = configs.specs.map((spec) =>  spec.nodeType);
   const plugin = new PMPlugin({

@@ -1,14 +1,14 @@
-import { EdimMenubarContext } from '../context';
+import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
-import { EdimSelect, EdimSeparator, classes, html } from '@edim-editor/ui';
+import { EdybaraSelect, EdybaraSeparator, classes, html } from '@edybara-editor/ui';
 import {
   TEXT_ALIGNMENT,
   getRangeFirstAlignment,
   setTextAlign,
-} from '@edim-editor/core';
+} from '@edybara-editor/core';
 
-export const EdimMenubarTextAlignSelect = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarTextAlignSelect = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.align) {
     return null;
@@ -32,27 +32,27 @@ export const EdimMenubarTextAlignSelect = () => {
   });
 
   return html`
-    <${EdimSelect.Root} 
+    <${EdybaraSelect.Root} 
       className="${classes(
-        'edim-menubar-align-select',
-        firstAlignment !== 'left' ? 'edim-menubar-align-active' : '',
+        'edybara-menubar-align-select',
+        firstAlignment !== 'left' ? 'edybara-menubar-align-active' : '',
       )}"
       value="${firstAlignment}">
-      <${EdimSelect.Text}>
+      <${EdybaraSelect.Text}>
         <i className="ri-align-${firstAlignment}" />
-      </${EdimSelect.Text}>
-      <${EdimSelect.OptionGroup} 
+      </${EdybaraSelect.Text}>
+      <${EdybaraSelect.OptionGroup} 
         matchWidth="${true}"
-        className="edim-menubar-align-list">
+        className="edybara-menubar-align-list">
       ${alignmentOptions.map(
         (option) => html`
-        <${EdimSelect.Option} className="edim-menubar-align-option" value="${option.value}" onClick=${option.command}>
+        <${EdybaraSelect.Option} className="edybara-menubar-align-option" value="${option.value}" onClick=${option.command}>
           <i className="ri-align-${option.value}" />
-        </${EdimSelect.Option}>
+        </${EdybaraSelect.Option}>
       `,
       )}
-      </${EdimSelect.OptionGroup}>
-    </${EdimSelect.Root}>
-    <${EdimSeparator} className="edim-view-menubar-separator" />
+      </${EdybaraSelect.OptionGroup}>
+    </${EdybaraSelect.Root}>
+    <${EdybaraSeparator} className="edybara-view-menubar-separator" />
   `;
 };

@@ -5,8 +5,8 @@
     "outDir": "./dist",
     "declaration": true,
     "paths": {
-      "@edim-editor/core": ["../../core/src/index.ts"],
-      "@edim-editor/ui": ["../../ui/src/index.ts"]
+      "@edybara-editor/core": ["../../core/src/index.ts"],
+      "@edybara-editor/ui": ["../../ui/src/index.ts"]
     }
   },
   "include": [

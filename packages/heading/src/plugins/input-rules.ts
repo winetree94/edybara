@@ -1,16 +1,16 @@
 import { Plugin as PMPlugin } from 'prosemirror-state';
 import { NodeType } from 'prosemirror-model';
 import { inputRules, textblockTypeInputRule } from 'prosemirror-inputrules';
-import { EdimHeadingNodeSpec } from '../schemas';
+import { EdybaraHeadingNodeSpec } from '../schemas';
 
-export interface EdimHeadingInputRulePluginConfigs {
+export interface EdybaraHeadingInputRulePluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimHeadingInputRulePlugins = (
-  configs: EdimHeadingInputRulePluginConfigs,
+export const edybaraHeadingInputRulePlugins = (
+  configs: EdybaraHeadingInputRulePluginConfigs,
 ): PMPlugin[] => {
-  const levels = (configs.nodeType.spec as EdimHeadingNodeSpec).meta.levels;
+  const levels = (configs.nodeType.spec as EdybaraHeadingNodeSpec).meta.levels;
   const levelRegex = levels.map((level) => `#{${level}}`).join('|');
   return [
     inputRules({

@@ -33,7 +33,7 @@ export const EDIM_IMAGE_NODES: Record<string, NodeSpec> = {
           const viewportWidth = dom.dataset['viewportWidth'] || 80;
           const align = dom.parentElement?.dataset['align'] || 'center';
 
-          if (dom.classList.contains('edim-emoji')) {
+          if (dom.classList.contains('edybara-emoji')) {
             return false;
           }
 
@@ -58,7 +58,7 @@ export const EDIM_IMAGE_NODES: Record<string, NodeSpec> = {
       return [
         'div',
         {
-          class: `edim-image-wrapper edim-image-align-${align}`,
+          class: `edybara-image-wrapper edybara-image-align-${align}`,
           'data-text-align': align,
         },
         [
@@ -67,7 +67,7 @@ export const EDIM_IMAGE_NODES: Record<string, NodeSpec> = {
             src,
             alt,
             title,
-            class: 'edim-image',
+            class: 'edybara-image',
             style: `width: ${viewportWidth}%`,
             'data-viewport-width': viewportWidth,
           },
@@ -81,11 +81,11 @@ export interface ImageExtensionConfigs {
   placeholderViewProvider?: (view: EditorView) => ImagePlaceholderViewProvider;
 }
 
-export interface EdimImagePluginConfigs {
+export interface EdybaraImagePluginConfigs {
   placeholderViewProvider?: (view: EditorView) => ImagePlaceholderViewProvider;
 }
 
-export const edimImagePlugins = (configs: EdimImagePluginConfigs) => {
+export const edybaraImagePlugins = (configs: EdybaraImagePluginConfigs) => {
   return [
     createImagePlaceholderPlugin({
       placeholderViewProvider: configs.placeholderViewProvider,

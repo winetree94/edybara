@@ -10,44 +10,44 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edim-editor/flat-list
+npm install @edybara-editor/flat-list
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/flat-list/styles/flat-list.scss";
+@import "@edybara-editor/flat-list/styles/flat-list.scss";
 ```
 
 ## 서식
 
-#### `edimFlatOrderedListNodes`
+#### `edybaraFlatOrderedListNodes`
 
-순차 리스트를 표현하기 위한 서식을 제공합니다. 반드시 `edimFlatListItemNodes` 와 함께 사용해야 합니다.
+순차 리스트를 표현하기 위한 서식을 제공합니다. 반드시 `edybaraFlatListItemNodes` 와 함께 사용해야 합니다.
 
-#### `edimFlatBulletListNodes`
+#### `edybaraFlatBulletListNodes`
 
-글머리 기호 리스트를 표현하기 위한 서식을 제공합니다. 반드시 `edimFlatListItemNodes` 와 함께 사용해야 합니다.
+글머리 기호 리스트를 표현하기 위한 서식을 제공합니다. 반드시 `edybaraFlatListItemNodes` 와 함께 사용해야 합니다.
 
-#### `edimFlatListItemNodes`
+#### `edybaraFlatListItemNodes`
 
-리스트의 항목을 표현하기 위한 서식을 제공합니다. 반드시 `edimFlatOrderedListNodes` 또는 `edimFlatBulletListNodes` 와 함께 사용해야 합니다.
+리스트의 항목을 표현하기 위한 서식을 제공합니다. 반드시 `edybaraFlatOrderedListNodes` 또는 `edybaraFlatBulletListNodes` 와 함께 사용해야 합니다.
 
 ## 플러그인
 
-#### `edimFlatListPlugins`
+#### `edybaraFlatListPlugins`
 
 하단의 모든 플러그인을 통합 제공합니다.
 
-#### `edimFlatListKeymapPlugins`
+#### `edybaraFlatListKeymapPlugins`
 
 Flat List 내부에서 되는 기본 단축키를 제공합니다.
 
-#### `edimFlatListInputRulePlugins`
+#### `edybaraFlatListInputRulePlugins`
 
 `-N` 또는 `N.` 패턴의 문자를 입력하면 Flat List 노드로 전환하는 InputRule 을 제공합니다.
 
-#### `edimFlatListMergePlugins`
+#### `edybaraFlatListMergePlugins`
 
 동일한 인접 리스트 노드를 자동으로 병합하는 기능을 제공합니다.
 
@@ -57,37 +57,37 @@ Flat List 내부에서 되는 기본 단축키를 제공합니다.
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
-import { edimFlatOrderedListNodes, edimFlatBulletListNodes, edimFlatListItemNodes, edimFlatListPlugins } from '@edim-editor/flat-list';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraFlatOrderedListNodes, edybaraFlatBulletListNodes, edybaraFlatListItemNodes, edybaraFlatListPlugins } from '@edybara-editor/flat-list';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimFlatOrderedListNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraFlatOrderedListNodes({
       nodeName: 'ordered_list',
     }),
-    ...edimFlatBulletListNodes({
+    ...edybaraFlatBulletListNodes({
       nodeName: 'bullet_list',
     }),
-    ...edimFlatListItemNodes({
+    ...edybaraFlatListItemNodes({
       nodeName: 'list_item',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimFlatListPlugins({
+  ...edybaraFlatListPlugins({
     orderedListNodeType: schema.nodes['ordered_list'],
     bulletListNodeType: schema.nodes['bullet_list'],
     listItemNodeType: schema.nodes['list_item'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     list: {
       orderedListNodeType: schema.nodes['ordered_list'],
       bulletListNodeType: schema.nodes['bullet_list'],
@@ -95,7 +95,7 @@ const plugins: Plugin[] = [
     },
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 const view = new EditorView(document.querySelector('#editor'), {

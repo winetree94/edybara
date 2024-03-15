@@ -6,7 +6,7 @@ export const focusedCellPluginKey = new PluginKey<DecorationSet>(
   'focusedCellPlugin',
 );
 
-export const edimFocusedCellDecorationPlugins = (): PMPlugin[] => {
+export const edybaraFocusedCellDecorationPlugins = (): PMPlugin[] => {
   const plugin: PMPlugin<DecorationSet> = new PMPlugin<DecorationSet>({
     key: focusedCellPluginKey,
     state: {
@@ -23,7 +23,7 @@ export const edimFocusedCellDecorationPlugins = (): PMPlugin[] => {
           cell.pos,
           cell.pos + cell.node.nodeSize,
           {
-            class: 'edim-focused-cell',
+            class: 'edybara-focused-cell',
           },
         );
         return DecorationSet.create(tr.doc, [classDeco]);

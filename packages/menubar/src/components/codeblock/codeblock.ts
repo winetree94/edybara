@@ -1,10 +1,10 @@
-import { EdimButton, html } from '@edim-editor/ui';
-import { EdimMenubarContext } from '../context';
+import { EdybaraButton, html } from '@edybara-editor/ui';
+import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import { setBlockType } from 'prosemirror-commands';
 
-export const EdimMenubarCodeblockToggleButtons = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarCodeblockToggleButtons = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.codeblock) {
     return null;
@@ -13,8 +13,8 @@ export const EdimMenubarCodeblockToggleButtons = () => {
   const codeblockNodeType = context.options.codeblock.codeBlockNodeType;
 
   return html`
-    <${EdimButton}
-      className="edim-icon-button"
+    <${EdybaraButton}
+      className="edybara-icon-button"
       onClick=${() => {
         setBlockType(codeblockNodeType)(
           context.editorView.state,
@@ -22,6 +22,6 @@ export const EdimMenubarCodeblockToggleButtons = () => {
         );
       }}>
       <i class="ri-code-s-slash-line"></i>
-    </${EdimButton}>
+    </${EdybaraButton}>
   `;
 };

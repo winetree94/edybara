@@ -1,34 +1,34 @@
 import { NodeType } from 'prosemirror-model';
-import { edimCodeBlockInputRulePlugins } from './input-rules';
-import { edimCodeBlockKeymapPlugins } from './keymap';
-import { edimCodeBlockMergePlugins } from './merge';
-import { edimCodeBlockEjectPlugins } from './eject';
+import { edybaraCodeBlockInputRulePlugins } from './input-rules';
+import { edybaraCodeBlockKeymapPlugins } from './keymap';
+import { edybaraCodeBlockMergePlugins } from './merge';
+import { edybaraCodeBlockEjectPlugins } from './eject';
 
-export interface EdimCodeBlockPluginConfigs {
+export interface EdybaraCodeBlockPluginConfigs {
   nodeType: NodeType;
   mergeAdjacentCodeBlock?: boolean;
 }
 
-const DEFAULT_CONFIGS: Required<Omit<EdimCodeBlockPluginConfigs, 'nodeType'>> =
+const DEFAULT_CONFIGS: Required<Omit<EdybaraCodeBlockPluginConfigs, 'nodeType'>> =
   {
     mergeAdjacentCodeBlock: true,
   };
 
-export const edimCodeBlockPlugins = (configs: EdimCodeBlockPluginConfigs) => {
+export const edybaraCodeBlockPlugins = (configs: EdybaraCodeBlockPluginConfigs) => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
     ...configs,
   };
 
   const plugins = [
-    ...edimCodeBlockKeymapPlugins(mergedConfigs),
-    ...edimCodeBlockInputRulePlugins(mergedConfigs),
-    ...edimCodeBlockEjectPlugins(mergedConfigs),
+    ...edybaraCodeBlockKeymapPlugins(mergedConfigs),
+    ...edybaraCodeBlockInputRulePlugins(mergedConfigs),
+    ...edybaraCodeBlockEjectPlugins(mergedConfigs),
   ];
 
   if (mergedConfigs.mergeAdjacentCodeBlock) {
     plugins.push(
-      ...edimCodeBlockMergePlugins({
+      ...edybaraCodeBlockMergePlugins({
         nodeType: mergedConfigs.nodeType,
       }),
     );

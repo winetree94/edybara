@@ -5,42 +5,42 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  edimSuperscriptMarks,
-  edimSuperscriptPlugins,
-} from '@edim-editor/superscript';
+  edybaraSuperscriptMarks,
+  edybaraSuperscriptPlugins,
+} from '@edybara-editor/superscript';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edimSuperscriptMarks({
+    ...edybaraSuperscriptMarks({
       markName: 'superscript',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimSuperscriptPlugins({
+  ...edybaraSuperscriptPlugins({
     markType: schema.marks['superscript'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textStyles: {
       superscriptMarkType: schema.marks['superscript'],
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const SuperscriptExample = (props: ProseMirrorProps) => {

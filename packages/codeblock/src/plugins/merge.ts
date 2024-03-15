@@ -1,13 +1,13 @@
 import { NodeType } from 'prosemirror-model';
-import { edimMergeAdjacentNodePlugins } from '@edim-editor/core';
+import { edybaraMergeAdjacentNodePlugins } from '@edybara-editor/core';
 
-export interface EdimCodeBlockMergePluginConfigs {
+export interface EdybaraCodeBlockMergePluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimCodeBlockMergePlugins = (configs: EdimCodeBlockMergePluginConfigs) => {
+export const edybaraCodeBlockMergePlugins = (configs: EdybaraCodeBlockMergePluginConfigs) => {
   return [
-    ...edimMergeAdjacentNodePlugins({
+    ...edybaraMergeAdjacentNodePlugins({
       specs: [
         {
           nodeType: configs.nodeType,

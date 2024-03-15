@@ -4,17 +4,17 @@ export const EDIM_CODEBLOCK_NODE_NAME = 'code_block';
 
 const preDOM: DOMOutputSpec = [
   'pre',
-  { class: 'edim-codeblock-wrapper' },
+  { class: 'edybara-codeblock-wrapper' },
   [
     'code',
     {
-      class: 'edim-codeblock-code',
+      class: 'edybara-codeblock-code',
     },
     0,
   ],
 ];
 
-export interface EdimCodeBlockNodeConfigs {
+export interface EdybaraCodeBlockNodeConfigs {
   /**
    * node name
    *
@@ -23,12 +23,12 @@ export interface EdimCodeBlockNodeConfigs {
   nodeName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimCodeBlockNodeConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraCodeBlockNodeConfigs> = {
   nodeName: EDIM_CODEBLOCK_NODE_NAME,
 };
 
-export const edimCodeBlockNodes = (
-  configs?: EdimCodeBlockNodeConfigs,
+export const edybaraCodeBlockNodes = (
+  configs?: EdybaraCodeBlockNodeConfigs,
 ): Record<string, NodeSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,

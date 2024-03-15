@@ -1,18 +1,18 @@
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
-import { html } from '@edim-editor/ui';
+import { html } from '@edybara-editor/ui';
 import { createRef, render } from 'preact';
 import { forwardRef, useImperativeHandle, useRef } from 'preact/compat';
 import { updateColumnsOnResize } from 'prosemirror-tables';
 
-export interface EdimTableViewRef {
+export interface EdybaraTableViewRef {
   colgroup: () => HTMLTableColElement;
   table: () => HTMLTableElement;
   tbody: () => HTMLTableSectionElement;
 }
 
-export const EdimTableView = forwardRef<
-  EdimTableViewRef,
+export const EdybaraTableView = forwardRef<
+  EdybaraTableViewRef,
   HTMLTableSectionElement
 >((_, ref) => {
   const tableRef = useRef<HTMLTableElement>(null);
@@ -26,15 +26,15 @@ export const EdimTableView = forwardRef<
   }));
 
   return html`
-    <table className="edim-table" ref=${tableRef}>
-      <colgroup className="edim-colgroup" ref=${colgroupRef}></colgroup>
-      <tbody className="edim-tbody" ref=${tbodyRef}></tbody>
+    <table className="edybara-table" ref=${tableRef}>
+      <colgroup className="edybara-colgroup" ref=${colgroupRef}></colgroup>
+      <tbody className="edybara-tbody" ref=${tbodyRef}></tbody>
     </table>
   `;
 });
 
-export class EdimTableNodeView implements NodeView {
-  public ref = createRef<EdimTableViewRef>();
+export class EdybaraTableNodeView implements NodeView {
+  public ref = createRef<EdybaraTableViewRef>();
   public readonly dom = document.createElement('div');
 
   public get contentDOM() {
@@ -46,9 +46,9 @@ export class EdimTableNodeView implements NodeView {
     private readonly editorView: EditorView,
     private readonly getPos: () => number | undefined,
   ) {
-    this.dom.classList.add('edim-table-container');
+    this.dom.classList.add('edybara-table-container');
     render(
-      html`<${EdimTableView} ref=${this.ref}></${EdimTableView}>`,
+      html`<${EdybaraTableView} ref=${this.ref}></${EdybaraTableView}>`,
       this.dom,
     );
     updateColumnsOnResize(
@@ -65,7 +65,7 @@ export class EdimTableNodeView implements NodeView {
     }
     this.node = node;
     render(
-      html`<${EdimTableView} ref=${this.ref}></${EdimTableView}>`,
+      html`<${EdybaraTableView} ref=${this.ref}></${EdybaraTableView}>`,
       this.dom,
     );
     updateColumnsOnResize(

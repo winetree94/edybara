@@ -78,20 +78,20 @@ for (const prop in extraAttrs) {
   cellAttrs[prop] = { default: extraAttrs[prop].default };
 }
 
-export interface EdimTableNodeConfigs {
+export interface EdybaraTableNodeConfigs {
   tableNodeName?: string;
   tableRowNodeName?: string;
   tableCellNodeName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimTableNodeConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraTableNodeConfigs> = {
   tableNodeName: EDIM_TABLE_DEFAULT_NODE_NAME,
   tableRowNodeName: EDIM_TABLE_ROW_DEFAULT_NODE_NAME,
   tableCellNodeName: EDIM_TABLE_CELL_DEFAULT_NODE_NAME,
 };
 
-export const edimTableNodes = (
-  configs?: EdimTableNodeConfigs,
+export const edybaraTableNodes = (
+  configs?: EdybaraTableNodeConfigs,
 ): Record<string, NodeSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,

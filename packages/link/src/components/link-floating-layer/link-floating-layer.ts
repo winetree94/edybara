@@ -1,35 +1,35 @@
 import {
-  EdimAnchor,
-  EdimLayer,
-  EdimOverlay,
-  EdimParagraph,
+  EdybaraAnchor,
+  EdybaraLayer,
+  EdybaraOverlay,
+  EdybaraParagraph,
   html,
-} from '@edim-editor/ui';
+} from '@edybara-editor/ui';
 
-export interface EdimLinkFloatingLayerProps {
+export interface EdybaraLinkFloatingLayerProps {
   target: HTMLElement;
   href: string;
 }
 
-export const EdimLinkFloatingLayer = (props: EdimLinkFloatingLayerProps) => {
+export const EdybaraLinkFloatingLayer = (props: EdybaraLinkFloatingLayerProps) => {
   return html`
-    <${EdimOverlay}>
-      <${EdimLayer} 
+    <${EdybaraOverlay}>
+      <${EdybaraLayer} 
         target=${props.target}
         disableBackdrop=${true}
-        className="edim-link-floating-layer-container">
-        <${EdimParagraph} className="edim-link-floating-layer-paragraph">
-          Visit URL: <${EdimAnchor} target="_blank" href="${props.href}">${
+        className="edybara-link-floating-layer-container">
+        <${EdybaraParagraph} className="edybara-link-floating-layer-paragraph">
+          Visit URL: <${EdybaraAnchor} target="_blank" href="${props.href}">${
             props.href
-          }</${EdimAnchor}>
-          <${EdimAnchor}>Edit</${EdimAnchor}>
-          <${EdimAnchor}
+          }</${EdybaraAnchor}>
+          <${EdybaraAnchor}>Edit</${EdybaraAnchor}>
+          <${EdybaraAnchor}
             onclick=${() => {
             }}>
             Remove
-          </${EdimAnchor}>
-        </${EdimParagraph}>
-      </${EdimLayer}>
-    </${EdimOverlay}>
+          </${EdybaraAnchor}>
+        </${EdybaraParagraph}>
+      </${EdybaraLayer}>
+    </${EdybaraOverlay}>
   `;
 };

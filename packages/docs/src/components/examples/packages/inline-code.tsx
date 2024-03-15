@@ -5,39 +5,39 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
-import { edimCodeMarks, edimCodePlugins } from '@edim-editor/code';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraCodeMarks, edybaraCodePlugins } from '@edybara-editor/code';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edimCodeMarks({
+    ...edybaraCodeMarks({
       markName: 'code',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimCodePlugins({
+  ...edybaraCodePlugins({
     markType: schema.marks['code'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textStyles: {
       codeMarkType: schema.marks['code'],
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const CodeExample = (props: ProseMirrorProps) => {

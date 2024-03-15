@@ -3,7 +3,7 @@ import { Plugin as PMPlugin, TextSelection } from 'prosemirror-state';
 /**
  * Remove the StoredMark when the text corresponding to the Mark range is deleted.
  */
-export const edimResetMarkPlugins = (): PMPlugin[] => {
+export const edybaraResetMarkPlugins = (): PMPlugin[] => {
   const plugins: PMPlugin[] = [
     new PMPlugin({
       appendTransaction: (transactions, oldState, newState) => {

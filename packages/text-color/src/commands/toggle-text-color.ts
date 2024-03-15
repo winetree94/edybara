@@ -1,17 +1,17 @@
 import { MarkType } from 'prosemirror-model';
 import { Command } from 'prosemirror-state';
 import { toggleMark } from 'prosemirror-commands';
-import { toggleMarkWithAttrs } from '@edim-editor/core';
-import { EdimTextColorAttrs } from 'schemas';
+import { toggleMarkWithAttrs } from '@edybara-editor/core';
+import { EdybaraTextColorAttrs } from 'schemas';
 
 export const toggleTextColorMark = (
   markType: MarkType,
-  attrs: EdimTextColorAttrs,
+  attrs: EdybaraTextColorAttrs,
 ): Command => toggleMark(markType, attrs);
 
 export const toggleTextColorWithAttrs = (
   markType: MarkType,
-  attr: EdimTextColorAttrs,
+  attr: EdybaraTextColorAttrs,
 ): Command => {
   return toggleMarkWithAttrs(markType, attr);
 };

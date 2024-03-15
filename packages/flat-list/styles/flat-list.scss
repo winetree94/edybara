@@ -1,15 +1,15 @@
 .ProseMirror {
 
-  li.edim-list-item {
+  li.edybara-list-item {
     position: relative;
   }
 
-  ul.edim-bullet-list,
-  ol.edim-ordered-list {
+  ul.edybara-bullet-list,
+  ol.edybara-ordered-list {
     padding-left: 0;
     list-style-type: none;
 
-    li.edim-list-item {
+    li.edybara-list-item {
       display: flex;
       word-break: break-all;
       line-height: normal;
@@ -24,21 +24,21 @@
       }
       margin: 10px 0;
 
-      p.edim-paragraph {
+      p.edybara-paragraph {
         margin: 0;
       }
 
-      &.edim-align-center {
+      &.edybara-align-center {
         text-align: center;
         justify-content: center;
       }
-      &.edim-align-right {
+      &.edybara-align-right {
         text-align: right;
         justify-content: flex-end;
       }
 
       @for $i from 1 through 6 {
-        &.edim-list-item-indent-#{$i} {
+        &.edybara-list-item-indent-#{$i} {
           margin-left: 30px * $i;
         }
       }
@@ -57,35 +57,35 @@
     }
   }
 
-  ul.edim-bullet-list {
-    li.edim-list-item {
-      &.edim-list-item-indent-1::before {
+  ul.edybara-bullet-list {
+    li.edybara-list-item {
+      &.edybara-list-item-indent-1::before {
         content: '\25cf';
       }
-      &.edim-list-item-indent-2::before {
+      &.edybara-list-item-indent-2::before {
         content: '\25cb';
       }
-      &.edim-list-item-indent-3::before {
+      &.edybara-list-item-indent-3::before {
         content: '\25a0';
       }
-      &.edim-list-item-indent-4::before {
+      &.edybara-list-item-indent-4::before {
         content: '\25cf';
       }
-      &.edim-list-item-indent-5::before {
+      &.edybara-list-item-indent-5::before {
         content: '\25cb';
       }
-      &.edim-list-item-indent-6::before {
+      &.edybara-list-item-indent-6::before {
         content: '\25a0';
       }
     }
   }
 
-  ol.edim-ordered-list {
+  ol.edybara-ordered-list {
     counter-reset: list-1 list-2 list-3 list-4 list-5 list-6;
     counter-increment: list-0;
 
-    li.edim-list-item {
-      &.edim-list-item-indent-1 {
+    li.edybara-list-item {
+      &.edybara-list-item-indent-1 {
         counter-reset: list-2 list-3 list-4 list-5 list-6 list-7;
         counter-increment: list-1;
 
@@ -95,7 +95,7 @@
         }
       }
 
-      &.edim-list-item-indent-2 {
+      &.edybara-list-item-indent-2 {
         counter-reset: list-3 list-4 list-5 list-6 list-7;
         counter-increment: list-2;
 
@@ -105,7 +105,7 @@
         }
       }
 
-      &.edim-list-item-indent-3 {
+      &.edybara-list-item-indent-3 {
         counter-reset: list-4 list-5 list-6 list-7;
         counter-increment: list-3;
 
@@ -115,7 +115,7 @@
         }
       }
 
-      &.edim-list-item-indent-4 {
+      &.edybara-list-item-indent-4 {
         counter-reset: list-5 list-6 list-7;
         counter-increment: list-4;
 
@@ -125,7 +125,7 @@
         }
       }
 
-      &.edim-list-item-indent-5 {
+      &.edybara-list-item-indent-5 {
         counter-reset: list-6 list-7;
         counter-increment: list-5;
 

@@ -1,6 +1,6 @@
 import { dropCursor } from 'prosemirror-dropcursor';
 
-export interface EdimDropCursorPluginConfigs {
+export interface EdybaraDropCursorPluginConfigs {
   /**
     The color of the cursor. Defaults to `black`. Use `false` to apply no color and rely only on class.
     */
@@ -15,8 +15,8 @@ export interface EdimDropCursorPluginConfigs {
   class?: string;
 }
 
-export const edimDropCursorPlugins = (
-  configs?: EdimDropCursorPluginConfigs,
+export const edybaraDropCursorPlugins = (
+  configs?: EdybaraDropCursorPluginConfigs,
 ) => {
   return [dropCursor(configs)];
 };

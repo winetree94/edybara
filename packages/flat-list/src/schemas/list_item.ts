@@ -3,7 +3,7 @@ import {
   isQuillTaskList,
   parseQuillIndent,
   parseQuillTextAlign,
-} from '@edim-editor/core';
+} from '@edybara-editor/core';
 
 export const EDIM_FLAT_LIST_ITEM_DEFAULT_NODE_NAME = 'list_item';
 
@@ -12,16 +12,16 @@ export interface ListItemAttrs {
   align: 'left' | 'right' | 'center' | null;
 }
 
-export interface EdimFlatListItemNodeConfigs {
+export interface EdybaraFlatListItemNodeConfigs {
   nodeName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimFlatListItemNodeConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraFlatListItemNodeConfigs> = {
   nodeName: EDIM_FLAT_LIST_ITEM_DEFAULT_NODE_NAME,
 };
 
-export const edimFlatListItemNodes = (
-  configs?: EdimFlatListItemNodeConfigs,
+export const edybaraFlatListItemNodes = (
+  configs?: EdybaraFlatListItemNodeConfigs,
 ): Record<string, NodeSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -64,8 +64,8 @@ export const edimFlatListItemNodes = (
       return [
         'li',
         {
-          class: `edim-list-item edim-list-item-indent-${attrs.indent || 1} ${
-            attrs.align ? ` edim-align-${attrs.align}` : ''
+          class: `edybara-list-item edybara-list-item-indent-${attrs.indent || 1} ${
+            attrs.align ? ` edybara-align-${attrs.align}` : ''
           }`,
           'data-text-align': attrs.align || 'left',
           'data-indent': attrs.indent || 1,

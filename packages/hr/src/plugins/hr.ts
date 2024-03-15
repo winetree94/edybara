@@ -1,12 +1,12 @@
 import { NodeType } from 'prosemirror-model';
-import { edimHorizontalKeymapPlugins } from './keymap';
+import { edybaraHorizontalKeymapPlugins } from './keymap';
 
-export interface EdimHorizontalRulePluginConfigs {
+export interface EdybaraHorizontalRulePluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimHorizontalRulePlugins = (
-  configs: EdimHorizontalRulePluginConfigs,
+export const edybaraHorizontalRulePlugins = (
+  configs: EdybaraHorizontalRulePluginConfigs,
 ) => {
-  return [...edimHorizontalKeymapPlugins(configs)];
+  return [...edybaraHorizontalKeymapPlugins(configs)];
 };

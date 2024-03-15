@@ -1,13 +1,13 @@
 import { Plugin as PMPlugin, PluginKey } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 import { findCellClosestToPos } from '../utils';
-import { EdimTableCellButtonWrapper } from '../components';
+import { EdybaraTableCellButtonWrapper } from '../components';
 import { render } from 'preact';
-import { html } from '@edim-editor/ui';
+import { html } from '@edybara-editor/ui';
 
 export const tableCellButtonPluginKey = new PluginKey('tableCellButtonPlugin');
 
-export const edimTableCellButtonPlugins = (): PMPlugin[] => {
+export const edybaraTableCellButtonPlugins = (): PMPlugin[] => {
   const plugin: PMPlugin<DecorationSet> = new PMPlugin<DecorationSet>({
     key: tableCellButtonPluginKey,
     state: {
@@ -25,14 +25,14 @@ export const edimTableCellButtonPlugins = (): PMPlugin[] => {
           return set;
         }
         const wrapper = document.createElement('div');
-        wrapper.classList.add('edim-table-cell-buttons-wrapper');
+        wrapper.classList.add('edybara-table-cell-buttons-wrapper');
         wrapper.addEventListener('mousedown', (e) => e.stopPropagation());
         const deco = Decoration.widget(cell.pos + 1, wrapper, {
           destroy: () => {
             render(null, wrapper);
           },
         });
-        render(html`<${EdimTableCellButtonWrapper} />`, wrapper);
+        render(html`<${EdybaraTableCellButtonWrapper} />`, wrapper);
         return DecorationSet.create(tr.doc, [deco]);
       },
     },

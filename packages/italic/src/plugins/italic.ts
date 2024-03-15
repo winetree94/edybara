@@ -1,10 +1,10 @@
 import { MarkType } from 'prosemirror-model';
-import { edimItalicKeymapPlugins } from './keymap';
+import { edybaraItalicKeymapPlugins } from './keymap';
 
-export interface EdimItalicPluginConfigs {
+export interface EdybaraItalicPluginConfigs {
   markType: MarkType;
 }
 
-export const edimItalicPlugins = (configs: EdimItalicPluginConfigs) => {
-  return [...edimItalicKeymapPlugins(configs)];
+export const edybaraItalicPlugins = (configs: EdybaraItalicPluginConfigs) => {
+  return [...edybaraItalicKeymapPlugins(configs)];
 };

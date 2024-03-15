@@ -2,16 +2,16 @@ import { MarkSpec } from 'prosemirror-model';
 
 export const EDIM_ITALIC_MARK_NAME = 'em';
 
-export interface EdimItalicMarkConfigs {
+export interface EdybaraItalicMarkConfigs {
   markName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimItalicMarkConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraItalicMarkConfigs> = {
   markName: EDIM_ITALIC_MARK_NAME,
 };
 
-export const edimItalicMarks = (
-  configs?: EdimItalicMarkConfigs,
+export const edybaraItalicMarks = (
+  configs?: EdybaraItalicMarkConfigs,
 ): Record<string, MarkSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,

@@ -3,14 +3,14 @@ import { indentListItem, listItemBackspace, splitListItem } from '../commands';
 import { Plugin as PMPlugin } from 'prosemirror-state';
 import { NodeType } from 'prosemirror-model';
 
-export interface EdimFlatListKeymapPluginConfigs {
+export interface EdybaraFlatListKeymapPluginConfigs {
   orderListNodeType?: NodeType;
   bulletListNodeType?: NodeType;
   listItemNodeType: NodeType;
 }
 
-export const edimFlatListKeymapPlugins = (
-  configs: EdimFlatListKeymapPluginConfigs,
+export const edybaraFlatListKeymapPlugins = (
+  configs: EdybaraFlatListKeymapPluginConfigs,
 ): PMPlugin[] => {
   const listTypes = [];
   if (configs.bulletListNodeType) {

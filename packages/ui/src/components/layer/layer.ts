@@ -3,14 +3,14 @@ import { useEffect, useLayoutEffect, useState } from 'preact/hooks';
 import { classes, html } from '../../cdk';
 import { forwardRef } from 'preact/compat';
 
-export interface EdimLayerPos {
+export interface EdybaraLayerPos {
   top: number;
   left: number;
   width: number | null;
   height: number | null;
 }
 
-export interface EdimLayerProps {
+export interface EdybaraLayerProps {
   top: number;
   left: number;
   target?: HTMLElement;
@@ -29,8 +29,8 @@ export interface EdimLayerProps {
   outerMousedown?: (e: MouseEvent) => void;
 }
 
-export const EdimLayer = forwardRef((props: EdimLayerProps) => {
-  const [pos, setPos] = useState<EdimLayerPos>({
+export const EdybaraLayer = forwardRef((props: EdybaraLayerProps) => {
+  const [pos, setPos] = useState<EdybaraLayerPos>({
     top: props.top,
     left: props.left,
     width: props.width ?? null,
@@ -81,7 +81,7 @@ export const EdimLayer = forwardRef((props: EdimLayerProps) => {
 
   const layer = html`
     <div
-      className="${classes('edim-layer-container', props.className)}"
+      className="${classes('edybara-layer-container', props.className)}"
       style=${{
         top: `${pos.top}px`,
         left: `${pos.left}px`,

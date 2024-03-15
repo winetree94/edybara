@@ -5,42 +5,42 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  edimStrikethroughMarks,
-  edimStrikethroughPlugins,
-} from '@edim-editor/strikethrough';
+  edybaraStrikethroughMarks,
+  edybaraStrikethroughPlugins,
+} from '@edybara-editor/strikethrough';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edimStrikethroughMarks({
+    ...edybaraStrikethroughMarks({
       markName: 'strikethrough',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimStrikethroughPlugins({
+  ...edybaraStrikethroughPlugins({
     markType: schema.marks['strikethrough'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textStyles: {
       strikethroughMarkType: schema.marks['strikethrough'],
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const StrikethroughExample = (props: ProseMirrorProps) => {

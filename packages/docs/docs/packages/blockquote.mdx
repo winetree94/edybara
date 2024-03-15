@@ -10,36 +10,36 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edim-editor/blockquote
+npm install @edybara-editor/blockquote
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/blockquote/styles/blockquote.scss";
+@import "@edybara-editor/blockquote/styles/blockquote.scss";
 ```
 
 ## 서식
 
-#### `edimBlockquoteNodes`
+#### `edybaraBlockquoteNodes`
 
 인용을 표현하기 위한 서식을 제공합니다.
 
 ## 플러그인
 
-#### `edimBlockQuotePlugins`
+#### `edybaraBlockQuotePlugins`
 
 하단의 모든 플러그인을 통합 제공합니다.
 
-#### `edimBlockquoteKeymapPlugins`
+#### `edybaraBlockquoteKeymapPlugins`
 
 Flat List 내부에서 되는 기본 단축키를 제공합니다.
 
-#### `edimBlockquoteInputRulePlugins`
+#### `edybaraBlockquoteInputRulePlugins`
 
 `>` 패턴의 문자를 입력하면 Flat Task List 노드로 전환하는 InputRule 을 제공합니다.
 
-#### `edimBlockQuoteMergePlugins`
+#### `edybaraBlockQuoteMergePlugins`
 
 동일한 인접 인용 노드를 자동으로 병합하는 기능을 제공합니다.
 
@@ -49,16 +49,16 @@ Flat List 내부에서 되는 기본 단축키를 제공합니다.
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
-import { edimBlockQuotePlugins, edimBlockquoteNodes } from '@edim-editor/blockquote';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraBlockQuotePlugins, edybaraBlockquoteNodes } from '@edybara-editor/blockquote';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimBlockquoteNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraBlockquoteNodes({
       multiline: true,
       nodeName: 'blockquote',
     }),
@@ -66,20 +66,20 @@ const schema = new Schema({
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimBlockQuotePlugins({
+  ...edybaraBlockQuotePlugins({
     nodeType: schema.nodes['blockquote'],
     mergeAdjacentBlockquote: true,
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     blockquote: {
       blockQuoteNodeType: schema.nodes['blockquote'],
     },
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 const view = new EditorView(document.querySelector('#editor'), {

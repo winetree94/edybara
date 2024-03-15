@@ -2,7 +2,7 @@ import { MarkSpec } from 'prosemirror-model';
 
 export const EDIM_LINK_DEFAULT_MARK_NAME = 'link';
 
-export interface EdimLinkMarkConfigs {
+export interface EdybaraLinkMarkConfigs {
   markName?: string;
 }
 
@@ -10,8 +10,8 @@ const DEFAULT_CONFIGS = {
   markName: EDIM_LINK_DEFAULT_MARK_NAME,
 };
 
-export const edimLinkMarks = (
-  configs?: EdimLinkMarkConfigs,
+export const edybaraLinkMarks = (
+  configs?: EdybaraLinkMarkConfigs,
 ): Record<string, MarkSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -39,7 +39,7 @@ export const edimLinkMarks = (
     toDOM(node) {
       const href = node.attrs['href'] as string;
       const title = node.attrs['title'] as string;
-      return ['a', { href, title, class: 'edim-link' }, 0];
+      return ['a', { href, title, class: 'edybara-link' }, 0];
     },
   };
 

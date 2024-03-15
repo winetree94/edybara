@@ -5,42 +5,42 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  edimUnderlineMarks,
-  edimUnderlinePlugins,
-} from '@edim-editor/underline';
+  edybaraUnderlineMarks,
+  edybaraUnderlinePlugins,
+} from '@edybara-editor/underline';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edimUnderlineMarks({
+    ...edybaraUnderlineMarks({
       markName: 'underline',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimUnderlinePlugins({
+  ...edybaraUnderlinePlugins({
     markType: schema.marks['underline'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textStyles: {
       underlineMarkType: schema.marks['underline'],
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const UnderlineExample = (props: ProseMirrorProps) => {

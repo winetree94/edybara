@@ -1,23 +1,23 @@
-.edim-menubar-color-select {
+.edybara-menubar-color-select {
   position: relative;
 }
 
-.edim-color-layer-list {
+.edybara-color-layer-list {
   margin: 8px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 4px;
 }
 
-.edim-select-option.edim-color-layer-list-item {
+.edybara-select-option.edybara-color-layer-list-item {
   padding: 0; 
 }
 
-.edim-color-button {
+.edybara-color-button {
   position: relative;
 }
 
-.edim-color-button-icon {
+.edybara-color-button-icon {
   width: 16px;
   height: 16px;
   fill: var(--spindle-950);

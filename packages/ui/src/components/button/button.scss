@@ -1,4 +1,4 @@
-.edim-button {
+.edybara-button {
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -14,7 +14,7 @@
   padding: 0 4px;
   background-color: var(--white-50);
 
-  &.edim-icon-button {
+  &.edybara-icon-button {
     padding: 0;
     width: var(--ui-height);
     display: flex;
@@ -28,7 +28,7 @@
     background-color: var(--spindle-50);
   }
 
-  &.edim-active {
+  &.edybara-active {
     background-color: var(--white-200);
   }
 

@@ -5,45 +5,45 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  edimFlatOrderedListNodes,
-  edimFlatBulletListNodes,
-  edimFlatListItemNodes,
-  edimFlatListPlugins,
-} from '@edim-editor/flat-list';
+  edybaraFlatOrderedListNodes,
+  edybaraFlatBulletListNodes,
+  edybaraFlatListItemNodes,
+  edybaraFlatListPlugins,
+} from '@edybara-editor/flat-list';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimFlatOrderedListNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraFlatOrderedListNodes({
       nodeName: 'ordered_list',
     }),
-    ...edimFlatBulletListNodes({
+    ...edybaraFlatBulletListNodes({
       nodeName: 'bullet_list',
     }),
-    ...edimFlatListItemNodes({
+    ...edybaraFlatListItemNodes({
       nodeName: 'list_item',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimFlatListPlugins({
+  ...edybaraFlatListPlugins({
     orderedListNodeType: schema.nodes['ordered_list'],
     bulletListNodeType: schema.nodes['bullet_list'],
     listItemNodeType: schema.nodes['list_item'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     list: {
       orderedListNodeType: schema.nodes['ordered_list'],
       bulletListNodeType: schema.nodes['bullet_list'],
@@ -51,7 +51,7 @@ const plugins: Plugin[] = [
     },
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const FlatListExample = (props: ProseMirrorProps) => {

@@ -1,5 +1,5 @@
 {
-  "name": "@edim-editor/tables",
+  "name": "@edybara-editor/tables",
   "version": "1.3.4",
   "license": "MIT",
   "scripts": {
@@ -16,20 +16,20 @@
   "style": "styles/tables.scss",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@edim-editor/core": "*",
-    "@edim-editor/ui": "*",
+    "@edybara-editor/core": "*",
+    "@edybara-editor/ui": "*",
     "prosemirror-keymap": "*",
     "prosemirror-model": "*",
     "prosemirror-state": "*",
-    "prosemirror-transform": "*",
     "prosemirror-tables": "*",
-    "prosemirror-view": "*",
-    "prosemirror-utils": "*"
+    "prosemirror-transform": "*",
+    "prosemirror-utils": "*",
+    "prosemirror-view": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",
+    "sass": "^1.69.5",
     "tsup": "^8.0.1",
-    "typescript": "^5.2.2",
-    "sass": "^1.69.5"
+    "typescript": "^5.2.2"
   }
 }

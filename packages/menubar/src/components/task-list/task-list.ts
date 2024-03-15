@@ -1,11 +1,11 @@
-import { EdimMenubarContext } from '../context';
+import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
-import { EdimButton, html } from '@edim-editor/ui';
-import { toggleList } from '@edim-editor/flat-list';
+import { EdybaraButton, html } from '@edybara-editor/ui';
+import { toggleList } from '@edybara-editor/flat-list';
 import { findParentNode } from 'prosemirror-utils';
 
-export const EdimMenubarTaskListToggleButtons = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarTaskListToggleButtons = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.taskList) {
     return null;
@@ -32,11 +32,11 @@ export const EdimMenubarTaskListToggleButtons = () => {
   };
 
   return html`
-    <${EdimButton}
-      className="edim-icon-button ${activeOrderedList ? 'selected' : ''}"
+    <${EdybaraButton}
+      className="edybara-icon-button ${activeOrderedList ? 'selected' : ''}"
       disabled=${!canTaskList}
       onClick=${() => onTaskListClick()}>
       <i class="ri-checkbox-line"></i>
-    </${EdimButton}>
+    </${EdybaraButton}>
   `;
 };

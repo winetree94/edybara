@@ -1,5 +1,5 @@
 {
-  "name": "@edim-editor/code",
+  "name": "@edybara-editor/code",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,13 +17,13 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "prosemirror-model": "*",
-    "@edim-editor/core": "*"
+    "@edybara-editor/core": "*",
+    "prosemirror-model": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",
+    "sass": "^1.69.5",
     "tsup": "^8.0.1",
-    "typescript": "^5.2.2",
-    "sass": "^1.69.5"
+    "typescript": "^5.2.2"
   }
 }

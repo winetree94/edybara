@@ -1,19 +1,19 @@
-import { EdimMenubarContext } from '../context';
+import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import {
-  EdimHeadingByNumber,
-  EdimParagraph,
-  EdimSelect,
-  EdimShortCut,
+  EdybaraHeadingByNumber,
+  EdybaraParagraph,
+  EdybaraSelect,
+  EdybaraShortCut,
   classes,
   html,
-} from '@edim-editor/ui';
-import { EdimHeadingNodeSpec } from '@edim-editor/heading';
-import { mac, transformRangeToBlock } from '@edim-editor/core';
+} from '@edybara-editor/ui';
+import { EdybaraHeadingNodeSpec } from '@edybara-editor/heading';
+import { mac, transformRangeToBlock } from '@edybara-editor/core';
 import { getTextType } from '../../utils';
 
-export const EdimMenubarTextTypeSelect = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarTextTypeSelect = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options?.textType) {
     return null;
@@ -21,7 +21,7 @@ export const EdimMenubarTextTypeSelect = () => {
 
   const paragraphNodeType = context.options.textType.paragraphNodeType;
   const headingNodeType = context.options.textType.headingNodeType;
-  const headingNodeSpec = headingNodeType.spec as EdimHeadingNodeSpec;
+  const headingNodeSpec = headingNodeType.spec as EdybaraHeadingNodeSpec;
 
   const textType = getTextType(context.editorView.state);
 
@@ -29,11 +29,11 @@ export const EdimMenubarTextTypeSelect = () => {
     ...headingNodeSpec.meta.levels.map((level) => ({
       value: `h${level}`,
       label: `Heading ${level}`,
-      Element: EdimHeadingByNumber[level],
+      Element: EdybaraHeadingByNumber[level],
       shortcut: html`
-        <${EdimShortCut}>
+        <${EdybaraShortCut}>
           ${mac ? '⌥⌘' : 'Ctrl+Alt+'}${level}
-        </${EdimShortCut}> 
+        </${EdybaraShortCut}> 
       `,
       command: () => {
         transformRangeToBlock(headingNodeType, {
@@ -45,9 +45,9 @@ export const EdimMenubarTextTypeSelect = () => {
     {
       value: 'p',
       label: 'Normal',
-      Element: EdimParagraph,
+      Element: EdybaraParagraph,
       shortcut: html`
-        <${EdimShortCut}>⌥⌘0</${EdimShortCut}> 
+        <${EdybaraShortCut}>⌥⌘0</${EdybaraShortCut}> 
       `,
       command: () => {
         transformRangeToBlock(paragraphNodeType)(
@@ -60,30 +60,30 @@ export const EdimMenubarTextTypeSelect = () => {
   ];
 
   return html`
-    <${EdimSelect.Root} 
+    <${EdybaraSelect.Root} 
       className="${classes(
-        'edim-menubar-text-select',
-        textType !== 'p' ? 'edim-heading-selected' : '',
+        'edybara-menubar-text-select',
+        textType !== 'p' ? 'edybara-heading-selected' : '',
       )}"
       value="${textType}">
-      <${EdimSelect.Text}>
-        <${EdimParagraph}>
+      <${EdybaraSelect.Text}>
+        <${EdybaraParagraph}>
           ${
             textTypeOptions.find((option) => option.value === textType)
               ?.label || ''
           }
-        </${EdimParagraph}>
-      </${EdimSelect.Text}>
-      <${EdimSelect.OptionGroup}>
+        </${EdybaraParagraph}>
+      </${EdybaraSelect.Text}>
+      <${EdybaraSelect.OptionGroup}>
         ${textTypeOptions.map((option) => {
           return html`
-            <${EdimSelect.Option} value="${option.value}" onClick=${option.command}>
-              <${option.Element} className="edim-menubar-select-text-type">${option.label}</${option.Element}> 
+            <${EdybaraSelect.Option} value="${option.value}" onClick=${option.command}>
+              <${option.Element} className="edybara-menubar-select-text-type">${option.label}</${option.Element}> 
               ${option.shortcut}
-            </${EdimSelect.Option}>
+            </${EdybaraSelect.Option}>
           `;
         })}
-      </${EdimSelect.OptionGroup}>
-    </${EdimSelect.Root}> 
+      </${EdybaraSelect.OptionGroup}>
+    </${EdybaraSelect.Root}> 
   `;
 };

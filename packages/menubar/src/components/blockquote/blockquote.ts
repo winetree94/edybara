@@ -1,10 +1,10 @@
-import { EdimButton, html } from '@edim-editor/ui';
-import { EdimMenubarContext } from '../context';
+import { EdybaraButton, html } from '@edybara-editor/ui';
+import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import { setBlockType } from 'prosemirror-commands';
 
-export const EdimMenubarBlockquoteToggleButtons = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarBlockquoteToggleButtons = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.blockquote) {
     return null;
@@ -13,8 +13,8 @@ export const EdimMenubarBlockquoteToggleButtons = () => {
   const blockquoteNodeType = context.options.blockquote.blockQuoteNodeType;
 
   return html`
-    <${EdimButton}
-      className="edim-icon-button"
+    <${EdybaraButton}
+      className="edybara-icon-button"
       onClick=${() => {
         setBlockType(blockquoteNodeType)(
           context.editorView.state,
@@ -22,6 +22,6 @@ export const EdimMenubarBlockquoteToggleButtons = () => {
         );
       }}>
       <i class="ri-double-quotes-r"></i>
-    </${EdimButton}>
+    </${EdybaraButton}>
   `;
 };

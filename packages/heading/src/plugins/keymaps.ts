@@ -2,16 +2,16 @@ import { setBlockType } from 'prosemirror-commands';
 import { keymap } from 'prosemirror-keymap';
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin, Command } from 'prosemirror-state';
-import { EdimHeadingNodeSpec } from '../schemas';
+import { EdybaraHeadingNodeSpec } from '../schemas';
 
-export interface EdimHeadingKeymapPluginConfigs {
+export interface EdybaraHeadingKeymapPluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimHeadingKeymapPlugins = (
-  configs: EdimHeadingKeymapPluginConfigs,
+export const edybaraHeadingKeymapPlugins = (
+  configs: EdybaraHeadingKeymapPluginConfigs,
 ): PMPlugin[] => {
-  const levels = (configs.nodeType.spec as EdimHeadingNodeSpec).meta.levels;
+  const levels = (configs.nodeType.spec as EdybaraHeadingNodeSpec).meta.levels;
   const headingKeymaps: Record<string, Command> = {};
 
   levels.forEach((level) => {

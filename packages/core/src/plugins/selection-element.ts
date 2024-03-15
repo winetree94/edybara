@@ -2,9 +2,9 @@ import { Plugin as PMPlugin } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 import { isTextSelection } from '../utils';
 
-export const edimSelectionElementPlugins = (): PMPlugin[] => {
+export const edybaraSelectionElementPlugins = (): PMPlugin[] => {
   const element = document.createElement('span');
-  element.classList.add('edim-selection-element');
+  element.classList.add('edybara-selection-element');
   element.style.position = 'absolute';
 
   const plugin: PMPlugin<DecorationSet> = new PMPlugin<DecorationSet>({
@@ -45,7 +45,7 @@ export const edimSelectionElementPlugins = (): PMPlugin[] => {
         }
 
         const widget = Decoration.widget(0, element, {
-          key: 'edim-selection-element',
+          key: 'edybara-selection-element',
         });
 
         return DecorationSet.create(newState.doc, [widget]);

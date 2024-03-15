@@ -5,33 +5,33 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 # Horizontal Rule
 
-`@edim-editor/hr` 에디터에 **수평 구분선**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
+`@edybara-editor/hr` 에디터에 **수평 구분선**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
 
 ## 설치
 
 ```bash
-npm install @edim-editor/hr
+npm install @edybara-editor/hr
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/hr/styles/hr.scss";
+@import "@edybara-editor/hr/styles/hr.scss";
 ```
 
 ## 서식
 
-#### `edimHorizontalRuleNodes`
+#### `edybaraHorizontalRuleNodes`
 
 수평선 서식을 제공합니다.
 
 ## 플러그인
 
-#### `edimHorizontalRulePlugins`
+#### `edybaraHorizontalRulePlugins`
 
 하단의 모든 플러그인을 통합 제공합니다.
 
-#### `edimHorizontalKeymapPlugins`
+#### `edybaraHorizontalKeymapPlugins`
 
 현재 커서 위치에서 수평선 노드를 추가하는 단축키(Ctrl Shift _)를 제공합니다.
 
@@ -41,32 +41,32 @@ npm install @edim-editor/hr
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
-import { edimHorizontalRuleNodes, edimHorizontalRulePlugins } from '@edim-editor/hr';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraHorizontalRuleNodes, edybaraHorizontalRulePlugins } from '@edybara-editor/hr';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes({
       allowAlign: true,
       nodeName: 'paragraph',
     }),
-    ...edimHorizontalRuleNodes({
+    ...edybaraHorizontalRuleNodes({
       nodeName: 'horizontal_rule',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimHorizontalRulePlugins({
+  ...edybaraHorizontalRulePlugins({
     nodeType: schema.nodes['horizontal_rule'],
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 

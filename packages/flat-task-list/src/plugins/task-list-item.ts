@@ -1,14 +1,14 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
 import { createNode } from '../utils';
-import { EdimFlatTaskListItemAttrs } from '../schemas';
+import { EdybaraFlatTaskListItemAttrs } from '../schemas';
 
-export interface EdimTaskListItemNodeViewPluginConfigs {
+export interface EdybaraTaskListItemNodeViewPluginConfigs {
   taskListItemNodeType: NodeType;
 }
 
-export const edimTaskListItemNodeViewPlugins = (
-  configs: EdimTaskListItemNodeViewPluginConfigs,
+export const edybaraTaskListItemNodeViewPlugins = (
+  configs: EdybaraTaskListItemNodeViewPluginConfigs,
 ): PMPlugin[] => {
   const plugins: PMPlugin[] = [
     new PMPlugin({
@@ -36,7 +36,7 @@ export const edimTaskListItemNodeViewPlugins = (
                 return;
               }
 
-              const attrs = node.attrs as EdimFlatTaskListItemAttrs;
+              const attrs = node.attrs as EdybaraFlatTaskListItemAttrs;
               const tr = view.state.tr.setNodeMarkup(
                 pos,
                 configs.taskListItemNodeType,

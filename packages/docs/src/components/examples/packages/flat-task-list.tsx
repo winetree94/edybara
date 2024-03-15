@@ -5,47 +5,47 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  edimFlatTaskListNodes,
-  edimFlatTaskListItemNodes,
-  edimFlatTaskListPlugins,
-} from '@edim-editor/flat-task-list';
+  edybaraFlatTaskListNodes,
+  edybaraFlatTaskListItemNodes,
+  edybaraFlatTaskListPlugins,
+} from '@edybara-editor/flat-task-list';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimFlatTaskListNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraFlatTaskListNodes({
       nodeName: 'task_list',
     }),
-    ...edimFlatTaskListItemNodes({
+    ...edybaraFlatTaskListItemNodes({
       nodeName: 'task_list_item',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimFlatTaskListPlugins({
+  ...edybaraFlatTaskListPlugins({
     taskListNodeType: schema.nodes['task_list'],
     taskListItemNodeType: schema.nodes['task_list_item'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     taskList: {
       taskListNodeType: schema.nodes['task_list'],
       taskListItemNodeType: schema.nodes['task_list_item'],
     },
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const FlatTaskListExample = (props: ProseMirrorProps) => {

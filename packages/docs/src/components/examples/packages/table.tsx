@@ -5,23 +5,23 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  edimTableEditingPlugins,
-  edimTableNodes,
-  edimTablePlugins,
-} from '@edim-editor/tables';
+  edybaraTableEditingPlugins,
+  edybaraTableNodes,
+  edybaraTablePlugins,
+} from '@edybara-editor/tables';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimTableNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraTableNodes({
       tableNodeName: 'table',
       tableRowNodeName: 'table_row',
       tableCellNodeName: 'table_cell',
@@ -30,25 +30,25 @@ const schema = new Schema({
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes.paragraph,
   }),
-  ...edimTablePlugins({
+  ...edybaraTablePlugins({
     tableNodeType: schema.nodes.table,
     tableRowNodeType: schema.nodes.table_row,
     tableCellNodeType: schema.nodes.table_cell,
   }),
-  ...edimTableEditingPlugins({
+  ...edybaraTableEditingPlugins({
     tableNodeType: schema.nodes.table,
     tableRowNodeType: schema.nodes.table_row,
     tableCellNodeType: schema.nodes.table_cell,
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     table: {
       tableNodeType: schema.nodes.table,
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const TableExample = (props: ProseMirrorProps) => {

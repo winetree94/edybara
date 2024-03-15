@@ -1,18 +1,18 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edimMergeAdjacentNodePlugins } from '@edim-editor/core';
+import { edybaraMergeAdjacentNodePlugins } from '@edybara-editor/core';
 
-export interface EdimBlockQuoteMergePluginConfigs {
+export interface EdybaraBlockQuoteMergePluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimBlockQuoteMergePlugins = (
-  configs: EdimBlockQuoteMergePluginConfigs,
+export const edybaraBlockQuoteMergePlugins = (
+  configs: EdybaraBlockQuoteMergePluginConfigs,
 ): PMPlugin[] => {
   const plugins: PMPlugin[] = [];
 
   plugins.push(
-    ...edimMergeAdjacentNodePlugins({
+    ...edybaraMergeAdjacentNodePlugins({
       specs: [
         {
           nodeType: configs.nodeType,

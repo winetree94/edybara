@@ -1,10 +1,10 @@
 import { MarkType } from 'prosemirror-model';
-import { edimSubscriptKeymapPlugins } from './keymap';
+import { edybaraSubscriptKeymapPlugins } from './keymap';
 
-export interface EdimSubscriptPluginConfigs {
+export interface EdybaraSubscriptPluginConfigs {
   markType: MarkType;
 }
 
-export const edimSubscriptPlugins = (configs: EdimSubscriptPluginConfigs) => {
-  return [...edimSubscriptKeymapPlugins(configs)];
+export const edybaraSubscriptPlugins = (configs: EdybaraSubscriptPluginConfigs) => {
+  return [...edybaraSubscriptKeymapPlugins(configs)];
 };

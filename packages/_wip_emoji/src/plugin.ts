@@ -21,7 +21,7 @@ export const EDIM_EMOJI_NODE: Record<string, NodeSpec> = {
         getAttrs: (node) => {
           const dom = node as HTMLSpanElement;
 
-          const currentEmoji = dom.classList.contains('edim-emoji');
+          const currentEmoji = dom.classList.contains('edybara-emoji');
           const legacyEmoji = dom.classList.contains('emoji-img');
 
           if (!currentEmoji && !legacyEmoji) {
@@ -44,7 +44,7 @@ export const EDIM_EMOJI_NODE: Record<string, NodeSpec> = {
       return [
         'img',
         {
-          class: 'edim-emoji',
+          class: 'edybara-emoji',
           'data-id': attrs.data_id,
         },
       ];

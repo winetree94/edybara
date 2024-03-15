@@ -2,27 +2,27 @@
 import { render } from 'preact';
 import { EditorState, PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { EdimCommandPluginState, EdimCommandPluginView } from '../plugin';
-import { addMention } from '@edim-editor/mention';
-import { insertTable } from '@edim-editor/tables';
+import { EdybaraCommandPluginState, EdybaraCommandPluginView } from '../plugin';
+import { addMention } from '@edybara-editor/mention';
+import { insertTable } from '@edybara-editor/tables';
 import {
-  EdimLayer,
-  EdimListItem,
-  EdimUnorderedList,
-  EdimParagraph,
+  EdybaraLayer,
+  EdybaraListItem,
+  EdybaraUnorderedList,
+  EdybaraParagraph,
   classes,
   html,
-} from '@edim-editor/ui';
+} from '@edybara-editor/ui';
 import { forwardRef } from 'preact/compat';
 
-export interface EdimCommandItem {
+export interface EdybaraCommandItem {
   icon: string;
   title: string;
   description: string;
   action: (view: EditorView, standalone?: boolean) => void;
 }
 
-export const EDIM_DEFAULT_COMMAND_LIST: EdimCommandItem[] = [
+export const EDIM_DEFAULT_COMMAND_LIST: EdybaraCommandItem[] = [
   {
     icon: 'ri-at-line',
     title: 'Mention',
@@ -53,23 +53,23 @@ export const EDIM_DEFAULT_COMMAND_LIST: EdimCommandItem[] = [
   },
 ];
 
-export interface EdimCommandProps {
-  items: EdimCommandItem[];
+export interface EdybaraCommandProps {
+  items: EdybaraCommandItem[];
   selectedIndex: number;
   onHover?(index: number): void;
   onClick?(index: number): void;
 }
 
-export const EdimCommand = forwardRef((props: EdimCommandProps) => {
+export const EdybaraCommand = forwardRef((props: EdybaraCommandProps) => {
   return html`
-    <div class="edim-view-command-container">
-      <${EdimUnorderedList}>
+    <div class="edybara-view-command-container">
+      <${EdybaraUnorderedList}>
         ${props.items.map(
           (item, index) => html`
-            <${EdimListItem}
+            <${EdybaraListItem}
               key=${index}
               className=${classes(
-                'edim-view-command-list-item',
+                'edybara-view-command-list-item',
                 props.selectedIndex === index ? 'selected' : '',
               )}
               onMouseMove=${() => props.onHover?.(index)}
@@ -78,28 +78,28 @@ export const EdimCommand = forwardRef((props: EdimCommandProps) => {
               <i
                 className=${classes(
                   item.icon,
-                  'edim-view-command-list-item-icon',
+                  'edybara-view-command-list-item-icon',
                 )}
               />
-              <div className="edim-view-command-item-content">
-                <${EdimParagraph}>${item.title}</${EdimParagraph}>
-                <${EdimParagraph}>${item.description}</${EdimParagraph}>
+              <div className="edybara-view-command-item-content">
+                <${EdybaraParagraph}>${item.title}</${EdybaraParagraph}>
+                <${EdybaraParagraph}>${item.description}</${EdybaraParagraph}>
               </div>
-            </${EdimListItem}>
+            </${EdybaraListItem}>
           `,
         )}
-      </${EdimUnorderedList}>
+      </${EdybaraUnorderedList}>
     </div>
   `;
 });
 
-export class EdimCommandView implements EdimCommandPluginView {
+export class EdybaraCommandView implements EdybaraCommandPluginView {
   public wrapper: HTMLDivElement | undefined;
   public index = 0;
 
   public constructor(
     private readonly view: EditorView,
-    private readonly pluginKey: PluginKey<EdimCommandPluginState>,
+    private readonly pluginKey: PluginKey<EdybaraCommandPluginState>,
   ) {}
 
   public update(view: EditorView) {
@@ -115,7 +115,7 @@ export class EdimCommandView implements EdimCommandPluginView {
   public render(
     view: EditorView,
     editorState: EditorState,
-    pluginState: EdimCommandPluginState,
+    pluginState: EdybaraCommandPluginState,
   ): void {
     const commands = EDIM_DEFAULT_COMMAND_LIST.filter((item) => {
       if (!pluginState.keyword) {
@@ -147,14 +147,14 @@ export class EdimCommandView implements EdimCommandPluginView {
 
     render(
       html`
-        <${EdimLayer}
+        <${EdybaraLayer}
           target=${this.wrapper}
           disableBackdrop=${true}
           maxWidth=${200}
           minWidth=${200}
           maxHeight=${300}
         >
-          <${EdimCommand}
+          <${EdybaraCommand}
             items=${commands}
             selectedIndex=${this.index}
             onHover=${(index: number) => {
@@ -167,7 +167,7 @@ export class EdimCommandView implements EdimCommandPluginView {
               commands[index].action(view);
             }}
           />
-        </${EdimLayer}>
+        </${EdybaraLayer}>
       `,
       this.wrapper,
     );

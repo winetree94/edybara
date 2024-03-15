@@ -1,27 +1,27 @@
 import { columnResizing, tableEditing } from 'prosemirror-tables';
-import { edimTableCellButtonPlugins } from './cell-button';
-import { edimFocusedCellDecorationPlugins } from './focused-cell';
+import { edybaraTableCellButtonPlugins } from './cell-button';
+import { edybaraFocusedCellDecorationPlugins } from './focused-cell';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { EdimTableNodeView } from '../node-views';
+import { EdybaraTableNodeView } from '../node-views';
 import { NodeType } from 'prosemirror-model';
 
-export interface EdimTableEditingPluginConfigs {
+export interface EdybaraTableEditingPluginConfigs {
   tableNodeType: NodeType;
   tableRowNodeType: NodeType;
   tableCellNodeType: NodeType;
 }
 
-export const edimTableEditingPlugins = (
-  configs: EdimTableEditingPluginConfigs,
+export const edybaraTableEditingPlugins = (
+  configs: EdybaraTableEditingPluginConfigs,
 ) => {
   const plugins: PMPlugin[] = [
-    ...edimFocusedCellDecorationPlugins(),
-    ...edimTableCellButtonPlugins(),
+    ...edybaraFocusedCellDecorationPlugins(),
+    ...edybaraTableCellButtonPlugins(),
     new PMPlugin({
       props: {
         nodeViews: {
           table: (node, view, getPos) =>
-            new EdimTableNodeView(node, view, getPos),
+            new EdybaraTableNodeView(node, view, getPos),
         },
       },
     }),

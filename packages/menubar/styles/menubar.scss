@@ -4,7 +4,7 @@
 @import '../src/components/marks/marks.scss';
 @import '../src/components/text-align/text-align.scss';
 
-.edim-view-editor-root {
+.edybara-view-editor-root {
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -15,7 +15,7 @@
   border: 1px solid var(--black-100);
 }
 
-.edim-view-editor-scroll {
+.edybara-view-editor-scroll {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
@@ -23,7 +23,7 @@
   overflow-y: auto;
 }
 
-.edim-view-editor {
+.edybara-view-editor {
   position: relative;
   max-width: 760px;
   width: 100%;
@@ -36,7 +36,7 @@
   color: black;
 }
 
-.edim-view-editor-menubar-root {
+.edybara-view-editor-menubar-root {
   border-bottom: 1px solid var(--black-100);
 
   &.bottom {
@@ -45,7 +45,7 @@
   }
 }
 
-.edim-view-menubar-wrapper {
+.edybara-view-menubar-wrapper {
   padding: 8px 8px;
   min-height: 44px;
   display: flex;
@@ -54,6 +54,6 @@
   position: relative;
 }
 
-.edim-view-menubar-separator {
+.edybara-view-menubar-separator {
   margin: 4px 4px;
 }

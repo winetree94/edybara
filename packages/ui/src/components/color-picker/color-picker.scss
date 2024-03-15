@@ -1,17 +1,17 @@
-.edim-color-picker {
+.edybara-color-picker {
   display: flex;
   flex-direction: column;
   gap: 5px;
   margin: 10px;
 
-  .edim-color-group {
+  .edybara-color-group {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
   }
 }
 
-.edim-color {
+.edybara-color {
   border: 1px solid transparent;
   width: 26px;
   height: 26px;

@@ -2,16 +2,16 @@ import { MarkSpec } from 'prosemirror-model';
 
 export const EDIM_STRIKETHROUGH_MARK_NAME = 'strikethrough';
 
-export interface EdimStrikethroughMarkConfigs {
+export interface EdybaraStrikethroughMarkConfigs {
   markName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimStrikethroughMarkConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraStrikethroughMarkConfigs> = {
   markName: EDIM_STRIKETHROUGH_MARK_NAME,
 };
 
-export const edimStrikethroughMarks = (
-  configs?: EdimStrikethroughMarkConfigs,
+export const edybaraStrikethroughMarks = (
+  configs?: EdybaraStrikethroughMarkConfigs,
 ): Record<string, MarkSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,

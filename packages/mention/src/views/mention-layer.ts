@@ -1,11 +1,11 @@
 import {
-  EdimLayer,
-  EdimListItem,
-  EdimUnorderedList,
-  EdimParagraph,
+  EdybaraLayer,
+  EdybaraListItem,
+  EdybaraUnorderedList,
+  EdybaraParagraph,
   classes,
   html,
-} from '@edim-editor/ui';
+} from '@edybara-editor/ui';
 import { EditorState, PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { render } from 'preact';
@@ -20,17 +20,17 @@ export interface MentionItem {
   name: string;
 }
 
-export interface EdimMentionViewProps {
+export interface EdybaraMentionViewProps {
   items: MentionItem[];
   selectedIndex: number;
   onHover?(index: number): void;
   onClick?(index: number): void;
 }
 
-export const EdimMention = forwardRef((props: EdimMentionViewProps) => {
+export const EdybaraMention = forwardRef((props: EdybaraMentionViewProps) => {
   useEffect(() => {
     const selected = document.querySelector(
-      '.edim-view-mention-list-item.selected',
+      '.edybara-view-mention-list-item.selected',
     );
     if (selected) {
       selected.scrollIntoView({ block: 'nearest' });
@@ -38,37 +38,37 @@ export const EdimMention = forwardRef((props: EdimMentionViewProps) => {
   }, [props.selectedIndex]);
 
   return html`
-    <div className="edim-view-mention-container">
-      <${EdimUnorderedList}>
+    <div className="edybara-view-mention-container">
+      <${EdybaraUnorderedList}>
         ${props.items.map(
           (item, index) => html`
-            <${EdimListItem}
+            <${EdybaraListItem}
               key=${index}
               className=${classes(
-                'edim-view-mention-list-item',
+                'edybara-view-mention-list-item',
                 props.selectedIndex === index ? 'selected' : '',
               )}
               onMouseMove=${() => props.onHover?.(index)}
               onClick=${() => props.onClick?.(index)}
             >
               <img
-                class="edim-view-mention-list-item-avatar"
+                class="edybara-view-mention-list-item-avatar"
                 src=${item.icon}
               />
-              <div className="edim-view-mention-list-item-content">
-                <${EdimParagraph} className="edim-view-mention-item-name">
+              <div className="edybara-view-mention-list-item-content">
+                <${EdybaraParagraph} className="edybara-view-mention-item-name">
                   ${item.name}
-                </${EdimParagraph}>
+                </${EdybaraParagraph}>
               </div>
-            </${EdimListItem}>
+            </${EdybaraListItem}>
           `,
         )}
-      </${EdimUnorderedList}>
+      </${EdybaraUnorderedList}>
     </div>
   `;
 });
 
-export class EdimMentionView implements MentionPluginView {
+export class EdybaraMentionView implements MentionPluginView {
   public prevKeyword: string = '';
   public wrapper: HTMLDivElement | undefined;
   public index = 0;
@@ -105,7 +105,7 @@ export class EdimMentionView implements MentionPluginView {
 
     if (!this.wrapper) {
       this.wrapper = document.createElement('div');
-      this.wrapper.classList.add('edim-view-mention-wrapper');
+      this.wrapper.classList.add('edybara-view-mention-wrapper');
       this.wrapper.style.top = `${start.bottom}px`;
       this.wrapper.style.left = `${start.left}px`;
       this.view.dom.parentElement?.appendChild(this.wrapper);
@@ -117,14 +117,14 @@ export class EdimMentionView implements MentionPluginView {
 
     render(
       html`
-        <${EdimLayer}
+        <${EdybaraLayer}
           target=${this.wrapper}
           disableBackdrop=${true}
           maxWidth=${200}
           minWidth=${200}
           maxHeight=${300}
         >
-          <${EdimMention}
+          <${EdybaraMention}
             items=${items}
             selectedIndex=${this.index}
             onHover=${(index: number) => {
@@ -137,7 +137,7 @@ export class EdimMentionView implements MentionPluginView {
               this.applyMention(items[index]);
             }}
           />
-        </${EdimLayer}>
+        </${EdybaraLayer}>
       `,
       this.wrapper,
     );

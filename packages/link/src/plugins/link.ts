@@ -1,11 +1,11 @@
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edimLinkFloatingLayerPlugins } from './floating-layer';
+import { edybaraLinkFloatingLayerPlugins } from './floating-layer';
 import { MarkType } from 'prosemirror-model';
 
-export interface EdimLinkPluginConfigs {
+export interface EdybaraLinkPluginConfigs {
   markType: MarkType;
 }
 
-export const edimLinkPlugins = (configs: EdimLinkPluginConfigs): PMPlugin[] => {
-  return [...edimLinkFloatingLayerPlugins(configs)];
+export const edybaraLinkPlugins = (configs: EdybaraLinkPluginConfigs): PMPlugin[] => {
+  return [...edybaraLinkFloatingLayerPlugins(configs)];
 };

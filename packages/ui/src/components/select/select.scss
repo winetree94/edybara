@@ -1,4 +1,4 @@
-.edim-select {
+.edybara-select {
   display: flex;
   cursor: pointer;
   height: var(--ui-height);
@@ -7,18 +7,18 @@
   border-radius: 3px;
   // padding: 0 4px;
 
-  .edim-select-text {
+  .edybara-select-text {
     margin: 0;
     flex: 1 1 auto;
     text-align: left;
   }
 
-  i.edim-select-arrow-icon {
+  i.edybara-select-arrow-icon {
     flex-shrink: 0;
   }
 }
 
-.edim-select-option {
+.edybara-select-option {
   cursor: pointer;
 
   &:hover {
@@ -29,7 +29,7 @@
     background-color: var(--white-200);
   }
 
-  &.edim-active {
+  &.edybara-active {
     color: var(--spindle-700);
   }
 }

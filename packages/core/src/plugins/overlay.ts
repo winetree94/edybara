@@ -1,19 +1,19 @@
 import { Plugin as PMPlugin, PluginKey } from 'prosemirror-state';
 
-export interface EdimOverlayPluginState {
+export interface EdybaraOverlayPluginState {
   overlayElement: HTMLDivElement;
 }
 
-export interface EdimOverlayPluginConfigs {
-  key?: PluginKey<EdimOverlayPluginState>;
+export interface EdybaraOverlayPluginConfigs {
+  key?: PluginKey<EdybaraOverlayPluginState>;
 }
 
-const DEFAULT_CONFIGS: Required<EdimOverlayPluginConfigs> = {
-  key: new PluginKey('EdimOverlayPluginKey'),
+const DEFAULT_CONFIGS: Required<EdybaraOverlayPluginConfigs> = {
+  key: new PluginKey('EdybaraOverlayPluginKey'),
 };
 
-export const edimOverlayPlugins = (
-  configs?: EdimOverlayPluginConfigs,
+export const edybaraOverlayPlugins = (
+  configs?: EdybaraOverlayPluginConfigs,
 ): PMPlugin[] => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -21,10 +21,10 @@ export const edimOverlayPlugins = (
   };
 
   const overlay = document.createElement('div');
-  overlay.classList.add('edim-overlay-container');
+  overlay.classList.add('edybara-overlay-container');
 
-  const plugin: PMPlugin<EdimOverlayPluginState> =
-    new PMPlugin<EdimOverlayPluginState>({
+  const plugin: PMPlugin<EdybaraOverlayPluginState> =
+    new PMPlugin<EdybaraOverlayPluginState>({
       key: mergedConfigs.key,
       view: (view) => {
         view.dom.parentElement?.appendChild(overlay);

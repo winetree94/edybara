@@ -1,12 +1,12 @@
 import { Plugin as PMPlugin, PluginKey, PluginView } from 'prosemirror-state';
-import { findMark, isTextSelection } from '@edim-editor/core';
+import { findMark, isTextSelection } from '@edybara-editor/core';
 import { MarkType, Node as PMNode } from 'prosemirror-model';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import { render } from 'preact';
-import { html } from '@edim-editor/ui';
-import { EdimLinkFloatingLayer } from '../components';
+import { html } from '@edybara-editor/ui';
+import { EdybaraLinkFloatingLayer } from '../components';
 
-export interface EdimLinkFloatingLayerPluginState {
+export interface EdybaraLinkFloatingLayerPluginState {
   active: {
     pos: number;
     node: PMNode;
@@ -14,20 +14,20 @@ export interface EdimLinkFloatingLayerPluginState {
   } | null;
 }
 
-const DEFAULT_STATE: Readonly<EdimLinkFloatingLayerPluginState> = {
+const DEFAULT_STATE: Readonly<EdybaraLinkFloatingLayerPluginState> = {
   active: null,
 };
 
 export const EDIM_LINK_FLOATING_LAYER_PLUGIN_KEY =
-  new PluginKey<EdimLinkFloatingLayerPluginState>('edim_link_floating_layer');
+  new PluginKey<EdybaraLinkFloatingLayerPluginState>('edybara_link_floating_layer');
 
-export interface edimLinkFloatingLayerPluginConfigs {
+export interface edybaraLinkFloatingLayerPluginConfigs {
   markType: MarkType;
   view?: (view: EditorView) => PluginView;
 }
 
 const DEFAULT_CONFIGS: Required<
-  Omit<edimLinkFloatingLayerPluginConfigs, 'markType'>
+  Omit<edybaraLinkFloatingLayerPluginConfigs, 'markType'>
 > = {
   view(editorView: EditorView) {
     const { active } = EDIM_LINK_FLOATING_LAYER_PLUGIN_KEY.getState(
@@ -44,8 +44,8 @@ const DEFAULT_CONFIGS: Required<
   },
 };
 
-export const edimLinkFloatingLayerPlugins = (
-  configs: edimLinkFloatingLayerPluginConfigs,
+export const edybaraLinkFloatingLayerPlugins = (
+  configs: edybaraLinkFloatingLayerPluginConfigs,
 ): PMPlugin[] => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -57,8 +57,8 @@ export const edimLinkFloatingLayerPlugins = (
   decorationDomWrapper.style.pointerEvents = 'none';
   let editorView: EditorView | null = null;
 
-  const plugin: PMPlugin<EdimLinkFloatingLayerPluginState> =
-    new PMPlugin<EdimLinkFloatingLayerPluginState>({
+  const plugin: PMPlugin<EdybaraLinkFloatingLayerPluginState> =
+    new PMPlugin<EdybaraLinkFloatingLayerPluginState>({
       key: EDIM_LINK_FLOATING_LAYER_PLUGIN_KEY,
       view: (view) => {
         editorView = view;
@@ -103,7 +103,7 @@ export const edimLinkFloatingLayerPlugins = (
 
           render(
             html`
-              <${EdimLinkFloatingLayer}
+              <${EdybaraLinkFloatingLayer}
                 target=${decorationDomWrapper}
                 href="${link.mark.attrs['href']}"
               />

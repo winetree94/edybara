@@ -1,15 +1,15 @@
 import { createContext } from 'preact';
 import { html } from '../../cdk';
 
-const EdimScrollContext = createContext({});
+const EdybaraScrollContext = createContext({});
 
-export const EdimScrollRoot = () => {
+export const EdybaraScrollRoot = () => {
   return html`
-    <${EdimScrollContext.Provider} value=${{}}>
-    </${EdimScrollContext.Provider}>
+    <${EdybaraScrollContext.Provider} value=${{}}>
+    </${EdybaraScrollContext.Provider}>
   `;
 };
 
-export const EdimScrollViewPort = () => {
+export const EdybaraScrollViewPort = () => {
   return html``;
 };

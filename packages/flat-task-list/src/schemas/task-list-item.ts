@@ -3,27 +3,27 @@ import {
   isQuillTaskList,
   parseQuillIndent,
   parseQuillTextAlign,
-} from '@edim-editor/core';
+} from '@edybara-editor/core';
 import { createNode } from '../utils';
 
 export const EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME = 'task_list_item';
 
-export interface EdimFlatTaskListItemAttrs {
+export interface EdybaraFlatTaskListItemAttrs {
   indent: number;
   align: 'left' | 'right' | 'center' | null;
   checked: boolean;
 }
 
-export interface EdimFlatTaskListItemNodeConfigs {
+export interface EdybaraFlatTaskListItemNodeConfigs {
   nodeName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimFlatTaskListItemNodeConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraFlatTaskListItemNodeConfigs> = {
   nodeName: EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME,
 };
 
-export const edimFlatTaskListItemNodes = (
-  configs?: EdimFlatTaskListItemNodeConfigs,
+export const edybaraFlatTaskListItemNodes = (
+  configs?: EdybaraFlatTaskListItemNodeConfigs,
 ): Record<string, NodeSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -49,7 +49,7 @@ export const edimFlatTaskListItemNodes = (
         getAttrs(node) {
           const dom = node as HTMLLIElement;
 
-          if (dom.classList.contains('edim-list-item')) {
+          if (dom.classList.contains('edybara-list-item')) {
             return false;
           }
 

@@ -5,22 +5,22 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  edimBlockQuotePlugins,
-  edimBlockquoteNodes,
-} from '@edim-editor/blockquote';
+  edybaraBlockQuotePlugins,
+  edybaraBlockquoteNodes,
+} from '@edybara-editor/blockquote';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimBlockquoteNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraBlockquoteNodes({
       multiline: true,
       nodeName: 'blockquote',
     }),
@@ -28,20 +28,20 @@ const schema = new Schema({
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimBlockQuotePlugins({
+  ...edybaraBlockQuotePlugins({
     nodeType: schema.nodes['blockquote'],
     mergeAdjacentBlockquote: true,
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     blockquote: {
       blockQuoteNodeType: schema.nodes['blockquote'],
     },
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const BlockquoteExample = (props: ProseMirrorProps) => {

@@ -2,16 +2,16 @@ import { MarkSpec } from 'prosemirror-model';
 
 export const EDIM_UNDERLINE_MARK_NAME = 'underline';
 
-export interface EdimUnderlineMarkConfigs {
+export interface EdybaraUnderlineMarkConfigs {
   markName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimUnderlineMarkConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraUnderlineMarkConfigs> = {
   markName: EDIM_UNDERLINE_MARK_NAME,
 };
 
-export const edimUnderlineMarks = (
-  configs?: EdimUnderlineMarkConfigs,
+export const edybaraUnderlineMarks = (
+  configs?: EdybaraUnderlineMarkConfigs,
 ): Record<string, MarkSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,

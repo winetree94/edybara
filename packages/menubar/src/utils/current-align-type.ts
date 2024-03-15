@@ -1,4 +1,4 @@
-import { getBlockContainerChildren } from '@edim-editor/core';
+import { getBlockContainerChildren } from '@edybara-editor/core';
 import { EditorState } from 'prosemirror-state';
 
 export const getAlignType = (state: EditorState) => {

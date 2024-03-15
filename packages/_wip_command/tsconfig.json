@@ -5,9 +5,9 @@
     "outDir": "./dist",
     "declaration": true,
     "paths": {
-      "@edim-editor/ui": ["../../ui/src/index.ts"],
-      "@edim-editor/mention": ["../../mention/src/index.ts"],
-      "@edim-editor/tables": ["../../tables/src/index.ts"]
+      "@edybara-editor/ui": ["../../ui/src/index.ts"],
+      "@edybara-editor/mention": ["../../mention/src/index.ts"],
+      "@edybara-editor/tables": ["../../tables/src/index.ts"]
     }
   },
   "include": [

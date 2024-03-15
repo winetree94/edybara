@@ -1,22 +1,22 @@
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edimBasicKeymapPlugins } from './keymap';
-import { edimHistoryPlugins } from './history';
-import { edimVirtualCursorPlugins } from './virtual-cursor';
-import { edimDropCursorPlugins } from './drop-cursor';
-import { edimGapCursorPlugins } from './gap-cursor';
-import { edimResetMarkPlugins } from './reset-mark';
-import { edimOverlayPlugins } from './overlay';
-import { edimSelectionElementPlugins } from './selection-element';
+import { edybaraBasicKeymapPlugins } from './keymap';
+import { edybaraHistoryPlugins } from './history';
+import { edybaraVirtualCursorPlugins } from './virtual-cursor';
+import { edybaraDropCursorPlugins } from './drop-cursor';
+import { edybaraGapCursorPlugins } from './gap-cursor';
+import { edybaraResetMarkPlugins } from './reset-mark';
+import { edybaraOverlayPlugins } from './overlay';
+import { edybaraSelectionElementPlugins } from './selection-element';
 
-export const edimCorePlugins = (): PMPlugin[] => {
+export const edybaraCorePlugins = (): PMPlugin[] => {
   return [
-    ...edimOverlayPlugins(),
-    ...edimBasicKeymapPlugins(),
-    ...edimHistoryPlugins(),
-    ...edimVirtualCursorPlugins(),
-    ...edimResetMarkPlugins(),
-    ...edimDropCursorPlugins(),
-    ...edimSelectionElementPlugins(),
-    ...edimGapCursorPlugins(),
+    ...edybaraOverlayPlugins(),
+    ...edybaraBasicKeymapPlugins(),
+    ...edybaraHistoryPlugins(),
+    ...edybaraVirtualCursorPlugins(),
+    ...edybaraResetMarkPlugins(),
+    ...edybaraDropCursorPlugins(),
+    ...edybaraSelectionElementPlugins(),
+    ...edybaraGapCursorPlugins(),
   ];
 };

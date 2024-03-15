@@ -1,10 +1,10 @@
 import { classes } from '../../cdk/utils/core';
 import { html } from '../../cdk/render';
 import emojiDataJson from 'emoji-datasource/emoji.json';
-import { EdimButton } from '../button';
+import { EdybaraButton } from '../button';
 import { useState } from 'preact/hooks';
 
-export interface EdimEmoji {
+export interface EdybaraEmoji {
   name: string;
   unified: string;
   non_qualified: string;
@@ -29,11 +29,11 @@ export interface EdimEmoji {
   has_img_facebook: boolean;
 }
 
-const emojis = emojiDataJson as EdimEmoji[];
+const emojis = emojiDataJson as EdybaraEmoji[];
 
 const categories = Object.entries(
   emojis.reduce<{
-    [key: string]: EdimEmoji[];
+    [key: string]: EdybaraEmoji[];
   }>((result, emoji) => {
     if (!result[emoji.category]) {
       result[emoji.category] = [];
@@ -44,13 +44,13 @@ const categories = Object.entries(
 );
 
 const categoryMap = categories.reduce<{
-  [key: string]: EdimEmoji[];
+  [key: string]: EdybaraEmoji[];
 }>((result, [category, emojis]) => {
   result[category] = emojis;
   return result;
 }, {});
 
-export interface EdimEmojiPickerProps {
+export interface EdybaraEmojiPickerProps {
   size: number;
   gap: number;
 }
@@ -68,32 +68,32 @@ const CategoryIcons = {
   'Smileys & Emotion': 'ri-smile-2-fill',
 };
 
-export const EdimEmojiPicker = (props: EdimEmojiPickerProps) => {
+export const EdybaraEmojiPicker = (props: EdybaraEmojiPickerProps) => {
   const [currentCategory, setCurrentCategory] = useState<string>(
     categories[0][0],
   );
 
   return html`
     <div
-      className=${classes('edim-view-emoji-picker')}
+      className=${classes('edybara-view-emoji-picker')}
       style=${{ width: (props.size + props.gap + props.gap) * 8 + 1 }}
     >
-      <div className=${classes('edim-view-emoji-category-group')}>
+      <div className=${classes('edybara-view-emoji-category-group')}>
         ${categories.map(([category]) => {
           return html`
-            <${EdimButton}
-              className=${classes('edim-view-emoji-category-button')}
+            <${EdybaraButton}
+              className=${classes('edybara-view-emoji-category-button')}
               onClick=${() => setCurrentCategory(category)}>
               ${category}
-            </${EdimButton}>
+            </${EdybaraButton}>
           `;
         })}
       </div>
-      <div className=${classes('edim-view-emoji-view')}>
+      <div className=${classes('edybara-view-emoji-view')}>
         ${categoryMap[currentCategory].map((emoji) => {
           return html`
-            <${EdimButton} 
-              className=${classes('edim-view-emoji-picker-emoji')}
+            <${EdybaraButton} 
+              className=${classes('edybara-view-emoji-picker-emoji')}
               style=${{
                 width: props.size,
                 height: props.size,
@@ -104,7 +104,7 @@ export const EdimEmojiPicker = (props: EdimEmojiPickerProps) => {
               }}
               data-emoji-name=${emoji.name}  
             >
-            </${EdimButton}>
+            </${EdybaraButton}>
           `;
         })}
       </div>

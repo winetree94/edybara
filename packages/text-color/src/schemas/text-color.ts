@@ -2,28 +2,28 @@ import { MarkSpec, MarkType } from 'prosemirror-model';
 
 export const EDIM_TEXT_COLOR_DEFAULT_MARK_NAME = 'text_color';
 
-export interface EdimTextColorAttrs {
+export interface EdybaraTextColorAttrs {
   color: string;
 }
 
-export interface EdimTextColor {
+export interface EdybaraTextColor {
   color: string;
 }
 
-export interface EdimTextColorMarkSpec extends MarkSpec {
-  colors: EdimTextColor[];
+export interface EdybaraTextColorMarkSpec extends MarkSpec {
+  colors: EdybaraTextColor[];
 }
 
-export interface EdimTextColorMarkType extends MarkType {
-  spec: EdimTextColorMarkSpec;
+export interface EdybaraTextColorMarkType extends MarkType {
+  spec: EdybaraTextColorMarkSpec;
 }
 
-export interface EdimTextColorMarkConfigs {
+export interface EdybaraTextColorMarkConfigs {
   markName?: string;
-  colors?: EdimTextColor[];
+  colors?: EdybaraTextColor[];
 }
 
-const DEFAULT_CONFIGS: Required<EdimTextColorMarkConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraTextColorMarkConfigs> = {
   markName: EDIM_TEXT_COLOR_DEFAULT_MARK_NAME,
   colors: [
     '#182B4D',
@@ -43,22 +43,22 @@ const DEFAULT_CONFIGS: Required<EdimTextColorMarkConfigs> = {
   ].map((color) => ({ color })),
 };
 
-export const edimTextColorMarks = (
-  configs?: EdimTextColorMarkConfigs,
-): Record<string, EdimTextColorMarkSpec> => {
+export const edybaraTextColorMarks = (
+  configs?: EdybaraTextColorMarkConfigs,
+): Record<string, EdybaraTextColorMarkSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
     ...configs,
   };
 
-  const markSpec: EdimTextColorMarkSpec = {
+  const markSpec: EdybaraTextColorMarkSpec = {
     colors: mergedConfigs.colors,
     attrs: {
       color: { default: '' },
     },
     parseDOM: [
       {
-        tag: 'span.edim-text-color',
+        tag: 'span.edybara-text-color',
         getAttrs: (node) => {
           const dom = node as HTMLSpanElement;
           const color = dom.dataset['color'];
@@ -76,11 +76,11 @@ export const edimTextColorMarks = (
       },
     ],
     toDOM(node) {
-      const attrs = node.attrs as EdimTextColorAttrs;
+      const attrs = node.attrs as EdybaraTextColorAttrs;
       return [
         'span',
         {
-          class: 'edim-text-color',
+          class: 'edybara-text-color',
           style: `color: ${attrs.color};`,
           'data-color': attrs.color,
         },

@@ -1,5 +1,5 @@
 import { gapCursor } from 'prosemirror-gapcursor';
 
-export const edimGapCursorPlugins = () => {
+export const edybaraGapCursorPlugins = () => {
   return [gapCursor()];
 };

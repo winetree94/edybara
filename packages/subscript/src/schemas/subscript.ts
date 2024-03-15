@@ -2,7 +2,7 @@ import { MarkSpec } from 'prosemirror-model';
 
 export const EDIM_SUBSCRIPT_MARK_NAME = 'subscript';
 
-export interface EdimSubscriptMarkConfigs {
+export interface EdybaraSubscriptMarkConfigs {
   /**
    * mark name
    *
@@ -13,13 +13,13 @@ export interface EdimSubscriptMarkConfigs {
   superscriptMarkName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimSubscriptMarkConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraSubscriptMarkConfigs> = {
   markName: EDIM_SUBSCRIPT_MARK_NAME,
   superscriptMarkName: '',
 };
 
-export const edimSubscriptMarks = (
-  configs?: EdimSubscriptMarkConfigs,
+export const edybaraSubscriptMarks = (
+  configs?: EdybaraSubscriptMarkConfigs,
 ): Record<string, MarkSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,

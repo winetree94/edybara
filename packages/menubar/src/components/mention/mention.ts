@@ -1,23 +1,23 @@
-import { EdimButton, html } from '@edim-editor/ui';
-import { addMention } from '@edim-editor/mention';
+import { EdybaraButton, html } from '@edybara-editor/ui';
+import { addMention } from '@edybara-editor/mention';
 import { useContext } from 'preact/hooks';
-import { EdimMenubarContext } from '../context';
+import { EdybaraMenubarContext } from '../context';
 
-export const EdimMenubarMentionButtons = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarMentionButtons = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.mention) {
     return null;
   }
 
   return html`
-    <${EdimButton}
-      className="edim-icon-button"
+    <${EdybaraButton}
+      className="edybara-icon-button"
       onClick=${() => {
         addMention()(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       }}>
       <i class="ri-at-line"></i>
-    </${EdimButton}>
+    </${EdybaraButton}>
   `;
 };

@@ -1,13 +1,13 @@
 
 import { Fragment } from 'preact';
 import { useContext, useRef, useState } from 'preact/hooks';
-import { EdimButton, EdimLayer, html } from '@edim-editor/ui';
-import { EdimLinkFormLayer, addLink } from '@edim-editor/link';
-import { EdimMenubarContext } from '../context';
+import { EdybaraButton, EdybaraLayer, html } from '@edybara-editor/ui';
+import { EdybaraLinkFormLayer, addLink } from '@edybara-editor/link';
+import { EdybaraMenubarContext } from '../context';
 
-export const EdimMenubarLinkButton = () => {
+export const EdybaraMenubarLinkButton = () => {
   const ref = useRef<HTMLButtonElement>();
-  const context = useContext(EdimMenubarContext);
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.link) {
     return null;
@@ -24,9 +24,9 @@ export const EdimMenubarLinkButton = () => {
 
   return html`
     <${Fragment}>
-      <${EdimButton}
+      <${EdybaraButton}
         ref=${ref}
-        className="edim-icon-button"
+        className="edybara-icon-button"
         onClick=${() => {
           const { from, to } = context.editorView.state.selection;
           const start = context.editorView.coordsAtPos(from);
@@ -41,17 +41,17 @@ export const EdimMenubarLinkButton = () => {
           });
         }}>
         <i class="ri-links-line"></i>
-      </${EdimButton}>
+      </${EdybaraButton}>
       ${
         linkLayerRef &&
         html`
-        <${EdimLayer}
+        <${EdybaraLayer}
           target=${ref.current}
           closeOnEsc=${true}
           outerMousedown=${() => setLinkLayerRef(null)}
           onClose=${() => setLinkLayerRef(null)}
           >
-          <${EdimLinkFormLayer}
+          <${EdybaraLinkFormLayer}
             text=${linkLayerRef.text}
             link=${linkLayerRef.link}
             onSubmit=${(link: string, text: string) => {
@@ -64,7 +64,7 @@ export const EdimMenubarLinkButton = () => {
             }}
             onCancel=${() => setLinkLayerRef(null)}
             />
-        </${EdimLayer}>
+        </${EdybaraLayer}>
       `
       }
     </${Fragment}> 

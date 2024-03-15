@@ -10,28 +10,28 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edim-editor/superscript
+npm install @edybara-editor/superscript
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/superscript/styles/superscript.scss";
+@import "@edybara-editor/superscript/styles/superscript.scss";
 ```
 
 ## 서식
 
-#### `edimSuperscriptMarks`
+#### `edybaraSuperscriptMarks`
 
 밑첨자 텍스트 서식을 제공합니다.
 
 ## 플러그인
 
-#### `edimSuperscriptPlugins`
+#### `edybaraSuperscriptPlugins`
 
 하단의 모든 플러그인을 통합 제공합니다.
 
-#### `edimSuperscriptKeymapPlugins`
+#### `edybaraSuperscriptKeymapPlugins`
 
 현재 텍스트를 위첨자 텍스트로 전환하는 단축키(`Mod-Shift-.`)를 제공합니다.
 
@@ -41,35 +41,35 @@ npm install @edim-editor/superscript
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins } from '@edim-editor/paragraph';
-import { edimSuperscriptMarks, edimSuperscriptPlugins } from '@edim-editor/superscript';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins } from '@edybara-editor/paragraph';
+import { edybaraSuperscriptMarks, edybaraSuperscriptPlugins } from '@edybara-editor/superscript';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edimSuperscriptMarks({
+    ...edybaraSuperscriptMarks({
       markName: 'superscript',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimSuperscriptPlugins({
+  ...edybaraSuperscriptPlugins({
     markType: schema.marks['superscript'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textStyles: {
       superscriptMarkType: schema.marks['superscript'],
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 const view = new EditorView(document.querySelector('#editor'), {

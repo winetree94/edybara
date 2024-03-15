@@ -1,10 +1,10 @@
 @import '../src/components/cell-button.scss';
 
-.ProseMirror .edim-table-container {
+.ProseMirror .edybara-table-container {
   overflow-x: auto;
   height: auto;
 
-  table.edim-table {
+  table.edybara-table {
     display: table;
     border-collapse: collapse;
     table-layout: fixed;
@@ -12,14 +12,14 @@
     overflow: hidden;
     margin: 0;
 
-    colgroup.edim-colgroup {
+    colgroup.edybara-colgroup {
       display: table-column-group;
       col {
         display: table-column;
       }
     }
 
-    tbody.edim-tbody {
+    tbody.edybara-tbody {
       display: table-row-group;
       vertical-align: middle;
       border-color: inherit;

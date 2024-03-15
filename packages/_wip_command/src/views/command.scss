@@ -1,8 +1,8 @@
-.edim-view-command-container {
+.edybara-view-command-container {
   overflow-y: auto;
 }
 
-.edim-view-command-list-item {
+.edybara-view-command-list-item {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -12,12 +12,12 @@
   }
 }
 
-.edim-view-command-list-item-icon {
+.edybara-view-command-list-item-icon {
   font-size: 24px;
   flex-shrink: 0;
   margin-right: 8px;
 }
 
-.edim-view-command-list-item-content {
+.edybara-view-command-list-item-content {
   flex: 1 1 auto;
 }

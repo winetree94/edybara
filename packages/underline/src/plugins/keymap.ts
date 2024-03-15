@@ -3,12 +3,12 @@ import { keymap } from 'prosemirror-keymap';
 import { MarkType } from 'prosemirror-model';
 import { toggleMark } from 'prosemirror-commands';
 
-export interface EdimUnderlineKeymapPluginConfigs {
+export interface EdybaraUnderlineKeymapPluginConfigs {
   markType: MarkType;
 }
 
-export const edimUnderlineKeymapPlugins = (
-  configs: EdimUnderlineKeymapPluginConfigs,
+export const edybaraUnderlineKeymapPlugins = (
+  configs: EdybaraUnderlineKeymapPluginConfigs,
 ): PMPlugin[] => {
   return [
     keymap({

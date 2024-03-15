@@ -1,44 +1,44 @@
 .ProseMirror {
-  h1.edim-heading,
-  h2.edim-heading,
-  h3.edim-heading,
-  h4.edim-heading,
-  h5.edim-heading,
-  h6.edim-heading {
+  h1.edybara-heading,
+  h2.edybara-heading,
+  h3.edybara-heading,
+  h4.edybara-heading,
+  h5.edybara-heading,
+  h6.edybara-heading {
     font-weight: normal;
-    &.edim-align-center {
+    &.edybara-align-center {
       text-align: center;
     }
-    &.edim-align-right {
+    &.edybara-align-right {
       text-align: right;
     }
   }
 
-  h1.edim-heading {
+  h1.edybara-heading {
     font-size: 32px;
   }
-  h2.edim-heading {
+  h2.edybara-heading {
     font-size: 24px;
   }
-  h3.edim-heading {
+  h3.edybara-heading {
     font-size: 20px;
   }
-  h4.edim-heading {
+  h4.edybara-heading {
     font-size: 16px;
   }
-  h5.edim-heading {
+  h5.edybara-heading {
     font-size: 14px;
   }
-  h6.edim-heading {
+  h6.edybara-heading {
     font-size: 12px;
   }
 
-  h1.edim-heading:first-child,
-  h2.edim-heading:first-child,
-  h3.edim-heading:first-child,
-  h4.edim-heading:first-child,
-  h5.edim-heading:first-child,
-  h6.edim-heading:first-child {
+  h1.edybara-heading:first-child,
+  h2.edybara-heading:first-child,
+  h3.edybara-heading:first-child,
+  h4.edybara-heading:first-child,
+  h5.edybara-heading:first-child,
+  h6.edybara-heading:first-child {
     // margin-top: 10px;
   }
 }

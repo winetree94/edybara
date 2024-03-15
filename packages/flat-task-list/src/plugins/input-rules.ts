@@ -1,14 +1,14 @@
 import { inputRules } from 'prosemirror-inputrules';
 import { NodeType } from 'prosemirror-model';
-import { wrappingInputRuleWithJoin } from '@edim-editor/core';
+import { wrappingInputRuleWithJoin } from '@edybara-editor/core';
 import { Plugin } from 'prosemirror-state';
 
-export interface EdimTaskListInputRulePluginConfigs {
+export interface EdybaraTaskListInputRulePluginConfigs {
   taskListNodeType: NodeType;
 }
 
-export const edimTaskListInputRulePlugins = (
-  configs: EdimTaskListInputRulePluginConfigs,
+export const edybaraTaskListInputRulePlugins = (
+  configs: EdybaraTaskListInputRulePluginConfigs,
 ): Plugin[] => [
   inputRules({
     rules: [

@@ -1,5 +1,5 @@
 {
-  "name": "@edim-editor/core",
+  "name": "@edybara-editor/core",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,21 +17,21 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "prosemirror-state": "*",
-    "prosemirror-model": "*",
+    "@edybara-editor/ui": "*",
     "prosemirror-commands": "*",
-    "prosemirror-keymap": "*",
-    "prosemirror-transform": "*",
-    "prosemirror-inputrules": "*",
-    "prosemirror-history": "*",
-    "prosemirror-gapcursor": "*",
     "prosemirror-dropcursor": "*",
-    "@edim-editor/ui": "*"
+    "prosemirror-gapcursor": "*",
+    "prosemirror-history": "*",
+    "prosemirror-inputrules": "*",
+    "prosemirror-keymap": "*",
+    "prosemirror-model": "*",
+    "prosemirror-state": "*",
+    "prosemirror-transform": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",
+    "sass": "^1.69.5",
     "tsup": "^8.0.1",
-    "typescript": "^5.2.2",
-    "sass": "^1.69.5"
+    "typescript": "^5.2.2"
   }
 }

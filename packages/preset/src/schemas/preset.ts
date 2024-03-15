@@ -1,94 +1,94 @@
 import { MarkSpec, NodeSpec, Schema } from 'prosemirror-model';
-import { edimBaseNodes } from '@edim-editor/core';
-import { EdimHeadingNodeConfigs, edimHeadingNodes } from '@edim-editor/heading';
+import { edybaraBaseNodes } from '@edybara-editor/core';
+import { EdybaraHeadingNodeConfigs, edybaraHeadingNodes } from '@edybara-editor/heading';
 import {
-  EdimParagraphNodeConfigs,
-  edimParagraphNodes,
-} from '@edim-editor/paragraph';
+  EdybaraParagraphNodeConfigs,
+  edybaraParagraphNodes,
+} from '@edybara-editor/paragraph';
 import {
-  EdimFlatBulletListNodeConfigs,
-  EdimFlatListItemNodeConfigs,
-  EdimFlatOrderedListNodeConfigs,
-  edimFlatBulletListNodes,
-  edimFlatListItemNodes,
-  edimFlatOrderedListNodes,
-} from '@edim-editor/flat-list';
+  EdybaraFlatBulletListNodeConfigs,
+  EdybaraFlatListItemNodeConfigs,
+  EdybaraFlatOrderedListNodeConfigs,
+  edybaraFlatBulletListNodes,
+  edybaraFlatListItemNodes,
+  edybaraFlatOrderedListNodes,
+} from '@edybara-editor/flat-list';
 import {
-  edimFlatTaskListNodes,
-  edimFlatTaskListItemNodes,
-  EdimFlatTaskListNodeConfigs,
-  EdimFlatTaskListItemNodeConfigs,
-} from '@edim-editor/flat-task-list';
+  edybaraFlatTaskListNodes,
+  edybaraFlatTaskListItemNodes,
+  EdybaraFlatTaskListNodeConfigs,
+  EdybaraFlatTaskListItemNodeConfigs,
+} from '@edybara-editor/flat-task-list';
 import {
-  EdimHorizontalRuleNodeConfigs,
-  edimHorizontalRuleNodes,
-} from '@edim-editor/hr';
-import { EdimLinkMarkConfigs, edimLinkMarks } from '@edim-editor/link';
-import { EdimBoldMarkConfigs, edimBoldMarks } from '@edim-editor/bold';
-import { EdimCodeMarkConfigs, edimCodeMarks } from '@edim-editor/code';
+  EdybaraHorizontalRuleNodeConfigs,
+  edybaraHorizontalRuleNodes,
+} from '@edybara-editor/hr';
+import { EdybaraLinkMarkConfigs, edybaraLinkMarks } from '@edybara-editor/link';
+import { EdybaraBoldMarkConfigs, edybaraBoldMarks } from '@edybara-editor/bold';
+import { EdybaraCodeMarkConfigs, edybaraCodeMarks } from '@edybara-editor/code';
 import {
-  EdimFontFamilyMarkConfigs,
-  edimFontFamilyMarks,
-} from '@edim-editor/font-family';
-import { EdimItalicMarkConfigs, edimItalicMarks } from '@edim-editor/italic';
+  EdybaraFontFamilyMarkConfigs,
+  edybaraFontFamilyMarks,
+} from '@edybara-editor/font-family';
+import { EdybaraItalicMarkConfigs, edybaraItalicMarks } from '@edybara-editor/italic';
 import {
-  EdimStrikethroughMarkConfigs,
-  edimStrikethroughMarks,
-} from '@edim-editor/strikethrough';
+  EdybaraStrikethroughMarkConfigs,
+  edybaraStrikethroughMarks,
+} from '@edybara-editor/strikethrough';
 import {
-  EdimSubscriptMarkConfigs,
-  edimSubscriptMarks,
-} from '@edim-editor/subscript';
+  EdybaraSubscriptMarkConfigs,
+  edybaraSubscriptMarks,
+} from '@edybara-editor/subscript';
 import {
-  EdimSuperscriptMarkConfigs,
-  edimSuperscriptMarks,
-} from '@edim-editor/superscript';
+  EdybaraSuperscriptMarkConfigs,
+  edybaraSuperscriptMarks,
+} from '@edybara-editor/superscript';
 import {
-  EdimTextColorMarkConfigs,
-  edimTextColorMarks,
-} from '@edim-editor/text-color';
+  EdybaraTextColorMarkConfigs,
+  edybaraTextColorMarks,
+} from '@edybara-editor/text-color';
 import {
-  EdimUnderlineMarkConfigs,
-  edimUnderlineMarks,
-} from '@edim-editor/underline';
+  EdybaraUnderlineMarkConfigs,
+  edybaraUnderlineMarks,
+} from '@edybara-editor/underline';
 import {
-  EdimBlockquoteNodeConfigs,
-  edimBlockquoteNodes,
-} from '@edim-editor/blockquote';
+  EdybaraBlockquoteNodeConfigs,
+  edybaraBlockquoteNodes,
+} from '@edybara-editor/blockquote';
 import {
-  EdimCodeBlockNodeConfigs,
-  edimCodeBlockNodes,
-} from '@edim-editor/codeblock';
-import { EdimMentionMarkConfigs, edimMentionMarks } from '@edim-editor/mention';
-import { EdimTableNodeConfigs, edimTableNodes } from '@edim-editor/tables';
+  EdybaraCodeBlockNodeConfigs,
+  edybaraCodeBlockNodes,
+} from '@edybara-editor/codeblock';
+import { EdybaraMentionMarkConfigs, edybaraMentionMarks } from '@edybara-editor/mention';
+import { EdybaraTableNodeConfigs, edybaraTableNodes } from '@edybara-editor/tables';
 
-export interface EdimPresetSchemaConfigs {
-  paragraph?: EdimParagraphNodeConfigs | null;
-  heading?: EdimHeadingNodeConfigs | null;
-  flatTaskList?: EdimFlatTaskListNodeConfigs | null;
-  flatTaskListItem?: EdimFlatTaskListItemNodeConfigs | null;
-  flatBulletList?: EdimFlatBulletListNodeConfigs | null;
-  flatOrderedList?: EdimFlatOrderedListNodeConfigs | null;
-  flatListItem?: EdimFlatListItemNodeConfigs | null;
-  blockquote?: EdimBlockquoteNodeConfigs | null;
-  horizontalRule?: EdimHorizontalRuleNodeConfigs | null;
-  codeblock?: EdimCodeBlockNodeConfigs | null;
-  table?: EdimTableNodeConfigs | null;
+export interface EdybaraPresetSchemaConfigs {
+  paragraph?: EdybaraParagraphNodeConfigs | null;
+  heading?: EdybaraHeadingNodeConfigs | null;
+  flatTaskList?: EdybaraFlatTaskListNodeConfigs | null;
+  flatTaskListItem?: EdybaraFlatTaskListItemNodeConfigs | null;
+  flatBulletList?: EdybaraFlatBulletListNodeConfigs | null;
+  flatOrderedList?: EdybaraFlatOrderedListNodeConfigs | null;
+  flatListItem?: EdybaraFlatListItemNodeConfigs | null;
+  blockquote?: EdybaraBlockquoteNodeConfigs | null;
+  horizontalRule?: EdybaraHorizontalRuleNodeConfigs | null;
+  codeblock?: EdybaraCodeBlockNodeConfigs | null;
+  table?: EdybaraTableNodeConfigs | null;
 
-  bold?: EdimBoldMarkConfigs | null;
-  italic?: EdimItalicMarkConfigs | null;
-  underline?: EdimUnderlineMarkConfigs | null;
-  strikethrough?: EdimStrikethroughMarkConfigs | null;
-  code?: EdimCodeMarkConfigs | null;
-  subscript?: EdimSubscriptMarkConfigs | null;
-  superscript?: EdimSuperscriptMarkConfigs | null;
-  fontFamily?: EdimFontFamilyMarkConfigs | null;
-  textColor?: EdimTextColorMarkConfigs | null;
-  link?: EdimLinkMarkConfigs | null;
-  mention?: EdimMentionMarkConfigs | null;
+  bold?: EdybaraBoldMarkConfigs | null;
+  italic?: EdybaraItalicMarkConfigs | null;
+  underline?: EdybaraUnderlineMarkConfigs | null;
+  strikethrough?: EdybaraStrikethroughMarkConfigs | null;
+  code?: EdybaraCodeMarkConfigs | null;
+  subscript?: EdybaraSubscriptMarkConfigs | null;
+  superscript?: EdybaraSuperscriptMarkConfigs | null;
+  fontFamily?: EdybaraFontFamilyMarkConfigs | null;
+  textColor?: EdybaraTextColorMarkConfigs | null;
+  link?: EdybaraLinkMarkConfigs | null;
+  mention?: EdybaraMentionMarkConfigs | null;
 }
 
-const DEFAULT_CONFIGS: Required<EdimPresetSchemaConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraPresetSchemaConfigs> = {
   // nodes
   paragraph: {},
   heading: {},
@@ -120,7 +120,7 @@ const DEFAULT_CONFIGS: Required<EdimPresetSchemaConfigs> = {
   mention: {},
 };
 
-export const edimPresetSchema = (configs?: EdimPresetSchemaConfigs) => {
+export const edybaraPresetSchema = (configs?: EdybaraPresetSchemaConfigs) => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
     ...configs,
@@ -131,7 +131,7 @@ export const edimPresetSchema = (configs?: EdimPresetSchemaConfigs) => {
     marks: Record<string, MarkSpec>;
   } = {
     nodes: {
-      ...edimBaseNodes(),
+      ...edybaraBaseNodes(),
     },
     marks: {},
   };
@@ -139,154 +139,154 @@ export const edimPresetSchema = (configs?: EdimPresetSchemaConfigs) => {
   if (mergedConfigs.paragraph) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimParagraphNodes(mergedConfigs.paragraph),
+      ...edybaraParagraphNodes(mergedConfigs.paragraph),
     };
   }
 
   if (mergedConfigs.heading) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimHeadingNodes(mergedConfigs.heading),
+      ...edybaraHeadingNodes(mergedConfigs.heading),
     };
   }
 
   if (mergedConfigs.flatTaskList) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimFlatTaskListNodes(mergedConfigs.flatTaskList),
+      ...edybaraFlatTaskListNodes(mergedConfigs.flatTaskList),
     };
   }
 
   if (mergedConfigs.flatTaskListItem) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimFlatTaskListItemNodes(mergedConfigs.flatTaskListItem),
+      ...edybaraFlatTaskListItemNodes(mergedConfigs.flatTaskListItem),
     };
   }
 
   if (mergedConfigs.flatBulletList) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimFlatBulletListNodes(mergedConfigs.flatBulletList),
+      ...edybaraFlatBulletListNodes(mergedConfigs.flatBulletList),
     };
   }
 
   if (mergedConfigs.flatOrderedList) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimFlatOrderedListNodes(mergedConfigs.flatOrderedList),
+      ...edybaraFlatOrderedListNodes(mergedConfigs.flatOrderedList),
     };
   }
 
   if (mergedConfigs.flatListItem) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimFlatListItemNodes(mergedConfigs.flatListItem),
+      ...edybaraFlatListItemNodes(mergedConfigs.flatListItem),
     };
   }
 
   if (mergedConfigs.blockquote) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimBlockquoteNodes(mergedConfigs.blockquote),
+      ...edybaraBlockquoteNodes(mergedConfigs.blockquote),
     };
   }
 
   if (mergedConfigs.horizontalRule) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimHorizontalRuleNodes(mergedConfigs.horizontalRule),
+      ...edybaraHorizontalRuleNodes(mergedConfigs.horizontalRule),
     };
   }
 
   if (mergedConfigs.codeblock) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimCodeBlockNodes(mergedConfigs.codeblock),
+      ...edybaraCodeBlockNodes(mergedConfigs.codeblock),
     };
   }
 
   if (mergedConfigs.table) {
     spec.nodes = {
       ...spec.nodes,
-      ...edimTableNodes(mergedConfigs.table),
+      ...edybaraTableNodes(mergedConfigs.table),
     };
   }
 
   if (mergedConfigs.bold) {
     spec.marks = {
       ...spec.marks,
-      ...edimBoldMarks(mergedConfigs.bold),
+      ...edybaraBoldMarks(mergedConfigs.bold),
     };
   }
 
   if (mergedConfigs.italic) {
     spec.marks = {
       ...spec.marks,
-      ...edimItalicMarks(mergedConfigs.italic),
+      ...edybaraItalicMarks(mergedConfigs.italic),
     };
   }
 
   if (mergedConfigs.underline) {
     spec.marks = {
       ...spec.marks,
-      ...edimUnderlineMarks(mergedConfigs.underline),
+      ...edybaraUnderlineMarks(mergedConfigs.underline),
     };
   }
 
   if (mergedConfigs.strikethrough) {
     spec.marks = {
       ...spec.marks,
-      ...edimStrikethroughMarks(mergedConfigs.strikethrough),
+      ...edybaraStrikethroughMarks(mergedConfigs.strikethrough),
     };
   }
 
   if (mergedConfigs.code) {
     spec.marks = {
       ...spec.marks,
-      ...edimCodeMarks(mergedConfigs.code),
+      ...edybaraCodeMarks(mergedConfigs.code),
     };
   }
 
   if (mergedConfigs.subscript) {
     spec.marks = {
       ...spec.marks,
-      ...edimSubscriptMarks(mergedConfigs.subscript),
+      ...edybaraSubscriptMarks(mergedConfigs.subscript),
     };
   }
 
   if (mergedConfigs.superscript) {
     spec.marks = {
       ...spec.marks,
-      ...edimSuperscriptMarks(mergedConfigs.superscript),
+      ...edybaraSuperscriptMarks(mergedConfigs.superscript),
     };
   }
 
   if (mergedConfigs.fontFamily) {
     spec.marks = {
       ...spec.marks,
-      ...edimFontFamilyMarks(mergedConfigs.fontFamily),
+      ...edybaraFontFamilyMarks(mergedConfigs.fontFamily),
     };
   }
 
   if (mergedConfigs.textColor) {
     spec.marks = {
       ...spec.marks,
-      ...edimTextColorMarks(mergedConfigs.textColor),
+      ...edybaraTextColorMarks(mergedConfigs.textColor),
     };
   }
 
   if (mergedConfigs.link) {
     spec.marks = {
       ...spec.marks,
-      ...edimLinkMarks(mergedConfigs.link),
+      ...edybaraLinkMarks(mergedConfigs.link),
     };
   }
 
   if (mergedConfigs.mention) {
     spec.marks = {
       ...spec.marks,
-      ...edimMentionMarks(mergedConfigs.mention),
+      ...edybaraMentionMarks(mergedConfigs.mention),
     };
   }
 

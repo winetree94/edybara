@@ -1,51 +1,51 @@
 import { forwardRef } from 'preact/compat';
-import { EdimSeparator, classes, html } from '@edim-editor/ui';
-import { EdimMenubarContext, EdimMenubarContextType } from './context';
-import { EdimMenubarTextTypeSelect } from './text-type';
-import { EdimMenubarFontFamilySelect } from './font-family';
-import { EdimMenubarMarkToggleButtons } from './marks';
-import { EdimMenubarFontColorSelect } from './font-color';
-import { EdimMenubarTextAlignSelect } from './text-align';
-import { EdimMenubarListToggleButtons } from './list';
-import { EdimMenubarTaskListToggleButtons } from './task-list';
-import { EdimMenubarBlockquoteToggleButtons } from './blockquote';
-import { EdimMenubarCodeblockToggleButtons } from './codeblock';
-import { EdimMenubarTableButtons } from './table';
-import { EdimMenubarLinkButton } from './link';
-import { EdimMenubarMentionButtons } from './mention';
+import { EdybaraSeparator, classes, html } from '@edybara-editor/ui';
+import { EdybaraMenubarContext, EdybaraMenubarContextType } from './context';
+import { EdybaraMenubarTextTypeSelect } from './text-type';
+import { EdybaraMenubarFontFamilySelect } from './font-family';
+import { EdybaraMenubarMarkToggleButtons } from './marks';
+import { EdybaraMenubarFontColorSelect } from './font-color';
+import { EdybaraMenubarTextAlignSelect } from './text-align';
+import { EdybaraMenubarListToggleButtons } from './list';
+import { EdybaraMenubarTaskListToggleButtons } from './task-list';
+import { EdybaraMenubarBlockquoteToggleButtons } from './blockquote';
+import { EdybaraMenubarCodeblockToggleButtons } from './codeblock';
+import { EdybaraMenubarTableButtons } from './table';
+import { EdybaraMenubarLinkButton } from './link';
+import { EdybaraMenubarMentionButtons } from './mention';
 
-export const EdimMenubar = forwardRef((props: EdimMenubarContextType) => {
+export const EdybaraMenubar = forwardRef((props: EdybaraMenubarContextType) => {
   const useTextType = !!props.options.textType;
   const useFontFamily = !!props.options.fontFamily;
 
   return html`
-    <${EdimMenubarContext.Provider} value="${{
+    <${EdybaraMenubarContext.Provider} value="${{
       editorView: props.editorView,
       editorState: props.editorState,
       options: props.options,
     }}">
-      <div className=${classes('edim-view-menubar-wrapper')}>
-        <${EdimMenubarTextTypeSelect} />
-        <${EdimMenubarFontFamilySelect} />
+      <div className=${classes('edybara-view-menubar-wrapper')}>
+        <${EdybaraMenubarTextTypeSelect} />
+        <${EdybaraMenubarFontFamilySelect} />
         ${
           useTextType || useFontFamily
             ? html`
-                <${EdimSeparator} className="edim-view-menubar-separator" />
+                <${EdybaraSeparator} className="edybara-view-menubar-separator" />
               `
             : null
         }
-        <${EdimMenubarMarkToggleButtons} />
-        <${EdimMenubarFontColorSelect} />
-        <${EdimMenubarTextAlignSelect} />
-        <${EdimMenubarListToggleButtons} />
+        <${EdybaraMenubarMarkToggleButtons} />
+        <${EdybaraMenubarFontColorSelect} />
+        <${EdybaraMenubarTextAlignSelect} />
+        <${EdybaraMenubarListToggleButtons} />
 
-        <${EdimMenubarTaskListToggleButtons} />
-        <${EdimMenubarBlockquoteToggleButtons} />
-        <${EdimMenubarCodeblockToggleButtons} />
-        <${EdimMenubarTableButtons} />
-        <${EdimMenubarLinkButton} />
-        <${EdimMenubarMentionButtons} />
+        <${EdybaraMenubarTaskListToggleButtons} />
+        <${EdybaraMenubarBlockquoteToggleButtons} />
+        <${EdybaraMenubarCodeblockToggleButtons} />
+        <${EdybaraMenubarTableButtons} />
+        <${EdybaraMenubarLinkButton} />
+        <${EdybaraMenubarMentionButtons} />
       </div>
-    </${EdimMenubarContext.Provider}>
+    </${EdybaraMenubarContext.Provider}>
   `;
 });

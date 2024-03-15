@@ -4,31 +4,31 @@ sidebar_position: 1
 
 # 소개 
 
-## Edim 이란?
+## Edybara 이란?
 
-**Edim**은 ProseMirror 를 기반으로 한 오픈소스 리치 텍스트 에디터입니다. ProseMirror 와 함께 사용 가능한 사전 정의된 서식과 플러그인을 제공합니다.
+**Edybara**은 ProseMirror 를 기반으로 한 오픈소스 리치 텍스트 에디터입니다. ProseMirror 와 함께 사용 가능한 사전 정의된 서식과 플러그인을 제공합니다.
 
 **ProseMirror**는 브라우저에서 동작하는 리치 텍스트 에디터를 만들기 위한 현대적인 툴킷입니다. 하지만 ProseMirror 는 **Quill.js** 와 같이 완성된 에디터를 제공하는 것이 목적이 아니기 때문에 학습곡선이 가파르며 작성해야 하는 코드 양도 많습니다. 극단적인 예로, ProseMirror 의 기본 상태는 div 요소를 생성하고 contenteditable=true 를 설정한 것과 비슷합니다.
 
-**Edim**은 이러한 ProseMirror 에서 즉시 사용 가능한 서식(Schema)과 플러그인(Plugin)을 제공하여 **Easy-To-Start** 가 가능하도록 돕습니다.
+**Edybara**은 이러한 ProseMirror 에서 즉시 사용 가능한 서식(Schema)과 플러그인(Plugin)을 제공하여 **Easy-To-Start** 가 가능하도록 돕습니다.
 
-Edim 은 **Remirror** 와 **Tiptap** 과는 다르게 ProseMirror 를 추상화하지 않으며 모든 API 를 직접 노출합니다. 이는 Edim 을 사용하는 것이 ProseMirror 를 직접 사용하는 것과 같은 경험을 제공하며 ProseMirror 의 공식 문서를 참고할 수 있다는 것을 의미합니다.
+Edybara 은 **Remirror** 와 **Tiptap** 과는 다르게 ProseMirror 를 추상화하지 않으며 모든 API 를 직접 노출합니다. 이는 Edybara 을 사용하는 것이 ProseMirror 를 직접 사용하는 것과 같은 경험을 제공하며 ProseMirror 의 공식 문서를 참고할 수 있다는 것을 의미합니다.
 
 ## Quill.js 과의 관계
 
-**Edim**의 주요 목적중의 하나는 **Quill.js** 에서 **ProseMirror** 로의 전환을 돕는 것입니다.
+**Edybara**의 주요 목적중의 하나는 **Quill.js** 에서 **ProseMirror** 로의 전환을 돕는 것입니다.
 
 비즈니스 환경에서 **에디터 전환을 고려**할 때, **ProseMirror** 에서 기본 제공하는 서식만으로는 Quill.js 에서 작성된 문서를 그대로 표현하기 어렵습니다. 또한 Quill.js 에서 제공하는 UX 를 유지하기 위해서는 많은 시간과 노력이 필요합니다.
 
-**Edim**은 Quill.js 에서 작성된 문서를 그대로 표현하고, 구현된 UI/UX 를 유지할 수 있도록 돕는 다양한 API를 함께 제공합니다.
+**Edybara**은 Quill.js 에서 작성된 문서를 그대로 표현하고, 구현된 UI/UX 를 유지할 수 있도록 돕는 다양한 API를 함께 제공합니다.
 
 ## 누구에게 추천하나요?
 
-Edim은 비즈니스 요구사항이 높아 최종적으로 ProseMirror API 를 직접 다루어야 하거나 Quill.js 에서 구현된 에디터를 ProseMirror 로 전환하려는 프로젝트에 적합합니다.
+Edybara은 비즈니스 요구사항이 높아 최종적으로 ProseMirror API 를 직접 다루어야 하거나 Quill.js 에서 구현된 에디터를 ProseMirror 로 전환하려는 프로젝트에 적합합니다.
 
-ProseMirror 는 설계 목적상 API 가 방대하고 적응하기 어렵습니다. 그리고 Edim을 사용한다는 것은 ProseMirror 를 직접 사용한다는 것과 같습니다. 에디터를 처음 만드려는 경우, 적절한 추상화를 통해 개발 경험이 향상된 Remirror 나 Tiptap 이 더 적합할 수 있습니다.
+ProseMirror 는 설계 목적상 API 가 방대하고 적응하기 어렵습니다. 그리고 Edybara을 사용한다는 것은 ProseMirror 를 직접 사용한다는 것과 같습니다. 에디터를 처음 만드려는 경우, 적절한 추상화를 통해 개발 경험이 향상된 Remirror 나 Tiptap 이 더 적합할 수 있습니다.
 
-하지만 Remirror 와 Tiptap 모두 완성된 에디터보다는 툴킷에 가깝습니다. 따라서 준비된 에디터가 필요하고 요구사항이 더 일치한다면 Edim 을 사용하는 것이 더 나은 시작지점이 될 수 있습니다.
+하지만 Remirror 와 Tiptap 모두 완성된 에디터보다는 툴킷에 가깝습니다. 따라서 준비된 에디터가 필요하고 요구사항이 더 일치한다면 Edybara 을 사용하는 것이 더 나은 시작지점이 될 수 있습니다.
 
 ## 빠르게 시작하기
 
@@ -37,8 +37,8 @@ ProseMirror 는 설계 목적상 API 가 방대하고 적응하기 어렵습니�
 
 ## 요구되는 사전 지식 
 
-Edim 에서 기본 제공하는 서식과 UI를 사용할 계획이라면 자바스크립트에 대한 기본 이해도만으로 충분합니다.
+Edybara 에서 기본 제공하는 서식과 UI를 사용할 계획이라면 자바스크립트에 대한 기본 이해도만으로 충분합니다.
 
 본 문서는 ProseMirror 가 처음이라는 가정하에 진행되며, ProseMirror 에 대한 기본 지식을 일부 포함합니다.
 
-이후 Edim 에 서식을 추가하거나, 사용자 정의 UI/UX를 구현하려는 경우 ProseMirror 의 공식 문서를 참고해야 합니다.
+이후 Edybara 에 서식을 추가하거나, 사용자 정의 UI/UX를 구현하려는 경우 ProseMirror 의 공식 문서를 참고해야 합니다.

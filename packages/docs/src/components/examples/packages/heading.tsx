@@ -6,24 +6,24 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
 import {
-  edimHeadingInputRulePlugins,
-  edimHeadingKeymapPlugins,
-  edimHeadingNodes,
-  edimHeadingPlugins,
-} from '@edim-editor/heading';
+  edybaraHeadingInputRulePlugins,
+  edybaraHeadingKeymapPlugins,
+  edybaraHeadingNodes,
+  edybaraHeadingPlugins,
+} from '@edybara-editor/heading';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimHeadingNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraHeadingNodes({
       nodeName: 'heading',
       allowAlign: true,
       levels: [2, 4, 6],
@@ -32,28 +32,28 @@ const schema = new Schema({
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimHeadingPlugins({
+  ...edybaraHeadingPlugins({
     nodeType: schema.nodes['heading'],
   }),
-  // ...edimHeadingKeymapPlugins({
+  // ...edybaraHeadingKeymapPlugins({
   //   nodeType: schema.nodes['heading'],
   //   level: 6,
   // }),
-  // ...edimHeadingInputRulePlugins({
+  // ...edybaraHeadingInputRulePlugins({
   //   nodeType: schema.nodes['heading'],
   //   level: 6,
   // }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textType: {
       headingNodeType: schema.nodes['heading'],
       paragraphNodeType: schema.nodes['paragraph'],
     },
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const HeadingExample = (props: ProseMirrorProps) => {

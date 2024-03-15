@@ -1,30 +1,30 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edimTaskListInputRulePlugins } from './input-rules';
-import { edimFlatTaskListKeymapPlugins } from './keymaps';
-import { edimFlatTaskListMergePlugins } from './merge';
-import { edimTaskListItemNodeViewPlugins } from './task-list-item';
+import { edybaraTaskListInputRulePlugins } from './input-rules';
+import { edybaraFlatTaskListKeymapPlugins } from './keymaps';
+import { edybaraFlatTaskListMergePlugins } from './merge';
+import { edybaraTaskListItemNodeViewPlugins } from './task-list-item';
 
-export interface EdimFlatTaskListPluginConfigs {
+export interface EdybaraFlatTaskListPluginConfigs {
   taskListNodeType: NodeType;
   taskListItemNodeType: NodeType;
 }
 
-export const edimFlatTaskListPlugins = (
-  configs: EdimFlatTaskListPluginConfigs,
+export const edybaraFlatTaskListPlugins = (
+  configs: EdybaraFlatTaskListPluginConfigs,
 ): PMPlugin[] => {
   return [
-    ...edimTaskListItemNodeViewPlugins({
+    ...edybaraTaskListItemNodeViewPlugins({
       taskListItemNodeType: configs.taskListItemNodeType,
     }),
-    ...edimTaskListInputRulePlugins({
+    ...edybaraTaskListInputRulePlugins({
       taskListNodeType: configs.taskListNodeType,
     }),
-    ...edimFlatTaskListKeymapPlugins({
+    ...edybaraFlatTaskListKeymapPlugins({
       taskListNodeType: configs.taskListNodeType,
       taskListItemNodeType: configs.taskListItemNodeType,
     }),
-    ...edimFlatTaskListMergePlugins({
+    ...edybaraFlatTaskListMergePlugins({
       taskListNodeType: configs.taskListNodeType,
     }),
   ];

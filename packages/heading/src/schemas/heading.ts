@@ -1,48 +1,48 @@
-import { parseQuillTextAlign } from '@edim-editor/core';
+import { parseQuillTextAlign } from '@edybara-editor/core';
 import { NodeSpec } from 'prosemirror-model';
 
-export type EdimHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
-export type EdimHeadingAlign = 'left' | 'right' | 'center' | null;
+export type EdybaraHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+export type EdybaraHeadingAlign = 'left' | 'right' | 'center' | null;
 
 export const EDIM_HEADING_DEFAULT_NODE_NAME = 'heading';
-export const EDIM_HEADING_ALLOWED_LEVELS: EdimHeadingLevel[] = [
+export const EDIM_HEADING_ALLOWED_LEVELS: EdybaraHeadingLevel[] = [
   1, 2, 3, 4, 5, 6,
 ];
 
-export interface EdimHeadingAttrs {
-  level: EdimHeadingLevel;
-  align: EdimHeadingAlign;
+export interface EdybaraHeadingAttrs {
+  level: EdybaraHeadingLevel;
+  align: EdybaraHeadingAlign;
 }
 
-export interface EdimHeadingNodeSpec extends NodeSpec {
+export interface EdybaraHeadingNodeSpec extends NodeSpec {
   attrs: {
     level: {
       default: number;
     };
     align: {
-      default: EdimHeadingAlign;
+      default: EdybaraHeadingAlign;
     };
   };
   meta: {
-    levels: EdimHeadingLevel[];
+    levels: EdybaraHeadingLevel[];
   };
 }
 
-export interface EdimHeadingNodeConfigs {
+export interface EdybaraHeadingNodeConfigs {
   allowAlign?: boolean;
-  levels?: EdimHeadingLevel[];
+  levels?: EdybaraHeadingLevel[];
   nodeName?: string;
 }
 
-const EDIM_DEFAULT_HEADING_NODE_CONFIGS: Required<EdimHeadingNodeConfigs> = {
+const EDIM_DEFAULT_HEADING_NODE_CONFIGS: Required<EdybaraHeadingNodeConfigs> = {
   allowAlign: true,
   levels: EDIM_HEADING_ALLOWED_LEVELS.slice(),
   nodeName: EDIM_HEADING_DEFAULT_NODE_NAME,
 };
 
-export const edimHeadingNodes = (
-  configs?: EdimHeadingNodeConfigs,
-): Record<string, EdimHeadingNodeSpec> => {
+export const edybaraHeadingNodes = (
+  configs?: EdybaraHeadingNodeConfigs,
+): Record<string, EdybaraHeadingNodeSpec> => {
   const mergedConfigs = {
     ...EDIM_DEFAULT_HEADING_NODE_CONFIGS,
     ...configs,
@@ -56,7 +56,7 @@ export const edimHeadingNodes = (
     throw new Error('Invalid heading levels');
   }
 
-  const nodeSpec: EdimHeadingNodeSpec = {
+  const nodeSpec: EdybaraHeadingNodeSpec = {
     attrs: {
       level: {
         default: mergedConfigs.levels[0],
@@ -85,10 +85,10 @@ export const edimHeadingNodes = (
       },
     })),
     toDOM(node) {
-      const attrs = node.attrs as EdimHeadingAttrs;
-      const classes = ['edim-heading'];
+      const attrs = node.attrs as EdybaraHeadingAttrs;
+      const classes = ['edybara-heading'];
       if (attrs.align) {
-        classes.push(`edim-align-${attrs.align}`);
+        classes.push(`edybara-align-${attrs.align}`);
       }
       return [
         'h' + attrs.level,

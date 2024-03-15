@@ -2,13 +2,13 @@ import { inputRules, wrappingInputRule } from 'prosemirror-inputrules';
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
 
-export interface EdimFlatListInputRulePluginConfigs {
+export interface EdybaraFlatListInputRulePluginConfigs {
   orderListNodeType?: NodeType;
   bulletListNodeType?: NodeType;
 }
 
-export const edimFlatListInputRulePlugins = (
-  configs: EdimFlatListInputRulePluginConfigs,
+export const edybaraFlatListInputRulePlugins = (
+  configs: EdybaraFlatListInputRulePluginConfigs,
 ): PMPlugin[] => {
   const plugins: PMPlugin[] = [];
 

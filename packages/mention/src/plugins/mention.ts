@@ -1,20 +1,20 @@
 import { MarkType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
 import {
-  EdimMentionCommandPluginConfigs,
-  edimMentionCommandPlugins,
+  EdybaraMentionCommandPluginConfigs,
+  edybaraMentionCommandPlugins,
 } from './command';
-import { edimMentionUnsetPlugins } from './unset';
-import { EdimMentionView } from '../views';
+import { edybaraMentionUnsetPlugins } from './unset';
+import { EdybaraMentionView } from '../views';
 
-export interface EdimMentionPluginConfigs {
+export interface EdybaraMentionPluginConfigs {
   markType: MarkType;
-  commandView?: EdimMentionCommandPluginConfigs['view'];
+  commandView?: EdybaraMentionCommandPluginConfigs['view'];
 }
 
-const DEFAULT_CONFIGS: Required<Omit<EdimMentionPluginConfigs, 'markType'>> = {
+const DEFAULT_CONFIGS: Required<Omit<EdybaraMentionPluginConfigs, 'markType'>> = {
   commandView: (view, plugin) => {
-    return new EdimMentionView(view, plugin, (keyword) => [
+    return new EdybaraMentionView(view, plugin, (keyword) => [
       {
         icon: '',
         id: '1',
@@ -24,8 +24,8 @@ const DEFAULT_CONFIGS: Required<Omit<EdimMentionPluginConfigs, 'markType'>> = {
   },
 };
 
-export const edimMentionPlugins = (
-  configs: EdimMentionPluginConfigs,
+export const edybaraMentionPlugins = (
+  configs: EdybaraMentionPluginConfigs,
 ): PMPlugin[] => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -33,9 +33,9 @@ export const edimMentionPlugins = (
   };
 
   return [
-    ...edimMentionCommandPlugins({
+    ...edybaraMentionCommandPlugins({
       view: mergedConfigs.commandView,
     }),
-    ...edimMentionUnsetPlugins(),
+    ...edybaraMentionUnsetPlugins(),
   ];
 };

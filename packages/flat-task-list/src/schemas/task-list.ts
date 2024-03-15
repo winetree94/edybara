@@ -1,18 +1,18 @@
 import { NodeSpec } from 'prosemirror-model';
-import { isQuillTaskList } from '@edim-editor/core';
+import { isQuillTaskList } from '@edybara-editor/core';
 
 export const EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME = 'task_list';
 
-export interface EdimFlatTaskListNodeConfigs {
+export interface EdybaraFlatTaskListNodeConfigs {
   nodeName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimFlatTaskListNodeConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraFlatTaskListNodeConfigs> = {
   nodeName: EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME,
 };
 
-export const edimFlatTaskListNodes = (
-  configs?: EdimFlatTaskListNodeConfigs,
+export const edybaraFlatTaskListNodes = (
+  configs?: EdybaraFlatTaskListNodeConfigs,
 ): Record<string, NodeSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -22,13 +22,13 @@ export const edimFlatTaskListNodes = (
   const nodeSpec: NodeSpec = {
     parseDOM: [
       {
-        tag: 'ul.edim-task-list',
+        tag: 'ul.edybara-task-list',
         getAttrs: (node) => {
           const dom = node as HTMLElement;
           if (isQuillTaskList(dom)) {
             return {};
           }
-          if (dom.classList.contains('edim-task-list')) {
+          if (dom.classList.contains('edybara-task-list')) {
             return {};
           }
           return false;
@@ -41,7 +41,7 @@ export const edimFlatTaskListNodes = (
       return [
         'ul',
         {
-          class: 'edim-task-list',
+          class: 'edybara-task-list',
         },
         0,
       ];

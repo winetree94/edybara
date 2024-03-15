@@ -2,16 +2,16 @@ import { NodeSpec } from 'prosemirror-model';
 
 export const EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME = 'ordered_list';
 
-export interface EdimFlatOrderedListNodeConfigs {
+export interface EdybaraFlatOrderedListNodeConfigs {
   nodeName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimFlatOrderedListNodeConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraFlatOrderedListNodeConfigs> = {
   nodeName: EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME,
 };
 
-export const edimFlatOrderedListNodes = (
-  configs?: EdimFlatOrderedListNodeConfigs,
+export const edybaraFlatOrderedListNodes = (
+  configs?: EdybaraFlatOrderedListNodeConfigs,
 ): Record<string, NodeSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -33,7 +33,7 @@ export const edimFlatOrderedListNodes = (
       return [
         'ol',
         {
-          class: 'edim-ordered-list',
+          class: 'edybara-ordered-list',
         },
         0,
       ];

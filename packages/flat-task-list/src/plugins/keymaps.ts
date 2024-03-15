@@ -5,15 +5,15 @@ import {
   splitListItem,
   indentListItem,
   listItemBackspace,
-} from '@edim-editor/flat-list';
+} from '@edybara-editor/flat-list';
 
-export interface EdimFlatTaskListKeymapPluginConfigs {
+export interface EdybaraFlatTaskListKeymapPluginConfigs {
   taskListNodeType: NodeType;
   taskListItemNodeType: NodeType;
 }
 
-export const edimFlatTaskListKeymapPlugins = (
-  configs: EdimFlatTaskListKeymapPluginConfigs,
+export const edybaraFlatTaskListKeymapPlugins = (
+  configs: EdybaraFlatTaskListKeymapPluginConfigs,
 ): PMPlugin[] => {
   return [
     keymap({

@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { EdimButton, EdimInput, EdimLabel, html } from '@edim-editor/ui';
+import { EdybaraButton, EdybaraInput, EdybaraLabel, html } from '@edybara-editor/ui';
 import { forwardRef } from 'preact/compat';
 
-export interface EdimLinkFormProps {
+export interface EdybaraLinkFormProps {
   link?: string;
   text?: string;
   onCancel?(): void;
   onSubmit?(link: string, text: string): void;
 }
 
-export const EdimLinkFormLayer = forwardRef((props: EdimLinkFormProps) => {
+export const EdybaraLinkFormLayer = forwardRef((props: EdybaraLinkFormProps) => {
   const linkRef = useRef<HTMLInputElement>(null);
   const [link, setLink] = useState<string>(props.link || '');
   const [text, setText] = useState<string>(props.text || '');
@@ -23,10 +23,10 @@ export const EdimLinkFormLayer = forwardRef((props: EdimLinkFormProps) => {
   return html`
     <form
       onSubmit=${() => props.onSubmit?.(link, text)}
-      className="edim-link-wrapper"
+      className="edybara-link-wrapper"
     >
-      <${EdimLabel}>Link<//>
-      <${EdimInput}
+      <${EdybaraLabel}>Link<//>
+      <${EdybaraInput}
         ref=${linkRef}
         type="text"
         value=${link}
@@ -35,8 +35,8 @@ export const EdimLinkFormLayer = forwardRef((props: EdimLinkFormProps) => {
           setLink(target.value);
         }}
       />
-      <${EdimLabel}>Text (Optional)<//>
-      <${EdimInput}
+      <${EdybaraLabel}>Text (Optional)<//>
+      <${EdybaraInput}
         type="text"
         value=${text}
         onInput=${(e: Event) => {
@@ -44,11 +44,11 @@ export const EdimLinkFormLayer = forwardRef((props: EdimLinkFormProps) => {
           setText(target.value);
         }}
       />
-      <div className="edim-link-buttons">
-        <${EdimButton} disabled=${!link} className="laksdjfsa" type="submit">
+      <div className="edybara-link-buttons">
+        <${EdybaraButton} disabled=${!link} className="laksdjfsa" type="submit">
           submit
         <//>
-        <${EdimButton} onClick=${() => props.onCancel?.()}>cancel<//>
+        <${EdybaraButton} onClick=${() => props.onCancel?.()}>cancel<//>
       </div>
     </form>
   `;

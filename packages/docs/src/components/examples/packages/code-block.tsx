@@ -5,41 +5,41 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  edimCodeBlockNodes,
-  edimCodeBlockPlugins,
-} from '@edim-editor/codeblock';
+  edybaraCodeBlockNodes,
+  edybaraCodeBlockPlugins,
+} from '@edybara-editor/codeblock';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimCodeBlockNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraCodeBlockNodes({
       nodeName: 'code_block',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimCodeBlockPlugins({
+  ...edybaraCodeBlockPlugins({
     nodeType: schema.nodes['code_block'],
     mergeAdjacentCodeBlock: true,
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     codeblock: {
       codeBlockNodeType: schema.nodes['code_block'],
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const CodeBlockExample = (props: ProseMirrorProps) => {

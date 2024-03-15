@@ -3,7 +3,7 @@ import { Plugin as PMPlugin } from 'prosemirror-state';
 /**
  * Provides a feature to unmention when text with mention formatting is partially deleted.
  */
-export const edimMentionUnsetPlugins = () => {
+export const edybaraMentionUnsetPlugins = () => {
   const mentionPlugin = new PMPlugin({
     appendTransaction: (transactions, oldState, newState) => {
       const tr = newState.tr;

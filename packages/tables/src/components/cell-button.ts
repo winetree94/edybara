@@ -1,45 +1,45 @@
-import { html, EdimSelect } from '@edim-editor/ui';
+import { html, EdybaraSelect } from '@edybara-editor/ui';
 import { Fragment } from 'preact';
 
-export const EdimTableCellButtonWrapper = () => {
+export const EdybaraTableCellButtonWrapper = () => {
   return html`
     <${Fragment}>
-      <${EdimSelect.Root} 
-        className="edim-icon-button">
-      <${EdimSelect.OptionGroup}>
-        <${EdimSelect.Option} value="${'asdf'}">
+      <${EdybaraSelect.Root} 
+        className="edybara-icon-button">
+      <${EdybaraSelect.OptionGroup}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Insert Column Before
-        </${EdimSelect.Option}>
-        <${EdimSelect.Option} value="${'asdf'}">
+        </${EdybaraSelect.Option}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Insert Column After
-        </${EdimSelect.Option}>
-        <${EdimSelect.Option} value="${'asdf'}">
+        </${EdybaraSelect.Option}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Insert Row Before
-        </${EdimSelect.Option}>
-        <${EdimSelect.Option} value="${'asdf'}">
+        </${EdybaraSelect.Option}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Insert Row After
-        </${EdimSelect.Option}>
-        <${EdimSelect.Option} value="${'asdf'}">
+        </${EdybaraSelect.Option}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Delete Column
-        </${EdimSelect.Option}>
-        <${EdimSelect.Option} value="${'asdf'}">
+        </${EdybaraSelect.Option}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Delete Row 
-        </${EdimSelect.Option}>
-        <${EdimSelect.Option} value="${'asdf'}">
+        </${EdybaraSelect.Option}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Delete Table
-        </${EdimSelect.Option}>
-        <${EdimSelect.Option} value="${'asdf'}">
+        </${EdybaraSelect.Option}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Merge Cell
-        </${EdimSelect.Option}>
-        <${EdimSelect.Option} value="${'asdf'}">
+        </${EdybaraSelect.Option}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Split Cell
-        </${EdimSelect.Option}>
-        <${EdimSelect.Option} value="${'asdf'}">
+        </${EdybaraSelect.Option}>
+        <${EdybaraSelect.Option} value="${'asdf'}">
           Delete Cell Content
-        </${EdimSelect.Option}>
+        </${EdybaraSelect.Option}>
 
-      </${EdimSelect.OptionGroup}>
-    </${EdimSelect.Root}> 
+      </${EdybaraSelect.OptionGroup}>
+    </${EdybaraSelect.Root}> 
     </${Fragment}>
   `;
 };

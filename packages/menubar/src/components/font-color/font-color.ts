@@ -1,36 +1,36 @@
-import { EdimMenubarContext } from '../context';
+import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import {
-  EdimColor,
-  EdimSelect,
-  EdimSeparator,
+  EdybaraColor,
+  EdybaraSelect,
+  EdybaraSeparator,
   classes,
   html,
-} from '@edim-editor/ui';
-import { markActive } from '@edim-editor/core';
+} from '@edybara-editor/ui';
+import { markActive } from '@edybara-editor/core';
 import {
-  EdimTextColorAttrs,
-  EdimTextColorMarkType,
+  EdybaraTextColorAttrs,
+  EdybaraTextColorMarkType,
   toggleTextColorWithAttrs,
-} from '@edim-editor/text-color';
+} from '@edybara-editor/text-color';
 
-export const EdimMenubarFontColorSelect = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarFontColorSelect = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.textColor) {
     return null;
   }
 
   const textColorMarkType = context.options.textColor
-    .textColorMarkType as EdimTextColorMarkType;
+    .textColorMarkType as EdybaraTextColorMarkType;
 
   const currentMark = markActive(context.editorView.state, textColorMarkType);
   const currentColor =
-    (currentMark?.attrs as EdimTextColorAttrs | null)?.color || null;
+    (currentMark?.attrs as EdybaraTextColorAttrs | null)?.color || null;
 
   return html`
-    <${EdimSelect.Root} 
-      className="${classes('edim-menubar-color-select')}"
+    <${EdybaraSelect.Root} 
+      className="${classes('edybara-menubar-color-select')}"
       value="${'black'}"
       onChange="${(color: string) => {
         toggleTextColorWithAttrs(textColorMarkType, {
@@ -38,9 +38,9 @@ export const EdimMenubarFontColorSelect = () => {
         })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       }}">
-      <${EdimSelect.Text}>
+      <${EdybaraSelect.Text}>
         <svg 
-          className="edim-color-button-icon"
+          className="edybara-color-button-icon"
           xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 24 24">
           <path d="M15.2459 14H8.75407L7.15407 18H5L11 3H13L19 18H16.8459L15.2459 14ZM14.4459 12L12 5.88516L9.55407 12H14.4459ZM3">
@@ -49,22 +49,22 @@ export const EdimMenubarFontColorSelect = () => {
         <span className="current-font-color" style="${{
           backgroundColor: currentColor || 'black',
         }}"></span>
-      </${EdimSelect.Text}>
-      <${EdimSelect.OptionGroup} className="edim-color-layer-list">
+      </${EdybaraSelect.Text}>
+      <${EdybaraSelect.OptionGroup} className="edybara-color-layer-list">
       ${textColorMarkType.spec.colors?.map(
         (color) => html`
-        <${EdimSelect.Option}
-          className="edim-color-layer-list-item"
+        <${EdybaraSelect.Option}
+          className="edybara-color-layer-list-item"
           value="${color.color}">
-            <${EdimColor}
+            <${EdybaraColor}
               color=${color.color}
               className=${'context.color' === color.color ? 'selected' : ''}
             />
-        </${EdimSelect.Option}>
+        </${EdybaraSelect.Option}>
         `,
       )}
-      </${EdimSelect.OptionGroup}>
-    </${EdimSelect.Root}>
-    <${EdimSeparator} className="edim-view-menubar-separator" />
+      </${EdybaraSelect.OptionGroup}>
+    </${EdybaraSelect.Root}>
+    <${EdybaraSeparator} className="edybara-view-menubar-separator" />
   `;
 };

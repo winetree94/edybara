@@ -3,21 +3,21 @@ import { createPortal } from 'preact/compat';
 
 const overlayContainer = ((): HTMLDivElement => {
   const exist = document.querySelector(
-    'div.edim-overlay-container',
+    'div.edybara-overlay-container',
   ) as HTMLDivElement;
   if (exist) {
     return exist;
   }
   const div = document.createElement('div');
-  div.classList.add('edim-overlay-container');
+  div.classList.add('edybara-overlay-container');
   document.body.appendChild(div);
   return div;
 })();
 
-export interface EdimOverlayProps {
+export interface EdybaraOverlayProps {
   children: VNode<Attributes>;
 }
 
-export const EdimOverlay = ({ children }: EdimOverlayProps) => {
+export const EdybaraOverlay = ({ children }: EdybaraOverlayProps) => {
   return createPortal(children, overlayContainer);
 };

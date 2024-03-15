@@ -1,142 +1,142 @@
 import { Plugin as PMPlugin, Plugin } from 'prosemirror-state';
-import { edimCorePlugins } from '@edim-editor/core';
+import { edybaraCorePlugins } from '@edybara-editor/core';
 import {
   EDIM_HEADING_DEFAULT_NODE_NAME,
-  EdimHeadingPluginConfigs,
-  edimHeadingPlugins,
-} from '@edim-editor/heading';
+  EdybaraHeadingPluginConfigs,
+  edybaraHeadingPlugins,
+} from '@edybara-editor/heading';
 import {
   EDIM_PARAGRAPH_DEFAULT_NODE_NAME,
-  EdimParagraphPluginConfigs,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
+  EdybaraParagraphPluginConfigs,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
 import {
   EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME,
   EDIM_FLAT_LIST_ITEM_DEFAULT_NODE_NAME,
   EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME,
-  EdimFlatListPluginConfigs,
-  edimFlatListPlugins,
-} from '@edim-editor/flat-list';
+  EdybaraFlatListPluginConfigs,
+  edybaraFlatListPlugins,
+} from '@edybara-editor/flat-list';
 import {
   EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME,
   EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME,
-  EdimFlatTaskListPluginConfigs,
-  edimFlatTaskListPlugins,
-} from '@edim-editor/flat-task-list';
+  EdybaraFlatTaskListPluginConfigs,
+  edybaraFlatTaskListPlugins,
+} from '@edybara-editor/flat-task-list';
 import {
   EDIM_HORIZONTAL_RULE_NODE_NAME,
-  EdimHorizontalRulePluginConfigs,
-  edimHorizontalRulePlugins,
-} from '@edim-editor/hr';
+  EdybaraHorizontalRulePluginConfigs,
+  edybaraHorizontalRulePlugins,
+} from '@edybara-editor/hr';
 import {
   EDIM_BOLD_MARK_NAME,
-  EdimBoldPluginConfigs,
-  edimBoldPlugins,
-} from '@edim-editor/bold';
+  EdybaraBoldPluginConfigs,
+  edybaraBoldPlugins,
+} from '@edybara-editor/bold';
 import {
   EDIM_CODE_MARK_NAME,
-  EdimCodePluginConfigs,
-  edimCodePlugins,
-} from '@edim-editor/code';
+  EdybaraCodePluginConfigs,
+  edybaraCodePlugins,
+} from '@edybara-editor/code';
 import {
   EDIM_ITALIC_MARK_NAME,
-  EdimItalicPluginConfigs,
-  edimItalicPlugins,
-} from '@edim-editor/italic';
+  EdybaraItalicPluginConfigs,
+  edybaraItalicPlugins,
+} from '@edybara-editor/italic';
 import {
   EDIM_STRIKETHROUGH_MARK_NAME,
-  EdimStrikethroughPluginConfigs,
-  edimStrikethroughPlugins,
-} from '@edim-editor/strikethrough';
+  EdybaraStrikethroughPluginConfigs,
+  edybaraStrikethroughPlugins,
+} from '@edybara-editor/strikethrough';
 import {
   EDIM_SUBSCRIPT_MARK_NAME,
-  EdimSubscriptPluginConfigs,
-  edimSubscriptPlugins,
-} from '@edim-editor/subscript';
+  EdybaraSubscriptPluginConfigs,
+  edybaraSubscriptPlugins,
+} from '@edybara-editor/subscript';
 import {
   EDIM_SUPERSCRIPT_MARK_NAME,
-  EdimSuperscriptPluginConfigs,
-  edimSuperscriptPlugins,
-} from '@edim-editor/superscript';
+  EdybaraSuperscriptPluginConfigs,
+  edybaraSuperscriptPlugins,
+} from '@edybara-editor/superscript';
 import {
   EDIM_UNDERLINE_MARK_NAME,
-  EdimUnderlinePluginConfigs,
-  edimUnderlinePlugins,
-} from '@edim-editor/underline';
+  EdybaraUnderlinePluginConfigs,
+  edybaraUnderlinePlugins,
+} from '@edybara-editor/underline';
 import {
   EDIM_BLOCKQUOTE_NODE_NAME,
-  EdimBlockQuotePluginConfigs,
-  edimBlockQuotePlugins,
-} from '@edim-editor/blockquote';
+  EdybaraBlockQuotePluginConfigs,
+  edybaraBlockQuotePlugins,
+} from '@edybara-editor/blockquote';
 import {
   EDIM_CODEBLOCK_NODE_NAME,
-  EdimCodeBlockPluginConfigs,
-  edimCodeBlockPlugins,
-} from '@edim-editor/codeblock';
+  EdybaraCodeBlockPluginConfigs,
+  edybaraCodeBlockPlugins,
+} from '@edybara-editor/codeblock';
 import {
   EDIM_TABLE_CELL_DEFAULT_NODE_NAME,
   EDIM_TABLE_DEFAULT_NODE_NAME,
   EDIM_TABLE_ROW_DEFAULT_NODE_NAME,
-  EdimTableEditingPluginConfigs,
-  edimTableEditingPlugins,
-  edimTablePlugins,
-} from '@edim-editor/tables';
+  EdybaraTableEditingPluginConfigs,
+  edybaraTableEditingPlugins,
+  edybaraTablePlugins,
+} from '@edybara-editor/tables';
 import {
-  EdimMenubarPluginConfigs,
-  edimMenubarPlugins,
-} from '@edim-editor/menubar';
+  EdybaraMenubarPluginConfigs,
+  edybaraMenubarPlugins,
+} from '@edybara-editor/menubar';
 import { Schema } from 'prosemirror-model';
-import { EDIM_FONT_FAMILY_DEFAULT_MARK_NAME } from '@edim-editor/font-family';
+import { EDIM_FONT_FAMILY_DEFAULT_MARK_NAME } from '@edybara-editor/font-family';
 import {
   EDIM_LINK_DEFAULT_MARK_NAME,
-  EdimLinkPluginConfigs,
-  edimLinkPlugins,
-} from '@edim-editor/link';
+  EdybaraLinkPluginConfigs,
+  edybaraLinkPlugins,
+} from '@edybara-editor/link';
 import {
   EDIM_MENTION_DEFAULT_MARK_NAME,
-  EdimMentionPluginConfigs,
-  edimMentionPlugins,
-} from '@edim-editor/mention';
-import { EDIM_TEXT_COLOR_DEFAULT_MARK_NAME } from '@edim-editor/text-color';
+  EdybaraMentionPluginConfigs,
+  edybaraMentionPlugins,
+} from '@edybara-editor/mention';
+import { EDIM_TEXT_COLOR_DEFAULT_MARK_NAME } from '@edybara-editor/text-color';
 
 /**
- * @see https://edim.me/docs/packages/menubar
+ * @see https://edybara.me/docs/packages/menubar
  */
-export interface EdimPresetPluginConfigs {
+export interface EdybaraPresetPluginConfigs {
   /**
    * preset schema
    * @requires
    */
   schema: Schema;
 
-  paragraph?: EdimParagraphPluginConfigs | null;
-  heading?: EdimHeadingPluginConfigs | null;
-  flatTaskList?: EdimFlatTaskListPluginConfigs | null;
-  flatList?: EdimFlatListPluginConfigs | null;
-  blockquote?: EdimBlockQuotePluginConfigs | null;
-  horizontalRule?: EdimHorizontalRulePluginConfigs | null;
-  codeblock?: EdimCodeBlockPluginConfigs | null;
-  table?: EdimTableEditingPluginConfigs | null;
+  paragraph?: EdybaraParagraphPluginConfigs | null;
+  heading?: EdybaraHeadingPluginConfigs | null;
+  flatTaskList?: EdybaraFlatTaskListPluginConfigs | null;
+  flatList?: EdybaraFlatListPluginConfigs | null;
+  blockquote?: EdybaraBlockQuotePluginConfigs | null;
+  horizontalRule?: EdybaraHorizontalRulePluginConfigs | null;
+  codeblock?: EdybaraCodeBlockPluginConfigs | null;
+  table?: EdybaraTableEditingPluginConfigs | null;
 
-  italic?: EdimItalicPluginConfigs | null;
-  bold?: EdimBoldPluginConfigs | null;
-  code?: EdimCodePluginConfigs | null;
-  underline?: EdimUnderlinePluginConfigs | null;
-  strikethrough?: EdimStrikethroughPluginConfigs | null;
-  subscript?: EdimSubscriptPluginConfigs | null;
-  superscript?: EdimSuperscriptPluginConfigs | null;
-  link?: EdimLinkPluginConfigs | null;
-  mention?: EdimMentionPluginConfigs | null;
+  italic?: EdybaraItalicPluginConfigs | null;
+  bold?: EdybaraBoldPluginConfigs | null;
+  code?: EdybaraCodePluginConfigs | null;
+  underline?: EdybaraUnderlinePluginConfigs | null;
+  strikethrough?: EdybaraStrikethroughPluginConfigs | null;
+  subscript?: EdybaraSubscriptPluginConfigs | null;
+  superscript?: EdybaraSuperscriptPluginConfigs | null;
+  link?: EdybaraLinkPluginConfigs | null;
+  mention?: EdybaraMentionPluginConfigs | null;
 
   /**
    * @default true
    */
-  menubar?: EdimMenubarPluginConfigs | null;
+  menubar?: EdybaraMenubarPluginConfigs | null;
 }
 
 const getDefaultConfigs = (
   schema: Schema,
-): Required<Omit<EdimPresetPluginConfigs, 'schema'>> => {
+): Required<Omit<EdybaraPresetPluginConfigs, 'schema'>> => {
   return {
     paragraph: {
       nodeType: schema.nodes[EDIM_PARAGRAPH_DEFAULT_NODE_NAME],
@@ -249,8 +249,8 @@ const getDefaultConfigs = (
   };
 };
 
-export const edimPresetPlugins = (
-  configs: EdimPresetPluginConfigs,
+export const edybaraPresetPlugins = (
+  configs: EdybaraPresetPluginConfigs,
 ): PMPlugin[] => {
   const plugins: Plugin[] = [];
   const mergedConfigs = {
@@ -259,79 +259,79 @@ export const edimPresetPlugins = (
   };
 
   if (mergedConfigs.paragraph) {
-    plugins.push(...edimParagraphPlugins(mergedConfigs.paragraph));
+    plugins.push(...edybaraParagraphPlugins(mergedConfigs.paragraph));
   }
 
   if (mergedConfigs.heading) {
-    plugins.push(...edimHeadingPlugins(mergedConfigs.heading));
+    plugins.push(...edybaraHeadingPlugins(mergedConfigs.heading));
   }
 
   if (mergedConfigs.flatTaskList) {
-    plugins.push(...edimFlatTaskListPlugins(mergedConfigs.flatTaskList));
+    plugins.push(...edybaraFlatTaskListPlugins(mergedConfigs.flatTaskList));
   }
 
   if (mergedConfigs.flatList) {
-    plugins.push(...edimFlatListPlugins(mergedConfigs.flatList));
+    plugins.push(...edybaraFlatListPlugins(mergedConfigs.flatList));
   }
 
   if (mergedConfigs.blockquote) {
-    plugins.push(...edimBlockQuotePlugins(mergedConfigs.blockquote));
+    plugins.push(...edybaraBlockQuotePlugins(mergedConfigs.blockquote));
   }
 
   if (mergedConfigs.horizontalRule) {
-    plugins.push(...edimHorizontalRulePlugins(mergedConfigs.horizontalRule));
+    plugins.push(...edybaraHorizontalRulePlugins(mergedConfigs.horizontalRule));
   }
 
   if (mergedConfigs.codeblock) {
-    plugins.push(...edimCodeBlockPlugins(mergedConfigs.codeblock));
+    plugins.push(...edybaraCodeBlockPlugins(mergedConfigs.codeblock));
   }
 
   if (mergedConfigs.table) {
-    plugins.push(...edimTablePlugins(mergedConfigs.table));
-    plugins.push(...edimTableEditingPlugins(mergedConfigs.table));
+    plugins.push(...edybaraTablePlugins(mergedConfigs.table));
+    plugins.push(...edybaraTableEditingPlugins(mergedConfigs.table));
   }
 
   if (mergedConfigs.italic) {
-    plugins.push(...edimItalicPlugins(mergedConfigs.italic));
+    plugins.push(...edybaraItalicPlugins(mergedConfigs.italic));
   }
 
   if (mergedConfigs.bold) {
-    plugins.push(...edimBoldPlugins(mergedConfigs.bold));
+    plugins.push(...edybaraBoldPlugins(mergedConfigs.bold));
   }
 
   if (mergedConfigs.code) {
-    plugins.push(...edimCodePlugins(mergedConfigs.code));
+    plugins.push(...edybaraCodePlugins(mergedConfigs.code));
   }
 
   if (mergedConfigs.underline) {
-    plugins.push(...edimUnderlinePlugins(mergedConfigs.underline));
+    plugins.push(...edybaraUnderlinePlugins(mergedConfigs.underline));
   }
 
   if (mergedConfigs.strikethrough) {
-    plugins.push(...edimStrikethroughPlugins(mergedConfigs.strikethrough));
+    plugins.push(...edybaraStrikethroughPlugins(mergedConfigs.strikethrough));
   }
 
   if (mergedConfigs.subscript) {
-    plugins.push(...edimSubscriptPlugins(mergedConfigs.subscript));
+    plugins.push(...edybaraSubscriptPlugins(mergedConfigs.subscript));
   }
 
   if (mergedConfigs.superscript) {
-    plugins.push(...edimSuperscriptPlugins(mergedConfigs.superscript));
+    plugins.push(...edybaraSuperscriptPlugins(mergedConfigs.superscript));
   }
 
   if (mergedConfigs.link) {
-    plugins.push(...edimLinkPlugins(mergedConfigs.link));
+    plugins.push(...edybaraLinkPlugins(mergedConfigs.link));
   }
 
   if (mergedConfigs.mention) {
-    plugins.push(...edimMentionPlugins(mergedConfigs.mention));
+    plugins.push(...edybaraMentionPlugins(mergedConfigs.mention));
   }
 
   if (mergedConfigs.menubar) {
-    plugins.push(...edimMenubarPlugins(mergedConfigs.menubar));
+    plugins.push(...edybaraMenubarPlugins(mergedConfigs.menubar));
   }
 
-  plugins.push(...edimCorePlugins());
+  plugins.push(...edybaraCorePlugins());
 
   return plugins;
 };

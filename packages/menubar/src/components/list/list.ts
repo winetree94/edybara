@@ -1,11 +1,11 @@
-import { EdimMenubarContext } from '../context';
+import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
-import { EdimButton, EdimSeparator, html } from '@edim-editor/ui';
-import { indentListItem, toggleList } from '@edim-editor/flat-list';
+import { EdybaraButton, EdybaraSeparator, html } from '@edybara-editor/ui';
+import { indentListItem, toggleList } from '@edybara-editor/flat-list';
 import { findParentNode } from 'prosemirror-utils';
 
-export const EdimMenubarListToggleButtons = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarListToggleButtons = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.list) {
     return null;
@@ -79,39 +79,39 @@ export const EdimMenubarListToggleButtons = () => {
     ${
       orderedListNodeType &&
       html`
-      <${EdimButton}
-        className="edim-icon-button ${activeOrderedList ? 'selected' : ''}"
+      <${EdybaraButton}
+        className="edybara-icon-button ${activeOrderedList ? 'selected' : ''}"
         disabled=${!canOrderedList}
         onClick=${() => onOrderedListClick()}
         >
         <i className="ri-list-ordered" />
-      </${EdimButton}>
+      </${EdybaraButton}>
     `
     }
     ${
       bulletListNodeType &&
       html`
-      <${EdimButton}
-        className="edim-icon-button ${activeUnorderedList ? 'selected' : ''}"
+      <${EdybaraButton}
+        className="edybara-icon-button ${activeUnorderedList ? 'selected' : ''}"
         disabled=${!canBulletList}
         onClick=${() => onUnorderedListClick()}
         >
         <i className="ri-list-unordered" />
-      </${EdimButton}>
+      </${EdybaraButton}>
     `
     }
-    <${EdimButton}
-      className="edim-icon-button"
+    <${EdybaraButton}
+      className="edybara-icon-button"
       onClick=${() => onDecreaseIndentClick()}
       >
       <i className="ri-indent-decrease" />
-    </${EdimButton}>
-    <${EdimButton}
-      className="edim-icon-button"
+    </${EdybaraButton}>
+    <${EdybaraButton}
+      className="edybara-icon-button"
       onClick=${() => onIncreaseIndentClick()}
       >
       <i className="ri-indent-increase" />
-    </${EdimButton}>
-    <${EdimSeparator} className="edim-view-menubar-separator" />
+    </${EdybaraButton}>
+    <${EdybaraSeparator} className="edybara-view-menubar-separator" />
   `;
 };

@@ -11,28 +11,28 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edim-editor/bold
+npm install @edybara-editor/bold
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/bold/styles/bold.scss";
+@import "@edybara-editor/bold/styles/bold.scss";
 ```
 
 ## 서식
 
-#### `edimBoldMarks`
+#### `edybaraBoldMarks`
 
 굵은 텍스트 서식을 제공합니다.
 
 ## 플러그인
 
-#### `edimBoldPlugins`
+#### `edybaraBoldPlugins`
 
 하단의 모든 플러그인을 통합 제공합니다.
 
-#### `edimBoldKeymapPlugins`
+#### `edybaraBoldKeymapPlugins`
 
 현재 텍스트를 굵은 텍스트로 전환하는 단축키(Mod-b)를 제공합니다.
 
@@ -42,35 +42,35 @@ npm install @edim-editor/bold
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins, mac } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
-import { edimBoldMarks, edimBoldPlugins } from '@edim-editor/bold';
+import { edybaraBaseNodes, edybaraCorePlugins, mac } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
+import { edybaraBoldMarks, edybaraBoldPlugins } from '@edybara-editor/bold';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edimBoldMarks({
+    ...edybaraBoldMarks({
       markName: 'bold',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimBoldPlugins({
+  ...edybaraBoldPlugins({
     markType: schema.marks['bold'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textStyles: {
       boldMarkType: schema.marks['bold'],
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 const view = new EditorView(document.querySelector('#editor'), {

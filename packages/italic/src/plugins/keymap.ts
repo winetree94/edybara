@@ -2,12 +2,12 @@ import { MarkType } from 'prosemirror-model';
 import { keymap } from 'prosemirror-keymap';
 import { toggleMark } from 'prosemirror-commands';
 
-export interface EdimItalicKeymapPluginConfigs {
+export interface EdybaraItalicKeymapPluginConfigs {
   markType: MarkType;
 }
 
-export const edimItalicKeymapPlugins = (
-  configs: EdimItalicKeymapPluginConfigs,
+export const edybaraItalicKeymapPlugins = (
+  configs: EdybaraItalicKeymapPluginConfigs,
 ) => {
   return [
     keymap({

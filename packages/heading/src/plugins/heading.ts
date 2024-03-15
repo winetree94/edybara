@@ -1,14 +1,14 @@
-import { edimHeadingInputRulePlugins } from './input-rules';
-import { edimHeadingKeymapPlugins } from './keymaps';
+import { edybaraHeadingInputRulePlugins } from './input-rules';
+import { edybaraHeadingKeymapPlugins } from './keymaps';
 import { NodeType } from 'prosemirror-model';
 
-export interface EdimHeadingPluginConfigs {
+export interface EdybaraHeadingPluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimHeadingPlugins = (configs: EdimHeadingPluginConfigs) => {
+export const edybaraHeadingPlugins = (configs: EdybaraHeadingPluginConfigs) => {
   return [
-    ...edimHeadingInputRulePlugins(configs),
-    ...edimHeadingKeymapPlugins(configs),
+    ...edybaraHeadingInputRulePlugins(configs),
+    ...edybaraHeadingKeymapPlugins(configs),
   ];
 };

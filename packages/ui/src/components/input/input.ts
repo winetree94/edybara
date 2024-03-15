@@ -2,12 +2,12 @@ import { forwardRef, HTMLAttributes } from 'preact/compat';
 import { classes } from '../../cdk/utils/core';
 import { html } from '../../cdk/render';
 
-export interface EdimInputProps extends HTMLAttributes<HTMLInputElement> {}
+export interface EdybaraInputProps extends HTMLAttributes<HTMLInputElement> {}
 
-export const EdimInput = forwardRef<HTMLInputElement, EdimInputProps>(
+export const EdybaraInput = forwardRef<HTMLInputElement, EdybaraInputProps>(
   ({ className, ...props }, ref) => {
     return html`
-      <input class=${classes('edim-input', className)} ...${props} ref=${ref} />
+      <input class=${classes('edybara-input', className)} ...${props} ref=${ref} />
     `;
   },
 );

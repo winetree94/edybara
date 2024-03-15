@@ -1,11 +1,11 @@
 import { MarkType } from 'prosemirror-model';
-import { toggleMarkWithAttrs } from '@edim-editor/core';
-import { EdimFontFamilyAttrs } from '../schemas';
+import { toggleMarkWithAttrs } from '@edybara-editor/core';
+import { EdybaraFontFamilyAttrs } from '../schemas';
 import { Command } from 'prosemirror-state';
 
 export const toggleFontFamily = (
   markType: MarkType,
-  attr: EdimFontFamilyAttrs,
+  attr: EdybaraFontFamilyAttrs,
 ): Command => {
   return toggleMarkWithAttrs(markType, attr);
 };

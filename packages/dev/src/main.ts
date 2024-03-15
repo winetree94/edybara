@@ -1,10 +1,10 @@
 import './style.scss';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { edimPresetSchema, edimPresetPlugins } from '@edim-editor/preset';
+import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara-editor/preset';
 
-const schema = edimPresetSchema();
-const plugins = edimPresetPlugins({ schema });
+const schema = edybaraPresetSchema();
+const plugins = edybaraPresetPlugins({ schema });
 
 const state = EditorState.create({
   schema: schema,

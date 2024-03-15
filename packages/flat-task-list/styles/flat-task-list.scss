@@ -1,14 +1,14 @@
 .ProseMirror {
 
-  li.edim-task-list-item {
+  li.edybara-task-list-item {
     position: relative;
   }
 
-  ul.edim-task-list {
+  ul.edybara-task-list {
     padding-left: 0;
     list-style-type: none;
 
-    li.edim-task-list-item {
+    li.edybara-task-list-item {
       word-break: break-all;
       line-height: normal;
       display: flex;
@@ -18,21 +18,21 @@
       }
       margin: 10px 0;
 
-      p.edim-paragraph {
+      p.edybara-paragraph {
         margin: 0;
       }
 
-      &.edim-align-center {
+      &.edybara-align-center {
         text-align: center;
         justify-content: center;
       }
-      &.edim-align-right {
+      &.edybara-align-right {
         text-align: right;
         justify-content: flex-end;
       }
 
       @for $i from 1 through 6 {
-        &.edim-indent-#{$i} {
+        &.edybara-indent-#{$i} {
           padding-left: 30px * $i;
         }
       }

@@ -1,18 +1,18 @@
-import { EdimMenubarContext } from '../context';
+import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import {
-  EdimButton,
-  EdimParagraph,
-  EdimSelect,
-  EdimSeparator,
-  EdimShortCut,
+  EdybaraButton,
+  EdybaraParagraph,
+  EdybaraSelect,
+  EdybaraSeparator,
+  EdybaraShortCut,
   html,
-} from '@edim-editor/ui';
+} from '@edybara-editor/ui';
 import { toggleMark } from 'prosemirror-commands';
-import { clearMarks, mac, markActive } from '@edim-editor/core';
+import { clearMarks, mac, markActive } from '@edybara-editor/core';
 import { Attributes, VNode } from 'preact';
 
-export interface EdimMenubarMarkButton {
+export interface EdybaraMenubarMarkButton {
   iconName: string;
   label: string;
   active: boolean;
@@ -20,8 +20,8 @@ export interface EdimMenubarMarkButton {
   command: () => void;
 }
 
-export const EdimMenubarMarkToggleButtons = () => {
-  const context = useContext(EdimMenubarContext);
+export const EdybaraMenubarMarkToggleButtons = () => {
+  const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.textStyles) {
     return null;
@@ -43,7 +43,7 @@ export const EdimMenubarMarkToggleButtons = () => {
     return null;
   }
 
-  const buttons: EdimMenubarMarkButton[] = [];
+  const buttons: EdybaraMenubarMarkButton[] = [];
 
   if (boldMarkType) {
     buttons.push({
@@ -51,9 +51,9 @@ export const EdimMenubarMarkToggleButtons = () => {
       label: 'Bold',
       active: markActive(context.editorView.state, boldMarkType),
       shortcut: html`
-        <${EdimShortCut}>
+        <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}B
-        </${EdimShortCut}>
+        </${EdybaraShortCut}>
       `,
       command: () => {
         toggleMark(boldMarkType)(
@@ -71,9 +71,9 @@ export const EdimMenubarMarkToggleButtons = () => {
       label: 'Italic',
       active: markActive(context.editorView.state, italicMarkType),
       shortcut: html`
-        <${EdimShortCut}>
+        <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}I
-        </${EdimShortCut}>
+        </${EdybaraShortCut}>
       `,
       command: () => {
         toggleMark(italicMarkType)(
@@ -91,9 +91,9 @@ export const EdimMenubarMarkToggleButtons = () => {
       label: 'Underline',
       active: markActive(context.editorView.state, underlineMarkType),
       shortcut: html`
-        <${EdimShortCut}>
+        <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}U
-        </${EdimShortCut}>
+        </${EdybaraShortCut}>
       `,
       command: () => {
         toggleMark(underlineMarkType)(
@@ -111,9 +111,9 @@ export const EdimMenubarMarkToggleButtons = () => {
       label: 'Strikethrough',
       active: markActive(context.editorView.state, strikethroughMarkType),
       shortcut: html`
-        <${EdimShortCut}>
+        <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}S
-        </${EdimShortCut}>
+        </${EdybaraShortCut}>
       `,
       command: () => {
         toggleMark(strikethroughMarkType)(
@@ -131,9 +131,9 @@ export const EdimMenubarMarkToggleButtons = () => {
       label: 'Inline Code',
       active: markActive(context.editorView.state, codeMarkType),
       shortcut: html`
-        <${EdimShortCut}>
+        <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}M
-        </${EdimShortCut}>
+        </${EdybaraShortCut}>
       `,
       command: () => {
         toggleMark(codeMarkType)(
@@ -151,9 +151,9 @@ export const EdimMenubarMarkToggleButtons = () => {
       label: 'Subscript',
       active: markActive(context.editorView.state, subscriptMarkType),
       shortcut: html`
-        <${EdimShortCut}>
+        <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'},
-        </${EdimShortCut}>
+        </${EdybaraShortCut}>
       `,
       command: () => {
         toggleMark(subscriptMarkType)(
@@ -171,9 +171,9 @@ export const EdimMenubarMarkToggleButtons = () => {
       label: 'Superscript',
       active: markActive(context.editorView.state, superscriptMarkType),
       shortcut: html`
-        <${EdimShortCut}>
+        <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}.
-        </${EdimShortCut}>
+        </${EdybaraShortCut}>
       `,
       command: () => {
         toggleMark(superscriptMarkType)(
@@ -191,9 +191,9 @@ export const EdimMenubarMarkToggleButtons = () => {
       label: 'Clear Format',
       active: false,
       shortcut: html`
-        <${EdimShortCut}>
+        <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}\\
-        </${EdimShortCut}>
+        </${EdybaraShortCut}>
       `,
       command: () => {
         clearMarks()(context.editorView.state, context.editorView.dispatch);
@@ -212,41 +212,41 @@ export const EdimMenubarMarkToggleButtons = () => {
   return html`
     ${buttons.map(
       (button) => html`
-      <${EdimButton}
-        className="edim-icon-button ${button.active ? 'selected' : ''}"
+      <${EdybaraButton}
+        className="edybara-icon-button ${button.active ? 'selected' : ''}"
         onClick=${button.command}>
         <i className="${button.iconName}" />
-      </${EdimButton}>
+      </${EdybaraButton}>
     `,
     )}
     ${contextButtons.length > 1 &&
     html`
-     <${EdimSelect.Root} 
+     <${EdybaraSelect.Root} 
       hideArrow="${true}"
-      className="edim-icon-button ${contextActive ? 'selected' : ''}">
-      <${EdimSelect.Text}>
+      className="edybara-icon-button ${contextActive ? 'selected' : ''}">
+      <${EdybaraSelect.Text}>
         <i class="ri-more-fill"></i>
-      </${EdimSelect.Text}>
-      <${EdimSelect.OptionGroup} 
-        className="edim-menubar-more-marks-list">
+      </${EdybaraSelect.Text}>
+      <${EdybaraSelect.OptionGroup} 
+        className="edybara-menubar-more-marks-list">
         ${contextButtons.map(
           (button) => html`
-          <${EdimSelect.Option}
+          <${EdybaraSelect.Option}
             onClick="${button.command}"
             value="${button.iconName}"
-            className="${button.active ? 'edim-active' : ''}">
+            className="${button.active ? 'edybara-active' : ''}">
             <i className="${button.iconName}" />
-            <${EdimParagraph} 
-              className="edim-menubar-more-marks-description">
+            <${EdybaraParagraph} 
+              className="edybara-menubar-more-marks-description">
               ${button.label}
-            </${EdimParagraph}>
+            </${EdybaraParagraph}>
             ${button.shortcut}
-          </${EdimSelect.Option}>
+          </${EdybaraSelect.Option}>
         `,
         )}
-      </${EdimSelect.OptionGroup}>
-    </${EdimSelect.Root}>   
+      </${EdybaraSelect.OptionGroup}>
+    </${EdybaraSelect.Root}>   
     `}
-    <${EdimSeparator} className="edim-view-menubar-separator" />
+    <${EdybaraSeparator} className="edybara-view-menubar-separator" />
   `;
 };

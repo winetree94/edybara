@@ -1,10 +1,10 @@
 import { MarkType } from 'prosemirror-model';
-import { edimBoldKeymapPlugins } from './keymap';
+import { edybaraBoldKeymapPlugins } from './keymap';
 
-export interface EdimBoldPluginConfigs {
+export interface EdybaraBoldPluginConfigs {
   markType: MarkType;
 }
 
-export const edimBoldPlugins = (configs: EdimBoldPluginConfigs) => {
-  return [...edimBoldKeymapPlugins(configs)];
+export const edybaraBoldPlugins = (configs: EdybaraBoldPluginConfigs) => {
+  return [...edybaraBoldKeymapPlugins(configs)];
 };

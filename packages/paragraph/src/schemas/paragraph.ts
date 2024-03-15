@@ -1,5 +1,5 @@
 import { NodeSpec } from 'prosemirror-model';
-import { parseQuillTextAlign } from '@edim-editor/core';
+import { parseQuillTextAlign } from '@edybara-editor/core';
 
 export const EDIM_PARAGRAPH_DEFAULT_NODE_NAME = 'paragraph';
 
@@ -7,7 +7,7 @@ export interface ParagraphAttributes {
   align: 'left' | 'right' | 'center' | null;
 }
 
-export interface EdimParagraphNodeConfigs {
+export interface EdybaraParagraphNodeConfigs {
   /**
    * allow text align
    *
@@ -23,13 +23,13 @@ export interface EdimParagraphNodeConfigs {
   nodeName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimParagraphNodeConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraParagraphNodeConfigs> = {
   allowAlign: true,
   nodeName: EDIM_PARAGRAPH_DEFAULT_NODE_NAME,
 };
 
-export const edimParagraphNodes = (
-  configs?: EdimParagraphNodeConfigs,
+export const edybaraParagraphNodes = (
+  configs?: EdybaraParagraphNodeConfigs,
 ): Record<string, NodeSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -57,9 +57,9 @@ export const edimParagraphNodes = (
     ],
     toDOM(node) {
       const attrs = node.attrs as ParagraphAttributes;
-      const classes = ['edim-paragraph'];
+      const classes = ['edybara-paragraph'];
       if (attrs.align) {
-        classes.push(`edim-align-${attrs.align}`);
+        classes.push(`edybara-align-${attrs.align}`);
       }
       return [
         'p',

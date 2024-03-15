@@ -2,18 +2,18 @@ import { NodeSpec } from 'prosemirror-model';
 
 export const EDIM_BLOCKQUOTE_NODE_NAME = 'blockquote';
 
-export interface EdimBlockquoteNodeConfigs {
+export interface EdybaraBlockquoteNodeConfigs {
   multiline?: boolean;
   nodeName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimBlockquoteNodeConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraBlockquoteNodeConfigs> = {
   multiline: true,
   nodeName: EDIM_BLOCKQUOTE_NODE_NAME,
 };
 
-export const edimBlockquoteNodes = (
-  configs?: EdimBlockquoteNodeConfigs,
+export const edybaraBlockquoteNodes = (
+  configs?: EdybaraBlockquoteNodeConfigs,
 ): Record<string, NodeSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,

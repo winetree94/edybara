@@ -1,16 +1,16 @@
 import { MarkSpec } from 'prosemirror-model';
-import { BaseMarkConfigs } from '@edim-editor/core';
+import { BaseMarkConfigs } from '@edybara-editor/core';
 
 export const EDIM_BOLD_MARK_NAME = 'bold';
 
-export interface EdimBoldMarkConfigs extends BaseMarkConfigs {}
+export interface EdybaraBoldMarkConfigs extends BaseMarkConfigs {}
 
-const DEFAULT_CONFIGS: Required<EdimBoldMarkConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraBoldMarkConfigs> = {
   markName: EDIM_BOLD_MARK_NAME,
 };
 
-export const edimBoldMarks = (
-  configs?: EdimBoldMarkConfigs,
+export const edybaraBoldMarks = (
+  configs?: EdybaraBoldMarkConfigs,
 ): Record<string, MarkSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -45,7 +45,7 @@ export const edimBoldMarks = (
       return [
         'strong',
         {
-          class: 'edim-bold',
+          class: 'edybara-bold',
         },
         0,
       ];

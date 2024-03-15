@@ -1,18 +1,18 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edimParagraphKeymapPlugins } from './keymaps';
+import { edybaraParagraphKeymapPlugins } from './keymaps';
 
-export interface EdimParagraphPluginConfigs {
+export interface EdybaraParagraphPluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimParagraphPlugins = (
-  configs: EdimParagraphPluginConfigs,
+export const edybaraParagraphPlugins = (
+  configs: EdybaraParagraphPluginConfigs,
 ): PMPlugin[] => {
   const plugins: PMPlugin[] = [];
 
   plugins.push(
-    ...edimParagraphKeymapPlugins({
+    ...edybaraParagraphKeymapPlugins({
       nodeType: configs.nodeType,
     }),
   );

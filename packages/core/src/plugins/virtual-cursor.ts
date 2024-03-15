@@ -7,7 +7,7 @@ import { Plugin as PMPlugin, TextSelection } from 'prosemirror-state';
  * Origin Project & License
  * https://github.com/ocavue/prosemirror-virtual-cursor
  */
-export function edimVirtualCursorPlugins(): PMPlugin[] {
+export function edybaraVirtualCursorPlugins(): PMPlugin[] {
   const plugins = [
     new PMPlugin({
       props: {

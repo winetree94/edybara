@@ -1,28 +1,28 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edimFlatListInputRulePlugins } from './input-rules';
-import { edimFlatListKeymapPlugins } from './keymaps';
-import { edimFlatListMergePlugins } from './merge';
+import { edybaraFlatListInputRulePlugins } from './input-rules';
+import { edybaraFlatListKeymapPlugins } from './keymaps';
+import { edybaraFlatListMergePlugins } from './merge';
 
-export interface EdimFlatListPluginConfigs {
+export interface EdybaraFlatListPluginConfigs {
   orderedListNodeType?: NodeType;
   bulletListNodeType?: NodeType;
   listItemNodeType: NodeType;
 }
 
-export const edimFlatListPlugins = (
-  configs: EdimFlatListPluginConfigs,
+export const edybaraFlatListPlugins = (
+  configs: EdybaraFlatListPluginConfigs,
 ): PMPlugin[] => {
   return [
-    ...edimFlatListKeymapPlugins({
+    ...edybaraFlatListKeymapPlugins({
       bulletListNodeType: configs.bulletListNodeType,
       orderListNodeType: configs.orderedListNodeType,
       listItemNodeType: configs.listItemNodeType,
     }),
-    ...edimFlatListInputRulePlugins({
+    ...edybaraFlatListInputRulePlugins({
       bulletListNodeType: configs.bulletListNodeType,
       orderListNodeType: configs.orderedListNodeType,
     }),
-    ...edimFlatListMergePlugins(configs),
+    ...edybaraFlatListMergePlugins(configs),
   ];
 };

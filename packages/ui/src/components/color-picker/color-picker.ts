@@ -19,26 +19,26 @@ export const COLORS = [
   '#8270DB',
 ];
 
-export interface EdimColorProps extends HTMLAttributes<HTMLSpanElement> {
+export interface EdybaraColorProps extends HTMLAttributes<HTMLSpanElement> {
   color: string;
 }
 
-export const EdimColor = ({ className, color, ...props }: EdimColorProps) => {
+export const EdybaraColor = ({ className, color, ...props }: EdybaraColorProps) => {
   return html`
     <span
-      class=${classes('edim-color', className)}
+      class=${classes('edybara-color', className)}
       style=${{ backgroundColor: color }}
       ...${props}
     />
   `;
 };
 
-export interface EdimColorPickerProps {
+export interface EdybaraColorPickerProps {
   color?: string;
   onChange?(color: string): void;
 }
 
-export const EdimColorPicker = forwardRef((props: EdimColorPickerProps) => {
+export const EdybaraColorPicker = forwardRef((props: EdybaraColorPickerProps) => {
   const chunks = COLORS.reduce<string[][]>((result, color, index) => {
     if (index % 7 === 0) {
       result.push([]);
@@ -48,13 +48,13 @@ export const EdimColorPicker = forwardRef((props: EdimColorPickerProps) => {
   }, []);
 
   return html`
-    <div class=${classes('edim-color-picker')}>
+    <div class=${classes('edybara-color-picker')}>
       ${chunks.map(
         (chunk) => html`
-          <div class="edim-color-group">
+          <div class="edybara-color-group">
             ${chunk.map(
               (color) => html`
-                <${EdimColor}
+                <${EdybaraColor}
                   color=${color}
                   className=${props.color === color ? 'selected' : ''}
                   onClick=${() => props.onChange?.(color)}

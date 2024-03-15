@@ -5,37 +5,37 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 # Heading
 
-`@edim-editor/paragraph` 에디터에 **제목**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
+`@edybara-editor/paragraph` 에디터에 **제목**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
 
 ## 설치
 
 ```bash
-npm install @edim-editor/heading
+npm install @edybara-editor/heading
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/heading/styles/heading.scss";
+@import "@edybara-editor/heading/styles/heading.scss";
 ```
 
 ## 서식
 
-#### `edimHeadingNodes`
+#### `edybaraHeadingNodes`
 
 제목 서식을 제공합니다.
 
 ## 플러그인
 
-#### `edimHeadingPlugins`
+#### `edybaraHeadingPlugins`
 
 하단의 모든 플러그인을 통합 제공합니다.
 
-#### `edimHeadingKeymapPlugins`
+#### `edybaraHeadingKeymapPlugins`
 
 현재 선택 영역의 블록 노드를 Heading 노드로 전환하는 단축키를 제공합니다.
 
-#### `edimHeadingInputRulePlugins`
+#### `edybaraHeadingInputRulePlugins`
 
 `#N` 패턴의 문자를 입력하면 Heading 노드로 전환하는 InputRule 을 제공합니다.
 
@@ -45,16 +45,16 @@ npm install @edim-editor/heading
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins, mac } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
-import { edimHeadingInputRulePlugins, edimHeadingKeymapPlugins, edimHeadingNodes, edimHeadingPlugins } from '@edim-editor/heading';
+import { edybaraBaseNodes, edybaraCorePlugins, mac } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraHeadingInputRulePlugins, edybaraHeadingKeymapPlugins, edybaraHeadingNodes, edybaraHeadingPlugins } from '@edybara-editor/heading';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimHeadingNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraHeadingNodes({
       nodeName: 'heading',
       allowAlign: true,
       levels: [2, 4, 6],
@@ -63,28 +63,28 @@ const schema = new Schema({
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimHeadingPlugins({
+  ...edybaraHeadingPlugins({
     nodeType: schema.nodes['heading'],
   }),
-  // ...edimHeadingKeymapPlugins({
+  // ...edybaraHeadingKeymapPlugins({
   //   nodeType: schema.nodes['heading'],
   //   level: 6,
   // }),
-  // ...edimHeadingInputRulePlugins({
+  // ...edybaraHeadingInputRulePlugins({
   //   nodeType: schema.nodes['heading'],
   //   level: 6,
   // }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textType: {
       headingNodeType: schema.nodes['heading'],
       paragraphNodeType: schema.nodes['paragraph'],
     },
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 const view = new EditorView(document.querySelector('#editor'), {

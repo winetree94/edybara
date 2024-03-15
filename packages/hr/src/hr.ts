@@ -2,7 +2,7 @@ import { keymap } from 'prosemirror-keymap';
 import { DOMOutputSpec, NodeSpec, NodeType } from 'prosemirror-model';
 
 const hrDOM: DOMOutputSpec = ['hr'];
-export const edimHorizontalRuleNodes = (): Record<string, NodeSpec> => ({
+export const edybaraHorizontalRuleNodes = (): Record<string, NodeSpec> => ({
   horizontal_rule: {
     group: 'block',
     parseDOM: [{ tag: 'hr' }],
@@ -12,12 +12,12 @@ export const edimHorizontalRuleNodes = (): Record<string, NodeSpec> => ({
   },
 });
 
-export interface EdimHorizontalRulePluginConfigs {
+export interface EdybaraHorizontalRulePluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimHorizontalRulePlugins = (
-  configs: EdimHorizontalRulePluginConfigs,
+export const edybaraHorizontalRulePlugins = (
+  configs: EdybaraHorizontalRulePluginConfigs,
 ) => {
   return [
     keymap({

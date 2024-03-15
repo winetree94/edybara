@@ -3,7 +3,7 @@ import { baseKeymap } from 'prosemirror-commands';
 import { Plugin } from 'prosemirror-state';
 import { clearMarks } from '../commands';
 
-export const edimBasicKeymapPlugins = (): Plugin[] => {
+export const edybaraBasicKeymapPlugins = (): Plugin[] => {
   return [
     keymap({
       /**

@@ -1,5 +1,5 @@
-import { html } from '@edim-editor/ui';
+import { html } from '@edybara-editor/ui';
 
-export const EdimTaskListItem = () => {
+export const EdybaraTaskListItem = () => {
   return html`<div></div>`;
 }

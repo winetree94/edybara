@@ -3,14 +3,14 @@ import { NodeType } from 'prosemirror-model';
 import { isInCodeBlock } from '../utils';
 import { findParentNode } from 'prosemirror-utils';
 import { keymap } from 'prosemirror-keymap';
-import { findNearestBlockContainer } from '@edim-editor/core';
+import { findNearestBlockContainer } from '@edybara-editor/core';
 
-export interface EdimCodeBlockEjectPluginConfigs {
+export interface EdybaraCodeBlockEjectPluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimCodeBlockEjectPlugins = (
-  configs: EdimCodeBlockEjectPluginConfigs,
+export const edybaraCodeBlockEjectPlugins = (
+  configs: EdybaraCodeBlockEjectPluginConfigs,
 ): PMPlugin[] => {
   const plugins: PMPlugin[] = [
     new PMPlugin({

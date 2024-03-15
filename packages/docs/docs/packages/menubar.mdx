@@ -11,18 +11,18 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edim-editor/menubar
+npm install @edybara-editor/menubar
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/menubar/styles/menubar.scss";
+@import "@edybara-editor/menubar/styles/menubar.scss";
 ```
 
 ## 플러그인
 
-#### edimMenubarPlugins
+#### edybaraMenubarPlugins
 
 에디터의 툴바를 표시하고 본문의 스크롤 영역을 생성합니다.
 
@@ -32,20 +32,20 @@ npm install @edim-editor/menubar
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins, mac } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+import { edybaraBaseNodes, edybaraCorePlugins, mac } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 
-const schema = edimPresetSchema();
+const schema = edybaraPresetSchema();
 
-const plugins = edimPresetPlugins({
+const plugins = edybaraPresetPlugins({
   schema,
   // Preset 에서 메뉴바 플러그인을 해제하고 수동으로 추가
   menubar: false,
 });
 
 plugins.push(
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textType: {
       paragraphNodeType: schema.nodes['paragraph'],
       headingNodeType: schema.nodes['heading'],

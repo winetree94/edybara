@@ -5,33 +5,33 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 # Paragraph
 
-`@edim-editor/paragraph` 에디터에 **문단**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
+`@edybara-editor/paragraph` 에디터에 **문단**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
 
 ## 설치
 
 ```bash
-npm install @edim-editor/paragraph
+npm install @edybara-editor/paragraph
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/paragraph/styles/paragraph.scss";
+@import "@edybara-editor/paragraph/styles/paragraph.scss";
 ```
 
 ## 서식
 
-#### `edimParagraphNodes`
+#### `edybaraParagraphNodes`
 
 문단 서식을 제공합니다.
 
 ## 플러그인
 
-#### `edimParagraphPlugins`
+#### `edybaraParagraphPlugins`
 
 하단의 모든 플러그인을 통합 제공합니다.
 
-#### `edimBasicKeymapPlugins`
+#### `edybaraBasicKeymapPlugins`
 
 현재 선택 영역의 블록 노드를 Paragraph 노드로 전환하는 단축키를 제공합니다.
 
@@ -41,14 +41,14 @@ npm install @edim-editor/paragraph
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins, mac } from '@edim-editor/core';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
+import { edybaraBaseNodes, edybaraCorePlugins, mac } from '@edybara-editor/core';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes({
       allowAlign: true,
       nodeName: 'paragraph',
     }),
@@ -56,13 +56,13 @@ const schema = new Schema({
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 const view = new EditorView(document.querySelector('#editor'), {

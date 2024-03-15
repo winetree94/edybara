@@ -1,5 +1,5 @@
 import React from 'react';
-import { classes } from '@edim-editor/ui';
+import { classes } from '@edybara-editor/ui';
 import { EditorView } from 'prosemirror-view';
 import { useEffect, useRef } from 'react';
 import { EditorState } from 'prosemirror-state';
@@ -32,7 +32,7 @@ export const ProseMirror = (props: ProseMirrorProps) => {
   return (
     <div
       ref={editorDomRef}
-      className={classes('edim-root', props.className)}
+      className={classes('edybara-root', props.className)}
       style={props.style}
     ></div>
   );

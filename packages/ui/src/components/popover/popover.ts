@@ -1,44 +1,44 @@
 import { ComponentChildren, createContext } from 'preact';
 import { useContext, useEffect, useRef, useState } from 'preact/compat';
-import { EdimOverlay, html } from '../../cdk';
+import { EdybaraOverlay, html } from '../../cdk';
 
-interface EdimPopoverOpenedState {
+interface EdybaraPopoverOpenedState {
   triggerRef: HTMLElement | null;
 }
 
-interface EdimPopoverContextType {
-  opened: EdimPopoverOpenedState | null;
-  setOpened: (opened: EdimPopoverOpenedState | null) => void;
+interface EdybaraPopoverContextType {
+  opened: EdybaraPopoverOpenedState | null;
+  setOpened: (opened: EdybaraPopoverOpenedState | null) => void;
 }
 
-const EdimPopoverContext = createContext<EdimPopoverContextType>({
+const EdybaraPopoverContext = createContext<EdybaraPopoverContextType>({
   opened: null,
   setOpened: () => {},
 });
 
-export interface EdimPopoverRootProps {
+export interface EdybaraPopoverRootProps {
   children: ComponentChildren;
 }
 
-const EdimPopoverRoot = (props: EdimPopoverRootProps) => {
-  const [opened, setOpened] = useState<EdimPopoverOpenedState | null>(null);
+const EdybaraPopoverRoot = (props: EdybaraPopoverRootProps) => {
+  const [opened, setOpened] = useState<EdybaraPopoverOpenedState | null>(null);
 
   return html`
-    <${EdimPopoverContext.Provider} value="${{
+    <${EdybaraPopoverContext.Provider} value="${{
       opened: opened,
       setOpened: setOpened,
     }}">
       ${props.children}
-    </${EdimPopoverContext.Provider}>
+    </${EdybaraPopoverContext.Provider}>
   `;
 };
 
-export interface EdimPopoverTriggerProps {
+export interface EdybaraPopoverTriggerProps {
   children: ComponentChildren;
 }
 
-const EdimPopoverTrigger = (props: EdimPopoverTriggerProps) => {
-  const context = useContext(EdimPopoverContext);
+const EdybaraPopoverTrigger = (props: EdybaraPopoverTriggerProps) => {
+  const context = useContext(EdybaraPopoverContext);
   const ref = useRef<HTMLElement>();
 
   useEffect(() => {
@@ -70,34 +70,34 @@ const EdimPopoverTrigger = (props: EdimPopoverTriggerProps) => {
   return html`${props.children}`;
 };
 
-export interface EdimPopoverPortalProps {
+export interface EdybaraPopoverPortalProps {
   children: ComponentChildren;
 }
 
-const EdimPopoverPortal = (props: EdimPopoverPortalProps) => {
-  const context = useContext(EdimPopoverContext);
+const EdybaraPopoverPortal = (props: EdybaraPopoverPortalProps) => {
+  const context = useContext(EdybaraPopoverContext);
   if (!context.opened) {
     return null;
   }
   return html`
-    <${EdimOverlay}>
+    <${EdybaraOverlay}>
       ${props.children}
-    </${EdimOverlay}>
+    </${EdybaraOverlay}>
   `;
 };
 
-export interface EdimPopoverContentProps {
+export interface EdybaraPopoverContentProps {
   children: ComponentChildren;
 }
 
-const EdimPopoverContent = (props: EdimPopoverContentProps) => {
-  const context = useContext(EdimPopoverContext);
-  return html`<div className="edim-popover-content">${props.children}</div>`;
+const EdybaraPopoverContent = (props: EdybaraPopoverContentProps) => {
+  const context = useContext(EdybaraPopoverContext);
+  return html`<div className="edybara-popover-content">${props.children}</div>`;
 };
 
-export const EdimPopover = {
-  Root: EdimPopoverRoot,
-  Trigger: EdimPopoverTrigger,
-  Portal: EdimPopoverPortal,
-  Content: EdimPopoverContent,
+export const EdybaraPopover = {
+  Root: EdybaraPopoverRoot,
+  Trigger: EdybaraPopoverTrigger,
+  Portal: EdybaraPopoverPortal,
+  Content: EdybaraPopoverContent,
 };

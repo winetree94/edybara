@@ -1,21 +1,21 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edimBlockquoteInputRulePlugins } from './input-rules';
-import { edimBlockquoteKeymapPlugins } from './keymaps';
-import { edimBlockQuoteMergePlugins } from './merge';
+import { edybaraBlockquoteInputRulePlugins } from './input-rules';
+import { edybaraBlockquoteKeymapPlugins } from './keymaps';
+import { edybaraBlockQuoteMergePlugins } from './merge';
 
-export interface EdimBlockQuotePluginConfigs {
+export interface EdybaraBlockQuotePluginConfigs {
   nodeType: NodeType;
   mergeAdjacentBlockquote?: boolean;
 }
 
-const DEFAULT_CONFIGS: Required<Omit<EdimBlockQuotePluginConfigs, 'nodeType'>> =
+const DEFAULT_CONFIGS: Required<Omit<EdybaraBlockQuotePluginConfigs, 'nodeType'>> =
   {
     mergeAdjacentBlockquote: false,
   };
 
-export const edimBlockQuotePlugins = (
-  configs: EdimBlockQuotePluginConfigs,
+export const edybaraBlockQuotePlugins = (
+  configs: EdybaraBlockQuotePluginConfigs,
 ): PMPlugin[] => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -23,13 +23,13 @@ export const edimBlockQuotePlugins = (
   };
 
   const plugins: PMPlugin[] = [
-    ...edimBlockquoteKeymapPlugins(mergedConfigs),
-    ...edimBlockquoteInputRulePlugins(mergedConfigs),
+    ...edybaraBlockquoteKeymapPlugins(mergedConfigs),
+    ...edybaraBlockquoteInputRulePlugins(mergedConfigs),
   ];
 
   if (mergedConfigs.mergeAdjacentBlockquote) {
     plugins.push(
-      ...edimBlockQuoteMergePlugins({
+      ...edybaraBlockQuoteMergePlugins({
         nodeType: mergedConfigs.nodeType,
       }),
     );

@@ -1,11 +1,11 @@
 import { render } from 'preact';
 import { EditorState, Plugin, PluginKey, PluginView } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { html } from '@edim-editor/ui';
-import { EdimMenubar } from '../components';
+import { html } from '@edybara-editor/ui';
+import { EdybaraMenubar } from '../components';
 import { MarkType, NodeType } from 'prosemirror-model';
 
-export interface EdimMenubarPluginConfigs {
+export interface EdybaraMenubarPluginConfigs {
   position?: 'top' | 'bottom';
   textType?: {
     paragraphNodeType: NodeType;
@@ -55,7 +55,7 @@ export interface EdimMenubarPluginConfigs {
   translates?: {};
 }
 
-export class EdimMenubarView implements PluginView {
+export class EdybaraMenubarView implements PluginView {
   public readonly editorRoot: HTMLDivElement;
   public readonly editorWrapper: HTMLDivElement;
   public readonly menubarWrapper: HTMLDivElement;
@@ -64,23 +64,23 @@ export class EdimMenubarView implements PluginView {
 
   public constructor(
     public readonly editorView: EditorView,
-    private readonly configs: EdimMenubarPluginConfigs,
+    private readonly configs: EdybaraMenubarPluginConfigs,
   ) {
     this.editorView = editorView;
 
     const editorRoot = document.createElement('div');
-    editorRoot.classList.add('edim-view-editor-root');
+    editorRoot.classList.add('edybara-view-editor-root');
     this.editorRoot = editorRoot;
 
     const editorWrapper = document.createElement('div');
-    editorWrapper.classList.add('edim-view-editor-scroll');
+    editorWrapper.classList.add('edybara-view-editor-scroll');
     this.editorWrapper = editorWrapper;
 
     const menubarWrapper = document.createElement('div');
-    menubarWrapper.classList.add('edim-view-editor-menubar-root');
+    menubarWrapper.classList.add('edybara-view-editor-menubar-root');
     this.menubarWrapper = menubarWrapper;
 
-    editorView.dom.classList.add('edim-view-editor');
+    editorView.dom.classList.add('edybara-view-editor');
     const originParent = editorView.dom.parentElement!;
     const originIndex = Array.from(originParent.children).indexOf(
       editorView.dom,
@@ -110,7 +110,7 @@ export class EdimMenubarView implements PluginView {
   public render() {
     render(
       html`
-        <${EdimMenubar}
+        <${EdybaraMenubar}
           editorView=${this.editorView}
           editorState=${this.editorView.state}
           options=${this.configs}
@@ -125,13 +125,13 @@ export class EdimMenubarView implements PluginView {
   }
 }
 
-export const edimMenubarPlugins = (
-  configs: EdimMenubarPluginConfigs,
+export const edybaraMenubarPlugins = (
+  configs: EdybaraMenubarPluginConfigs,
 ): Plugin[] => {
   const plugin = new Plugin({
-    key: new PluginKey('edimMenubar'),
+    key: new PluginKey('edybaraMenubar'),
     view: (editorView) => {
-      return new EdimMenubarView(editorView, configs);
+      return new EdybaraMenubarView(editorView, configs);
     },
   });
   return [plugin];

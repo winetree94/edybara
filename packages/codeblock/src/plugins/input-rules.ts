@@ -1,12 +1,12 @@
 import { NodeType } from 'prosemirror-model';
 import { inputRules, textblockTypeInputRule } from 'prosemirror-inputrules';
 
-export interface EdimCodeBlockInputRulePluginConfigs {
+export interface EdybaraCodeBlockInputRulePluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimCodeBlockInputRulePlugins = (
-  configs: EdimCodeBlockInputRulePluginConfigs,
+export const edybaraCodeBlockInputRulePlugins = (
+  configs: EdybaraCodeBlockInputRulePluginConfigs,
 ) => {
   return [
     inputRules({

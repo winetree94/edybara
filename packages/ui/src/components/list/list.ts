@@ -2,16 +2,16 @@ import { forwardRef, HTMLAttributes } from 'preact/compat';
 import { classes } from '../../cdk/utils/core';
 import { html } from '../../cdk/render';
 
-export interface EdimOrderedListProps
+export interface EdybaraOrderedListProps
   extends HTMLAttributes<HTMLOListElement> {}
 
-export const EdimOrderedList = forwardRef<
+export const EdybaraOrderedList = forwardRef<
   HTMLOListElement,
-  EdimOrderedListProps
+  EdybaraOrderedListProps
 >(({ className, children, ...props }, ref) => {
   return html`
     <ol
-      class=${classes('edim-view-ordered-list', className)}
+      class=${classes('edybara-view-ordered-list', className)}
       ...${props}
       ref=${ref}
     >
@@ -20,16 +20,16 @@ export const EdimOrderedList = forwardRef<
   `;
 });
 
-export interface EdimUnorderedListProps
+export interface EdybaraUnorderedListProps
   extends HTMLAttributes<HTMLUListElement> {}
 
-export const EdimUnorderedList = forwardRef<
+export const EdybaraUnorderedList = forwardRef<
   HTMLUListElement,
-  EdimUnorderedListProps
+  EdybaraUnorderedListProps
 >(({ className, children, ...props }, ref) => {
   return html`
     <ul
-      class=${classes('edim-view-unordered-list', className)}
+      class=${classes('edybara-view-unordered-list', className)}
       ...${props}
       ref=${ref}
     >
@@ -38,13 +38,13 @@ export const EdimUnorderedList = forwardRef<
   `;
 });
 
-export interface EdimListItemProps extends HTMLAttributes<HTMLLIElement> {}
+export interface EdybaraListItemProps extends HTMLAttributes<HTMLLIElement> {}
 
-export const EdimListItem = forwardRef<HTMLLIElement, EdimListItemProps>(
+export const EdybaraListItem = forwardRef<HTMLLIElement, EdybaraListItemProps>(
   ({ className, children, ...props }, ref) => {
     return html`
       <li
-        className=${classes('edim-view-list-item', className)}
+        className=${classes('edybara-view-list-item', className)}
         ...${props}
         ref=${ref}
       >

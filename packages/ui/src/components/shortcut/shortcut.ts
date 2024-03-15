@@ -1,10 +1,10 @@
 import { ComponentChildren } from 'preact';
 import { html } from '../../cdk';
 
-export interface EdimShortcutProps {
+export interface EdybaraShortcutProps {
   children: ComponentChildren;
 }
 
-export const EdimShortCut = (props: EdimShortcutProps) => {
-  return html`<span className="edim-ui-shortcut">${props.children}</span>`;
+export const EdybaraShortCut = (props: EdybaraShortcutProps) => {
+  return html`<span className="edybara-ui-shortcut">${props.children}</span>`;
 };

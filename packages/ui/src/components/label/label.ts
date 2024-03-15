@@ -2,12 +2,12 @@ import { forwardRef, HTMLAttributes } from 'preact/compat';
 import { classes } from '../../cdk/utils/core';
 import { html } from '../../cdk/render';
 
-export interface EdimLabelProps extends HTMLAttributes<HTMLLabelElement> {}
+export interface EdybaraLabelProps extends HTMLAttributes<HTMLLabelElement> {}
 
-export const EdimLabel = forwardRef<HTMLLabelElement, EdimLabelProps>(
+export const EdybaraLabel = forwardRef<HTMLLabelElement, EdybaraLabelProps>(
   ({ className, children, ...props }, ref) => {
     return html`
-      <label class=${classes('edim-label', className)} ...${props} ref=${ref}>
+      <label class=${classes('edybara-label', className)} ...${props} ref=${ref}>
         ${children}
       </label>
     `;

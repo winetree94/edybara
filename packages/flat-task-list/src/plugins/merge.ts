@@ -1,16 +1,16 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edimMergeAdjacentNodePlugins } from '@edim-editor/core';
+import { edybaraMergeAdjacentNodePlugins } from '@edybara-editor/core';
 
-export interface EdimFlatTaskListMergePluginConfigs {
+export interface EdybaraFlatTaskListMergePluginConfigs {
   taskListNodeType: NodeType;
 }
 
-export const edimFlatTaskListMergePlugins = (
-  configs: EdimFlatTaskListMergePluginConfigs,
+export const edybaraFlatTaskListMergePlugins = (
+  configs: EdybaraFlatTaskListMergePluginConfigs,
 ): PMPlugin[] => {
   return [
-    ...edimMergeAdjacentNodePlugins({
+    ...edybaraMergeAdjacentNodePlugins({
       specs: [
         {
           nodeType: configs.taskListNodeType,

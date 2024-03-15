@@ -5,22 +5,22 @@ import {
 import { EditorState } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
 });
 
 const plugins = [
-  ...edimCorePlugins(),
-  ...edimParagraphPlugins({
+  ...edybaraCorePlugins(),
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes.paragraph,
   }),
 ];

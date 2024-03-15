@@ -2,12 +2,12 @@ import { Plugin as PMPlugin } from 'prosemirror-state';
 import { InputRule, inputRules } from 'prosemirror-inputrules';
 import { MarkType } from 'prosemirror-model';
 
-export interface EdimCodeInputRulePluginConfigs {
+export interface EdybaraCodeInputRulePluginConfigs {
   markType: MarkType;
 }
 
-export const edimCodeInputRulePlugins = (
-  configs: EdimCodeInputRulePluginConfigs,
+export const edybaraCodeInputRulePlugins = (
+  configs: EdybaraCodeInputRulePluginConfigs,
 ): PMPlugin[] => [
   inputRules({
     rules: [

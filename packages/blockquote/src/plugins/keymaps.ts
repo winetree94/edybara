@@ -3,12 +3,12 @@ import { NodeType } from 'prosemirror-model';
 import { wrapIn } from 'prosemirror-commands';
 import { keymap } from 'prosemirror-keymap';
 
-export interface EdimBlockquoteKeymapPluginConfigs {
+export interface EdybaraBlockquoteKeymapPluginConfigs {
   nodeType: NodeType;
 }
 
-export const edimBlockquoteKeymapPlugins = (
-  configs: EdimBlockquoteKeymapPluginConfigs,
+export const edybaraBlockquoteKeymapPlugins = (
+  configs: EdybaraBlockquoteKeymapPluginConfigs,
 ): PMPlugin[] => [
   keymap({
     'Ctrl->': wrapIn(configs.nodeType),

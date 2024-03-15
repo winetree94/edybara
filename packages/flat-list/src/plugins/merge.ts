@@ -1,17 +1,17 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edimMergeAdjacentNodePlugins } from '@edim-editor/core';
-import { EdimMergeAdjacentNodePluginConfigs } from '@edim-editor/core';
+import { edybaraMergeAdjacentNodePlugins } from '@edybara-editor/core';
+import { EdybaraMergeAdjacentNodePluginConfigs } from '@edybara-editor/core';
 
-export interface EdimFlatListMergePluginConfigs {
+export interface EdybaraFlatListMergePluginConfigs {
   orderedListNodeType?: NodeType;
   bulletListNodeType?: NodeType;
 }
 
-export const edimFlatListMergePlugins = (
-  configs: EdimFlatListMergePluginConfigs,
+export const edybaraFlatListMergePlugins = (
+  configs: EdybaraFlatListMergePluginConfigs,
 ): PMPlugin[] => {
-  const mergeConfigs: EdimMergeAdjacentNodePluginConfigs = {
+  const mergeConfigs: EdybaraMergeAdjacentNodePluginConfigs = {
     specs: [],
   };
 
@@ -27,5 +27,5 @@ export const edimFlatListMergePlugins = (
     });
   }
 
-  return [...edimMergeAdjacentNodePlugins(mergeConfigs)];
+  return [...edybaraMergeAdjacentNodePlugins(mergeConfigs)];
 };

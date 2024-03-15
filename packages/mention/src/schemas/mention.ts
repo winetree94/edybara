@@ -6,16 +6,16 @@ export interface MentionAttrs {
   data_id: string;
 }
 
-export interface EdimMentionMarkConfigs {
+export interface EdybaraMentionMarkConfigs {
   markName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimMentionMarkConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraMentionMarkConfigs> = {
   markName: EDIM_MENTION_DEFAULT_MARK_NAME,
 };
 
-export const edimMentionMarks = (
-  configs?: EdimMentionMarkConfigs,
+export const edybaraMentionMarks = (
+  configs?: EdybaraMentionMarkConfigs,
 ): Record<string, MarkSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -35,7 +35,7 @@ export const edimMentionMarks = (
         tag: 'span',
         getAttrs: (node) => {
           const dom = node as HTMLSpanElement;
-          if (!dom.classList.contains('edim-mention')) {
+          if (!dom.classList.contains('edybara-mention')) {
             return false;
           }
           return {
@@ -63,7 +63,7 @@ export const edimMentionMarks = (
       return [
         'span',
         {
-          class: 'edim-mention',
+          class: 'edybara-mention',
           'data-id': attrs.data_id,
         },
         0,

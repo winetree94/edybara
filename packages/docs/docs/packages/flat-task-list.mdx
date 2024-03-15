@@ -10,40 +10,40 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edim-editor/flat-task-list
+npm install @edybara-editor/flat-task-list
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edim-editor/flat-task-list/styles/flat-task-list.scss";
+@import "@edybara-editor/flat-task-list/styles/flat-task-list.scss";
 ```
 
 ## 서식
 
-#### `edimFlatTaskListNodes`
+#### `edybaraFlatTaskListNodes`
 
-할일 목록을 표현하기 위한 서식을 제공합니다. 반드시 `edimFlatTaskListItemNodes` 와 함께 사용해야 합니다.
+할일 목록을 표현하기 위한 서식을 제공합니다. 반드시 `edybaraFlatTaskListItemNodes` 와 함께 사용해야 합니다.
 
-#### `edimFlatTaskListItemNodes`
+#### `edybaraFlatTaskListItemNodes`
 
-할일 목록의 항목을 표현하기 위한 서식을 제공합니다. 반드시 `edimFlatTaskListNodes` 와 함께 사용해야 합니다.
+할일 목록의 항목을 표현하기 위한 서식을 제공합니다. 반드시 `edybaraFlatTaskListNodes` 와 함께 사용해야 합니다.
 
 ## 플러그인
 
-#### `edimFlatTaskListPlugins`
+#### `edybaraFlatTaskListPlugins`
 
 하단의 모든 플러그인을 통합 제공합니다.
 
-#### `edimFlatTaskListKeymapPlugins`
+#### `edybaraFlatTaskListKeymapPlugins`
 
 Flat List 내부에서 되는 기본 단축키를 제공합니다.
 
-#### `edimTaskListInputRulePlugins`
+#### `edybaraTaskListInputRulePlugins`
 
 `[]` 또는 `[x]` 패턴의 문자를 입력하면 Flat Task List 노드로 전환하는 InputRule 을 제공합니다.
 
-#### `edimFlatTaskListMergePlugins`
+#### `edybaraFlatTaskListMergePlugins`
 
 동일한 인접 리스트 노드를 자동으로 병합하는 기능을 제공합니다.
 
@@ -53,40 +53,40 @@ Flat List 내부에서 되는 기본 단축키를 제공합니다.
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
-import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
-import { edimFlatTaskListNodes, edimFlatTaskListItemNodes, edimFlatTaskListPlugins } from '@edim-editor/flat-task-list';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraFlatTaskListNodes, edybaraFlatTaskListItemNodes, edybaraFlatTaskListPlugins } from '@edybara-editor/flat-task-list';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
-    ...edimFlatTaskListNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
+    ...edybaraFlatTaskListNodes({
       nodeName: 'task_list',
     }),
-    ...edimFlatTaskListItemNodes({
+    ...edybaraFlatTaskListItemNodes({
       nodeName: 'task_list_item',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimFlatTaskListPlugins({
+  ...edybaraFlatTaskListPlugins({
     taskListNodeType: schema.nodes['task_list'],
     taskListItemNodeType: schema.nodes['task_list_item'],
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     taskList: {
       taskListNodeType: schema.nodes['task_list'],
       taskListItemNodeType: schema.nodes['task_list_item'],
     },
     align: {},
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 const view = new EditorView(document.querySelector('#editor'), {

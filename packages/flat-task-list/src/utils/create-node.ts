@@ -1,15 +1,15 @@
 import { Node } from 'prosemirror-model';
-import { EdimFlatTaskListItemAttrs } from '../schemas';
+import { EdybaraFlatTaskListItemAttrs } from '../schemas';
 
 export const createNode = (node: Node) => {
-  const attrs = node.attrs as EdimFlatTaskListItemAttrs;
-  const classes = ['edim-task-list-item'];
+  const attrs = node.attrs as EdybaraFlatTaskListItemAttrs;
+  const classes = ['edybara-task-list-item'];
   if (attrs.align && attrs.align !== 'left') {
-    classes.push(`edim-align-${attrs.align}`);
+    classes.push(`edybara-align-${attrs.align}`);
   }
-  classes.push(`edim-indent-${attrs.indent || 1}`);
+  classes.push(`edybara-indent-${attrs.indent || 1}`);
   if (attrs.checked) {
-    classes.push('edim-task-list-item-checked');
+    classes.push('edybara-task-list-item-checked');
   }
 
   const li = document.createElement('li');

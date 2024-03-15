@@ -1,18 +1,18 @@
 import { NodeSpec } from 'prosemirror-model';
-import { isQuillTaskList } from '@edim-editor/core';
+import { isQuillTaskList } from '@edybara-editor/core';
 
 export const EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME = 'bullet_list';
 
-export interface EdimFlatBulletListNodeConfigs {
+export interface EdybaraFlatBulletListNodeConfigs {
   nodeName?: string;
 }
 
-const DEFAULT_CONFIGS: Required<EdimFlatBulletListNodeConfigs> = {
+const DEFAULT_CONFIGS: Required<EdybaraFlatBulletListNodeConfigs> = {
   nodeName: EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME,
 };
 
-export const edimFlatBulletListNodes = (
-  configs?: EdimFlatBulletListNodeConfigs,
+export const edybaraFlatBulletListNodes = (
+  configs?: EdybaraFlatBulletListNodeConfigs,
 ): Record<string, NodeSpec> => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
@@ -38,7 +38,7 @@ export const edimFlatBulletListNodes = (
       return [
         'ul',
         {
-          class: 'edim-bullet-list',
+          class: 'edybara-bullet-list',
         },
         0,
       ];

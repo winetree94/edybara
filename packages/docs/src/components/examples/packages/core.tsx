@@ -6,36 +6,36 @@ import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
 import {
-  edimBaseNodes,
-  edimCorePlugins,
-  edimBasicKeymapPlugins,
-  edimDropCursorPlugins,
-  edimGapCursorPlugins,
-  edimHistoryPlugins,
-  edimVirtualCursorPlugins,
-} from '@edim-editor/core';
+  edybaraBaseNodes,
+  edybaraCorePlugins,
+  edybaraBasicKeymapPlugins,
+  edybaraDropCursorPlugins,
+  edybaraGapCursorPlugins,
+  edybaraHistoryPlugins,
+  edybaraVirtualCursorPlugins,
+} from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimCorePlugins(),
-  // ...edimBasicKeymapPlugins(),
-  // ...edimHistoryPlugins(),
-  // ...edimVirtualCursorPlugins(),
-  // ...edimDropCursorPlugins(),
-  // ...edimGapCursorPlugins(),
+  ...edybaraCorePlugins(),
+  // ...edybaraBasicKeymapPlugins(),
+  // ...edybaraHistoryPlugins(),
+  // ...edybaraVirtualCursorPlugins(),
+  // ...edybaraDropCursorPlugins(),
+  // ...edybaraGapCursorPlugins(),
 ];
 
 export const CoreExample = (props: ProseMirrorProps) => {

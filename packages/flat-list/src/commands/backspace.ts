@@ -3,13 +3,13 @@ import { indentListItem } from './indent-list-item';
 import { findParentNode } from 'prosemirror-utils';
 import { NodeType } from 'prosemirror-model';
 
-export interface EdimListItemBackspaceCommandConfigs {
+export interface EdybaraListItemBackspaceCommandConfigs {
   listNodeTypes: NodeType[];
   listItemNodeType: NodeType;
 }
 
 export const listItemBackspace =
-  (configs: EdimListItemBackspaceCommandConfigs): Command =>
+  (configs: EdybaraListItemBackspaceCommandConfigs): Command =>
   (state, dispatch) => {
     const listItemNodeType = configs.listItemNodeType;
     const selection = state.selection;

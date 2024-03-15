@@ -5,17 +5,17 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 import {
-  EdimMentionView,
-  edimMentionMarks,
-  edimMentionPlugins,
-} from '@edim-editor/mention';
+  EdybaraMentionView,
+  edybaraMentionMarks,
+  edybaraMentionPlugins,
+} from '@edybara-editor/mention';
 import { faker } from '@faker-js/faker';
 
 const persons = Array.from({ length: 200 }).map(() => ({
@@ -26,35 +26,35 @@ const persons = Array.from({ length: 200 }).map(() => ({
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edimMentionMarks({
+    ...edybaraMentionMarks({
       markName: 'mention',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimMentionPlugins({
+  ...edybaraMentionPlugins({
     markType: schema.marks['mention'],
     commandView: (view, plugin) =>
-      new EdimMentionView(view, plugin, (keyword) => {
+      new EdybaraMentionView(view, plugin, (keyword) => {
         return persons.filter((person) =>
           person.name.toLowerCase().includes(keyword.toLowerCase()),
         );
       }),
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     mention: {
       mentionMarkType: schema.marks['mention'],
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const MentionExample = (props: ProseMirrorProps) => {

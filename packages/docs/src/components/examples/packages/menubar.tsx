@@ -4,17 +4,17 @@ import {
   ProseMirrorProps,
 } from '@site/src/components/editor/prose-mirror';
 import { EditorState } from 'prosemirror-state';
-import { edimPresetSchema, edimPresetPlugins } from '@edim-editor/preset';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
+import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara-editor/preset';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
 
-const schema = edimPresetSchema();
-const plugins = edimPresetPlugins({
+const schema = edybaraPresetSchema();
+const plugins = edybaraPresetPlugins({
   schema,
   menubar: null,
 });
 
 plugins.push(
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     textType: {
       paragraphNodeType: schema.nodes['paragraph'],
       headingNodeType: schema.nodes['heading'],

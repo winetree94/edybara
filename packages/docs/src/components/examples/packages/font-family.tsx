@@ -5,21 +5,21 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
-import { edimMenubarPlugins } from '@edim-editor/menubar';
-import { edimFontFamilyMarks } from '@edim-editor/font-family';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
+import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraFontFamilyMarks } from '@edybara-editor/font-family';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes(),
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edimFontFamilyMarks({
+    ...edybaraFontFamilyMarks({
       markName: 'font_family',
       fonts: ['Arial', 'Verdana', 'Tahoma', 'Trebuchet MS'].map((font) => ({
         fontFamily: font,
@@ -29,15 +29,15 @@ const schema = new Schema({
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes.paragraph,
   }),
-  ...edimMenubarPlugins({
+  ...edybaraMenubarPlugins({
     fontFamily: {
       fontFamilyMarkType: schema.marks.fontFamily,
     },
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const FontFamilyExample = (props: ProseMirrorProps) => {

@@ -13,7 +13,7 @@ export interface MentionPluginView extends PluginView {
   handleKeydown?(view: EditorView, event: KeyboardEvent): boolean | void;
 }
 
-export interface EdimMentionCommandPluginConfigs {
+export interface EdybaraMentionCommandPluginConfigs {
   view?: (
     view: EditorView,
     plugin: PluginKey<MentionPluginState>,
@@ -23,8 +23,8 @@ export interface EdimMentionCommandPluginConfigs {
 /**
  * Provides a feature to display a mention search popup when the "@" character is entered.
  */
-export const edimMentionCommandPlugins = (
-  configs: EdimMentionCommandPluginConfigs,
+export const edybaraMentionCommandPlugins = (
+  configs: EdybaraMentionCommandPluginConfigs,
 ): PMPlugin[] => {
   const defaultPluginState: MentionPluginState = {
     active: false,

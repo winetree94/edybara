@@ -1,12 +1,12 @@
-.edim-view-mention-wrapper {
+.edybara-view-mention-wrapper {
   position: fixed;
 }
 
-.edim-view-mention-container {
+.edybara-view-mention-container {
   overflow-y: auto;
 }
 
-.edim-view-mention-list-item {
+.edybara-view-mention-list-item {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -16,7 +16,7 @@
   }
 }
 
-.edim-view-mention-list-item-avatar {
+.edybara-view-mention-list-item-avatar {
   flex-shrink: 0;
   margin-right: 8px;
   width: 32px;
@@ -24,13 +24,13 @@
   border-radius: 50%;
 }
 
-.edim-view-mention-list-item-content {
+.edybara-view-mention-list-item-content {
   flex: 1 1 auto;
   min-width: 0;
   overflow: hidden;
 }
 
-.edim-view-mention-item-name {
+.edybara-view-mention-item-name {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

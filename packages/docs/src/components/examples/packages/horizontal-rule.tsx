@@ -5,37 +5,37 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edimBaseNodes, edimCorePlugins } from '@edim-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
 import {
-  edimParagraphNodes,
-  edimParagraphPlugins,
-} from '@edim-editor/paragraph';
+  edybaraParagraphNodes,
+  edybaraParagraphPlugins,
+} from '@edybara-editor/paragraph';
 import {
-  edimHorizontalRuleNodes,
-  edimHorizontalRulePlugins,
-} from '@edim-editor/hr';
+  edybaraHorizontalRuleNodes,
+  edybaraHorizontalRulePlugins,
+} from '@edybara-editor/hr';
 
 const schema = new Schema({
   nodes: {
-    ...edimBaseNodes(),
-    ...edimParagraphNodes({
+    ...edybaraBaseNodes(),
+    ...edybaraParagraphNodes({
       allowAlign: true,
       nodeName: 'paragraph',
     }),
-    ...edimHorizontalRuleNodes({
+    ...edybaraHorizontalRuleNodes({
       nodeName: 'horizontal_rule',
     }),
   },
 });
 
 const plugins: Plugin[] = [
-  ...edimParagraphPlugins({
+  ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edimHorizontalRulePlugins({
+  ...edybaraHorizontalRulePlugins({
     nodeType: schema.nodes['horizontal_rule'],
   }),
-  ...edimCorePlugins(),
+  ...edybaraCorePlugins(),
 ];
 
 export const HorizontalRuleExample = (props: ProseMirrorProps) => {

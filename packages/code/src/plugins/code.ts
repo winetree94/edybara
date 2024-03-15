@@ -1,14 +1,14 @@
 import { MarkType } from 'prosemirror-model';
-import { edimCodeKeymapPlugins } from './keymap';
-import { edimCodeInputRulePlugins } from './input-rules';
+import { edybaraCodeKeymapPlugins } from './keymap';
+import { edybaraCodeInputRulePlugins } from './input-rules';
 
-export interface EdimCodePluginConfigs {
+export interface EdybaraCodePluginConfigs {
   markType: MarkType;
 }
 
-export const edimCodePlugins = (configs: EdimCodePluginConfigs) => {
+export const edybaraCodePlugins = (configs: EdybaraCodePluginConfigs) => {
   return [
-    ...edimCodeKeymapPlugins(configs),
-    ...edimCodeInputRulePlugins(configs),
+    ...edybaraCodeKeymapPlugins(configs),
+    ...edybaraCodeInputRulePlugins(configs),
   ];
 };

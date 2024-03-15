@@ -1,4 +1,4 @@
-@import '@edim-editor/preset/styles/preset.scss';
+@import '@edybara-editor/preset/styles/preset.scss';
 
 /* You can override the default Infima variables here. */
 :root {
@@ -34,7 +34,7 @@ body {
   overflow: hidden;
 }
 
-.edim-root {
+.edybara-root {
   width: 100%;
   margin: var(--ifm-leading) 0;
 }

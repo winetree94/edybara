@@ -1,5 +1,5 @@
 import { ComponentChildren } from 'preact';
-import { classes, html, EdimOverlay } from '../../cdk';
+import { classes, html, EdybaraOverlay } from '../../cdk';
 import {
   createContext,
   forwardRef,
@@ -8,25 +8,25 @@ import {
   useRef,
   useState,
 } from 'preact/compat';
-import { EdimLayer } from '../layer';
-import { EdimListItem, EdimUnorderedList } from '../list';
-import { EdimButton } from '../button';
+import { EdybaraLayer } from '../layer';
+import { EdybaraListItem, EdybaraUnorderedList } from '../list';
+import { EdybaraButton } from '../button';
 
-interface EdimSelectContextValue {
+interface EdybaraSelectContextValue {
   opened: { target: HTMLElement } | null;
   value: string;
   onSelect: (value: string) => void;
   close: () => void;
 }
 
-const EdimSelectContext = createContext<EdimSelectContextValue>({
+const EdybaraSelectContext = createContext<EdybaraSelectContextValue>({
   opened: null,
   value: '',
   onSelect: () => {},
   close: () => {},
 });
 
-export interface EdimSelectProps {
+export interface EdybaraSelectProps {
   children: ComponentChildren;
   value: string;
   className: string;
@@ -35,7 +35,7 @@ export interface EdimSelectProps {
   disabled?: boolean;
 }
 
-const EdimSelectRoot = forwardRef<HTMLDivElement, EdimSelectProps>(
+const EdybaraSelectRoot = forwardRef<HTMLDivElement, EdybaraSelectProps>(
   ({ children, className, ...props }, ref) => {
     const wrapperRef = useRef<HTMLDivElement>();
     const [opened, setOpened] = useState<{ target: HTMLElement } | null>(null);
@@ -52,19 +52,19 @@ const EdimSelectRoot = forwardRef<HTMLDivElement, EdimSelectProps>(
     };
 
     return html`
-      <${EdimSelectContext.Provider} value=${{
+      <${EdybaraSelectContext.Provider} value=${{
         opened: opened,
         value: props.value,
         onSelect: onSelect,
         close: close,
       }}>
-        <${EdimButton}
+        <${EdybaraButton}
           ref="${wrapperRef}"
           disabled="${props.disabled}"
           className="${classes(
-            'edim-select',
-            opened ? 'edim-active' : '',
-            props.disabled ? 'edim-disabled' : '',
+            'edybara-select',
+            opened ? 'edybara-active' : '',
+            props.disabled ? 'edybara-disabled' : '',
             className,
           )}"
           onclick="${() => {
@@ -77,42 +77,42 @@ const EdimSelectRoot = forwardRef<HTMLDivElement, EdimSelectProps>(
               ? html`
                   <i
                     className="${classes(
-                      'edim-select-arrow-icon',
+                      'edybara-select-arrow-icon',
                       'ri-arrow-down-s-line',
                     )}"
                   ></i>
                 `
               : null
           }
-        </${EdimButton}>
-      </${EdimSelectContext.Provider}>
+        </${EdybaraButton}>
+      </${EdybaraSelectContext.Provider}>
     `;
   },
 );
 
-export interface EdimSelectTextProps {
+export interface EdybaraSelectTextProps {
   children: ComponentChildren;
 }
 
-const EdimSelectText = ({ children }: EdimSelectTextProps) => {
+const EdybaraSelectText = ({ children }: EdybaraSelectTextProps) => {
   return children;
 };
 
-export interface EdimSelectOptionProps {
+export interface EdybaraSelectOptionProps {
   children: ComponentChildren;
   className?: string;
   onClick?: () => void;
   value: string;
 }
 
-const EdimSelectOption = forwardRef<HTMLLIElement, EdimSelectOptionProps>(
+const EdybaraSelectOption = forwardRef<HTMLLIElement, EdybaraSelectOptionProps>(
   ({ children, value, className, onClick }, ref) => {
-    const context = useContext(EdimSelectContext);
+    const context = useContext(EdybaraSelectContext);
     return html`
-      <${EdimListItem} 
+      <${EdybaraListItem} 
         className="${classes(
-          'edim-select-option',
-          context.value === value ? 'edim-active' : '',
+          'edybara-select-option',
+          context.value === value ? 'edybara-active' : '',
           className,
         )}"
         onclick=${() => {
@@ -120,22 +120,22 @@ const EdimSelectOption = forwardRef<HTMLLIElement, EdimSelectOptionProps>(
           onClick?.();
         }}>
         ${children}
-      </${EdimListItem}>
+      </${EdybaraListItem}>
     `;
   },
 );
 
-export interface EdimSelectOptionGroupProps {
+export interface EdybaraSelectOptionGroupProps {
   className: string;
   children: ComponentChildren;
   matchWidth: boolean;
 }
 
-const EdimSelectOptionGroup = forwardRef<
+const EdybaraSelectOptionGroup = forwardRef<
   HTMLDivElement,
-  EdimSelectOptionGroupProps
+  EdybaraSelectOptionGroupProps
 >(({ className, children, ...props }) => {
-  const context = useContext(EdimSelectContext);
+  const context = useContext(EdybaraSelectContext);
 
   if (context.opened === null) {
     return null;
@@ -145,23 +145,23 @@ const EdimSelectOptionGroup = forwardRef<
   const rect = target.getBoundingClientRect();
 
   return html`
-    <${EdimOverlay}>
-      <${EdimLayer}
+    <${EdybaraOverlay}>
+      <${EdybaraLayer}
         target="${context.opened.target}"
         maxHeight="${300}"
         width="${props.matchWidth ? rect.width : undefined}"
         outerMousedown="${() => context.close()}">
-        <${EdimUnorderedList} className="${classes(className)}">
+        <${EdybaraUnorderedList} className="${classes(className)}">
           ${children}
-        </${EdimUnorderedList}>
-      </${EdimLayer}>
-    </${EdimOverlay}>
+        </${EdybaraUnorderedList}>
+      </${EdybaraLayer}>
+    </${EdybaraOverlay}>
   `;
 });
 
-export const EdimSelect = {
-  Root: EdimSelectRoot,
-  Text: EdimSelectText,
-  OptionGroup: EdimSelectOptionGroup,
-  Option: EdimSelectOption,
+export const EdybaraSelect = {
+  Root: EdybaraSelectRoot,
+  Text: EdybaraSelectText,
+  OptionGroup: EdybaraSelectOptionGroup,
+  Option: EdybaraSelectOption,
 } as const;
