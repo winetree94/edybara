@@ -1,0 +1,12 @@
+.ProseMirror {
+  pre.edim-codeblock-wrapper {
+    white-space: pre-wrap;
+    border-radius: 3px;
+    background-color: #F3F4F5;
+    padding: 8px;
+
+    code.edim-codeblock-code {
+      line-height: 24px;
+    }
+  }
+}

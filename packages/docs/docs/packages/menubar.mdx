@@ -1,0 +1,108 @@
+---
+sidebar_position: 3
+---
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+# Menubar
+
+에디터의 **툴바**를 표현하기 위한 플러그인을 제공합니다.
+
+## 설치
+
+```bash
+npm install @edim-editor/menubar
+```
+
+## 스타일
+
+```css title="src/index.scss"
+@import "@edim-editor/menubar/styles/menubar.scss";
+```
+
+## 플러그인
+
+#### edimMenubarPlugins
+
+에디터의 툴바를 표시하고 본문의 스크롤 영역을 생성합니다.
+
+## 사용 예시
+
+```typescript title="src/index.ts"
+import { EditorState, Plugin } from 'prosemirror-state';
+import { Schema } from 'prosemirror-model';
+import { EditorView } from 'prosemirror-view';
+import { edimBaseNodes, edimCorePlugins, mac } from '@edim-editor/core';
+import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
+import { edimMenubarPlugins } from '@edim-editor/menubar';
+
+const schema = edimPresetSchema();
+
+const plugins = edimPresetPlugins({
+  schema,
+  // Preset 에서 메뉴바 플러그인을 해제하고 수동으로 추가
+  menubar: false,
+});
+
+plugins.push(
+  ...edimMenubarPlugins({
+    textType: {
+      paragraphNodeType: schema.nodes['paragraph'],
+      headingNodeType: schema.nodes['heading'],
+    },
+    fontFamily: {
+      fontFamilyMarkType: schema.marks['font_family'],
+    },
+    textStyles: {
+      boldMarkType: schema.marks['bold'],
+      italicMarkType: schema.marks['italic'],
+      underlineMarkType: schema.marks['underline'],
+      strikethroughMarkType: schema.marks['strikethrough'],
+      codeMarkType: schema.marks['code'],
+      subscriptMarkType: schema.marks['subscript'],
+      superscriptMarkType: schema.marks['superscript'],
+      useClearButton: true,
+    },
+    textColor: {
+      textColorMarkType: schema.marks['text_color'],
+    },
+    align: {},
+    list: {
+      flatOrderedListNodeType: schema.nodes['ordered_list'],
+      flatBulletListNodeType: schema.nodes['bullet_list'],
+      flatListItemNodeType: schema.nodes['list_item'],
+    },
+    taskList: {
+      flatTaskListNodeType: schema.nodes['task_list'],
+      flatTaskListItemNodeType: schema.nodes['task_list_item'],
+    },
+    blockquote: {
+      blockQuoteNodeType: schema.nodes['blockquote'],
+    },
+    codeblock: {
+      codeBlockNodeType: schema.nodes['code_block'],
+    },
+    table: {
+      tableNodeType: schema.nodes['table'],
+    },
+    link: {
+      linkMarkType: schema.marks['link'],
+    },
+  }),
+);
+
+const view = new EditorView(document.querySelector('#editor'), {
+  state: EditorState.create({
+    schema: schema,
+    plugins: plugins,
+  }),
+});
+```
+
+<BrowserOnly>
+  {() => {
+    const { MenubarExample } = require('@site/src/components/examples/packages/menubar.tsx');
+    return <MenubarExample />
+  }}
+</BrowserOnly>
+

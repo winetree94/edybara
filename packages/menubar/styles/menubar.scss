@@ -1,0 +1,59 @@
+@import '../src/components/text-type/text-type.scss';
+@import '../src/components/font-family/font-family.scss';
+@import '../src/components/font-color/font-color.scss';
+@import '../src/components/marks/marks.scss';
+@import '../src/components/text-align/text-align.scss';
+
+.edim-view-editor-root {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--black-100);
+}
+
+.edim-view-editor-scroll {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.edim-view-editor {
+  position: relative;
+  max-width: 760px;
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: inherit;
+  min-height: 0;
+  background-color: white;
+  color: black;
+}
+
+.edim-view-editor-menubar-root {
+  border-bottom: 1px solid var(--black-100);
+
+  &.bottom {
+    border-bottom: none;
+    border-top: 1px solid var(--black-100);
+  }
+}
+
+.edim-view-menubar-wrapper {
+  padding: 8px 8px;
+  min-height: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  position: relative;
+}
+
+.edim-view-menubar-separator {
+  margin: 4px 4px;
+}

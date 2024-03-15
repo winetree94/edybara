@@ -1,0 +1,91 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc",
+    "clean:dist": "rimraf dist",
+    "clean:dependency": "rimraf node_modules"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.0.1",
+    "@docusaurus/preset-classic": "^3.0.1",
+    "@faker-js/faker": "^8.1.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^1.2.1",
+    "prism-react-renderer": "^2.1.0",
+    "prosemirror-commands": "*",
+    "prosemirror-dropcursor": "*",
+    "prosemirror-gapcursor": "*",
+    "prosemirror-history": "*",
+    "prosemirror-inputrules": "*",
+    "prosemirror-keymap": "*",
+    "prosemirror-model": "*",
+    "prosemirror-schema-basic": "*",
+    "prosemirror-state": "*",
+    "prosemirror-transform": "*",
+    "prosemirror-view": "*",
+    "@edim-editor/blockquote": "*",
+    "@edim-editor/codeblock": "*",
+    "@edim-editor/command": "*",
+    "@edim-editor/core": "*",
+    "@edim-editor/emoji": "*",
+    "@edim-editor/flat-list": "*",
+    "@edim-editor/flat-task-list": "*",
+    "@edim-editor/heading": "*",
+    "@edim-editor/hr": "*",
+    "@edim-editor/image": "*",
+    "@edim-editor/link": "*",
+    "@edim-editor/mention": "*",
+    "@edim-editor/paragraph": "*",
+    "@edim-editor/bold": "*",
+    "@edim-editor/code": "*",
+    "@edim-editor/font-family": "*",
+    "@edim-editor/italic": "*",
+    "@edim-editor/strikethrough": "*",
+    "@edim-editor/subscript": "*",
+    "@edim-editor/superscript": "*",
+    "@edim-editor/text-color": "*",
+    "@edim-editor/underline": "*",
+    "@edim-editor/tables": "*",
+    "@edim-editor/ui": "*",
+    "@edim-editor/menubar": "*",
+    "@edim-editor/preset": "*",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "remixicon": "^3.5.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.0.1",
+    "@docusaurus/tsconfig": "^3.0.1",
+    "@docusaurus/types": "^3.0.1",
+    "docusaurus-plugin-sass": "^0.2.5",
+    "sass": "^1.69.5",
+    "tsconfig-paths-webpack-plugin": "4.1.0",
+    "typescript": "~5.2.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.14"
+  }
+}

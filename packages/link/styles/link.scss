@@ -1,0 +1,8 @@
+@import '../src/components/link-layer/link-layer.scss';
+@import '../src/components/link-floating-layer/link-floating-layer.scss';
+
+.ProseMirror {
+  a.edim-link {
+    color: blue;
+  }
+}

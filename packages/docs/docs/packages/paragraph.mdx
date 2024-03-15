@@ -1,0 +1,82 @@
+---
+sidebar_position: 4
+---
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+# Paragraph
+
+`@edim-editor/paragraph` 에디터에 **문단**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
+
+## 설치
+
+```bash
+npm install @edim-editor/paragraph
+```
+
+## 스타일
+
+```css title="src/index.scss"
+@import "@edim-editor/paragraph/styles/paragraph.scss";
+```
+
+## 서식
+
+#### `edimParagraphNodes`
+
+문단 서식을 제공합니다.
+
+## 플러그인
+
+#### `edimParagraphPlugins`
+
+하단의 모든 플러그인을 통합 제공합니다.
+
+#### `edimBasicKeymapPlugins`
+
+현재 선택 영역의 블록 노드를 Paragraph 노드로 전환하는 단축키를 제공합니다.
+
+## 사용 예시
+
+```typescript title="src/index.ts"
+import { EditorState, Plugin } from 'prosemirror-state';
+import { Schema } from 'prosemirror-model';
+import { EditorView } from 'prosemirror-view';
+import { edimBaseNodes, edimCorePlugins, mac } from '@edim-editor/core';
+import { edimMenubarPlugins } from '@edim-editor/menubar';
+import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
+
+const schema = new Schema({
+  nodes: {
+    ...edimBaseNodes(),
+    ...edimParagraphNodes({
+      allowAlign: true,
+      nodeName: 'paragraph',
+    }),
+  },
+});
+
+const plugins: Plugin[] = [
+  ...edimParagraphPlugins({
+    nodeType: schema.nodes['paragraph'],
+  }),
+  ...edimMenubarPlugins({
+    align: {},
+  }),
+  ...edimCorePlugins(),
+];
+
+const view = new EditorView(document.querySelector('#editor'), {
+  state: EditorState.create({
+    schema: schema,
+    plugins: plugins,
+  }),
+});
+```
+
+<BrowserOnly>
+  {() => {
+    const { ParagraphExample } = require('@site/src/components/examples/packages/paragraph.tsx');
+    return <ParagraphExample />
+  }}
+</BrowserOnly>
+

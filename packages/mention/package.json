@@ -1,0 +1,33 @@
+{
+  "name": "@edim-editor/mention",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsup --watch --tsconfig tsconfig.build.json",
+    "clean:dist": "rimraf dist",
+    "clean:dependency": "rimraf node_modules",
+    "build": "npm run clean:dist && npm run build:ts && npm run build:style",
+    "build:ts": "tsup --tsconfig tsconfig.build.json",
+    "build:style": "sass styles:styles"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "style": "styles/mention.scss",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "dependencies": {
+    "prosemirror-state": "*",
+    "prosemirror-model": "*",
+    "@edim-editor/core": "*",
+    "prosemirror-keymap": "*",
+    "prosemirror-inputrules": "*",
+    "@edim-editor/ui": "*"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.1",
+    "typescript": "^5.2.2",
+    "sass": "^1.69.5"
+  }
+}

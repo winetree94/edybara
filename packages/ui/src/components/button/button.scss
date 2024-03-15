@@ -1,0 +1,47 @@
+.edim-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  white-space: nowrap;
+
+  font-size: 16px;
+  height: var(--ui-height);
+  color: var(--spindle-950);
+  padding: 0 4px;
+  background-color: var(--white-50);
+
+  &.edim-icon-button {
+    padding: 0;
+    width: var(--ui-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.selected {
+    // font-weight: bold;
+    color: var(--spindle-700);
+    background-color: var(--spindle-50);
+  }
+
+  &.edim-active {
+    background-color: var(--white-200);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--white-300);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--white-100);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--white-200);
+  }
+}

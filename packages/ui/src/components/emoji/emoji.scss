@@ -1,0 +1,29 @@
+.edim-view-emoji-picker {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+
+.edim-view-emoji-category-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+
+.edim-view-emoji-category-button {
+  flex-shrink: 0;
+}
+
+.edim-view-emoji-view {
+  flex: 0 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.edim-view-emoji-picker-emoji {
+  overflow: hidden;
+}

@@ -1,0 +1,139 @@
+.ProseMirror {
+
+  li.edim-list-item {
+    position: relative;
+  }
+
+  ul.edim-bullet-list,
+  ol.edim-ordered-list {
+    padding-left: 0;
+    list-style-type: none;
+
+    li.edim-list-item {
+      display: flex;
+      word-break: break-all;
+      line-height: normal;
+
+      &::before {
+        flex-shrink: 0;
+        font-family: auto;
+      }
+
+      &:first-child {
+        margin-top: 10px; 
+      }
+      margin: 10px 0;
+
+      p.edim-paragraph {
+        margin: 0;
+      }
+
+      &.edim-align-center {
+        text-align: center;
+        justify-content: center;
+      }
+      &.edim-align-right {
+        text-align: right;
+        justify-content: flex-end;
+      }
+
+      @for $i from 1 through 6 {
+        &.edim-list-item-indent-#{$i} {
+          margin-left: 30px * $i;
+        }
+      }
+
+      &:before {
+        vertical-align: top;
+        margin-left: -1.5em;
+        margin-right: 0.3em;
+        margin-top: 2px;
+        text-align: right;
+        display: inline-block;
+        white-space: nowrap;
+        width: 1.2em;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  ul.edim-bullet-list {
+    li.edim-list-item {
+      &.edim-list-item-indent-1::before {
+        content: '\25cf';
+      }
+      &.edim-list-item-indent-2::before {
+        content: '\25cb';
+      }
+      &.edim-list-item-indent-3::before {
+        content: '\25a0';
+      }
+      &.edim-list-item-indent-4::before {
+        content: '\25cf';
+      }
+      &.edim-list-item-indent-5::before {
+        content: '\25cb';
+      }
+      &.edim-list-item-indent-6::before {
+        content: '\25a0';
+      }
+    }
+  }
+
+  ol.edim-ordered-list {
+    counter-reset: list-1 list-2 list-3 list-4 list-5 list-6;
+    counter-increment: list-0;
+
+    li.edim-list-item {
+      &.edim-list-item-indent-1 {
+        counter-reset: list-2 list-3 list-4 list-5 list-6 list-7;
+        counter-increment: list-1;
+
+        &::before {
+          font-family: auto;
+          content: counter(list-1, decimal) '. ';
+        }
+      }
+
+      &.edim-list-item-indent-2 {
+        counter-reset: list-3 list-4 list-5 list-6 list-7;
+        counter-increment: list-2;
+
+        &::before {
+          font-family: auto;
+          content: counter(list-2, lower-alpha) '. ';
+        }
+      }
+
+      &.edim-list-item-indent-3 {
+        counter-reset: list-4 list-5 list-6 list-7;
+        counter-increment: list-3;
+
+        &::before {
+          font-family: auto;
+          content: counter(list-3, lower-roman) '. ';
+        }
+      }
+
+      &.edim-list-item-indent-4 {
+        counter-reset: list-5 list-6 list-7;
+        counter-increment: list-4;
+
+        &::before {
+          font-family: auto;
+          content: counter(list-4, decimal) '. ';
+        }
+      }
+
+      &.edim-list-item-indent-5 {
+        counter-reset: list-6 list-7;
+        counter-increment: list-5;
+
+        &::before {
+          font-family: auto;
+          content: counter(list-5, lower-alpha) '. ';
+        }
+      }
+    }
+  }
+}

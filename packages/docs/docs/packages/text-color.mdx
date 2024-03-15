@@ -1,0 +1,88 @@
+---
+sidebar_position: 19
+---
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+# Text Color
+
+에디터에 **텍스트 색상**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
+
+## 설치
+
+```bash
+npm install @edim-editor/text-color
+```
+
+## 스타일
+
+```css title="src/index.scss"
+@import "@edim-editor/text-color/styles/text-color.scss";
+```
+
+## 서식
+
+#### `edimTextColorMarks`
+
+텍스트 색상 서식을 제공합니다.
+
+## 사용 예시
+
+```typescript title="src/index.ts"
+import { EditorState, Plugin } from 'prosemirror-state';
+import { Schema } from 'prosemirror-model';
+import { EditorView } from 'prosemirror-view';
+import { edimBaseNodes, edimCorePlugins, mac } from '@edim-editor/core';
+import { edimParagraphNodes, edimParagraphPlugins, } from '@edim-editor/paragraph';
+import { edimMenubarPlugins } from '@edim-editor/menubar';
+import { edimTextColorMarks } from '@edim-editor/text-color';
+
+const schema = new Schema({
+  nodes: {
+    ...edimBaseNodes(),
+    ...edimParagraphNodes(),
+  },
+  marks: {
+    ...edimTextColorMarks({
+      markName: 'text_color',
+      colors: [
+        '#182B4D',
+        '#0055CC',
+        '#206A83',
+        '#216E4E',
+        '#E56910',
+        '#AE2E24',
+        '#5E4DB2',
+      ].map((color) => ({
+        color: color,
+      })),
+    }),
+  },
+});
+
+const plugins: Plugin[] = [
+  ...edimParagraphPlugins({
+    nodeType: schema.nodes['paragraph'],
+  }),
+  ...edimMenubarPlugins({
+    textColor: {
+      textColorMarkType: schema.marks['text_color'],
+    },
+  }),
+  ...edimCorePlugins(),
+];
+
+const view = new EditorView(document.querySelector('#editor'), {
+  state: EditorState.create({
+    schema: schema,
+    plugins: plugins,
+  }),
+});
+```
+
+<BrowserOnly>
+  {() => {
+    const { TextColorExample } = require('@site/src/components/examples/packages/text-color.tsx');
+    return <TextColorExample />
+  }}
+</BrowserOnly>
+

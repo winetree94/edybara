@@ -1,0 +1,15 @@
+@import '../src/views/image-placeholder.scss';
+
+.ProseMirror {
+  div.edim-image-wrapper {
+    &.edim-image-align-left {
+      text-align: left;
+    }
+    &.edim-image-align-center {
+      text-align: center;
+    }
+    &.edim-image-align-right {
+      text-align: right;
+    }
+  }
+}
