@@ -29,10 +29,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
+      - name: Set yarn version
+        run: yarn set version stable
 
       - name: Build App
         run: yarn build:docs
