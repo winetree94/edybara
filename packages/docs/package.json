@@ -17,8 +17,8 @@
     "clean:dependency": "rimraf node_modules"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.0.1",
-    "@docusaurus/preset-classic": "^3.0.1",
+    "@docusaurus/core": "^3.1.1",
+    "@docusaurus/preset-classic": "^3.1.1",
     "@edybara-editor/blockquote": "*",
     "@edybara-editor/bold": "*",
     "@edybara-editor/code": "*",
@@ -66,9 +66,9 @@
     "remixicon": "^3.5.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.0.1",
-    "@docusaurus/tsconfig": "^3.0.1",
-    "@docusaurus/types": "^3.0.1",
+    "@docusaurus/module-type-aliases": "^3.1.1",
+    "@docusaurus/tsconfig": "^3.1.1",
+    "@docusaurus/types": "^3.1.1",
     "docusaurus-plugin-sass": "^0.2.5",
     "sass": "^1.69.5",
     "tsconfig-paths-webpack-plugin": "4.1.0",

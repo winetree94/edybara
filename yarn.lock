@@ -1748,7 +1748,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/core@npm:3.1.1, @docusaurus/core@npm:^3.0.1":
+"@docusaurus/core@npm:3.1.1, @docusaurus/core@npm:^3.1.1":
   version: 3.1.1
   resolution: "@docusaurus/core@npm:3.1.1"
   dependencies:
@@ -1889,7 +1889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/module-type-aliases@npm:3.1.1, @docusaurus/module-type-aliases@npm:^3.0.1":
+"@docusaurus/module-type-aliases@npm:3.1.1, @docusaurus/module-type-aliases@npm:^3.1.1":
   version: 3.1.1
   resolution: "@docusaurus/module-type-aliases@npm:3.1.1"
   dependencies:
@@ -2064,7 +2064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/preset-classic@npm:^3.0.1":
+"@docusaurus/preset-classic@npm:^3.1.1":
   version: 3.1.1
   resolution: "@docusaurus/preset-classic@npm:3.1.1"
   dependencies:
@@ -2199,14 +2199,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/tsconfig@npm:^3.0.1":
+"@docusaurus/tsconfig@npm:^3.1.1":
   version: 3.1.1
   resolution: "@docusaurus/tsconfig@npm:3.1.1"
   checksum: 10c0/5325ae169c19e155bdaf5b3e5da7ef6d3300a8f24e6271d76c4ae1671c2e385c4d60df72640c8ddd9f640213eeadeb59a16c60fe60b4fe34f70f66da9fa59186
   languageName: node
   linkType: hard
 
-"@docusaurus/types@npm:3.1.1, @docusaurus/types@npm:^3.0.1":
+"@docusaurus/types@npm:3.1.1, @docusaurus/types@npm:^3.1.1":
   version: 3.1.1
   resolution: "@docusaurus/types@npm:3.1.1"
   dependencies:
@@ -6253,11 +6253,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:packages/docs"
   dependencies:
-    "@docusaurus/core": "npm:^3.0.1"
-    "@docusaurus/module-type-aliases": "npm:^3.0.1"
-    "@docusaurus/preset-classic": "npm:^3.0.1"
-    "@docusaurus/tsconfig": "npm:^3.0.1"
-    "@docusaurus/types": "npm:^3.0.1"
+    "@docusaurus/core": "npm:^3.1.1"
+    "@docusaurus/module-type-aliases": "npm:^3.1.1"
+    "@docusaurus/preset-classic": "npm:^3.1.1"
+    "@docusaurus/tsconfig": "npm:^3.1.1"
+    "@docusaurus/types": "npm:^3.1.1"
     "@edybara-editor/blockquote": "npm:*"
     "@edybara-editor/bold": "npm:*"
     "@edybara-editor/code": "npm:*"
