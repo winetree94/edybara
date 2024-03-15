@@ -4,6 +4,11 @@
   "license": "MIT",
   "private": true,
   "packageManager": "yarn@4.1.1",
+  "engines": {
+    "node": "^18.19.0",
+    "yarn": "^4.1.1",
+    "npm": "Please use yarn instead of NPM to install dependencies"
+  },
   "workspaces": [
     "packages/*"
   ],
