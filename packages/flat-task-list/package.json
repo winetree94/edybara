@@ -22,6 +22,7 @@
     "@edybara-editor/ui": "*",
     "prosemirror-commands": "*",
     "prosemirror-inputrules": "*",
+    "prosemirror-keymap": "*",
     "prosemirror-model": "*",
     "prosemirror-state": "*",
     "prosemirror-transform": "*",

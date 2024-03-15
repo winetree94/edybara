@@ -26,7 +26,9 @@
     "prosemirror-keymap": "*",
     "prosemirror-model": "*",
     "prosemirror-state": "*",
-    "prosemirror-transform": "*"
+    "prosemirror-transform": "*",
+    "prosemirror-utils": "*",
+    "prosemirror-view": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",

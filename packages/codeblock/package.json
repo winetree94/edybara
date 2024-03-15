@@ -19,6 +19,7 @@
   "dependencies": {
     "@edybara-editor/core": "*",
     "prosemirror-commands": "*",
+    "prosemirror-inputrules": "*",
     "prosemirror-keymap": "*",
     "prosemirror-model": "*",
     "prosemirror-state": "*",

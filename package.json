@@ -3,27 +3,27 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
+  "packageManager": "yarn@4.1.1",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "start": "nx start docs",
-    "start2": "yarn workspace docs start",
-    "dev": "nx start dev",
-    "clean:dist": "nx run-many -t clean:dist --all --maxParallel=10",
-    "clean:dependency": "nx run-many -t clean:dependency --all --maxParallel=10 && rimraf node_modules",
-    "reconfigure": "npm run clean:dist && npm run clean:dependency && rimraf package-lock.json && npm install",
-    "build": "nx run-many -t build --all --maxParallel=10",
-    "build:docs": "nx build docs"
+    "start": "yarn workspace docs start",
+    "dev": "yarn workspace dev start",
+    "clean:dist": "yarn workspaces foreach --all run clean:dist",
+    "clean:dependency": "yarn workspaces foreach --all run clean:dependency && rimraf node_modules",
+    "reconfigure": "yarn clean:dist && yarn clean:dependency && yarn install",
+    "build": "yarn workspaces foreach --all --topological --parallel run build",
+    "build:docs": "yarn workspace docs build"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
     "eslint": "^8.49.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
     "eslint-config-preact": "^1.3.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-jest": "^27.4.3",
+    "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"

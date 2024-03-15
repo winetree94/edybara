@@ -17,6 +17,8 @@
   "private": true,
   "dependencies": {
     "@edybara-editor/core": "*",
+    "prosemirror-commands": "*",
+    "prosemirror-keymap": "*",
     "prosemirror-model": "*"
   },
   "devDependencies": {

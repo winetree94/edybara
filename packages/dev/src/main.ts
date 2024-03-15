@@ -1,7 +1,10 @@
 import './style.scss';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara-editor/preset';
+import {
+  edybaraPresetSchema,
+  edybaraPresetPlugins,
+} from '@edybara-editor/preset';
 
 const schema = edybaraPresetSchema();
 const plugins = edybaraPresetPlugins({ schema });
@@ -17,3 +20,5 @@ const view = new EditorView(document.querySelector('#editor'), {
     spellcheck: 'false',
   },
 });
+
+console.log(view);

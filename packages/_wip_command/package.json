@@ -21,6 +21,8 @@
     "@edybara-editor/mention": "*",
     "@edybara-editor/tables": "*",
     "@edybara-editor/ui": "*",
+    "preact": "*",
+    "prosemirror-commands": "*",
     "prosemirror-inputrules": "*",
     "prosemirror-keymap": "*",
     "prosemirror-model": "*",

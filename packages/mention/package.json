@@ -19,6 +19,7 @@
   "dependencies": {
     "@edybara-editor/core": "*",
     "@edybara-editor/ui": "*",
+    "preact": "*",
     "prosemirror-inputrules": "*",
     "prosemirror-keymap": "*",
     "prosemirror-model": "*",
