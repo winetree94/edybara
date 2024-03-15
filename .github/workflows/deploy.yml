@@ -29,20 +29,13 @@ jobs:
         with:
           node-version: 18
 
-      - name: Cache dependencies
-        id: cache
-        uses: actions/cache@v3
+      - name: Run install
+        uses: borales/actions-yarn@v4
         with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
-
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+          cmd: install
 
       - name: Build App
-        run: npm run build:docs
+        run: yarn build:docs
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
