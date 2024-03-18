@@ -19,7 +19,6 @@
   "dependencies": {
     "@edybara/core": "*",
     "@edybara/flat-list": "*",
-    "@edybara/ui": "*",
     "prosemirror-commands": "*",
     "prosemirror-inputrules": "*",
     "prosemirror-keymap": "*",

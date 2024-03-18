@@ -2375,7 +2375,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@edybara/core@workspace:packages/core"
   dependencies:
-    "@edybara/ui": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-dropcursor: "npm:*"
     prosemirror-gapcursor: "npm:*"
@@ -2435,7 +2434,6 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/flat-list": "npm:*"
-    "@edybara/ui": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
     prosemirror-keymap: "npm:*"
@@ -2546,9 +2544,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara/mention@npm:*, @edybara/mention@workspace:packages/mention":
+"@edybara/mention@npm:*, @edybara/mention@workspace:packages/_wip_mention":
   version: 0.0.0-use.local
-  resolution: "@edybara/mention@workspace:packages/mention"
+  resolution: "@edybara/mention@workspace:packages/_wip_mention"
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/ui": "npm:*"

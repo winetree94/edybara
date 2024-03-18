@@ -17,7 +17,6 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara/ui": "*",
     "prosemirror-commands": "*",
     "prosemirror-dropcursor": "*",
     "prosemirror-gapcursor": "*",

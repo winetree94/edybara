@@ -19,7 +19,9 @@ const DEFAULT_STATE: Readonly<EdybaraLinkFloatingLayerPluginState> = {
 };
 
 export const EDIM_LINK_FLOATING_LAYER_PLUGIN_KEY =
-  new PluginKey<EdybaraLinkFloatingLayerPluginState>('edybara_link_floating_layer');
+  new PluginKey<EdybaraLinkFloatingLayerPluginState>(
+    'edybara_link_floating_layer',
+  );
 
 export interface edybaraLinkFloatingLayerPluginConfigs {
   markType: MarkType;

@@ -3,7 +3,7 @@ import { parseQuillTextAlign } from '@edybara/core';
 
 export const EDIM_PARAGRAPH_DEFAULT_NODE_NAME = 'paragraph';
 
-export interface ParagraphAttributes {
+export interface EdybaraParagraphAttributes {
   align: 'left' | 'right' | 'center' | null;
 }
 
@@ -56,7 +56,7 @@ export const edybaraParagraphNodes = (
       },
     ],
     toDOM(node) {
-      const attrs = node.attrs as ParagraphAttributes;
+      const attrs = node.attrs as EdybaraParagraphAttributes;
       const classes = ['edybara-paragraph'];
       if (attrs.align) {
         classes.push(`edybara-align-${attrs.align}`);
