@@ -22,7 +22,7 @@
     "module": "ESNext",
     "useDefineForClassFields": false,
     "lib": [
-      "ES6",
+      "ES2017",
       "dom"
     ]
   },
