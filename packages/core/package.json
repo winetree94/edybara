@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/core",
+  "name": "@edybara/core",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,7 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara-editor/ui": "*",
+    "@edybara/ui": "*",
     "prosemirror-commands": "*",
     "prosemirror-dropcursor": "*",
     "prosemirror-gapcursor": "*",

@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/blockquote",
+  "name": "@edybara/blockquote",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,7 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara-editor/core": "*",
+    "@edybara/core": "*",
     "prosemirror-commands": "*",
     "prosemirror-inputrules": "*",
     "prosemirror-keymap": "*",

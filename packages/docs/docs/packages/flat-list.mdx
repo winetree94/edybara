@@ -10,13 +10,13 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edybara-editor/flat-list
+npm install @edybara/flat-list
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edybara-editor/flat-list/styles/flat-list.scss";
+@import "@edybara/flat-list/styles/flat-list.scss";
 ```
 
 ## 서식
@@ -57,10 +57,10 @@ Flat List 내부에서 되는 기본 단축키를 제공합니다.
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
-import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
-import { edybaraFlatOrderedListNodes, edybaraFlatBulletListNodes, edybaraFlatListItemNodes, edybaraFlatListPlugins } from '@edybara-editor/flat-list';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara/paragraph';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
+import { edybaraFlatOrderedListNodes, edybaraFlatBulletListNodes, edybaraFlatListItemNodes, edybaraFlatListPlugins } from '@edybara/flat-list';
 
 const schema = new Schema({
   nodes: {

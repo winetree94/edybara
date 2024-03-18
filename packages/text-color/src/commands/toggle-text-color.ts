@@ -1,7 +1,7 @@
 import { MarkType } from 'prosemirror-model';
 import { Command } from 'prosemirror-state';
 import { toggleMark } from 'prosemirror-commands';
-import { toggleMarkWithAttrs } from '@edybara-editor/core';
+import { toggleMarkWithAttrs } from '@edybara/core';
 import { EdybaraTextColorAttrs } from 'schemas';
 
 export const toggleTextColorMark = (

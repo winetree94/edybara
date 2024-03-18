@@ -1,6 +1,6 @@
 import { inputRules } from 'prosemirror-inputrules';
 import { NodeType } from 'prosemirror-model';
-import { wrappingInputRuleWithJoin } from '@edybara-editor/core';
+import { wrappingInputRuleWithJoin } from '@edybara/core';
 import { Plugin } from 'prosemirror-state';
 
 export interface EdybaraTaskListInputRulePluginConfigs {

@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/tables",
+  "name": "@edybara/tables",
   "version": "1.3.4",
   "license": "MIT",
   "scripts": {
@@ -16,8 +16,8 @@
   "style": "styles/tables.scss",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@edybara-editor/core": "*",
-    "@edybara-editor/ui": "*",
+    "@edybara/core": "*",
+    "@edybara/ui": "*",
     "preact": "*",
     "prosemirror-keymap": "*",
     "prosemirror-model": "*",

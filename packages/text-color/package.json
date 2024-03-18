@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/text-color",
+  "name": "@edybara/text-color",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -16,7 +16,7 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara-editor/core": "*",
+    "@edybara/core": "*",
     "prosemirror-commands": "*",
     "prosemirror-model": "*"
   },

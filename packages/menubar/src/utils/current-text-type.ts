@@ -1,5 +1,5 @@
 import { EditorState } from 'prosemirror-state';
-import { EdybaraHeadingAttrs } from '@edybara-editor/heading';
+import { EdybaraHeadingAttrs } from '@edybara/heading';
 
 export const getTextType = (state: EditorState) => {
   const { selection } = state;

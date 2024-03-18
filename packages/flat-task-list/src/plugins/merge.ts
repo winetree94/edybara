@@ -1,6 +1,6 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edybaraMergeAdjacentNodePlugins } from '@edybara-editor/core';
+import { edybaraMergeAdjacentNodePlugins } from '@edybara/core';
 
 export interface EdybaraFlatTaskListMergePluginConfigs {
   taskListNodeType: NodeType;

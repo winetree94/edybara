@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/paragraph",
+  "name": "@edybara/paragraph",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,7 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara-editor/core": "*",
+    "@edybara/core": "*",
     "orderedmap": "*",
     "prosemirror-commands": "*",
     "prosemirror-inputrules": "*",

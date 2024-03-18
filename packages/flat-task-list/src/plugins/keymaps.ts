@@ -5,7 +5,7 @@ import {
   splitListItem,
   indentListItem,
   listItemBackspace,
-} from '@edybara-editor/flat-list';
+} from '@edybara/flat-list';
 
 export interface EdybaraFlatTaskListKeymapPluginConfigs {
   taskListNodeType: NodeType;

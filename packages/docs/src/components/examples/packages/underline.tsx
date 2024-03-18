@@ -5,16 +5,16 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
 import {
   edybaraParagraphNodes,
   edybaraParagraphPlugins,
-} from '@edybara-editor/paragraph';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+} from '@edybara/paragraph';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
 import {
   edybaraUnderlineMarks,
   edybaraUnderlinePlugins,
-} from '@edybara-editor/underline';
+} from '@edybara/underline';
 
 const schema = new Schema({
   nodes: {

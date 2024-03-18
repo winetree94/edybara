@@ -4,8 +4,8 @@ import {
   ProseMirrorProps,
 } from '@site/src/components/editor/prose-mirror';
 import { EditorState } from 'prosemirror-state';
-import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara-editor/preset';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara/preset';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
 
 const schema = edybaraPresetSchema();
 const plugins = edybaraPresetPlugins({

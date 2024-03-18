@@ -1,10 +1,10 @@
 import { MarkSpec, NodeSpec, Schema } from 'prosemirror-model';
-import { edybaraBaseNodes } from '@edybara-editor/core';
-import { EdybaraHeadingNodeConfigs, edybaraHeadingNodes } from '@edybara-editor/heading';
+import { edybaraBaseNodes } from '@edybara/core';
+import { EdybaraHeadingNodeConfigs, edybaraHeadingNodes } from '@edybara/heading';
 import {
   EdybaraParagraphNodeConfigs,
   edybaraParagraphNodes,
-} from '@edybara-editor/paragraph';
+} from '@edybara/paragraph';
 import {
   EdybaraFlatBulletListNodeConfigs,
   EdybaraFlatListItemNodeConfigs,
@@ -12,55 +12,55 @@ import {
   edybaraFlatBulletListNodes,
   edybaraFlatListItemNodes,
   edybaraFlatOrderedListNodes,
-} from '@edybara-editor/flat-list';
+} from '@edybara/flat-list';
 import {
   edybaraFlatTaskListNodes,
   edybaraFlatTaskListItemNodes,
   EdybaraFlatTaskListNodeConfigs,
   EdybaraFlatTaskListItemNodeConfigs,
-} from '@edybara-editor/flat-task-list';
+} from '@edybara/flat-task-list';
 import {
   EdybaraHorizontalRuleNodeConfigs,
   edybaraHorizontalRuleNodes,
-} from '@edybara-editor/hr';
-import { EdybaraLinkMarkConfigs, edybaraLinkMarks } from '@edybara-editor/link';
-import { EdybaraBoldMarkConfigs, edybaraBoldMarks } from '@edybara-editor/bold';
-import { EdybaraCodeMarkConfigs, edybaraCodeMarks } from '@edybara-editor/code';
+} from '@edybara/hr';
+import { EdybaraLinkMarkConfigs, edybaraLinkMarks } from '@edybara/link';
+import { EdybaraBoldMarkConfigs, edybaraBoldMarks } from '@edybara/bold';
+import { EdybaraCodeMarkConfigs, edybaraCodeMarks } from '@edybara/code';
 import {
   EdybaraFontFamilyMarkConfigs,
   edybaraFontFamilyMarks,
-} from '@edybara-editor/font-family';
-import { EdybaraItalicMarkConfigs, edybaraItalicMarks } from '@edybara-editor/italic';
+} from '@edybara/font-family';
+import { EdybaraItalicMarkConfigs, edybaraItalicMarks } from '@edybara/italic';
 import {
   EdybaraStrikethroughMarkConfigs,
   edybaraStrikethroughMarks,
-} from '@edybara-editor/strikethrough';
+} from '@edybara/strikethrough';
 import {
   EdybaraSubscriptMarkConfigs,
   edybaraSubscriptMarks,
-} from '@edybara-editor/subscript';
+} from '@edybara/subscript';
 import {
   EdybaraSuperscriptMarkConfigs,
   edybaraSuperscriptMarks,
-} from '@edybara-editor/superscript';
+} from '@edybara/superscript';
 import {
   EdybaraTextColorMarkConfigs,
   edybaraTextColorMarks,
-} from '@edybara-editor/text-color';
+} from '@edybara/text-color';
 import {
   EdybaraUnderlineMarkConfigs,
   edybaraUnderlineMarks,
-} from '@edybara-editor/underline';
+} from '@edybara/underline';
 import {
   EdybaraBlockquoteNodeConfigs,
   edybaraBlockquoteNodes,
-} from '@edybara-editor/blockquote';
+} from '@edybara/blockquote';
 import {
   EdybaraCodeBlockNodeConfigs,
   edybaraCodeBlockNodes,
-} from '@edybara-editor/codeblock';
-import { EdybaraMentionMarkConfigs, edybaraMentionMarks } from '@edybara-editor/mention';
-import { EdybaraTableNodeConfigs, edybaraTableNodes } from '@edybara-editor/tables';
+} from '@edybara/codeblock';
+import { EdybaraMentionMarkConfigs, edybaraMentionMarks } from '@edybara/mention';
+import { EdybaraTableNodeConfigs, edybaraTableNodes } from '@edybara/tables';
 
 export interface EdybaraPresetSchemaConfigs {
   paragraph?: EdybaraParagraphNodeConfigs | null;

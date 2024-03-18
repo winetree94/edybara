@@ -5,17 +5,17 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
 import {
   edybaraParagraphNodes,
   edybaraParagraphPlugins,
-} from '@edybara-editor/paragraph';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+} from '@edybara/paragraph';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
 import {
   EdybaraMentionView,
   edybaraMentionMarks,
   edybaraMentionPlugins,
-} from '@edybara-editor/mention';
+} from '@edybara/mention';
 import { faker } from '@faker-js/faker';
 
 const persons = Array.from({ length: 200 }).map(() => ({

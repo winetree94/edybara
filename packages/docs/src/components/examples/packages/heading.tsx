@@ -6,18 +6,18 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
 import {
   edybaraParagraphNodes,
   edybaraParagraphPlugins,
-} from '@edybara-editor/paragraph';
+} from '@edybara/paragraph';
 import {
   edybaraHeadingInputRulePlugins,
   edybaraHeadingKeymapPlugins,
   edybaraHeadingNodes,
   edybaraHeadingPlugins,
-} from '@edybara-editor/heading';
+} from '@edybara/heading';
 
 const schema = new Schema({
   nodes: {

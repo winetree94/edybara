@@ -4,7 +4,7 @@ import { EditorView } from 'prosemirror-view';
 import {
   edybaraPresetSchema,
   edybaraPresetPlugins,
-} from '@edybara-editor/preset';
+} from '@edybara/preset';
 
 const schema = edybaraPresetSchema();
 const plugins = edybaraPresetPlugins({ schema });

@@ -10,13 +10,13 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edybara-editor/blockquote
+npm install @edybara/blockquote
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edybara-editor/blockquote/styles/blockquote.scss";
+@import "@edybara/blockquote/styles/blockquote.scss";
 ```
 
 ## 서식
@@ -49,10 +49,10 @@ Flat List 내부에서 되는 기본 단축키를 제공합니다.
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
-import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
-import { edybaraBlockQuotePlugins, edybaraBlockquoteNodes } from '@edybara-editor/blockquote';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara/paragraph';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
+import { edybaraBlockQuotePlugins, edybaraBlockquoteNodes } from '@edybara/blockquote';
 
 const schema = new Schema({
   nodes: {

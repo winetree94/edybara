@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/flat-task-list",
+  "name": "@edybara/flat-task-list",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,9 +17,9 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara-editor/core": "*",
-    "@edybara-editor/flat-list": "*",
-    "@edybara-editor/ui": "*",
+    "@edybara/core": "*",
+    "@edybara/flat-list": "*",
+    "@edybara/ui": "*",
     "prosemirror-commands": "*",
     "prosemirror-inputrules": "*",
     "prosemirror-keymap": "*",

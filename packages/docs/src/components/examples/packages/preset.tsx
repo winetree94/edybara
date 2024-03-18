@@ -4,11 +4,11 @@ import {
 } from '@site/src/components/editor/prose-mirror';
 import { EditorState } from 'prosemirror-state';
 import React, { useState } from 'react';
-import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara-editor/preset';
+import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara/preset';
 import doc from '@site/src/pages/lorem-ipsum.json';
 import { Node } from 'prosemirror-model';
 import { faker } from '@faker-js/faker';
-import { EdybaraMentionView } from '@edybara-editor/mention';
+import { EdybaraMentionView } from '@edybara/mention';
 
 const persons = Array.from({ length: 200 }).map(() => ({
   id: faker.string.uuid(),

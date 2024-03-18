@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/link",
+  "name": "@edybara/link",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,8 +17,8 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara-editor/core": "*",
-    "@edybara-editor/ui": "*",
+    "@edybara/core": "*",
+    "@edybara/ui": "*",
     "preact": "*",
     "prosemirror-model": "*",
     "prosemirror-state": "*",

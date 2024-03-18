@@ -7,9 +7,9 @@ import {
   EdybaraSeparator,
   EdybaraShortCut,
   html,
-} from '@edybara-editor/ui';
+} from '@edybara/ui';
 import { toggleMark } from 'prosemirror-commands';
-import { clearMarks, mac, markActive } from '@edybara-editor/core';
+import { clearMarks, mac, markActive } from '@edybara/core';
 import { Attributes, VNode } from 'preact';
 
 export interface EdybaraMenubarMarkButton {

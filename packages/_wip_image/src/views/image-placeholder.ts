@@ -1,5 +1,5 @@
 import { render } from 'preact';
-import { html, classes } from '@edybara-editor/ui';
+import { html, classes } from '@edybara/ui';
 import { forwardRef } from 'preact/compat';
 import { ImagePlaceholderViewProvider, ImagePlaceholderSpec } from '../placeholder';
 

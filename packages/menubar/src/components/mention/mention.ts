@@ -1,5 +1,5 @@
-import { EdybaraButton, html } from '@edybara-editor/ui';
-import { addMention } from '@edybara-editor/mention';
+import { EdybaraButton, html } from '@edybara/ui';
+import { addMention } from '@edybara/mention';
 import { useContext } from 'preact/hooks';
 import { EdybaraMenubarContext } from '../context';
 

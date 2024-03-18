@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/emoji",
+  "name": "@edybara/emoji",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,7 +17,7 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara-editor/core": "*",
+    "@edybara/core": "*",
     "prosemirror-inputrules": "*",
     "prosemirror-keymap": "*",
     "prosemirror-model": "*"

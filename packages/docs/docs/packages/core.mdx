@@ -5,18 +5,18 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 # Core 
 
-`@edybara-editor/core` 패키지는 에디터의 기초 서식과 스타일, 그리고 기본 동작을 위한 플러그인을 제공합니다. Edybara 을 사용하기 위해선 필수로 설치해야 합니다.
+`@edybara/core` 패키지는 에디터의 기초 서식과 스타일, 그리고 기본 동작을 위한 플러그인을 제공합니다. Edybara 을 사용하기 위해선 필수로 설치해야 합니다.
 
 ## 설치
 
 ```bash
-npm install @edybara-editor/core
+npm install @edybara/core
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edybara-editor/core/styles/core.scss";
+@import "@edybara/core/styles/core.scss";
 ```
 
 ## 서식
@@ -66,10 +66,10 @@ Mark 가 적용된 텍스트가 모두 지워지면 Mark 를 자동으로 해제
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
-import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
-import { edybaraBaseNodes, edybaraCorePlugins, edybaraBasicKeymapPlugins, edybaraDropCursorPlugins, edybaraGapCursorPlugins, edybaraHistoryPlugins, edybaraVirtualCursorPlugins } from '@edybara-editor/core';
-import { edybaraParagraphNodes, edybaraParagraphPlugins } from '@edybara-editor/paragraph';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara/paragraph';
+import { edybaraBaseNodes, edybaraCorePlugins, edybaraBasicKeymapPlugins, edybaraDropCursorPlugins, edybaraGapCursorPlugins, edybaraHistoryPlugins, edybaraVirtualCursorPlugins } from '@edybara/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins } from '@edybara/paragraph';
 
 const schema = new Schema({
   nodes: {

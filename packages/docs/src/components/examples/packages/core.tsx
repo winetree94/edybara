@@ -13,11 +13,11 @@ import {
   edybaraGapCursorPlugins,
   edybaraHistoryPlugins,
   edybaraVirtualCursorPlugins,
-} from '@edybara-editor/core';
+} from '@edybara/core';
 import {
   edybaraParagraphNodes,
   edybaraParagraphPlugins,
-} from '@edybara-editor/paragraph';
+} from '@edybara/paragraph';
 
 const schema = new Schema({
   nodes: {

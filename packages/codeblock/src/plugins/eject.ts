@@ -3,7 +3,7 @@ import { NodeType } from 'prosemirror-model';
 import { isInCodeBlock } from '../utils';
 import { findParentNode } from 'prosemirror-utils';
 import { keymap } from 'prosemirror-keymap';
-import { findNearestBlockContainer } from '@edybara-editor/core';
+import { findNearestBlockContainer } from '@edybara/core';
 
 export interface EdybaraCodeBlockEjectPluginConfigs {
   nodeType: NodeType;

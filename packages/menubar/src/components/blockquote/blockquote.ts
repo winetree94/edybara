@@ -1,4 +1,4 @@
-import { EdybaraButton, html } from '@edybara-editor/ui';
+import { EdybaraButton, html } from '@edybara/ui';
 import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import { setBlockType } from 'prosemirror-commands';

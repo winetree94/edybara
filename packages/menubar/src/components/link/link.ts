@@ -1,8 +1,8 @@
 
 import { Fragment } from 'preact';
 import { useContext, useRef, useState } from 'preact/hooks';
-import { EdybaraButton, EdybaraLayer, html } from '@edybara-editor/ui';
-import { EdybaraLinkFormLayer, addLink } from '@edybara-editor/link';
+import { EdybaraButton, EdybaraLayer, html } from '@edybara/ui';
+import { EdybaraLinkFormLayer, addLink } from '@edybara/link';
 import { EdybaraMenubarContext } from '../context';
 
 export const EdybaraMenubarLinkButton = () => {

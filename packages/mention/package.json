@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/mention",
+  "name": "@edybara/mention",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,8 +17,8 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara-editor/core": "*",
-    "@edybara-editor/ui": "*",
+    "@edybara/core": "*",
+    "@edybara/ui": "*",
     "preact": "*",
     "prosemirror-inputrules": "*",
     "prosemirror-keymap": "*",

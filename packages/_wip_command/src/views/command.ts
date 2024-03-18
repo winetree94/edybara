@@ -3,8 +3,8 @@ import { render } from 'preact';
 import { EditorState, PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { EdybaraCommandPluginState, EdybaraCommandPluginView } from '../plugin';
-import { addMention } from '@edybara-editor/mention';
-import { insertTable } from '@edybara-editor/tables';
+import { addMention } from '@edybara/mention';
+import { insertTable } from '@edybara/tables';
 import {
   EdybaraLayer,
   EdybaraListItem,
@@ -12,7 +12,7 @@ import {
   EdybaraParagraph,
   classes,
   html,
-} from '@edybara-editor/ui';
+} from '@edybara/ui';
 import { forwardRef } from 'preact/compat';
 
 export interface EdybaraCommandItem {

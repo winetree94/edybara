@@ -10,13 +10,13 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edybara-editor/strikethrough
+npm install @edybara/strikethrough
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edybara-editor/strikethrough/styles/strikethrough.scss";
+@import "@edybara/strikethrough/styles/strikethrough.scss";
 ```
 
 ## 서식
@@ -41,10 +41,10 @@ npm install @edybara-editor/strikethrough
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
-import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
-import { edybaraStrikethroughMarks, edybaraStrikethroughPlugins } from '@edybara-editor/strikethrough';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara/paragraph';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
+import { edybaraStrikethroughMarks, edybaraStrikethroughPlugins } from '@edybara/strikethrough';
 
 const schema = new Schema({
   nodes: {

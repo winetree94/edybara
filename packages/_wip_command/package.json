@@ -1,5 +1,5 @@
 {
-  "name": "@edybara-editor/command",
+  "name": "@edybara/command",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -17,10 +17,10 @@
   "types": "dist/index.d.ts",
   "private": true,
   "dependencies": {
-    "@edybara-editor/core": "*",
-    "@edybara-editor/mention": "*",
-    "@edybara-editor/tables": "*",
-    "@edybara-editor/ui": "*",
+    "@edybara/core": "*",
+    "@edybara/mention": "*",
+    "@edybara/tables": "*",
+    "@edybara/ui": "*",
     "preact": "*",
     "prosemirror-commands": "*",
     "prosemirror-inputrules": "*",

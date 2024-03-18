@@ -1,7 +1,7 @@
-import { EdybaraButton, html } from '@edybara-editor/ui';
+import { EdybaraButton, html } from '@edybara/ui';
 import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
-import { insertTable } from '@edybara-editor/tables';
+import { insertTable } from '@edybara/tables';
 
 export const EdybaraMenubarTableButtons = () => {
   const context = useContext(EdybaraMenubarContext);

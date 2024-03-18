@@ -1,5 +1,5 @@
 import { MarkSpec } from 'prosemirror-model';
-import { BaseMarkConfigs } from '@edybara-editor/core';
+import { BaseMarkConfigs } from '@edybara/core';
 
 export const EDIM_BOLD_MARK_NAME = 'bold';
 

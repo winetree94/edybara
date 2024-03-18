@@ -5,18 +5,18 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 # Code Block
 
-`@edybara-editor/codeblock` 에디터에 **코드 블록**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
+`@edybara/codeblock` 에디터에 **코드 블록**을 표현하기 위한 서식과 관련 플러그인을 제공합니다.
 
 ## 설치
 
 ```bash
-npm install @edybara-editor/codeblock
+npm install @edybara/codeblock
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edybara-editor/codeblock/styles/codeblock.scss";
+@import "@edybara/codeblock/styles/codeblock.scss";
 ```
 
 ## 서식
@@ -49,10 +49,10 @@ npm install @edybara-editor/codeblock
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
-import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
-import { edybaraCodeBlockNodes, edybaraCodeBlockPlugins } from '@edybara-editor/codeblock';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara/paragraph';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
+import { edybaraCodeBlockNodes, edybaraCodeBlockPlugins } from '@edybara/codeblock';
 
 const schema = new Schema({
   nodes: {

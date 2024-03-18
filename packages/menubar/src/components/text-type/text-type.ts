@@ -7,9 +7,9 @@ import {
   EdybaraShortCut,
   classes,
   html,
-} from '@edybara-editor/ui';
-import { EdybaraHeadingNodeSpec } from '@edybara-editor/heading';
-import { mac, transformRangeToBlock } from '@edybara-editor/core';
+} from '@edybara/ui';
+import { EdybaraHeadingNodeSpec } from '@edybara/heading';
+import { mac, transformRangeToBlock } from '@edybara/core';
 import { getTextType } from '../../utils';
 
 export const EdybaraMenubarTextTypeSelect = () => {

@@ -1,6 +1,6 @@
 import { Fragment, NodeType } from 'prosemirror-model';
 import { Command } from 'prosemirror-state';
-import { getBlockContainerChildren, liftOut } from '@edybara-editor/core';
+import { getBlockContainerChildren, liftOut } from '@edybara/core';
 
 const allowedContentTypes = [
   'paragraph',

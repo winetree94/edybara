@@ -1,78 +1,78 @@
 import { Plugin as PMPlugin, Plugin } from 'prosemirror-state';
-import { edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraCorePlugins } from '@edybara/core';
 import {
   EDIM_HEADING_DEFAULT_NODE_NAME,
   EdybaraHeadingPluginConfigs,
   edybaraHeadingPlugins,
-} from '@edybara-editor/heading';
+} from '@edybara/heading';
 import {
   EDIM_PARAGRAPH_DEFAULT_NODE_NAME,
   EdybaraParagraphPluginConfigs,
   edybaraParagraphPlugins,
-} from '@edybara-editor/paragraph';
+} from '@edybara/paragraph';
 import {
   EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME,
   EDIM_FLAT_LIST_ITEM_DEFAULT_NODE_NAME,
   EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME,
   EdybaraFlatListPluginConfigs,
   edybaraFlatListPlugins,
-} from '@edybara-editor/flat-list';
+} from '@edybara/flat-list';
 import {
   EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME,
   EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME,
   EdybaraFlatTaskListPluginConfigs,
   edybaraFlatTaskListPlugins,
-} from '@edybara-editor/flat-task-list';
+} from '@edybara/flat-task-list';
 import {
   EDIM_HORIZONTAL_RULE_NODE_NAME,
   EdybaraHorizontalRulePluginConfigs,
   edybaraHorizontalRulePlugins,
-} from '@edybara-editor/hr';
+} from '@edybara/hr';
 import {
   EDIM_BOLD_MARK_NAME,
   EdybaraBoldPluginConfigs,
   edybaraBoldPlugins,
-} from '@edybara-editor/bold';
+} from '@edybara/bold';
 import {
   EDIM_CODE_MARK_NAME,
   EdybaraCodePluginConfigs,
   edybaraCodePlugins,
-} from '@edybara-editor/code';
+} from '@edybara/code';
 import {
   EDIM_ITALIC_MARK_NAME,
   EdybaraItalicPluginConfigs,
   edybaraItalicPlugins,
-} from '@edybara-editor/italic';
+} from '@edybara/italic';
 import {
   EDIM_STRIKETHROUGH_MARK_NAME,
   EdybaraStrikethroughPluginConfigs,
   edybaraStrikethroughPlugins,
-} from '@edybara-editor/strikethrough';
+} from '@edybara/strikethrough';
 import {
   EDIM_SUBSCRIPT_MARK_NAME,
   EdybaraSubscriptPluginConfigs,
   edybaraSubscriptPlugins,
-} from '@edybara-editor/subscript';
+} from '@edybara/subscript';
 import {
   EDIM_SUPERSCRIPT_MARK_NAME,
   EdybaraSuperscriptPluginConfigs,
   edybaraSuperscriptPlugins,
-} from '@edybara-editor/superscript';
+} from '@edybara/superscript';
 import {
   EDIM_UNDERLINE_MARK_NAME,
   EdybaraUnderlinePluginConfigs,
   edybaraUnderlinePlugins,
-} from '@edybara-editor/underline';
+} from '@edybara/underline';
 import {
   EDIM_BLOCKQUOTE_NODE_NAME,
   EdybaraBlockQuotePluginConfigs,
   edybaraBlockQuotePlugins,
-} from '@edybara-editor/blockquote';
+} from '@edybara/blockquote';
 import {
   EDIM_CODEBLOCK_NODE_NAME,
   EdybaraCodeBlockPluginConfigs,
   edybaraCodeBlockPlugins,
-} from '@edybara-editor/codeblock';
+} from '@edybara/codeblock';
 import {
   EDIM_TABLE_CELL_DEFAULT_NODE_NAME,
   EDIM_TABLE_DEFAULT_NODE_NAME,
@@ -80,24 +80,24 @@ import {
   EdybaraTableEditingPluginConfigs,
   edybaraTableEditingPlugins,
   edybaraTablePlugins,
-} from '@edybara-editor/tables';
+} from '@edybara/tables';
 import {
   EdybaraMenubarPluginConfigs,
   edybaraMenubarPlugins,
-} from '@edybara-editor/menubar';
+} from '@edybara/menubar';
 import { Schema } from 'prosemirror-model';
-import { EDIM_FONT_FAMILY_DEFAULT_MARK_NAME } from '@edybara-editor/font-family';
+import { EDIM_FONT_FAMILY_DEFAULT_MARK_NAME } from '@edybara/font-family';
 import {
   EDIM_LINK_DEFAULT_MARK_NAME,
   EdybaraLinkPluginConfigs,
   edybaraLinkPlugins,
-} from '@edybara-editor/link';
+} from '@edybara/link';
 import {
   EDIM_MENTION_DEFAULT_MARK_NAME,
   EdybaraMentionPluginConfigs,
   edybaraMentionPlugins,
-} from '@edybara-editor/mention';
-import { EDIM_TEXT_COLOR_DEFAULT_MARK_NAME } from '@edybara-editor/text-color';
+} from '@edybara/mention';
+import { EDIM_TEXT_COLOR_DEFAULT_MARK_NAME } from '@edybara/text-color';
 
 /**
  * @see https://edybara.me/docs/packages/menubar

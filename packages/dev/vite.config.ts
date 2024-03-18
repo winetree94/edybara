@@ -7,7 +7,7 @@ export default defineConfig({
   },
   resolve: {
     alias: [{
-      find: /^@edybara-editor\/(.*)$/,
+      find: /^@edybara\/(.*)$/,
       replacement: path.resolve('../$1/src'),
     }]
   }

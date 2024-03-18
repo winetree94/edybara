@@ -1,5 +1,5 @@
 import { forwardRef } from 'preact/compat';
-import { EdybaraSeparator, classes, html } from '@edybara-editor/ui';
+import { EdybaraSeparator, classes, html } from '@edybara/ui';
 import { EdybaraMenubarContext, EdybaraMenubarContextType } from './context';
 import { EdybaraMenubarTextTypeSelect } from './text-type';
 import { EdybaraMenubarFontFamilySelect } from './font-family';

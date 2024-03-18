@@ -3,7 +3,7 @@ import { Decoration, DecorationSet } from 'prosemirror-view';
 import { findCellClosestToPos } from '../utils';
 import { EdybaraTableCellButtonWrapper } from '../components';
 import { render } from 'preact';
-import { html } from '@edybara-editor/ui';
+import { html } from '@edybara/ui';
 
 export const tableCellButtonPluginKey = new PluginKey('tableCellButtonPlugin');
 

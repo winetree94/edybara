@@ -4,7 +4,7 @@ import {
   EdybaraOverlay,
   EdybaraParagraph,
   html,
-} from '@edybara-editor/ui';
+} from '@edybara/ui';
 
 export interface EdybaraLinkFloatingLayerProps {
   target: HTMLElement;

@@ -5,7 +5,7 @@ import {
   EdybaraParagraph,
   classes,
   html,
-} from '@edybara-editor/ui';
+} from '@edybara/ui';
 import { EditorState, PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { render } from 'preact';

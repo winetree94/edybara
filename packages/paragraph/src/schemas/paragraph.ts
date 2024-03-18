@@ -1,5 +1,5 @@
 import { NodeSpec } from 'prosemirror-model';
-import { parseQuillTextAlign } from '@edybara-editor/core';
+import { parseQuillTextAlign } from '@edybara/core';
 
 export const EDIM_PARAGRAPH_DEFAULT_NODE_NAME = 'paragraph';
 

@@ -10,13 +10,13 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edybara-editor/text-color
+npm install @edybara/text-color
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edybara-editor/text-color/styles/text-color.scss";
+@import "@edybara/text-color/styles/text-color.scss";
 ```
 
 ## 서식
@@ -31,10 +31,10 @@ npm install @edybara-editor/text-color
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edybaraBaseNodes, edybaraCorePlugins, mac } from '@edybara-editor/core';
-import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
-import { edybaraTextColorMarks } from '@edybara-editor/text-color';
+import { edybaraBaseNodes, edybaraCorePlugins, mac } from '@edybara/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara/paragraph';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
+import { edybaraTextColorMarks } from '@edybara/text-color';
 
 const schema = new Schema({
   nodes: {

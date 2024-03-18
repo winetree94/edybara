@@ -1,7 +1,7 @@
 import { NodeType } from 'prosemirror-model';
 import { Plugin as PMPlugin } from 'prosemirror-state';
-import { edybaraMergeAdjacentNodePlugins } from '@edybara-editor/core';
-import { EdybaraMergeAdjacentNodePluginConfigs } from '@edybara-editor/core';
+import { edybaraMergeAdjacentNodePlugins } from '@edybara/core';
+import { EdybaraMergeAdjacentNodePluginConfigs } from '@edybara/core';
 
 export interface EdybaraFlatListMergePluginConfigs {
   orderedListNodeType?: NodeType;

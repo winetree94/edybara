@@ -1,4 +1,4 @@
-import { createEnsuredMarkType } from '@edybara-editor/core';
+import { createEnsuredMarkType } from '@edybara/core';
 import { EDIM_SUPERSCRIPT_MARK_NAME } from '../schemas';
 
 export const checkSuperscriptMarkType = createEnsuredMarkType(

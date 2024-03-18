@@ -1,6 +1,6 @@
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
-import { html } from '@edybara-editor/ui';
+import { html } from '@edybara/ui';
 import { createRef, render } from 'preact';
 import { forwardRef, useImperativeHandle, useRef } from 'preact/compat';
 import { updateColumnsOnResize } from 'prosemirror-tables';

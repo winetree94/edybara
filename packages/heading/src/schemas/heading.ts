@@ -1,4 +1,4 @@
-import { parseQuillTextAlign } from '@edybara-editor/core';
+import { parseQuillTextAlign } from '@edybara/core';
 import { NodeSpec } from 'prosemirror-model';
 
 export type EdybaraHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;

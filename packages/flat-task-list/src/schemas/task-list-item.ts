@@ -3,7 +3,7 @@ import {
   isQuillTaskList,
   parseQuillIndent,
   parseQuillTextAlign,
-} from '@edybara-editor/core';
+} from '@edybara/core';
 import { createNode } from '../utils';
 
 export const EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME = 'task_list_item';

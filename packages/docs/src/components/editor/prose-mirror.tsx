@@ -1,5 +1,5 @@
 import React from 'react';
-import { classes } from '@edybara-editor/ui';
+import { classes } from '@edybara/ui';
 import { EditorView } from 'prosemirror-view';
 import { useEffect, useRef } from 'react';
 import { EditorState } from 'prosemirror-state';

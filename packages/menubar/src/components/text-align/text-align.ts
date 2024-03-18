@@ -1,11 +1,11 @@
 import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
-import { EdybaraSelect, EdybaraSeparator, classes, html } from '@edybara-editor/ui';
+import { EdybaraSelect, EdybaraSeparator, classes, html } from '@edybara/ui';
 import {
   TEXT_ALIGNMENT,
   getRangeFirstAlignment,
   setTextAlign,
-} from '@edybara-editor/core';
+} from '@edybara/core';
 
 export const EdybaraMenubarTextAlignSelect = () => {
   const context = useContext(EdybaraMenubarContext);

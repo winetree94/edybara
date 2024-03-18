@@ -1,4 +1,4 @@
-import { html, EdybaraSelect } from '@edybara-editor/ui';
+import { html, EdybaraSelect } from '@edybara/ui';
 import { Fragment } from 'preact';
 
 export const EdybaraTableCellButtonWrapper = () => {

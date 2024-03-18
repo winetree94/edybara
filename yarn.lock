@@ -2283,11 +2283,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@edybara-editor/blockquote@npm:*, @edybara-editor/blockquote@workspace:packages/blockquote":
+"@edybara/blockquote@npm:*, @edybara/blockquote@workspace:packages/blockquote":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/blockquote@workspace:packages/blockquote"
+  resolution: "@edybara/blockquote@workspace:packages/blockquote"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
     prosemirror-keymap: "npm:*"
@@ -2300,11 +2300,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/bold@npm:*, @edybara-editor/bold@workspace:packages/bold":
+"@edybara/bold@npm:*, @edybara/bold@workspace:packages/bold":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/bold@workspace:packages/bold"
+  resolution: "@edybara/bold@workspace:packages/bold"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-keymap: "npm:*"
     prosemirror-model: "npm:*"
@@ -2315,11 +2315,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/code@npm:*, @edybara-editor/code@workspace:packages/code":
+"@edybara/code@npm:*, @edybara/code@workspace:packages/code":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/code@workspace:packages/code"
+  resolution: "@edybara/code@workspace:packages/code"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
     prosemirror-keymap: "npm:*"
@@ -2331,11 +2331,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/codeblock@npm:*, @edybara-editor/codeblock@workspace:packages/codeblock":
+"@edybara/codeblock@npm:*, @edybara/codeblock@workspace:packages/codeblock":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/codeblock@workspace:packages/codeblock"
+  resolution: "@edybara/codeblock@workspace:packages/codeblock"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
     prosemirror-keymap: "npm:*"
@@ -2349,14 +2349,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/command@npm:*, @edybara-editor/command@workspace:packages/_wip_command":
+"@edybara/command@npm:*, @edybara/command@workspace:packages/_wip_command":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/command@workspace:packages/_wip_command"
+  resolution: "@edybara/command@workspace:packages/_wip_command"
   dependencies:
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/mention": "npm:*"
-    "@edybara-editor/tables": "npm:*"
-    "@edybara-editor/ui": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/mention": "npm:*"
+    "@edybara/tables": "npm:*"
+    "@edybara/ui": "npm:*"
     preact: "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
@@ -2371,11 +2371,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/core@npm:*, @edybara-editor/core@workspace:packages/core":
+"@edybara/core@npm:*, @edybara/core@workspace:packages/core":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/core@workspace:packages/core"
+  resolution: "@edybara/core@workspace:packages/core"
   dependencies:
-    "@edybara-editor/ui": "npm:*"
+    "@edybara/ui": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-dropcursor: "npm:*"
     prosemirror-gapcursor: "npm:*"
@@ -2394,11 +2394,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/emoji@npm:*, @edybara-editor/emoji@workspace:packages/_wip_emoji":
+"@edybara/emoji@npm:*, @edybara/emoji@workspace:packages/_wip_emoji":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/emoji@workspace:packages/_wip_emoji"
+  resolution: "@edybara/emoji@workspace:packages/_wip_emoji"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-inputrules: "npm:*"
     prosemirror-keymap: "npm:*"
     prosemirror-model: "npm:*"
@@ -2409,11 +2409,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/flat-list@npm:*, @edybara-editor/flat-list@workspace:packages/flat-list":
+"@edybara/flat-list@npm:*, @edybara/flat-list@workspace:packages/flat-list":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/flat-list@workspace:packages/flat-list"
+  resolution: "@edybara/flat-list@workspace:packages/flat-list"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     orderedmap: "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
@@ -2429,13 +2429,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/flat-task-list@npm:*, @edybara-editor/flat-task-list@workspace:packages/flat-task-list":
+"@edybara/flat-task-list@npm:*, @edybara/flat-task-list@workspace:packages/flat-task-list":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/flat-task-list@workspace:packages/flat-task-list"
+  resolution: "@edybara/flat-task-list@workspace:packages/flat-task-list"
   dependencies:
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/flat-list": "npm:*"
-    "@edybara-editor/ui": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/flat-list": "npm:*"
+    "@edybara/ui": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
     prosemirror-keymap: "npm:*"
@@ -2450,11 +2450,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/font-family@npm:*, @edybara-editor/font-family@workspace:packages/font-family":
+"@edybara/font-family@npm:*, @edybara/font-family@workspace:packages/font-family":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/font-family@workspace:packages/font-family"
+  resolution: "@edybara/font-family@workspace:packages/font-family"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-model: "npm:*"
     prosemirror-state: "npm:*"
@@ -2465,11 +2465,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/heading@npm:*, @edybara-editor/heading@workspace:packages/heading":
+"@edybara/heading@npm:*, @edybara/heading@workspace:packages/heading":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/heading@workspace:packages/heading"
+  resolution: "@edybara/heading@workspace:packages/heading"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
     prosemirror-keymap: "npm:*"
@@ -2482,11 +2482,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/hr@npm:*, @edybara-editor/hr@workspace:packages/hr":
+"@edybara/hr@npm:*, @edybara/hr@workspace:packages/hr":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/hr@workspace:packages/hr"
+  resolution: "@edybara/hr@workspace:packages/hr"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-keymap: "npm:*"
     prosemirror-model: "npm:*"
     rimraf: "npm:^5.0.5"
@@ -2496,12 +2496,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/image@npm:*, @edybara-editor/image@workspace:packages/_wip_image":
+"@edybara/image@npm:*, @edybara/image@workspace:packages/_wip_image":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/image@workspace:packages/_wip_image"
+  resolution: "@edybara/image@workspace:packages/_wip_image"
   dependencies:
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/ui": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/ui": "npm:*"
     preact: "npm:*"
     prosemirror-model: "npm:*"
     prosemirror-state: "npm:*"
@@ -2513,11 +2513,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/italic@npm:*, @edybara-editor/italic@workspace:packages/italic":
+"@edybara/italic@npm:*, @edybara/italic@workspace:packages/italic":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/italic@workspace:packages/italic"
+  resolution: "@edybara/italic@workspace:packages/italic"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-keymap: "npm:*"
     prosemirror-model: "npm:*"
@@ -2528,12 +2528,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/link@npm:*, @edybara-editor/link@workspace:packages/link":
+"@edybara/link@npm:*, @edybara/link@workspace:packages/link":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/link@workspace:packages/link"
+  resolution: "@edybara/link@workspace:packages/link"
   dependencies:
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/ui": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/ui": "npm:*"
     preact: "npm:*"
     prosemirror-model: "npm:*"
     prosemirror-state: "npm:*"
@@ -2546,12 +2546,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/mention@npm:*, @edybara-editor/mention@workspace:packages/mention":
+"@edybara/mention@npm:*, @edybara/mention@workspace:packages/mention":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/mention@workspace:packages/mention"
+  resolution: "@edybara/mention@workspace:packages/mention"
   dependencies:
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/ui": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/ui": "npm:*"
     preact: "npm:*"
     prosemirror-inputrules: "npm:*"
     prosemirror-keymap: "npm:*"
@@ -2564,24 +2564,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/menubar@npm:*, @edybara-editor/menubar@workspace:packages/menubar":
+"@edybara/menubar@npm:*, @edybara/menubar@workspace:packages/menubar":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/menubar@workspace:packages/menubar"
+  resolution: "@edybara/menubar@workspace:packages/menubar"
   dependencies:
-    "@edybara-editor/blockquote": "npm:*"
-    "@edybara-editor/command": "npm:*"
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/flat-list": "npm:*"
-    "@edybara-editor/flat-task-list": "npm:*"
-    "@edybara-editor/font-family": "npm:*"
-    "@edybara-editor/heading": "npm:*"
-    "@edybara-editor/image": "npm:*"
-    "@edybara-editor/link": "npm:*"
-    "@edybara-editor/mention": "npm:*"
-    "@edybara-editor/paragraph": "npm:*"
-    "@edybara-editor/tables": "npm:*"
-    "@edybara-editor/text-color": "npm:*"
-    "@edybara-editor/ui": "npm:*"
+    "@edybara/blockquote": "npm:*"
+    "@edybara/command": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/flat-list": "npm:*"
+    "@edybara/flat-task-list": "npm:*"
+    "@edybara/font-family": "npm:*"
+    "@edybara/heading": "npm:*"
+    "@edybara/image": "npm:*"
+    "@edybara/link": "npm:*"
+    "@edybara/mention": "npm:*"
+    "@edybara/paragraph": "npm:*"
+    "@edybara/tables": "npm:*"
+    "@edybara/text-color": "npm:*"
+    "@edybara/ui": "npm:*"
     emoji-datasource: "npm:>=15.0.0"
     htm: "npm:>=3.0.0"
     preact: "npm:>=10.0.0"
@@ -2600,11 +2600,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/paragraph@npm:*, @edybara-editor/paragraph@workspace:packages/paragraph":
+"@edybara/paragraph@npm:*, @edybara/paragraph@workspace:packages/paragraph":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/paragraph@workspace:packages/paragraph"
+  resolution: "@edybara/paragraph@workspace:packages/paragraph"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     orderedmap: "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
@@ -2619,35 +2619,35 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/preset@npm:*, @edybara-editor/preset@workspace:packages/preset":
+"@edybara/preset@npm:*, @edybara/preset@workspace:packages/preset":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/preset@workspace:packages/preset"
+  resolution: "@edybara/preset@workspace:packages/preset"
   dependencies:
-    "@edybara-editor/blockquote": "npm:*"
-    "@edybara-editor/bold": "npm:*"
-    "@edybara-editor/code": "npm:*"
-    "@edybara-editor/codeblock": "npm:*"
-    "@edybara-editor/command": "npm:*"
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/emoji": "npm:*"
-    "@edybara-editor/flat-list": "npm:*"
-    "@edybara-editor/flat-task-list": "npm:*"
-    "@edybara-editor/font-family": "npm:*"
-    "@edybara-editor/heading": "npm:*"
-    "@edybara-editor/hr": "npm:*"
-    "@edybara-editor/image": "npm:*"
-    "@edybara-editor/italic": "npm:*"
-    "@edybara-editor/link": "npm:*"
-    "@edybara-editor/mention": "npm:*"
-    "@edybara-editor/menubar": "npm:*"
-    "@edybara-editor/paragraph": "npm:*"
-    "@edybara-editor/strikethrough": "npm:*"
-    "@edybara-editor/subscript": "npm:*"
-    "@edybara-editor/superscript": "npm:*"
-    "@edybara-editor/tables": "npm:*"
-    "@edybara-editor/text-color": "npm:*"
-    "@edybara-editor/ui": "npm:*"
-    "@edybara-editor/underline": "npm:*"
+    "@edybara/blockquote": "npm:*"
+    "@edybara/bold": "npm:*"
+    "@edybara/code": "npm:*"
+    "@edybara/codeblock": "npm:*"
+    "@edybara/command": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/emoji": "npm:*"
+    "@edybara/flat-list": "npm:*"
+    "@edybara/flat-task-list": "npm:*"
+    "@edybara/font-family": "npm:*"
+    "@edybara/heading": "npm:*"
+    "@edybara/hr": "npm:*"
+    "@edybara/image": "npm:*"
+    "@edybara/italic": "npm:*"
+    "@edybara/link": "npm:*"
+    "@edybara/mention": "npm:*"
+    "@edybara/menubar": "npm:*"
+    "@edybara/paragraph": "npm:*"
+    "@edybara/strikethrough": "npm:*"
+    "@edybara/subscript": "npm:*"
+    "@edybara/superscript": "npm:*"
+    "@edybara/tables": "npm:*"
+    "@edybara/text-color": "npm:*"
+    "@edybara/ui": "npm:*"
+    "@edybara/underline": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-inputrules: "npm:*"
     prosemirror-keymap: "npm:*"
@@ -2660,11 +2660,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/strikethrough@npm:*, @edybara-editor/strikethrough@workspace:packages/strikethrough":
+"@edybara/strikethrough@npm:*, @edybara/strikethrough@workspace:packages/strikethrough":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/strikethrough@workspace:packages/strikethrough"
+  resolution: "@edybara/strikethrough@workspace:packages/strikethrough"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-keymap: "npm:*"
     prosemirror-model: "npm:*"
@@ -2675,11 +2675,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/subscript@npm:*, @edybara-editor/subscript@workspace:packages/subscript":
+"@edybara/subscript@npm:*, @edybara/subscript@workspace:packages/subscript":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/subscript@workspace:packages/subscript"
+  resolution: "@edybara/subscript@workspace:packages/subscript"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-keymap: "npm:*"
     prosemirror-model: "npm:*"
@@ -2690,11 +2690,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/superscript@npm:*, @edybara-editor/superscript@workspace:packages/superscript":
+"@edybara/superscript@npm:*, @edybara/superscript@workspace:packages/superscript":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/superscript@workspace:packages/superscript"
+  resolution: "@edybara/superscript@workspace:packages/superscript"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-keymap: "npm:*"
     prosemirror-model: "npm:*"
@@ -2705,12 +2705,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/tables@npm:*, @edybara-editor/tables@workspace:packages/tables":
+"@edybara/tables@npm:*, @edybara/tables@workspace:packages/tables":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/tables@workspace:packages/tables"
+  resolution: "@edybara/tables@workspace:packages/tables"
   dependencies:
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/ui": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/ui": "npm:*"
     preact: "npm:*"
     prosemirror-keymap: "npm:*"
     prosemirror-model: "npm:*"
@@ -2726,11 +2726,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/text-color@npm:*, @edybara-editor/text-color@workspace:packages/text-color":
+"@edybara/text-color@npm:*, @edybara/text-color@workspace:packages/text-color":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/text-color@workspace:packages/text-color"
+  resolution: "@edybara/text-color@workspace:packages/text-color"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-model: "npm:*"
     rimraf: "npm:^5.0.5"
@@ -2740,9 +2740,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/ui@npm:*, @edybara-editor/ui@workspace:packages/ui":
+"@edybara/ui@npm:*, @edybara/ui@workspace:packages/ui":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/ui@workspace:packages/ui"
+  resolution: "@edybara/ui@workspace:packages/ui"
   dependencies:
     emoji-datasource: "npm:>=15.0.0"
     htm: "npm:>=3.0.0"
@@ -2755,11 +2755,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@edybara-editor/underline@npm:*, @edybara-editor/underline@workspace:packages/underline":
+"@edybara/underline@npm:*, @edybara/underline@workspace:packages/underline":
   version: 0.0.0-use.local
-  resolution: "@edybara-editor/underline@workspace:packages/underline"
+  resolution: "@edybara/underline@workspace:packages/underline"
   dependencies:
-    "@edybara-editor/core": "npm:*"
+    "@edybara/core": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-keymap: "npm:*"
     prosemirror-model: "npm:*"
@@ -6186,32 +6186,32 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dev@workspace:packages/dev"
   dependencies:
-    "@edybara-editor/blockquote": "npm:*"
-    "@edybara-editor/bold": "npm:*"
-    "@edybara-editor/code": "npm:*"
-    "@edybara-editor/codeblock": "npm:*"
-    "@edybara-editor/command": "npm:*"
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/emoji": "npm:*"
-    "@edybara-editor/flat-list": "npm:*"
-    "@edybara-editor/flat-task-list": "npm:*"
-    "@edybara-editor/font-family": "npm:*"
-    "@edybara-editor/heading": "npm:*"
-    "@edybara-editor/hr": "npm:*"
-    "@edybara-editor/image": "npm:*"
-    "@edybara-editor/italic": "npm:*"
-    "@edybara-editor/link": "npm:*"
-    "@edybara-editor/mention": "npm:*"
-    "@edybara-editor/menubar": "npm:*"
-    "@edybara-editor/paragraph": "npm:*"
-    "@edybara-editor/preset": "npm:*"
-    "@edybara-editor/strikethrough": "npm:*"
-    "@edybara-editor/subscript": "npm:*"
-    "@edybara-editor/superscript": "npm:*"
-    "@edybara-editor/tables": "npm:*"
-    "@edybara-editor/text-color": "npm:*"
-    "@edybara-editor/ui": "npm:*"
-    "@edybara-editor/underline": "npm:*"
+    "@edybara/blockquote": "npm:*"
+    "@edybara/bold": "npm:*"
+    "@edybara/code": "npm:*"
+    "@edybara/codeblock": "npm:*"
+    "@edybara/command": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/emoji": "npm:*"
+    "@edybara/flat-list": "npm:*"
+    "@edybara/flat-task-list": "npm:*"
+    "@edybara/font-family": "npm:*"
+    "@edybara/heading": "npm:*"
+    "@edybara/hr": "npm:*"
+    "@edybara/image": "npm:*"
+    "@edybara/italic": "npm:*"
+    "@edybara/link": "npm:*"
+    "@edybara/mention": "npm:*"
+    "@edybara/menubar": "npm:*"
+    "@edybara/paragraph": "npm:*"
+    "@edybara/preset": "npm:*"
+    "@edybara/strikethrough": "npm:*"
+    "@edybara/subscript": "npm:*"
+    "@edybara/superscript": "npm:*"
+    "@edybara/tables": "npm:*"
+    "@edybara/text-color": "npm:*"
+    "@edybara/ui": "npm:*"
+    "@edybara/underline": "npm:*"
     prosemirror-commands: "npm:*"
     prosemirror-model: "npm:*"
     prosemirror-state: "npm:*"
@@ -6258,32 +6258,32 @@ __metadata:
     "@docusaurus/preset-classic": "npm:^3.1.1"
     "@docusaurus/tsconfig": "npm:^3.1.1"
     "@docusaurus/types": "npm:^3.1.1"
-    "@edybara-editor/blockquote": "npm:*"
-    "@edybara-editor/bold": "npm:*"
-    "@edybara-editor/code": "npm:*"
-    "@edybara-editor/codeblock": "npm:*"
-    "@edybara-editor/command": "npm:*"
-    "@edybara-editor/core": "npm:*"
-    "@edybara-editor/emoji": "npm:*"
-    "@edybara-editor/flat-list": "npm:*"
-    "@edybara-editor/flat-task-list": "npm:*"
-    "@edybara-editor/font-family": "npm:*"
-    "@edybara-editor/heading": "npm:*"
-    "@edybara-editor/hr": "npm:*"
-    "@edybara-editor/image": "npm:*"
-    "@edybara-editor/italic": "npm:*"
-    "@edybara-editor/link": "npm:*"
-    "@edybara-editor/mention": "npm:*"
-    "@edybara-editor/menubar": "npm:*"
-    "@edybara-editor/paragraph": "npm:*"
-    "@edybara-editor/preset": "npm:*"
-    "@edybara-editor/strikethrough": "npm:*"
-    "@edybara-editor/subscript": "npm:*"
-    "@edybara-editor/superscript": "npm:*"
-    "@edybara-editor/tables": "npm:*"
-    "@edybara-editor/text-color": "npm:*"
-    "@edybara-editor/ui": "npm:*"
-    "@edybara-editor/underline": "npm:*"
+    "@edybara/blockquote": "npm:*"
+    "@edybara/bold": "npm:*"
+    "@edybara/code": "npm:*"
+    "@edybara/codeblock": "npm:*"
+    "@edybara/command": "npm:*"
+    "@edybara/core": "npm:*"
+    "@edybara/emoji": "npm:*"
+    "@edybara/flat-list": "npm:*"
+    "@edybara/flat-task-list": "npm:*"
+    "@edybara/font-family": "npm:*"
+    "@edybara/heading": "npm:*"
+    "@edybara/hr": "npm:*"
+    "@edybara/image": "npm:*"
+    "@edybara/italic": "npm:*"
+    "@edybara/link": "npm:*"
+    "@edybara/mention": "npm:*"
+    "@edybara/menubar": "npm:*"
+    "@edybara/paragraph": "npm:*"
+    "@edybara/preset": "npm:*"
+    "@edybara/strikethrough": "npm:*"
+    "@edybara/subscript": "npm:*"
+    "@edybara/superscript": "npm:*"
+    "@edybara/tables": "npm:*"
+    "@edybara/text-color": "npm:*"
+    "@edybara/ui": "npm:*"
+    "@edybara/underline": "npm:*"
     "@faker-js/faker": "npm:^8.1.0"
     "@mdx-js/react": "npm:^3.0.0"
     "@types/react": "npm:^18.2.66"

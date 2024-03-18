@@ -5,15 +5,15 @@ import {
 import { EditorState, Plugin } from 'prosemirror-state';
 import React, { useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
 import {
   edybaraParagraphNodes,
   edybaraParagraphPlugins,
-} from '@edybara-editor/paragraph';
+} from '@edybara/paragraph';
 import {
   edybaraHorizontalRuleNodes,
   edybaraHorizontalRulePlugins,
-} from '@edybara-editor/hr';
+} from '@edybara/hr';
 
 const schema = new Schema({
   nodes: {

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { EdybaraButton, EdybaraInput, EdybaraLabel, html } from '@edybara-editor/ui';
+import { EdybaraButton, EdybaraInput, EdybaraLabel, html } from '@edybara/ui';
 import { forwardRef } from 'preact/compat';
 
 export interface EdybaraLinkFormProps {

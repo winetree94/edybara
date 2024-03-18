@@ -10,13 +10,13 @@ Edybara 의 모든 서식과 플러그인을 통합 제공하는 단일 패키�
 ## 설치
 
 ```bash
-npm install @edybara-editor/preset
+npm install @edybara/preset
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edybara-editor/preset/styles/preset.scss";
+@import "@edybara/preset/styles/preset.scss";
 ```
 
 ## 서식
@@ -38,8 +38,8 @@ import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { Node } from 'prosemirror-model';
-import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara-editor/preset';
-import { EdybaraMentionView } from '@edybara-editor/mention';
+import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara/preset';
+import { EdybaraMentionView } from '@edybara/mention';
 import { faker } from '@faker-js/faker';
 
 const persons = Array.from({ length: 200 }).map(() => ({

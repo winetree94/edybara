@@ -6,13 +6,13 @@ import {
   EdybaraSeparator,
   classes,
   html,
-} from '@edybara-editor/ui';
-import { markActive } from '@edybara-editor/core';
+} from '@edybara/ui';
+import { markActive } from '@edybara/core';
 import {
   EdybaraTextColorAttrs,
   EdybaraTextColorMarkType,
   toggleTextColorWithAttrs,
-} from '@edybara-editor/text-color';
+} from '@edybara/text-color';
 
 export const EdybaraMenubarFontColorSelect = () => {
   const context = useContext(EdybaraMenubarContext);

@@ -10,13 +10,13 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ## 설치
 
 ```bash
-npm install @edybara-editor/subscript
+npm install @edybara/subscript
 ```
 
 ## 스타일
 
 ```css title="src/index.scss"
-@import "@edybara-editor/subscript/styles/subscript.scss";
+@import "@edybara/subscript/styles/subscript.scss";
 ```
 
 ## 서식
@@ -41,10 +41,10 @@ npm install @edybara-editor/subscript
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara-editor/core';
-import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara-editor/paragraph';
-import { edybaraMenubarPlugins } from '@edybara-editor/menubar';
-import { edybaraSubscriptMarks, edybaraSubscriptPlugins } from '@edybara-editor/subscript';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import { edybaraParagraphNodes, edybaraParagraphPlugins, } from '@edybara/paragraph';
+import { edybaraMenubarPlugins } from '@edybara/menubar';
+import { edybaraSubscriptMarks, edybaraSubscriptPlugins } from '@edybara/subscript';
 
 const schema = new Schema({
   nodes: {

@@ -1,5 +1,5 @@
 import { NodeSpec } from 'prosemirror-model';
-import { isQuillTaskList } from '@edybara-editor/core';
+import { isQuillTaskList } from '@edybara/core';
 
 export const EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME = 'task_list';
 
