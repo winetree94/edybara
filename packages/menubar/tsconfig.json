@@ -8,7 +8,7 @@
     "allowSyntheticDefaultImports": true,
     "paths": {
       "@edybara/core": ["../../core/src/index.ts"],
-      "@edybara/mention": ["../../mention/src/index.ts"],
+      "@edybara/mention": ["../../_wip_mention/src/index.ts"],
       "@edybara/heading": ["../../heading/src/index.ts"],
       "@edybara/paragraph": ["../../paragraph/src/index.ts"],
       "@edybara/flat-list": ["../../flat-list/src/index.ts"],

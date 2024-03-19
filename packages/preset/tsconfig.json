@@ -27,7 +27,7 @@
       "@edybara/superscript": ["../../superscript/src/index.ts"],
       "@edybara/text-color": ["../../text-color/src/index.ts"],
       "@edybara/underline": ["../../underline/src/index.ts"],
-      "@edybara/mention": ["../../mention/src/index.ts"],
+      "@edybara/mention": ["../../_wip_mention/src/index.ts"],
       "@edybara/ui": ["../../ui/src/index.ts"],
       "@edybara/menubar": ["../../menubar/src/index.ts"]
     }

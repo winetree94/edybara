@@ -6,7 +6,7 @@
     "declaration": true,
     "paths": {
       "@edybara/ui": ["../../ui/src/index.ts"],
-      "@edybara/mention": ["../../mention/src/index.ts"],
+      "@edybara/mention": ["../../_wip_mention/src/index.ts"],
       "@edybara/tables": ["../../tables/src/index.ts"]
     }
   },
