@@ -1,5 +1,25 @@
 @import '@edybara/preset/styles/preset.scss';
 
+.navbar {
+  background-color: transparent;
+  // height: 88px;
+  // padding: 0 20px;
+
+  // .navbar__brand {
+  //   .navbar__logo {
+  //     height: unset;
+  //     margin: 0 5px 0 0;
+  //     img {
+  //       height: 46px;
+  //       width: 50px;
+  //     }
+  //   }
+  //   .navbar__title {
+  //     font-size: 28px;
+  //   }
+  // }
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
@@ -36,15 +56,10 @@ body {
 
 .edybara-root {
   width: 100%;
-  margin: var(--ifm-leading) 0;
 }
 
 .main-editor {
   margin: 0 !important;
-}
-
-.border {
-  border: 1px solid #ccc;
 }
 
 .stackblitz {

@@ -67,7 +67,7 @@ const config: Config = {
       title: 'Edybara',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/edybara.svg',
       },
       items: [
         {

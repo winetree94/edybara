@@ -7,7 +7,6 @@
     "start": "vite",
     "clean:dist": "rimraf dist",
     "clean:dependency": "rimraf node_modules",
-    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {

@@ -1,7 +1,42 @@
 .EditorContainer {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 30px;
   align-items: center;
+}
+
+.Wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.HeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 30px 482px 30px;
+  background-color: #e9f3ff;
+  width: 100%;
+  background: url('/img/hipo.svg') no-repeat center center;
+  background-size: 100% auto;
+}
+
+.Title {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.Description {
+  font-size: 26px;
+  font-weight: 400;
+  margin: 20px 0 0 0;
+  max-width: 584px;
+  text-align: center;
+}
+
+.DownloadButton {
+  margin-top: 50px;
 }
 
 .Header {
@@ -9,24 +44,26 @@
   margin-bottom: 30px;
 }
 
-.EditorWrapper {
-  margin-top: 100px;
-  padding: 60px 30px;
-  border: 2px solid black;
-  background-color: #c8ccd2;
-  border-radius: 60px;
+.WhatIsWrapper {
+  background-color: #1781fe;
   width: 100%;
-  max-width: 1080px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.EditorWrapper {
+  padding: 0px 30px 0px 30px;
+  display: flex;
+  flex: 1 1 auto;
+  height: 500px;
+  max-width: 954px;
+  width: 100%;
+  position: absolute;
+  top: -420px;
 }
 
 .Editor {
-  display: flex;
-  flex: 1 1 auto;
-  width: 100%;
-  height: 500px;
-  border: 2px solid black;
-}
-
-.MainEditor {
-  margin: 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
