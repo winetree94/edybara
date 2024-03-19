@@ -37,7 +37,7 @@ export default function Home(): JSX.Element {
         </div>
         <div className={styles.IntroWrapper}>
           <div className={styles.EditorWrapper}>
-            <BrowserOnly fallback={<div>loading</div>}>
+            <BrowserOnly>
               {() => {
                 const {
                   Maximum,

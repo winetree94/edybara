@@ -57,6 +57,11 @@ body {
 
 .edybara-root {
   width: 100%;
+  border-radius: 8px;
+
+  .edybara-view-editor-root {
+    border-radius: 8px;
+  }
 }
 
 .main-editor {
