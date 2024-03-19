@@ -4,7 +4,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.scss';
 import BrowserOnly from '@docusaurus/BrowserOnly';
-import { classes } from '@edybara/ui';
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
@@ -24,7 +23,11 @@ export default function Home(): JSX.Element {
             editor.
           </p>
           <button
-            className={classes('button button--primary', styles.DownloadButton)}
+            className={[
+              'button',
+              'button--primary',
+              styles.DownloadButton,
+            ].join(' ')}
           >
             Download Now!
           </button>
