@@ -63,10 +63,22 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+    },
+    announcementBar: {
+      id: 'support_us',
+      content: 'Edybara is currently in development',
+      backgroundColor: '#1781FE',
+      textColor: 'white',
+      isCloseable: false,
+    },
     navbar: {
       title: 'Edybara',
+      hideOnScroll: true,
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Edybara',
         src: 'img/edybara.svg',
       },
       items: [

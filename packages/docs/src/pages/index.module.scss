@@ -9,12 +9,16 @@
   align-items: center;
 }
 
+.HeaderBackgroundWrapper {
+  width: 100%;
+  background-color: #e9f3ff;
+}
+
 .HeaderWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 70px 30px 482px 30px;
-  background-color: #e9f3ff;
   width: 100%;
   background: url('/img/hipo.svg') no-repeat center center;
   background-size: 100% auto;
@@ -25,6 +29,7 @@
   font-size: 64px;
   font-weight: 800;
   text-align: center;
+  max-width: 1040px;
 }
 
 .Description {
@@ -44,8 +49,8 @@
   margin-bottom: 30px;
 }
 
-.WhatIsWrapper {
-  background-color: #1781fe;
+.IntroWrapper {
+  background-color: #e9f3ff;
   width: 100%;
   display: flex;
   align-items: center;
@@ -54,11 +59,11 @@
 }
 
 .EditorWrapper {
-  padding: 0px 30px 0px 30px;
+  padding: 0 20px;
   display: flex;
   flex: 1 1 auto;
-  height: 500px;
-  max-width: 954px;
+  height: 600px;
+  max-width: 994px;
   width: 100%;
   position: absolute;
   top: -420px;
@@ -66,4 +71,103 @@
 
 .Editor {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.WhatIsWrapper {
+  padding: 250px 20px 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1781fe;
+  width: 100%;
+}
+
+.WhatIsHeader {
+  font-size: 44px;
+  font-weight: 800;
+  color: white;
+}
+
+.WhatIsDescription {
+  margin-top: 18px;
+  font-size: 22px;
+  max-width: 706px;
+  color: white;
+}
+
+.GridLeftImage {
+  width: 100%;
+}
+
+.GridTopRightImage {
+  max-width: 252px;
+}
+
+.GridBottomRightImage {
+  max-width: 300px;
+}
+
+.GridItemTextWrapper {
+  padding: 0 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.GridItemHeader {
+  margin: 0;
+  font-size: 24px;
+}
+
+.GridItemDescription {
+  margin: 14px 0 0 0;
+  font-size: 16px;
+}
+
+.WhatIsGridWrapper {
+  display: grid;
+  grid-template-areas:
+    'left top-right top-right'
+    'left bottom-right bottom-right';
+  gap: 20px;
+  max-width: 954px;
+}
+
+.WhatIsGridItemLeft {
+  grid-area: left;
+  background-color: #e9f3ff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.WhatIsGridItemTopRight {
+  grid-area: top-right;
+  background-color: #ece9ff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.WhatIsGridItemBottomRight {
+  grid-area: bottom-right;
+  background-color: #ffe0e0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// Relation QUill
+
+.RelationQuillWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #d6e9ff;
+  padding: 100px 20px;
 }
