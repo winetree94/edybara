@@ -3,6 +3,7 @@ import React from 'react';
 // import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import Translate, { translate } from '@docusaurus/Translate';
 
 export default function Home(): JSX.Element {
   // const { siteConfig } = useDocusaurusContext();
@@ -22,14 +23,21 @@ export default function Home(): JSX.Element {
                 'tw-text-54 tw-font-800 tw-max-w-[954px] tw-text-center'
               }
             >
-              The most useful rich text editor, Use it for free
+              <Translate description="Main Title">home.main.title</Translate>
             </h1>
-            <p className={'tw-text-26 tw-font-400 tw-mt-20 tw-text-center'}>
-              It has only the advantages of a complete editor and a
-              non-completed editor.
+            <p
+              className={
+                'tw-text-26 tw-font-400 tw-mt-20 tw-text-center tw-max-w-[584px]'
+              }
+            >
+              <Translate description="Main Description">
+                home.main.description
+              </Translate>
             </p>
             <button className="tw-text-26 tw-font-700 tw-py-14 tw-px-24 tw-bg-blue-500 tw-text-white tw-rounded-8 tw-mt-50">
-              Download Now!
+              <Translate description="Main Start Button">
+                home.main.start
+              </Translate>
             </button>
           </div>
         </div>
@@ -56,11 +64,12 @@ export default function Home(): JSX.Element {
           }
         >
           <h2 className="tw-text-44 tw-font-800 tw-text-white">
-            What is <span className="tw-text-yellow-100">Edybara</span>?
+            <Translate description="What is Edybara title">
+              home.whatIs.title
+            </Translate>
           </h2>
-          <p className="tw-mt-18 tw-text-22 tw-max-w-[706px] tw-text-white">
-            Edim is an open source rich text editor based on proseMirror. It
-            provides a predefined format and plug-in for use with proseMirror.
+          <p className="tw-mt-18 tw-text-22 tw-max-w-[706px] tw-text-white tw-text-center">
+            <Translate>home.whatIs.description</Translate>
           </p>
           <div className="tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px] tw-w-full tw-mt-100">
             <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
@@ -70,13 +79,10 @@ export default function Home(): JSX.Element {
               />
               <div className="tw-p-20 tw-flex tw-flex-col">
                 <h3 className="tw-text-24">
-                  Open Source Rich Text Editor Based on ProsseMirror
+                  <Translate>home.whatIs.card.basedOn.title</Translate>
                 </h3>
                 <p className="tw-mt-14 tw-text-16">
-                  ProseMirror is a modern toolkit for creating rich text editors
-                  that work in your browser. However, ProseMirror has a steep
-                  learning curve and a lot of code to write because it is not
-                  intended to provide a complete editor, such as Quill.js.
+                  <Translate>home.whatIs.card.basedOn.description</Translate>
                 </p>
               </div>
             </div>
@@ -86,10 +92,13 @@ export default function Home(): JSX.Element {
                 src="img/ilusts/rocket.svg"
               />
               <div className="tw-p-20 tw-flex tw-flex-col">
-                <h3 className="tw-text-24">Easy-To-Start</h3>
+                <h3 className="tw-text-24">
+                  <Translate>home.whatIs.card.easyToStart.title</Translate>
+                </h3>
                 <p className="tw-mt-14 tw-text-16">
-                  Edim provides ready-to-use forms (Schema) and plugins in these
-                  ProseMirror to help enable Easy-To-Start.
+                  <Translate>
+                    home.whatIs.card.easyToStart.description
+                  </Translate>
                 </p>
               </div>
             </div>
@@ -100,12 +109,10 @@ export default function Home(): JSX.Element {
               />
               <div className="tw-p-20 tw-flex tw-flex-col">
                 <h3 className="tw-text-24">
-                  Experience like using ProseMirror
+                  <Translate>home.whatIs.card.experience.title</Translate>
                 </h3>
                 <p className="tw-mt-14 tw-text-16">
-                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
-                  and exposes all APIs directly. This means that you can refer
-                  to ProseMirror's official documentation.
+                  <Translate>home.whatIs.card.experience.description</Translate>
                 </p>
               </div>
             </div>
@@ -114,9 +121,9 @@ export default function Home(): JSX.Element {
         {/* Relationship */}
         <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-bg-blue-100 tw-py-100 tw-px-25">
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
-            Relationship with <span className="tw-text-blue-500">Quill.js</span>
+            <Translate>home.quill.title</Translate>
           </h1>
-          <div className="tw-mt-60 tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px]">
+          <div className="tw-mt-60 tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px] tw-w-full">
             <div className="tw-bg-white tw-rounded-20 tw-p-20">
               <img
                 className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
@@ -124,12 +131,10 @@ export default function Home(): JSX.Element {
               />
               <div className="tw-flex tw-flex-col tw-mt-20">
                 <h3 className="tw-text-22 tw-font-700">
-                  Experience like using ProseMirror
+                  <Translate>home.quill.card.migrate.title</Translate>
                 </h3>
                 <p className="tw-mt-14">
-                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
-                  and exposes all APIs directly. This means that you can refer
-                  to ProseMirror's official documentation.
+                  <Translate>home.quill.card.migrate.description</Translate>
                 </p>
               </div>
             </div>
@@ -140,23 +145,21 @@ export default function Home(): JSX.Element {
               />
               <div className="tw-flex tw-flex-col tw-mt-20">
                 <h3 className="tw-text-22 tw-font-700">
-                  Experience like using ProseMirror
+                  <Translate>home.quill.card.api.title</Translate>
                 </h3>
                 <p className="tw-mt-14">
-                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
-                  and exposes all APIs directly. This means that you can refer
-                  to ProseMirror's official documentation.
+                  <Translate>home.quill.card.api.description</Translate>
                 </p>
               </div>
             </div>
           </div>
         </div>
-        {/* Recommand */}
+        {/* Recommend */}
         <div className="tw-bg-white tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-25">
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
-            Who do you recommend it to?
+            <Translate>home.recommend.title</Translate>
           </h1>
-          <div className="tw-mt-40 tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px]">
+          <div className="tw-mt-40 tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px] tw-w-full">
             <div className="tw-bg-blue-200 tw-rounded-20 tw-p-20">
               <img
                 className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
@@ -164,12 +167,12 @@ export default function Home(): JSX.Element {
               />
               <div className="tw-flex tw-flex-col tw-mt-20">
                 <h3 className="tw-text-22 tw-font-700">
-                  Experience like using ProseMirror
+                  <Translate>home.recommend.card.business.title</Translate>
                 </h3>
                 <p className="tw-mt-14">
-                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
-                  and exposes all APIs directly. This means that you can refer
-                  to ProseMirror's official documentation.
+                  <Translate>
+                    home.recommend.card.business.description
+                  </Translate>
                 </p>
               </div>
             </div>
@@ -180,12 +183,10 @@ export default function Home(): JSX.Element {
               />
               <div className="tw-flex tw-flex-col tw-mt-20">
                 <h3 className="tw-text-22 tw-font-700">
-                  Experience like using ProseMirror
+                  <Translate>home.recommend.card.editor.title</Translate>
                 </h3>
                 <p className="tw-mt-14">
-                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
-                  and exposes all APIs directly. This means that you can refer
-                  to ProseMirror's official documentation.
+                  <Translate>home.recommend.card.editor.description</Translate>
                 </p>
               </div>
             </div>
@@ -196,12 +197,10 @@ export default function Home(): JSX.Element {
               />
               <div className="tw-flex tw-flex-col tw-mt-20">
                 <h3 className="tw-text-22 tw-font-700">
-                  Experience like using ProseMirror
+                  <Translate>home.recommend.card.ready.title</Translate>
                 </h3>
                 <p className="tw-mt-14">
-                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
-                  and exposes all APIs directly. This means that you can refer
-                  to ProseMirror's official documentation.
+                  <Translate>home.recommend.card.ready.description</Translate>
                 </p>
               </div>
             </div>
@@ -209,10 +208,10 @@ export default function Home(): JSX.Element {
         </div>
         <div className="tw-bg-blue-500 tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-20">
           <h1 className="tw-text-38 tw-font-800 tw-text-white">
-            Try Edybara today
+            <Translate>home.try.title</Translate>
           </h1>
           <button className="tw-bg-white tw-text-blue-500 tw-py-8 tw-px-14 tw-rounded-8 tw-text-20 tw-font-600 tw-mt-40">
-            Download Now
+            <Translate>home.try.start</Translate>
           </button>
         </div>
       </div>

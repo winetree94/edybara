@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.시작하기": {
+    "message": "시작하기",
+    "description": "The label for category 시작하기 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.시작하기.link.generated-index.description": {
+    "message": "Edybara 을 시작하기 위한 가이드",
+    "description": "The generated-index page description for category 시작하기 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.아키텍쳐": {
+    "message": "아키텍쳐",
+    "description": "The label for category 아키텍쳐 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.아키텍쳐.link.generated-index.description": {
+    "message": "Edybara",
+    "description": "The generated-index page description for category 아키텍쳐 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.패키지 목록": {
+    "message": "패키지 목록",
+    "description": "The label for category 패키지 목록 in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.패키지 목록.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category 패키지 목록 in sidebar docsSidebar"
+  }
+}
