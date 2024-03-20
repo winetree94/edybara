@@ -17,10 +17,10 @@ export default function Home(): JSX.Element {
       <div className={styles.Wrapper}>
         <div className={styles.HeaderBackgroundWrapper}>
           <div className={styles.HeaderWrapper}>
-            <h1 className={styles.Title}>
+            <h1 className={`tw-text-54 tw-font-800 ${styles.Title}`}>
               The most useful rich text editor, Use it for free
             </h1>
-            <p className={styles.Description}>
+            <p className={`tw-text-26 tw-font-400 ${styles.Description}`}>
               It has only the advantages of a complete editor and a
               non-completed editor.
             </p>
@@ -102,21 +102,31 @@ export default function Home(): JSX.Element {
             </div>
           </div>
         </div>
-        <div className={styles.RelationQuillWrapper}>
-          <h1 className={styles.RelationQuillHeader}>
-            Relationship with Quill.js
+        <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-bg-blue-100 tw-py-100 tw-px-25">
+          <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
+            Relationship with <span className="tw-text-blue-500">Quill.js</span>
           </h1>
-          <div className={styles.RelationQuillGridWrapper}>
-            <div className={styles.RelationQuillGridItemBottomRight}>
-              <img
-                className={styles.RelationQuillGridBottomRightImage}
-                src="img/what-is-bottom-right.svg"
-              />
-              <div className={styles.GridItemTextWrapper}>
-                <h3 className={styles.GridItemHeader}>
+          <div className="tw-mt-60 tw-flex tw-gap-20 tw-max-w-954">
+            <div className="tw-bg-white tw-rounded-20 tw-p-20">
+              <img className="" src="img/what-is-bottom-right.svg" />
+              <div className="tw-flex tw-flex-col tw-mt-20">
+                <h3 className="tw-text-22 tw-font-700">
                   Experience like using ProseMirror
                 </h3>
-                <p className={styles.GridItemDescription}>
+                <p className="tw-mt-14">
+                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
+                  and exposes all APIs directly. This means that you can refer
+                  to ProseMirror's official documentation.
+                </p>
+              </div>
+            </div>
+            <div className="tw-bg-white tw-rounded-20 tw-p-20">
+              <img className="" src="img/what-is-bottom-right.svg" />
+              <div className="tw-flex tw-flex-col tw-mt-20">
+                <h3 className="tw-text-22 tw-font-700">
+                  Experience like using ProseMirror
+                </h3>
+                <p className="tw-mt-14">
                   Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
                   and exposes all APIs directly. This means that you can refer
                   to ProseMirror's official documentation.
@@ -124,6 +134,34 @@ export default function Home(): JSX.Element {
               </div>
             </div>
           </div>
+        </div>
+        <div className="tw-bg-white tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-25">
+          <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
+            Who do you recommend it to?
+          </h1>
+          <div className="tw-mt-40 tw-flex tw-gap-20 tw-max-w-954">
+            <div className="tw-bg-blue-200 tw-rounded-20 tw-p-20">
+              <img className="" src="img/what-is-bottom-right.svg" />
+              <div className="tw-flex tw-flex-col tw-mt-20">
+                <h3 className="tw-text-22 tw-font-700">
+                  Experience like using ProseMirror
+                </h3>
+                <p className="tw-mt-14">
+                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
+                  and exposes all APIs directly. This means that you can refer
+                  to ProseMirror's official documentation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="tw-bg-blue-500 tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-20">
+          <h1 className="tw-text-38 tw-font-800 tw-text-white">
+            Try Edybara today
+          </h1>
+          <button className="tw-bg-white tw-text-blue-500 tw-py-8 tw-px-14 tw-rounded-8 tw-text-20 tw-font-600 tw-mt-40">
+            Download Now
+          </button>
         </div>
       </div>
     </Layout>
