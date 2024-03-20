@@ -33,6 +33,18 @@ const config: Config = {
   plugins: [
     'docusaurus-plugin-sass',
     require.resolve('./custom-webpack.config.js'),
+    // eslint-disable-next-line @typescript-eslint/require-await
+    async function myPlugin() {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require('tailwindcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
+        },
+      };
+    },
   ],
 
   presets: [
