@@ -2,7 +2,6 @@
 import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import styles from './index.module.scss';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export default function Home(): JSX.Element {
@@ -12,58 +11,66 @@ export default function Home(): JSX.Element {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
-      wrapperClassName={styles.EditorContainer}
+      wrapperClassName="tw-items-center"
     >
-      <div className={styles.Wrapper}>
-        <div className={styles.HeaderBackgroundWrapper}>
-          <div className={styles.HeaderWrapper}>
-            <h1 className={`tw-text-54 tw-font-800 ${styles.Title}`}>
+      <div className="tw-w-full tw-flex tw-flex-col tw-items-center">
+        <div className="tw-w-full tw-bg-blue-100">
+          <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-px-30 tw-pt-70 tw-pb-[482px] tw-bg-100 tw-bg-homepage-1 tw-bg-no-repeat tw-bg-center">
+            <h1
+              className={
+                'tw-text-54 tw-font-800 tw-max-w-[954px] tw-text-center'
+              }
+            >
               The most useful rich text editor, Use it for free
             </h1>
-            <p className={`tw-text-26 tw-font-400 ${styles.Description}`}>
+            <p className={'tw-text-26 tw-font-400 tw-mt-20 tw-text-center'}>
               It has only the advantages of a complete editor and a
               non-completed editor.
             </p>
-            <button
-              className={[
-                'button',
-                'button--primary',
-                styles.DownloadButton,
-              ].join(' ')}
-            >
+            <button className="tw-text-26 tw-font-700 tw-py-14 tw-px-24 tw-bg-blue-500 tw-text-white tw-rounded-8 tw-mt-50">
               Download Now!
             </button>
           </div>
         </div>
-        <div className={styles.IntroWrapper}>
-          <div className={styles.EditorWrapper}>
+        <div className="tw-bg-white tw-w-full tw-flex tw-items-center tw-flex-col tw-relative">
+          <div
+            className={
+              'tw-flex tw-flex-1 tw-px-20 tw-w-full tw-absolute tw-rounded-8 tw-h-[600px] tw-max-w-[994px] tw-top-[-420px]'
+            }
+          >
             <BrowserOnly>
               {() => {
                 const {
                   Maximum,
                 } = require('@site/src/components/examples/getting-started/maximum');
-                return <Maximum className={styles.Editor} />;
+                return <Maximum className={'tw-rounded-8 tw-shadow-black'} />;
               }}
             </BrowserOnly>
           </div>
         </div>
-        <div className={styles.WhatIsWrapper}>
-          <h2 className={styles.WhatIsHeader}>What is Edybara?</h2>
-          <p className={styles.WhatIsDescription}>
+        <div
+          className={
+            'tw-flex tw-flex-col tw-items-center tw-bg-blue-500 tw-w-full tw-px-20 tw-pb-100 tw-pt-250'
+          }
+        >
+          <h2 className="tw-text-44 tw-font-800 tw-text-white">
+            What is <span className="tw-text-yellow-100">Edybara</span>?
+          </h2>
+          <p className="tw-mt-18 tw-text-22 tw-max-w-[706px] tw-text-white">
             Edim is an open source rich text editor based on proseMirror. It
             provides a predefined format and plug-in for use with proseMirror.
           </p>
-          <div className={styles.WhatIsGridWrapper}>
-            <div className={styles.WhatIsGridItemLeft}>
+          <div className="tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px] tw-w-full tw-mt-100">
+            <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
               <img
-                className={styles.GridLeftImage}
+                className="tw-w-full tw-px-20 tw-pt-20"
                 src="img/what-is-left.svg"
               />
-              <div className={styles.GridItemTextWrapper}>
-                <h3 className={styles.GridItemHeader}>
+              <div className="tw-p-20 tw-flex tw-flex-col">
+                <h3 className="tw-text-24">
                   Open Source Rich Text Editor Based on ProsseMirror
                 </h3>
-                <p className={styles.GridItemDescription}>
+                <p className="tw-mt-14 tw-text-16">
                   ProseMirror is a modern toolkit for creating rich text editors
                   that work in your browser. However, ProseMirror has a steep
                   learning curve and a lot of code to write because it is not
@@ -71,29 +78,29 @@ export default function Home(): JSX.Element {
                 </p>
               </div>
             </div>
-            <div className={styles.WhatIsGridItemTopRight}>
+            <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
               <img
-                className={styles.GridTopRightImage}
+                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
                 src="img/what-is-top-right.svg"
               />
-              <div className={styles.GridItemTextWrapper}>
-                <h3 className={styles.GridItemHeader}>Easy-To-Start</h3>
-                <p className={styles.GridItemDescription}>
+              <div className="tw-p-20 tw-flex tw-flex-col">
+                <h3 className="tw-text-24">Easy-To-Start</h3>
+                <p className="tw-mt-14 tw-text-16">
                   Edim provides ready-to-use forms (Schema) and plugins in these
                   ProseMirror to help enable Easy-To-Start.
                 </p>
               </div>
             </div>
-            <div className={styles.WhatIsGridItemBottomRight}>
+            <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
               <img
-                className={styles.GridBottomRightImage}
+                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
                 src="img/what-is-bottom-right.svg"
               />
-              <div className={styles.GridItemTextWrapper}>
-                <h3 className={styles.GridItemHeader}>
+              <div className="tw-p-20 tw-flex tw-flex-col">
+                <h3 className="tw-text-24">
                   Experience like using ProseMirror
                 </h3>
-                <p className={styles.GridItemDescription}>
+                <p className="tw-mt-14 tw-text-16">
                   Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
                   and exposes all APIs directly. This means that you can refer
                   to ProseMirror's official documentation.
@@ -106,7 +113,7 @@ export default function Home(): JSX.Element {
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
             Relationship with <span className="tw-text-blue-500">Quill.js</span>
           </h1>
-          <div className="tw-mt-60 tw-flex tw-gap-20 tw-max-w-954">
+          <div className="tw-mt-60 tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px]">
             <div className="tw-bg-white tw-rounded-20 tw-p-20">
               <img className="" src="img/what-is-bottom-right.svg" />
               <div className="tw-flex tw-flex-col tw-mt-20">
@@ -139,7 +146,7 @@ export default function Home(): JSX.Element {
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
             Who do you recommend it to?
           </h1>
-          <div className="tw-mt-40 tw-flex tw-gap-20 tw-max-w-954">
+          <div className="tw-mt-40 tw-flex tw-gap-20 tw-max-w-[954px]">
             <div className="tw-bg-blue-200 tw-rounded-20 tw-p-20">
               <img className="" src="img/what-is-bottom-right.svg" />
               <div className="tw-flex tw-flex-col tw-mt-20">

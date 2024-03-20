@@ -3,9 +3,6 @@ module.exports = {
   prefix: 'tw-',
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    maxWidth: {
-      954: '954px',
-    },
     borderRadius: {
       8: '8px',
       20: '20px',
@@ -14,6 +11,10 @@ module.exports = {
       20: '20px',
     },
     colors: {
+      yellow: {
+        100: '#ffed91',
+      },
+      black: '#000000',
       white: '#FFFFFF',
       blue: {
         100: '#E9F3FF',
@@ -24,16 +25,25 @@ module.exports = {
     spacing: {
       8: '8px',
       14: '14px',
+      16: '16px',
+      18: '18px',
       20: '20px',
+      24: '24px',
       25: '25px',
+      30: '30px',
       40: '40px',
+      50: '50px',
       60: '60px',
+      70: '70px',
       100: '100px',
+      250: '250px',
       400: '400px',
     },
     fontSize: {
+      16: '16px',
       20: '20px',
       22: '22px',
+      24: '24px',
       26: '26px',
       38: '38px',
       44: '44px',
@@ -45,7 +55,14 @@ module.exports = {
       700: '700',
       800: '800',
     },
-    extend: {},
+    extend: {
+      backgroundSize: {
+        100: '100%',
+      },
+      backgroundImage: {
+        'homepage-1': 'url("/img/hipo.svg")',
+      },
+    },
   },
   plugins: [],
 };
