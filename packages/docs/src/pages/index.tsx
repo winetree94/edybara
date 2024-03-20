@@ -1,20 +1,21 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
+  // const { siteConfig } = useDocusaurusContext();
 
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title="The most useful rich text editor, Use it for free"
+      description="It has only the advantages of a complete editor and a non-completed editor."
       wrapperClassName="tw-items-center"
     >
       <div className="tw-w-full tw-flex tw-flex-col tw-items-center">
-        <div className="tw-w-full tw-bg-blue-100">
+        {/* Intro */}
+        <div className="tw-w-full ">
           <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-px-30 tw-pt-70 tw-pb-[482px] tw-bg-100 tw-bg-homepage-1 tw-bg-no-repeat tw-bg-center">
             <h1
               className={
@@ -32,6 +33,7 @@ export default function Home(): JSX.Element {
             </button>
           </div>
         </div>
+        {/* Edybara */}
         <div className="tw-bg-white tw-w-full tw-flex tw-items-center tw-flex-col tw-relative">
           <div
             className={
@@ -63,8 +65,8 @@ export default function Home(): JSX.Element {
           <div className="tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px] tw-w-full tw-mt-100">
             <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
               <img
-                className="tw-w-full tw-px-20 tw-pt-20"
-                src="img/what-is-left.svg"
+                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                src="img/ilusts/folder.svg"
               />
               <div className="tw-p-20 tw-flex tw-flex-col">
                 <h3 className="tw-text-24">
@@ -81,7 +83,7 @@ export default function Home(): JSX.Element {
             <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
               <img
                 className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
-                src="img/what-is-top-right.svg"
+                src="img/ilusts/rocket.svg"
               />
               <div className="tw-p-20 tw-flex tw-flex-col">
                 <h3 className="tw-text-24">Easy-To-Start</h3>
@@ -94,7 +96,7 @@ export default function Home(): JSX.Element {
             <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
               <img
                 className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
-                src="img/what-is-bottom-right.svg"
+                src="img/ilusts/book.svg"
               />
               <div className="tw-p-20 tw-flex tw-flex-col">
                 <h3 className="tw-text-24">
@@ -109,13 +111,17 @@ export default function Home(): JSX.Element {
             </div>
           </div>
         </div>
+        {/* Relationship */}
         <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-bg-blue-100 tw-py-100 tw-px-25">
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
             Relationship with <span className="tw-text-blue-500">Quill.js</span>
           </h1>
           <div className="tw-mt-60 tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px]">
             <div className="tw-bg-white tw-rounded-20 tw-p-20">
-              <img className="" src="img/what-is-bottom-right.svg" />
+              <img
+                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                src="img/ilusts/document.svg"
+              />
               <div className="tw-flex tw-flex-col tw-mt-20">
                 <h3 className="tw-text-22 tw-font-700">
                   Experience like using ProseMirror
@@ -128,7 +134,10 @@ export default function Home(): JSX.Element {
               </div>
             </div>
             <div className="tw-bg-white tw-rounded-20 tw-p-20">
-              <img className="" src="img/what-is-bottom-right.svg" />
+              <img
+                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                src="img/ilusts/preferences.svg"
+              />
               <div className="tw-flex tw-flex-col tw-mt-20">
                 <h3 className="tw-text-22 tw-font-700">
                   Experience like using ProseMirror
@@ -142,13 +151,49 @@ export default function Home(): JSX.Element {
             </div>
           </div>
         </div>
+        {/* Recommand */}
         <div className="tw-bg-white tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-25">
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
             Who do you recommend it to?
           </h1>
-          <div className="tw-mt-40 tw-flex tw-gap-20 tw-max-w-[954px]">
+          <div className="tw-mt-40 tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px]">
             <div className="tw-bg-blue-200 tw-rounded-20 tw-p-20">
-              <img className="" src="img/what-is-bottom-right.svg" />
+              <img
+                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                src="img/ilusts/bag.svg"
+              />
+              <div className="tw-flex tw-flex-col tw-mt-20">
+                <h3 className="tw-text-22 tw-font-700">
+                  Experience like using ProseMirror
+                </h3>
+                <p className="tw-mt-14">
+                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
+                  and exposes all APIs directly. This means that you can refer
+                  to ProseMirror's official documentation.
+                </p>
+              </div>
+            </div>
+            <div className="tw-bg-blue-200 tw-rounded-20 tw-p-20">
+              <img
+                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                src="img/ilusts/developer.svg"
+              />
+              <div className="tw-flex tw-flex-col tw-mt-20">
+                <h3 className="tw-text-22 tw-font-700">
+                  Experience like using ProseMirror
+                </h3>
+                <p className="tw-mt-14">
+                  Unlike Reminder and Tiptap, Edim does not abstract ProseMirror
+                  and exposes all APIs directly. This means that you can refer
+                  to ProseMirror's official documentation.
+                </p>
+              </div>
+            </div>
+            <div className="tw-bg-blue-200 tw-rounded-20 tw-p-20">
+              <img
+                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                src="img/ilusts/edybara.svg"
+              />
               <div className="tw-flex tw-flex-col tw-mt-20">
                 <h3 className="tw-text-22 tw-font-700">
                   Experience like using ProseMirror

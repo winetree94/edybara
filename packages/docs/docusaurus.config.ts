@@ -4,11 +4,12 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Edybara',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  tagline:
+    'Edybara is an open source rich text editor based on proseMirror. It provides a predefined format and plug-in for use with proseMirror.',
+  favicon: 'img/edybara.svg',
 
   // Set the production url of your site here
-  url: 'https://edybara.me',
+  url: 'https://edybara.com',
 
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
@@ -78,6 +79,7 @@ const config: Config = {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
     announcementBar: {
       id: 'support_us',

@@ -56,11 +56,15 @@ module.exports = {
       800: '800',
     },
     extend: {
+      fontFamily: {
+        sans: ['Noto Sans KR', 'sans-serif'],
+        // serif: ['Merriweather', 'serif'],
+      },
       backgroundSize: {
         100: '100%',
       },
       backgroundImage: {
-        'homepage-1': 'url("/img/hipo.svg")',
+        'homepage-1': 'url("/img/backgrounds/hipo.svg")',
       },
     },
   },
