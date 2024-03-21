@@ -34,7 +34,7 @@ export default function Home(): JSX.Element {
                 home.main.description
               </Translate>
             </p>
-            <button className="tw-text-26 tw-font-700 tw-py-14 tw-px-24 tw-bg-blue-500 tw-text-white tw-rounded-8 tw-mt-50">
+            <button className="tw-text-26 tw-font-700 tw-py-8 tw-px-24 tw-bg-blue-500 tw-text-white tw-rounded-8 tw-mt-50">
               <Translate description="Main Start Button">
                 home.main.start
               </Translate>
