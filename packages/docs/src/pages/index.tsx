@@ -71,14 +71,14 @@ export default function Home(): JSX.Element {
           <p className="tw-mt-18 tw-text-22 tw-max-w-[706px] tw-text-white tw-text-center">
             <Translate>home.whatIs.description</Translate>
           </p>
-          <div className="tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px] tw-w-full tw-mt-100">
-            <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
+          <div className="tw-grid md:tw-grid-rows-2 tw-grid-cols-1 md:tw-grid-cols-none md:tw-grid-flow-col tw-gap-20 tw-max-w-[954px] tw-w-full tw-mt-100">
+            <div className="md:tw-row-span-2 tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
               <img
-                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                className="tw-w-full md:tw-object-cover tw-max-h-[180px] md:tw-max-h-none tw-flex-1"
                 src="img/ilusts/folder.svg"
               />
               <div className="tw-p-20 tw-flex tw-flex-col">
-                <h3 className="tw-text-24">
+                <h3 className="tw-text-22 tw-font-700">
                   <Translate>home.whatIs.card.basedOn.title</Translate>
                 </h3>
                 <p className="tw-mt-14 tw-text-16">
@@ -86,13 +86,13 @@ export default function Home(): JSX.Element {
                 </p>
               </div>
             </div>
-            <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
+            <div className="md:tw-col-span-2 tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
               <img
-                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                className="tw-w-full tw-max-h-[180px] md:tw-max-h-[250px] tw-px-20 tw-pt-20"
                 src="img/ilusts/rocket.svg"
               />
               <div className="tw-p-20 tw-flex tw-flex-col">
-                <h3 className="tw-text-24">
+                <h3 className="tw-text-22 tw-font-700">
                   <Translate>home.whatIs.card.easyToStart.title</Translate>
                 </h3>
                 <p className="tw-mt-14 tw-text-16">
@@ -102,13 +102,13 @@ export default function Home(): JSX.Element {
                 </p>
               </div>
             </div>
-            <div className="tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
+            <div className="md:tw-col-span-2 tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
               <img
-                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                className="tw-w-full tw-max-h-[180px] md:tw-max-h-[250px] tw-px-20 tw-pt-20"
                 src="img/ilusts/book.svg"
               />
               <div className="tw-p-20 tw-flex tw-flex-col">
-                <h3 className="tw-text-24">
+                <h3 className="tw-text-22 tw-font-700">
                   <Translate>home.whatIs.card.experience.title</Translate>
                 </h3>
                 <p className="tw-mt-14 tw-text-16">
@@ -119,12 +119,12 @@ export default function Home(): JSX.Element {
           </div>
         </div>
         {/* Relationship */}
-        {/* <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-bg-blue-100 tw-py-100 tw-px-25">
+        <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-bg-blue-100 tw-py-100 tw-px-25">
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
             <Translate>home.quill.title</Translate>
           </h1>
-          <div className="tw-mt-60 tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px] tw-w-full">
-            <div className="tw-bg-white tw-rounded-20 tw-p-20">
+          <div className="tw-grid tw-grid-rows-1 tw-grid-cols-1 md:tw-grid-flow-col md:tw-grid-cols-none tw-mt-60 tw-gap-20 tw-max-w-[954px] tw-w-full">
+            <div className="md:tw-col-span-2 tw-bg-white tw-rounded-20 tw-p-20">
               <img
                 className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
                 src="img/ilusts/document.svg"
@@ -153,19 +153,19 @@ export default function Home(): JSX.Element {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
         {/* Recommend */}
         <div className="tw-bg-white tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-25">
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
             <Translate>home.recommend.title</Translate>
           </h1>
-          <div className="tw-mt-40 tw-flex tw-flex-col tw-gap-20 tw-max-w-[954px] tw-w-full">
-            <div className="tw-bg-blue-200 tw-rounded-20 tw-p-20">
+          <div className="tw-grid md:tw-grid-rows-3 tw-grid-cols-1 md:tw-grid-cols-none md:tw-grid-flow-col tw-mt-40 tw-gap-20 tw-max-w-[954px] tw-w-full">
+            <div className="md:tw-col-span-3 tw-flex tw-flex-col md:tw-flex-row-reverse tw-justify-center tw-bg-blue-200 tw-rounded-20">
               <img
-                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                className="tw-w-full tw-max-h-[180px] md:tw-max-h-[260px] md:tw-self-end tw-px-20 tw-pt-20 md:tw-px-0"
                 src="img/ilusts/bag.svg"
               />
-              <div className="tw-flex tw-flex-col tw-mt-20">
+              <div className="tw-flex tw-flex-col tw-p-20">
                 <h3 className="tw-text-22 tw-font-700">
                   <Translate>home.recommend.card.business.title</Translate>
                 </h3>
@@ -176,9 +176,9 @@ export default function Home(): JSX.Element {
                 </p>
               </div>
             </div>
-            <div className="tw-bg-blue-200 tw-rounded-20 tw-p-20">
+            <div className="md:tw-col-span-2 md:tw-row-span-2 tw-flex tw-flex-col tw-justify-center tw-bg-blue-200 tw-rounded-20 tw-p-20">
               <img
-                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                className="tw-w-full tw-max-h-[180px] md:tw-max-h-none md:tw-flex-1"
                 src="img/ilusts/developer.svg"
               />
               <div className="tw-flex tw-flex-col tw-mt-20">
@@ -190,9 +190,9 @@ export default function Home(): JSX.Element {
                 </p>
               </div>
             </div>
-            <div className="tw-bg-blue-200 tw-rounded-20 tw-p-20">
+            <div className="md:tw-row-span-2 tw-flex tw-flex-col tw-justify-center tw-bg-blue-200 tw-rounded-20 tw-p-20">
               <img
-                className="tw-w-full tw-max-h-[180px] tw-px-20 tw-pt-20"
+                className="tw-w-full tw-max-h-[180px] md:tw-max-h-none md:tw-flex-1"
                 src="img/ilusts/edybara.svg"
               />
               <div className="tw-flex tw-flex-col tw-mt-20">

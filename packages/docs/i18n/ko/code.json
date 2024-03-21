@@ -345,13 +345,13 @@
     "message": "비즈니스 요구사항이 높은 프로젝트"
   },
   "home.recommend.card.business.description": {
-    "message": "Edim is well suited for projects that require high business requirements that ultimately require direct handling of the ProseMirror API or want to convert the editor implemented in Quill.js to ProseMirror."
+    "message": "Edybara 는 ProseMirror 를 기반으로 강력한 확장성과 지속성을 제공합니다."
   },
   "home.recommend.card.editor.title": {
     "message": "유연성과 확장성"
   },
   "home.recommend.card.editor.description": {
-    "message": "ProseMirror has a large API and is difficult to adapt for design purposes. And using Edim is the same as using ProseMirror directly. If you're new to creating an editor, a Reminder or Tiptap with an improved development experience through proper abstraction may be more appropriate."
+    "message": "Edybara 는 쉬운 시작점을 제공하면서도 ProseMirror 의 강력한 확장성을 제공합니다. 사용자는 ProseMirror 의 API 를 그대로 사용할 수 있습니다."
   },
   "home.recommend.card.ready.title": {
     "message": "즉시 사용 가능한 에디터"
