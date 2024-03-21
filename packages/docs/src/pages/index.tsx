@@ -86,7 +86,7 @@ export default function Home(): JSX.Element {
                 </p>
               </div>
             </div>
-            <div className="md:tw-col-span-2 tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
+            <div className="md:tw-col-span-2 tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-purple-100">
               <img
                 className="tw-w-full tw-max-h-[180px] md:tw-max-h-[250px] tw-px-20 tw-pt-20"
                 src="img/ilusts/rocket.svg"
@@ -102,7 +102,7 @@ export default function Home(): JSX.Element {
                 </p>
               </div>
             </div>
-            <div className="md:tw-col-span-2 tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-blue-100">
+            <div className="md:tw-col-span-2 tw-flex tw-flex-col tw-justify-center tw-rounded-20 tw-bg-purple-200">
               <img
                 className="tw-w-full tw-max-h-[180px] md:tw-max-h-[250px] tw-px-20 tw-pt-20"
                 src="img/ilusts/book.svg"
