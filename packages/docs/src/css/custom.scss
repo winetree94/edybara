@@ -32,6 +32,20 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-heading-font-family: 'Noto Sans KR', sans-serif;
+
+  // --ifm-footer-background-color: white;
+  // --ifm-footer-color: var(--ifm-footer-link-color);
+  // --ifm-footer-link-color: var(--ifm-color-secondary);
+  // --ifm-footer-title-color: var(--ifm-color-white);
+
+  .footer {
+    .container {
+      max-width: 500px;
+    }
+    .footer__copyright {
+      font-size: 14px;
+    }
+  }
 }
 
 /* You can add global styles to this file, and also import other style files */
