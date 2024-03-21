@@ -295,7 +295,7 @@
     "description": "Main Description"
   },
   "home.main.start": {
-    "message": "시작하기",
+    "message": "빠르게 시작하기",
     "description": "Main Start Button"
   },
   "home.whatIs.title": {
@@ -309,55 +309,55 @@
     "message": "ProseMirror 기반의 오픈 소스 라이브러리"
   },
   "home.whatIs.card.basedOn.description": {
-    "message": "ProseMirror는 웹 브라우저에서 리치 텍스트 편집기를 만들기 위한 플랫폼입니다. 사용자는 강력한 ProseMirror 의 확장성을 활용하여 자유롭게 Edybara 를 커스터마이징할 수 있습니다."
+    "message": "ProseMirror는 웹 브라우저에서 리치 텍스트 편집기를 만들기 위한 플랫폼입니다. Edybara 는 강력한 ProseMirror 의 확장성을 활용하여 다양한 서식을 지원합니다."
   },
   "home.whatIs.card.easyToStart.title": {
     "message": "쉽고 빠르게 시작"
   },
   "home.whatIs.card.easyToStart.description": {
-    "message": "ProseMirror는 Quill과 같은 완성된 편집기를 제공하는 것이 목적이 아니기 때문에 학습 곡선이 가파르고 많은 코드를 작성해야 합니다. Edybara 는 ProseMirror 에서 즉시 사용 가능한 서식과 플러그인을 제공하여 ProseMirror 를 보다 쉽게 적응할 수 있도록 돕습니다."
+    "message": "ProseMirror는 Quill과 같은 완성된 편집기를 제공하는 것이 목적이 아니기 때문에 학습 곡선이 가파르고 많은 코드를 작성해야 합니다. Edybara 는 ProseMirror 에서 즉시 사용 가능한 서식과 플러그인을 제공하여 ProseMirror 를 보다 쉽게 시작할 수 있도록 돕습니다."
   },
   "home.whatIs.card.experience.title": {
-    "message": "ProseMirror API 를 그대로 사용합니다."
+    "message": "ProseMirror API 를 그대로 사용"
   },
   "home.whatIs.card.experience.description": {
-    "message": "Edybara 는 ProseMirror API 를 추상화하지 않고 그대로 사용합니다. Edybara 를 사용한다는 것은 ProseMirror 를 직접 사용한다는 것과 같습니다. 필요하다면 ProseMirror 의 공식 문서와 커뮤니티를 통해 더 많은 정보를 얻을 수 있음을 의미합니다."
+    "message": "Edybara 는 ProseMirror API 를 추상화하지 않고 그대로 사용합니다. 이것은 Edybara 를 사용한다는 것이 ProseMirror 를 직접 사용한다는 것과 같다는 의미입니다. ProseMirror 의 다양한 문서와 커뮤니티를 활용할 수 있습니다."
   },
   "home.quill.title": {
-    "message": "Relationship with Quill.js"
+    "message": "Quill 에서 손쉽게 전환하세요."
   },
   "home.quill.card.migrate.title": {
-    "message": "Consider transitioning editors in a business environment"
+    "message": "손쉬운 마이그레이션"
   },
   "home.quill.card.migrate.description": {
-    "message": "It is difficult to express the documents created by Quill.js in the form provided by ProseMirror only. It also takes a lot of time and effort to maintain the UX provided by Quill.js."
+    "message": "Quill 은 훌륭한 Eash-To-Start 에디터이지만 현대의 복잡한 요구사항을 수용하기는 다소 부적합합니다. Edybara 는 복잡한 비즈니스 환경에서 Quill.js 로 구현된 에디터를 쉽게 전환할 수 있습니다."
   },
   "home.quill.card.api.title": {
-    "message": "Provide API"
+    "message": "Quill 의 서식 지원"
   },
   "home.quill.card.api.description": {
-    "message": "Edim represents the document created in Quill.js as it is, and it comes with a variety of APIs to help maintain the implemented UI/UX."
+    "message": "Edybara 에서 제공하는 서식들은 Quill 의 서식들에 대응되며, Quill 에서 작성한 문서를 그대로 표현할 수 있도록 설계되어 있습니다."
   },
   "home.recommend.title": {
     "message": "누구에게 추천하나요?"
   },
   "home.recommend.card.business.title": {
-    "message": "비즈니스 요구사항이 높은 프로젝트"
+    "message": "높은 비즈니스 요구사항"
   },
   "home.recommend.card.business.description": {
-    "message": "Edybara 는 ProseMirror 를 기반으로 강력한 확장성과 지속성을 제공합니다."
+    "message": "ProseMirror 는 복잡한 비즈니스 요구사항도 수용할 수 있는 강력한 콘텐츠 에디터 개발 플랫폼입니다. ProseMirror 의 생태계를 활용하면 차트, 그래프, 실시간 협업 등 수많은 기능을 사용자에게 제공할 수 있습니다."
   },
   "home.recommend.card.editor.title": {
-    "message": "유연성과 확장성"
+    "message": "유연성과 확장성을 원한다면"
   },
   "home.recommend.card.editor.description": {
-    "message": "Edybara 는 쉬운 시작점을 제공하면서도 ProseMirror 의 강력한 확장성을 제공합니다. 사용자는 ProseMirror 의 API 를 그대로 사용할 수 있습니다."
+    "message": "ProseMirror 는 강력한 확장성과 이식성을 제공합니다. Edybara 를 사용하면 원하는 시점에 다른 ProseMirror 기반의 에디터로 쉽게 전환할 수 있으며, 타사에서 개발된 서식과 플러그인과 함께 사용할 수 있습니다."
   },
   "home.recommend.card.ready.title": {
     "message": "즉시 사용 가능한 에디터"
   },
   "home.recommend.card.ready.description": {
-    "message": "Both Reminder and Tiptap are more like toolkits than finished editors, so using Edim might be a better starting point if you need a ready editor and your requirements are more consistent."
+    "message": "Edybara 는 Easy-To-Start 가 가능한 완성형 에디터를 제공합니다. 사용자는 ProseMirror 의 복잡한 API 를 알지 못하더라도, 빠르게 에디터를 구현하게 사용자에게 제공할 수 있습니다."
   },
   "home.try.title": {
     "message": "시작하기"
