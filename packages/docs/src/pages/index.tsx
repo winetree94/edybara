@@ -4,9 +4,13 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Translate, { translate } from '@docusaurus/Translate';
+import { useHistory } from '@docusaurus/router';
 
 export default function Home(): JSX.Element {
   // const { siteConfig } = useDocusaurusContext();
+  const history = useHistory();
+
+  // history.push('/docs/introduction');
 
   return (
     <Layout
@@ -34,7 +38,10 @@ export default function Home(): JSX.Element {
                 home.main.description
               </Translate>
             </p>
-            <button className="tw-text-26 tw-font-700 tw-py-8 tw-px-24 tw-bg-blue-500 tw-text-white tw-rounded-8 tw-mt-50">
+            <button
+              className="tw-text-26 tw-font-700 tw-py-8 tw-px-24 tw-bg-blue-500 tw-text-white tw-rounded-8 tw-mt-50"
+              onClick={() => history.push('/docs/introduction')}
+            >
               <Translate description="Main Start Button">
                 home.main.start
               </Translate>
@@ -210,7 +217,10 @@ export default function Home(): JSX.Element {
           <h1 className="tw-text-38 tw-font-800 tw-text-white">
             <Translate>home.try.title</Translate>
           </h1>
-          <button className="tw-bg-white tw-text-blue-500 tw-py-8 tw-px-14 tw-rounded-8 tw-text-20 tw-font-600 tw-mt-40">
+          <button
+            className="tw-bg-white tw-text-blue-500 tw-py-8 tw-px-14 tw-rounded-8 tw-text-20 tw-font-600 tw-mt-40"
+            onClick={() => history.push('/docs/introduction')}
+          >
             <Translate>home.try.start</Translate>
           </button>
         </div>
