@@ -295,7 +295,7 @@
     "description": "Main Description"
   },
   "home.main.start": {
-    "message": "바로 시작하기",
+    "message": "시작하기",
     "description": "Main Start Button"
   },
   "home.whatIs.title": {
@@ -321,7 +321,7 @@
     "message": "ProseMirror API 를 그대로 사용합니다."
   },
   "home.whatIs.card.experience.description": {
-    "message": "ProseMirror는 웹 브라우저에서 리치 텍스트 편집기를 만들기 위한 플랫폼입니다. 하지만 ProseMirror는 Quill과 같은 완성된 편집기를 제공하는 것이 목적이 아니기 때문에 학습 곡선이 가파르고 많은 코드를 작성해야 합니다. Edybara 는 ProseMirror 에서 즉시 사용 가능한 서식과 플러그인을 제공하여 ProseMirror 를 보다 쉽게 적응할 수 있도록 돕습니다."
+    "message": "Edybara 는 ProseMirror API 를 추상화하지 않고 그대로 사용합니다. Edybara 를 사용한다는 것은 ProseMirror 를 직접 사용한다는 것과 같습니다. 필요하다면 ProseMirror 의 공식 문서와 커뮤니티를 통해 더 많은 정보를 얻을 수 있음을 의미합니다."
   },
   "home.quill.title": {
     "message": "Relationship with Quill.js"
@@ -339,30 +339,30 @@
     "message": "Edim represents the document created in Quill.js as it is, and it comes with a variety of APIs to help maintain the implemented UI/UX."
   },
   "home.recommend.title": {
-    "message": "Who do you recommend it to?"
+    "message": "누구에게 추천하나요?"
   },
   "home.recommend.card.business.title": {
-    "message": "Project with high business requirements"
+    "message": "비즈니스 요구사항이 높은 프로젝트"
   },
   "home.recommend.card.business.description": {
     "message": "Edim is well suited for projects that require high business requirements that ultimately require direct handling of the ProseMirror API or want to convert the editor implemented in Quill.js to ProseMirror."
   },
   "home.recommend.card.editor.title": {
-    "message": "Perfect for editors experienced people."
+    "message": "유연성과 확장성"
   },
   "home.recommend.card.editor.description": {
     "message": "ProseMirror has a large API and is difficult to adapt for design purposes. And using Edim is the same as using ProseMirror directly. If you're new to creating an editor, a Reminder or Tiptap with an improved development experience through proper abstraction may be more appropriate."
   },
   "home.recommend.card.ready.title": {
-    "message": "If you need a ready editor"
+    "message": "즉시 사용 가능한 에디터"
   },
   "home.recommend.card.ready.description": {
     "message": "Both Reminder and Tiptap are more like toolkits than finished editors, so using Edim might be a better starting point if you need a ready editor and your requirements are more consistent."
   },
   "home.try.title": {
-    "message": "Try Edybara today"
+    "message": "시작하기"
   },
   "home.try.start": {
-    "message": "Download Now!"
+    "message": "문서로 이동"
   }
 }

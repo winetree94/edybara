@@ -119,7 +119,7 @@ export default function Home(): JSX.Element {
           </div>
         </div>
         {/* Relationship */}
-        <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-bg-blue-100 tw-py-100 tw-px-25">
+        {/* <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-bg-blue-100 tw-py-100 tw-px-25">
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
             <Translate>home.quill.title</Translate>
           </h1>
@@ -153,7 +153,7 @@ export default function Home(): JSX.Element {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* Recommend */}
         <div className="tw-bg-white tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-25">
           <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
