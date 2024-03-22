@@ -32,7 +32,6 @@
     "@edybara/image": "*",
     "@edybara/italic": "*",
     "@edybara/link": "*",
-    "@edybara/mention": "*",
     "@edybara/menubar": "*",
     "@edybara/paragraph": "*",
     "@edybara/strikethrough": "*",

@@ -1,6 +1,9 @@
 import { MarkSpec, NodeSpec, Schema } from 'prosemirror-model';
 import { edybaraBaseNodes } from '@edybara/core';
-import { EdybaraHeadingNodeConfigs, edybaraHeadingNodes } from '@edybara/heading';
+import {
+  EdybaraHeadingNodeConfigs,
+  edybaraHeadingNodes,
+} from '@edybara/heading';
 import {
   EdybaraParagraphNodeConfigs,
   edybaraParagraphNodes,
@@ -59,7 +62,10 @@ import {
   EdybaraCodeBlockNodeConfigs,
   edybaraCodeBlockNodes,
 } from '@edybara/codeblock';
-import { EdybaraMentionMarkConfigs, edybaraMentionMarks } from '@edybara/mention';
+// import {
+//   EdybaraMentionMarkConfigs,
+//   edybaraMentionMarks,
+// } from '@edybara/mention';
 import { EdybaraTableNodeConfigs, edybaraTableNodes } from '@edybara/tables';
 
 export interface EdybaraPresetSchemaConfigs {
@@ -85,7 +91,7 @@ export interface EdybaraPresetSchemaConfigs {
   fontFamily?: EdybaraFontFamilyMarkConfigs | null;
   textColor?: EdybaraTextColorMarkConfigs | null;
   link?: EdybaraLinkMarkConfigs | null;
-  mention?: EdybaraMentionMarkConfigs | null;
+  // mention?: EdybaraMentionMarkConfigs | null;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraPresetSchemaConfigs> = {
@@ -117,7 +123,7 @@ const DEFAULT_CONFIGS: Required<EdybaraPresetSchemaConfigs> = {
   fontFamily: {},
   textColor: {},
   link: {},
-  mention: {},
+  // mention: {},
 };
 
 export const edybaraPresetSchema = (configs?: EdybaraPresetSchemaConfigs) => {
@@ -283,12 +289,12 @@ export const edybaraPresetSchema = (configs?: EdybaraPresetSchemaConfigs) => {
     };
   }
 
-  if (mergedConfigs.mention) {
-    spec.marks = {
-      ...spec.marks,
-      ...edybaraMentionMarks(mergedConfigs.mention),
-    };
-  }
+  // if (mergedConfigs.mention) {
+  //   spec.marks = {
+  //     ...spec.marks,
+  //     ...edybaraMentionMarks(mergedConfigs.mention),
+  //   };
+  // }
 
   return new Schema(spec);
 };

@@ -24,7 +24,6 @@
       "@edybara/flat-list": ["../flat-list/src/index.ts"],
       "@edybara/flat-task-list": ["../flat-task-list/src/index.ts"],
       "@edybara/tables": ["../tables/src/index.ts"],
-      "@edybara/image": ["../image/src/index.ts"],
       "@edybara/link": ["../link/src/index.ts"],
       "@edybara/core": ["../core/src/index.ts"],
       "@edybara/codeblock": ["../codeblock/src/index.ts"],
@@ -38,7 +37,6 @@
       "@edybara/superscript": ["../superscript/src/index.ts"],
       "@edybara/text-color": ["../text-color/src/index.ts"],
       "@edybara/underline": ["../underline/src/index.ts"],
-      "@edybara/mention": ["../_wip_mention/src/index.ts"],
       "@edybara/ui": ["../ui/src/index.ts"],
       "@edybara/menubar": ["../menubar/src/index.ts"],
       "@edybara/preset": ["../preset/src/index.ts"]

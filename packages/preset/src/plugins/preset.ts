@@ -92,11 +92,11 @@ import {
   EdybaraLinkPluginConfigs,
   edybaraLinkPlugins,
 } from '@edybara/link';
-import {
-  EDIM_MENTION_DEFAULT_MARK_NAME,
-  EdybaraMentionPluginConfigs,
-  edybaraMentionPlugins,
-} from '@edybara/mention';
+// import {
+//   EDIM_MENTION_DEFAULT_MARK_NAME,
+//   EdybaraMentionPluginConfigs,
+//   edybaraMentionPlugins,
+// } from '@edybara/mention';
 import { EDIM_TEXT_COLOR_DEFAULT_MARK_NAME } from '@edybara/text-color';
 
 /**
@@ -126,7 +126,7 @@ export interface EdybaraPresetPluginConfigs {
   subscript?: EdybaraSubscriptPluginConfigs | null;
   superscript?: EdybaraSuperscriptPluginConfigs | null;
   link?: EdybaraLinkPluginConfigs | null;
-  mention?: EdybaraMentionPluginConfigs | null;
+  // mention?: EdybaraMentionPluginConfigs | null;
 
   /**
    * @default true
@@ -193,9 +193,9 @@ const getDefaultConfigs = (
     link: {
       markType: schema.marks[EDIM_LINK_DEFAULT_MARK_NAME],
     },
-    mention: {
-      markType: schema.marks[EDIM_MENTION_DEFAULT_MARK_NAME],
-    },
+    // mention: {
+    //   markType: schema.marks[EDIM_MENTION_DEFAULT_MARK_NAME],
+    // },
     menubar: {
       textType: {
         paragraphNodeType: schema.nodes[EDIM_PARAGRAPH_DEFAULT_NODE_NAME],
@@ -242,9 +242,9 @@ const getDefaultConfigs = (
       link: {
         linkMarkType: schema.marks[EDIM_LINK_DEFAULT_MARK_NAME],
       },
-      mention: {
-        mentionMarkType: schema.marks[EDIM_MENTION_DEFAULT_MARK_NAME],
-      },
+      // mention: {
+      //   mentionMarkType: schema.marks[EDIM_MENTION_DEFAULT_MARK_NAME],
+      // },
     },
   };
 };
@@ -323,9 +323,9 @@ export const edybaraPresetPlugins = (
     plugins.push(...edybaraLinkPlugins(mergedConfigs.link));
   }
 
-  if (mergedConfigs.mention) {
-    plugins.push(...edybaraMentionPlugins(mergedConfigs.mention));
-  }
+  // if (mergedConfigs.mention) {
+  //   plugins.push(...edybaraMentionPlugins(mergedConfigs.mention));
+  // }
 
   if (mergedConfigs.menubar) {
     plugins.push(...edybaraMenubarPlugins(mergedConfigs.menubar));
