@@ -1,5 +1,4 @@
 import { EdybaraButton, html } from '@edybara/ui';
-import { addMention } from '@edybara/mention';
 import { useContext } from 'preact/hooks';
 import { EdybaraMenubarContext } from '../context';
 
@@ -14,7 +13,6 @@ export const EdybaraMenubarMentionButtons = () => {
     <${EdybaraButton}
       className="edybara-icon-button"
       onClick=${() => {
-        addMention()(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       }}>
       <i class="ri-at-line"></i>

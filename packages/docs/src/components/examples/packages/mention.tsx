@@ -11,11 +11,11 @@ import {
   edybaraParagraphPlugins,
 } from '@edybara/paragraph';
 import { edybaraMenubarPlugins } from '@edybara/menubar';
-import {
-  EdybaraMentionView,
-  edybaraMentionMarks,
-  edybaraMentionPlugins,
-} from '@edybara/mention';
+// import {
+//   EdybaraMentionView,
+//   edybaraMentionMarks,
+//   edybaraMentionPlugins,
+// } from '@edybara/mention';
 import { faker } from '@faker-js/faker';
 
 const persons = Array.from({ length: 200 }).map(() => ({
@@ -30,9 +30,9 @@ const schema = new Schema({
     ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edybaraMentionMarks({
-      markName: 'mention',
-    }),
+    // ...edybaraMentionMarks({
+    //   markName: 'mention',
+    // }),
   },
 });
 
@@ -40,15 +40,15 @@ const plugins: Plugin[] = [
   ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edybaraMentionPlugins({
-    markType: schema.marks['mention'],
-    commandView: (view, plugin) =>
-      new EdybaraMentionView(view, plugin, (keyword) => {
-        return persons.filter((person) =>
-          person.name.toLowerCase().includes(keyword.toLowerCase()),
-        );
-      }),
-  }),
+  // ...edybaraMentionPlugins({
+  //   markType: schema.marks['mention'],
+  //   commandView: (view, plugin) =>
+  //     new EdybaraMentionView(view, plugin, (keyword) => {
+  //       return persons.filter((person) =>
+  //         person.name.toLowerCase().includes(keyword.toLowerCase()),
+  //       );
+  //     }),
+  // }),
   ...edybaraMenubarPlugins({
     mention: {
       mentionMarkType: schema.marks['mention'],
