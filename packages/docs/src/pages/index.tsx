@@ -19,14 +19,14 @@ export default function Home(): JSX.Element {
           <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-px-30 tw-pt-70 tw-pb-[482px] tw-bg-100 tw-bg-homepage-1 tw-bg-no-repeat tw-bg-center">
             <h1
               className={
-                'tw-text-54 tw-font-800 tw-max-w-[954px] tw-text-center'
+                'tw-text-54 tw-font-800 tw-max-w-[954px] tw-text-center tw-break-normal tw-break-keep'
               }
             >
               <Translate description="Main Title">home.main.title</Translate>
             </h1>
             <p
               className={
-                'tw-text-26 tw-font-400 tw-mt-20 tw-text-center tw-max-w-[584px]'
+                'tw-text-26 tw-font-400 tw-mt-20 tw-text-center tw-max-w-[584px] tw-break-keep'
               }
             >
               <Translate description="Main Description">
@@ -65,12 +65,12 @@ export default function Home(): JSX.Element {
             'tw-flex tw-flex-col tw-items-center tw-bg-blue-500 tw-w-full tw-px-20 tw-pb-100 tw-pt-250'
           }
         >
-          <h2 className="tw-text-44 tw-font-800 tw-text-white">
+          <h2 className="tw-text-44 tw-font-800 tw-text-white tw-text-center tw-break-keep">
             <Translate description="What is Edybara title">
               home.whatIs.title
             </Translate>
           </h2>
-          <p className="tw-mt-18 tw-text-22 tw-max-w-[706px] tw-text-white tw-text-center">
+          <p className="tw-mt-18 tw-text-22 tw-max-w-[706px] tw-text-white tw-text-center tw-break-keep">
             <Translate>home.whatIs.description</Translate>
           </p>
           <div className="tw-grid md:tw-grid-rows-2 tw-grid-cols-1 md:tw-grid-cols-none md:tw-grid-flow-col tw-gap-20 tw-max-w-[954px] tw-w-full tw-mt-100">
@@ -122,7 +122,7 @@ export default function Home(): JSX.Element {
         </div>
         {/* Relationship */}
         <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-bg-blue-100 tw-py-100 tw-px-25">
-          <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
+          <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center tw-break-keep">
             <Translate>home.quill.title</Translate>
           </h1>
           <div className="tw-grid tw-grid-rows-1 tw-grid-cols-1 md:tw-grid-flow-col md:tw-grid-cols-none tw-mt-60 tw-gap-20 tw-max-w-[954px] tw-w-full">
@@ -158,7 +158,7 @@ export default function Home(): JSX.Element {
         </div>
         {/* Recommend */}
         <div className="tw-bg-white tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-25">
-          <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center">
+          <h1 className="tw-text-44 tw-font-800 tw-max-w-400 tw-text-center tw-break-keep">
             <Translate>home.recommend.title</Translate>
           </h1>
           <div className="tw-grid md:tw-grid-rows-3 tw-grid-cols-1 md:tw-grid-cols-none md:tw-grid-flow-col tw-mt-40 tw-gap-20 tw-max-w-[954px] tw-w-full">
@@ -209,7 +209,7 @@ export default function Home(): JSX.Element {
           </div>
         </div>
         <div className="tw-bg-blue-500 tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-20">
-          <h1 className="tw-text-38 tw-font-800 tw-text-white">
+          <h1 className="tw-text-38 tw-font-800 tw-text-white tw-text-center tw-break-keep">
             <Translate>home.try.title</Translate>
           </h1>
           <Link
