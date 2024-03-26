@@ -25,6 +25,7 @@
     "@edybara/codeblock": "*",
     "@edybara/command": "*",
     "@edybara/core": "*",
+    "@edybara/devkit": "*",
     "@edybara/emoji": "*",
     "@edybara/flat-list": "*",
     "@edybara/flat-task-list": "*",

@@ -1,5 +1,5 @@
 import { Plugin as PMPlugin, PluginKey } from 'prosemirror-state';
-import { Decoration, DecorationSet } from 'prosemirror-view';
+import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import { findCellClosestToPos } from '../utils';
 import { EdybaraTableCellButtonWrapper } from '../components';
 import { render } from 'preact';
@@ -8,8 +8,13 @@ import { html } from '@edybara/ui';
 export const tableCellButtonPluginKey = new PluginKey('tableCellButtonPlugin');
 
 export const edybaraTableCellButtonPlugins = (): PMPlugin[] => {
+  let view: EditorView;
   const plugin: PMPlugin<DecorationSet> = new PMPlugin<DecorationSet>({
     key: tableCellButtonPluginKey,
+    view: (editorView) => {
+      view = editorView;
+      return {};
+    },
     state: {
       init() {
         return DecorationSet.empty;
@@ -32,7 +37,10 @@ export const edybaraTableCellButtonPlugins = (): PMPlugin[] => {
             render(null, wrapper);
           },
         });
-        render(html`<${EdybaraTableCellButtonWrapper} />`, wrapper);
+        render(
+          html`<${EdybaraTableCellButtonWrapper} editorView=${view} />`,
+          wrapper,
+        );
         return DecorationSet.create(tr.doc, [deco]);
       },
     },

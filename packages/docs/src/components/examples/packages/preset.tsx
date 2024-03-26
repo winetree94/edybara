@@ -3,22 +3,26 @@ import {
   ProseMirrorProps,
 } from '@site/src/components/editor/prose-mirror';
 import { EditorState } from 'prosemirror-state';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara/preset';
 import doc from '@site/src/pages/lorem-ipsum.json';
 import { Node } from 'prosemirror-model';
-
-const schema = edybaraPresetSchema();
-const plugins = edybaraPresetPlugins({
-  schema,
-});
+import { edybaraDevkitCodeMirrorPlugins } from '@edybara/devkit';
 
 export const PresetExample = (props: ProseMirrorProps) => {
+  const schema = useRef(edybaraPresetSchema());
+  const plugins = useRef([
+    ...edybaraPresetPlugins({
+      schema: schema.current,
+    }),
+    ...edybaraDevkitCodeMirrorPlugins(),
+  ]);
+
   const [state] = useState(
     EditorState.create({
-      doc: Node.fromJSON(schema, doc),
-      schema: schema,
-      plugins: plugins,
+      doc: Node.fromJSON(schema.current, doc),
+      schema: schema.current,
+      plugins: plugins.current,
     }),
   );
 

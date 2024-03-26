@@ -3,7 +3,78 @@ import { EditorView, NodeView } from 'prosemirror-view';
 import { html } from '@edybara/ui';
 import { createRef, render } from 'preact';
 import { forwardRef, useImperativeHandle, useRef } from 'preact/compat';
-import { updateColumnsOnResize } from 'prosemirror-tables';
+
+/**
+ * @public
+ */
+interface CellAttrs {
+  colspan: number;
+  rowspan: number;
+  colwidth: number[] | null;
+}
+
+/**
+ * @public
+ */
+function updateColumnsOnResize(
+  node: PMNode,
+  colgroup: HTMLTableColElement,
+  table: HTMLTableElement,
+  cellMinWidth: number,
+  overrideCol?: number,
+  overrideValue?: number,
+): void {
+  let totalWidth = 0;
+  let fixedWidth = true;
+  let nextDOM = colgroup.firstChild as HTMLElement;
+  const row = node.firstChild;
+
+  if (!row) {
+    return;
+  }
+
+  // const cols: {
+  //   colspan: number;
+  //   colwidth: number[] | null;
+  // }[] = [];
+
+  for (let i = 0, col = 0; i < row.childCount; i++) {
+    const { colspan, colwidth } = row.child(i).attrs as CellAttrs;
+    for (let j = 0; j < colspan; j++, col++) {
+      const hasWidth =
+        overrideCol == col ? overrideValue : colwidth && colwidth[j];
+      const cssWidth = hasWidth ? hasWidth + 'px' : '';
+      totalWidth += hasWidth || cellMinWidth;
+      if (!hasWidth) {
+        fixedWidth = false;
+      }
+      if (!nextDOM) {
+        const colElement = document.createElement('col');
+        colElement.style.width = cssWidth;
+        colgroup.appendChild(colElement);
+      } else {
+        if (nextDOM.style.width != cssWidth) {
+          nextDOM.style.width = cssWidth;
+        }
+        nextDOM = nextDOM.nextSibling as HTMLElement;
+      }
+    }
+  }
+
+  while (nextDOM) {
+    const after = nextDOM.nextSibling;
+    nextDOM.parentNode?.removeChild(nextDOM);
+    nextDOM = after as HTMLElement;
+  }
+
+  if (fixedWidth) {
+    table.style.width = totalWidth + 'px';
+    table.style.minWidth = '';
+  } else {
+    table.style.width = '';
+    table.style.minWidth = totalWidth + 'px';
+  }
+}
 
 export interface EdybaraTableViewRef {
   colgroup: () => HTMLTableColElement;

@@ -1,0 +1,43 @@
+{
+  "name": "@edybara/devkit",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsup --watch --tsconfig tsconfig.build.json",
+    "clean:dist": "rimraf dist",
+    "clean:dependency": "rimraf node_modules",
+    "build": "npm run clean:dist && npm run build:ts && npm run build:style",
+    "build:ts": "tsup --tsconfig tsconfig.build.json",
+    "build:style": "sass styles:styles"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "style": "styles/devkit.scss",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "dependencies": {
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/state": "^6.4.1",
+    "@edybara/ui": "*",
+    "codemirror": "^6.0.1",
+    "preact": "^10.20.1",
+    "prosemirror-commands": "*",
+    "prosemirror-dropcursor": "*",
+    "prosemirror-gapcursor": "*",
+    "prosemirror-history": "*",
+    "prosemirror-inputrules": "*",
+    "prosemirror-keymap": "*",
+    "prosemirror-model": "*",
+    "prosemirror-state": "*",
+    "prosemirror-transform": "*",
+    "prosemirror-utils": "*",
+    "prosemirror-view": "*"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "sass": "^1.69.5",
+    "tsup": "^8.0.1",
+    "typescript": "^5.2.2"
+  }
+}

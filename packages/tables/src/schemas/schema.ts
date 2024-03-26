@@ -16,7 +16,7 @@ export interface CellAttributes {
   background: string | null;
 }
 
-export interface CellAttrs {
+interface CellAttrs {
   colspan: number;
   rowspan: number;
   colwidth: number[] | null;

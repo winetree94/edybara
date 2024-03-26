@@ -2,56 +2,40 @@ import {
   ProseMirror,
   ProseMirrorProps,
 } from '@site/src/components/editor/prose-mirror';
-import { EditorState, Plugin } from 'prosemirror-state';
-import React, { useState } from 'react';
+import { EditorState } from 'prosemirror-state';
+import React, { useRef, useState } from 'react';
 import { Schema } from 'prosemirror-model';
-import {
-  edybaraBaseNodes,
-  edybaraCorePlugins,
-  edybaraBasicKeymapPlugins,
-  edybaraDropCursorPlugins,
-  edybaraGapCursorPlugins,
-  edybaraHistoryPlugins,
-  edybaraVirtualCursorPlugins,
-} from '@edybara/core';
+import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
 import {
   edybaraParagraphNodes,
   edybaraParagraphPlugins,
 } from '@edybara/paragraph';
-
-const schema = new Schema({
-  nodes: {
-    ...edybaraBaseNodes(),
-    ...edybaraParagraphNodes(),
-  },
-});
-
-const plugins: Plugin[] = [
-  ...edybaraParagraphPlugins({
-    nodeType: schema.nodes['paragraph'],
-  }),
-  ...edybaraCorePlugins(),
-  // ...edybaraBasicKeymapPlugins(),
-  // ...edybaraHistoryPlugins(),
-  // ...edybaraVirtualCursorPlugins(),
-  // ...edybaraDropCursorPlugins(),
-  // ...edybaraGapCursorPlugins(),
-];
+import { edybaraDevkitCodeMirrorPlugins } from '@edybara/devkit';
 
 export const CoreExample = (props: ProseMirrorProps) => {
-  const [state] = useState(
-    EditorState.create({
-      schema: schema,
-      plugins: plugins,
+  const schema = useRef(
+    new Schema({
+      nodes: {
+        ...edybaraBaseNodes(),
+        ...edybaraParagraphNodes(),
+      },
     }),
   );
 
-  return (
-    <ProseMirror
-      state={state}
-      style={{ height: '300px' }}
-      className="border"
-      {...props}
-    />
+  const plugins = useRef([
+    ...edybaraParagraphPlugins({
+      nodeType: schema.current.nodes['paragraph'],
+    }),
+    ...edybaraCorePlugins(),
+    ...edybaraDevkitCodeMirrorPlugins(),
+  ]);
+
+  const [state] = useState(
+    EditorState.create({
+      schema: schema.current,
+      plugins: plugins.current,
+    }),
   );
+
+  return <ProseMirror state={state} {...props} />;
 };

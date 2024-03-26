@@ -1,5 +1,10 @@
 import { html, EdybaraSelect } from '@edybara/ui';
 import { Fragment } from 'preact';
+import { EditorView } from 'prosemirror-view';
+
+export interface EdybaraTableCellButtonWrapperProps {
+  editorView: EditorView;
+}
 
 export const EdybaraTableCellButtonWrapper = () => {
   return html`

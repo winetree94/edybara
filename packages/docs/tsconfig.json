@@ -19,6 +19,7 @@
       "@edybara/emoji": ["../emoji/src/index.ts"],
       "@edybara/heading": ["../heading/src/index.ts"],
       "@edybara/command": ["../command/src/index.ts"],
+      "@edybara/devkit": ["../devkit/src/index.ts"],
       "@edybara/hr": ["../hr/src/index.ts"],
       "@edybara/paragraph": ["../paragraph/src/index.ts"],
       "@edybara/flat-list": ["../flat-list/src/index.ts"],
