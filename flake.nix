@@ -1,38 +1,41 @@
 {
-  description = "My Development Environment";
+  description = "A development environment for my project";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
 
-  outputs = { self, nixpkgs }:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      devShells.${system}.default = pkgs.mkShell {
-        buildInputs = [
-          pkgs.git
-          pkgs.nodejs-18_x
-          pkgs.yarn-berry
-          pkgs.neovim
-          pkgs.zsh
-          pkgs.ripgrep
-          pkgs.lazygit
-          pkgs.gdu
-          pkgs.bottom
-          pkgs.python3
-        ];
+  outputs = { self, nixpkgs, flake-utils, ... }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+      in {
+        devShell = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            git 
+            nodejs-18_x
+            yarn-berry
+            neovim
 
-        shellHook = ''
-          export SHELL=${pkgs.zsh}/bin/zsh
-          eval "$__ETC_PROFILE_SETUP"
-        '';
+            # shell environment
+            zsh
 
-        # Set some environment variables for convenience
-        # EDITOR = "nvim";
-        # VISUAL = "nvim";
-      };
-    };
+            # astronvim requirements
+            ripgrep
+            lazygit
+            gdu
+            bottom
+            python3
+          ];
+
+          shellHook = ''
+            export SHELL=${pkgs.zsh}/bin/zsh
+            eval "$__ETC_PROFILE_SETUP"
+          '';
+        };
+      }
+    );
 }
-
-
