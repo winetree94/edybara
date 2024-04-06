@@ -23,14 +23,16 @@ export const EdybaraMenubar = forwardRef((props: EdybaraMenubarContextType) => {
       editorView: props.editorView,
       editorState: props.editorState,
       options: props.options,
-    }}">
+    }}">      
       <div className=${classes('edybara-view-menubar-wrapper')}>
         <${EdybaraMenubarTextTypeSelect} />
         <${EdybaraMenubarFontFamilySelect} />
         ${
           useTextType || useFontFamily
             ? html`
-                <${EdybaraSeparator} className="edybara-view-menubar-separator" />
+                <${EdybaraSeparator}
+                  className="edybara-view-menubar-separator"
+                />
               `
             : null
         }
