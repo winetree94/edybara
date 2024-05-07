@@ -3,15 +3,9 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "outDir": "./dist",
-    "declaration": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
     "paths": {}
   },
-  "include": [
-    "src/*"
-  ],
-  "files": [
-    "src/index.ts"
-  ],
+  "include": ["src/*"],
+  "files": ["./tsup.config.ts"]
 }

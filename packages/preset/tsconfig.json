@@ -3,7 +3,6 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "outDir": "./dist",
-    "declaration": true,
     "paths": {
       "@edybara/emoji": ["../../emoji/src/index.ts"],
       "@edybara/heading": ["../../heading/src/index.ts"],
@@ -32,10 +31,6 @@
       "@edybara/menubar": ["../../menubar/src/index.ts"]
     }
   },
-  "include": [
-    "src/*"
-  ],
-  "files": [
-    "src/index.ts"
-  ]
+  "include": ["src/*"],
+  "files": ["./tsup.config.ts"]
 }

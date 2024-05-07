@@ -3,17 +3,12 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "outDir": "./dist",
-    "declaration": true,
     "paths": {
       "@edybara/core": ["../../core/src/index.ts"],
       "@edybara/ui": ["../../ui/src/index.ts"],
       "@edybara/flat-list": ["../../flat-list/src/index.ts"]
     }
   },
-  "include": [
-    "src/*"
-  ],
-  "files": [
-    "src/index.ts"
-  ]
+  "include": ["src/*"],
+  "files": ["./tsup.config.ts"]
 }

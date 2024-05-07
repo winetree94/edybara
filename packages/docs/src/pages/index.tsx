@@ -1,10 +1,36 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import React from 'react';
+import React, { useState } from 'react';
 // import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Translate, { translate } from '@docusaurus/Translate';
 import Link from '@docusaurus/Link';
+
+import {
+  ProseMirror,
+  ProseMirrorProps,
+} from '@site/src/components/editor/prose-mirror';
+import { EditorState } from 'prosemirror-state';
+import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara/preset';
+import doc from '@site/src/pages/lorem-ipsum.json';
+import { Node } from 'prosemirror-model';
+
+const schema = edybaraPresetSchema();
+const plugins = edybaraPresetPlugins({
+  schema,
+});
+
+export const IntroEditor = (props: Omit<ProseMirrorProps, 'state'>) => {
+  const [state] = useState(
+    EditorState.create({
+      doc: Node.fromJSON(schema, doc),
+      schema: schema,
+      plugins: plugins,
+    }),
+  );
+
+  return <ProseMirror state={state} {...props} />;
+};
 
 export default function Home(): JSX.Element {
   return (
@@ -51,12 +77,7 @@ export default function Home(): JSX.Element {
             }
           >
             <BrowserOnly>
-              {() => {
-                const {
-                  Maximum,
-                } = require('@site/src/components/examples/getting-started/maximum');
-                return <Maximum className={'tw-rounded-8 tw-shadow-black'} />;
-              }}
+              {() => <IntroEditor className={'tw-rounded-8 tw-shadow-black'} />}
             </BrowserOnly>
           </div>
         </div>

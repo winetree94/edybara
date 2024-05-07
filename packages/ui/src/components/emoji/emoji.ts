@@ -83,7 +83,7 @@ export const EdybaraEmojiPicker = (props: EdybaraEmojiPickerProps) => {
           return html`
             <${EdybaraButton}
               className=${classes('edybara-view-emoji-category-button')}
-              onClick=${() => setCurrentCategory(category)}>
+              onClick=${() => setCurrentCategory(category)}> 
               ${category}
             </${EdybaraButton}>
           `;

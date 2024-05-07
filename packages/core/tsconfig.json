@@ -2,13 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "outDir": "./dist",
-    "declaration": true
+    "outDir": "./dist"
   },
-  "include": [
-    "src/*"
-  ],
-  "files": [
-    "src/index.ts"
-  ]
+  "include": ["src/*"],
+  "files": ["./tsup.config.ts"]
 }

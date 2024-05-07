@@ -9,7 +9,12 @@
     "lib": ["DOM"],
     "moduleResolution": "node",
     "noEmit": true,
-    "types": ["node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic", "docusaurus-plugin-sass"],
+    "types": [
+      "node",
+      "@docusaurus/module-type-aliases",
+      "@docusaurus/theme-classic",
+      "docusaurus-plugin-sass"
+    ],
     "baseUrl": ".",
     "resolveJsonModule": true,
     "sourceMap": true,
