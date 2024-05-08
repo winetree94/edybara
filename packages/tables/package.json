@@ -1,7 +1,23 @@
 {
   "name": "@edybara/tables",
-  "version": "1.3.4",
+  "description": "rich text editor",
+  "version": "1.0.0",
   "license": "MIT",
+  "homepage": "https://edybara.com",
+  "keywords": [
+    "wysiwyg",
+    "text editor",
+    "prosemirror"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/winetree94"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winetree94/edybara",
+    "directory": "packages/bold"
+  },
   "scripts": {
     "start": "tsup --watch --tsconfig tsconfig.build.json",
     "clean:dist": "rimraf dist",
@@ -10,10 +26,21 @@
     "build:ts": "tsup --tsconfig tsconfig.build.json",
     "build:style": "sass styles:styles"
   },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
-  "style": "styles/tables.scss",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "dependencies": {
     "@edybara/core": "*",
     "@edybara/pm": "*",

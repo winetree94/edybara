@@ -26,14 +26,14 @@
     "build:ts": "tsup --tsconfig tsconfig.build.json",
     "build:style": "sass styles:styles"
   },
-  "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "files": [
     "src",
     "dist"
   ],
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
