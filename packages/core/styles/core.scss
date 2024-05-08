@@ -1,11 +1,9 @@
-@import '../../ui/styles/ui.scss';
 @import './gapcursor.scss';
 
 .ProseMirror {
   flex: 1 1 auto;
   position: relative;
   word-wrap: break-word;
-  white-space: pre-wrap;
   white-space: break-spaces;
   -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;

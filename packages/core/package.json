@@ -39,7 +39,9 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./styles/gapcursor.css": "./styles/gapcursor.css",
+    "./styles/core.css": "./styles/core.css"
   },
   "dependencies": {
     "@edybara/pm": "*"

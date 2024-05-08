@@ -39,7 +39,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./styles/italic.css": "./styles/italic.css"
   },
   "dependencies": {
     "@edybara/core": "*",

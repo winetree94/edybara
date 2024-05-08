@@ -39,7 +39,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./styles/ui.css": "./styles/ui.css"
   },
   "dependencies": {
     "emoji-datasource": ">=15.0.0",

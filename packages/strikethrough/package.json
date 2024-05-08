@@ -39,7 +39,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./styles/strikethrough.css": "./styles/strikethrough.css"
   },
   "dependencies": {
     "@edybara/core": "*",

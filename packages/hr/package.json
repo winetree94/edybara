@@ -39,7 +39,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./styles/hr.css": "./styles/hr.css"
   },
   "dependencies": {
     "@edybara/core": "*",
