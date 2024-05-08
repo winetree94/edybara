@@ -1,6 +1,6 @@
 import { edybaraHeadingInputRulePlugins } from './input-rules';
 import { edybaraHeadingKeymapPlugins } from './keymaps';
-import { NodeType } from 'prosemirror-model';
+import { NodeType } from '@edybara/pm/model';
 
 export interface EdybaraHeadingPluginConfigs {
   nodeType: NodeType;

@@ -1,4 +1,4 @@
-import { MarkSpec } from 'prosemirror-model';
+import { MarkSpec } from '@edybara/pm/model';
 
 export const EDIM_UNDERLINE_MARK_NAME = 'underline';
 

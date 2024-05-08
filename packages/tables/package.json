@@ -16,15 +16,9 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@edybara/core": "*",
+    "@edybara/pm": "*",
     "@edybara/ui": "*",
-    "preact": "*",
-    "prosemirror-keymap": "*",
-    "prosemirror-model": "*",
-    "prosemirror-state": "*",
-    "prosemirror-tables": "*",
-    "prosemirror-transform": "*",
-    "prosemirror-utils": "*",
-    "prosemirror-view": "*"
+    "preact": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",

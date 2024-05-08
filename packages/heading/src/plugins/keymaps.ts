@@ -1,7 +1,7 @@
-import { setBlockType } from 'prosemirror-commands';
+import { setBlockType } from '@edybara/pm/commands';
 import { keymap } from 'prosemirror-keymap';
-import { NodeType } from 'prosemirror-model';
-import { Plugin as PMPlugin, Command } from 'prosemirror-state';
+import { NodeType } from '@edybara/pm/model';
+import { Plugin as PMPlugin, Command } from '@edybara/pm/state';
 import { EdybaraHeadingNodeSpec } from '../schemas';
 
 export interface EdybaraHeadingKeymapPluginConfigs {

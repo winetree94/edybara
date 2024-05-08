@@ -1,1 +1,1 @@
-export { deleteColumn } from 'prosemirror-tables';
+export { deleteColumn } from '@edybara/pm/tables';

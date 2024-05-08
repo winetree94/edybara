@@ -1,7 +1,7 @@
 import { EdybaraMenubarPluginConfigs } from '../plugins';
 import { createContext } from 'preact';
-import { EditorState } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
+import { EditorState } from '@edybara/pm/state';
+import { EditorView } from '@edybara/pm/view';
 
 export interface EdybaraMenubarContextType {
   editorView: EditorView;

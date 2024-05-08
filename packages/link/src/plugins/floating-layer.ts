@@ -1,7 +1,7 @@
-import { Plugin as PMPlugin, PluginKey, PluginView } from 'prosemirror-state';
+import { Plugin as PMPlugin, PluginKey, PluginView } from '@edybara/pm/state';
 import { findMark, isTextSelection } from '@edybara/core';
-import { MarkType, Node as PMNode } from 'prosemirror-model';
-import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
+import { MarkType, Node as PMNode } from '@edybara/pm/model';
+import { Decoration, DecorationSet, EditorView } from '@edybara/pm/view';
 import { render } from 'preact';
 import { html } from '@edybara/ui';
 import { EdybaraLinkFloatingLayer } from '../components';

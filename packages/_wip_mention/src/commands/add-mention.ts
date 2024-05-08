@@ -1,4 +1,4 @@
-import { Command } from 'prosemirror-state';
+import { Command } from '@edybara/pm/state';
 
 /**
  * To initiate a mention input, insert the @ character.

@@ -1,5 +1,5 @@
-import { Plugin as PMPlugin, PluginKey } from 'prosemirror-state';
-import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
+import { Plugin as PMPlugin, PluginKey } from '@edybara/pm/state';
+import { Decoration, DecorationSet, EditorView } from '@edybara/pm/view';
 import { findCellClosestToPos } from '../utils';
 import { EdybaraTableCellButtonWrapper } from '../components';
 import { render } from 'preact';

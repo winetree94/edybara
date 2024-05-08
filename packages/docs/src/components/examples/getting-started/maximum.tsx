@@ -2,11 +2,11 @@ import {
   ProseMirror,
   ProseMirrorProps,
 } from '@site/src/components/editor/prose-mirror';
-import { EditorState } from 'prosemirror-state';
+import { EditorState } from '@edybara/pm/state';
 import React, { useState } from 'react';
 import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara/preset';
 import doc from '@site/src/pages/lorem-ipsum.json';
-import { Node } from 'prosemirror-model';
+import { Node } from '@edybara/pm/model';
 
 const schema = edybaraPresetSchema();
 const plugins = edybaraPresetPlugins({

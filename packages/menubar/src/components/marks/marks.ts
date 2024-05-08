@@ -8,7 +8,7 @@ import {
   EdybaraShortCut,
   html,
 } from '@edybara/ui';
-import { toggleMark } from 'prosemirror-commands';
+import { toggleMark } from '@edybara/pm/commands';
 import { clearMarks, mac, markActive } from '@edybara/core';
 import { Attributes, VNode } from 'preact';
 

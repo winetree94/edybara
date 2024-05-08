@@ -1,4 +1,4 @@
-import { Node } from 'prosemirror-model';
+import { Node } from '@edybara/pm/model';
 
 export interface NodePair {
   node: Node;

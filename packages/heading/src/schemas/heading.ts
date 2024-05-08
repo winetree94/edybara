@@ -1,5 +1,5 @@
 import { parseQuillTextAlign } from '@edybara/core';
-import { NodeSpec } from 'prosemirror-model';
+import { NodeSpec } from '@edybara/pm/model';
 
 export type EdybaraHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 export type EdybaraHeadingAlign = 'left' | 'right' | 'center' | null;

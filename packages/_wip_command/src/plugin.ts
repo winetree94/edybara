@@ -1,5 +1,5 @@
-import { Plugin, PluginKey, PluginView } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
+import { Plugin, PluginKey, PluginView } from '@edybara/pm/state';
+import { EditorView } from '@edybara/pm/view';
 
 export interface EdybaraCommandPluginConfigs {
   view?: (

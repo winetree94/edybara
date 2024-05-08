@@ -1,6 +1,6 @@
-import { Plugin as PMPlugin } from 'prosemirror-state';
-import { InputRule, inputRules } from 'prosemirror-inputrules';
-import { MarkType } from 'prosemirror-model';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
+import { InputRule, inputRules } from '@edybara/pm/inputrules';
+import { MarkType } from '@edybara/pm/model';
 
 export interface EdybaraCodeInputRulePluginConfigs {
   markType: MarkType;

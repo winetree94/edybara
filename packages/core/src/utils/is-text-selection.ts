@@ -1,4 +1,4 @@
-import { Selection, TextSelection } from 'prosemirror-state';
+import { Selection, TextSelection } from '@edybara/pm/state';
 
 export const isTextSelection = (
   selection: Selection,

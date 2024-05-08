@@ -1,9 +1,9 @@
 import { render } from 'preact';
-import { EditorState, Plugin, PluginKey, PluginView } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
+import { EditorState, Plugin, PluginKey, PluginView } from '@edybara/pm/state';
+import { EditorView } from '@edybara/pm/view';
 import { html } from '@edybara/ui';
 import { EdybaraMenubar } from '../components';
-import { MarkType, NodeType } from 'prosemirror-model';
+import { MarkType, NodeType } from '@edybara/pm/model';
 
 export interface EdybaraMenubarPluginConfigs {
   position?: 'top' | 'bottom';

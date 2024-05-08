@@ -1,4 +1,4 @@
-import { Plugin as PMPlugin, PluginKey } from 'prosemirror-state';
+import { Plugin as PMPlugin, PluginKey } from '@edybara/pm/state';
 import { EditorState } from '@codemirror/state';
 import { EditorView, basicSetup } from 'codemirror';
 import { json } from '@codemirror/lang-json';

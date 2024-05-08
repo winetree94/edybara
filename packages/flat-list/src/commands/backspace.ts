@@ -1,7 +1,7 @@
-import { Command, TextSelection } from 'prosemirror-state';
+import { Command, TextSelection } from '@edybara/pm/state';
 import { indentListItem } from './indent-list-item';
 import { findParentNode } from 'prosemirror-utils';
-import { NodeType } from 'prosemirror-model';
+import { NodeType } from '@edybara/pm/model';
 
 export interface EdybaraListItemBackspaceCommandConfigs {
   listNodeTypes: NodeType[];

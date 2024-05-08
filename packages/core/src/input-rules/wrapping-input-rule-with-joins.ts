@@ -1,6 +1,6 @@
-import { InputRule } from 'prosemirror-inputrules';
-import { Attrs, Node, NodeType } from 'prosemirror-model';
-import { canJoin, findWrapping } from 'prosemirror-transform';
+import { InputRule } from '@edybara/pm/inputrules';
+import { Attrs, Node, NodeType } from '@edybara/pm/model';
+import { canJoin, findWrapping } from '@edybara/pm/transform';
 
 // TODO 정리 및 분리
 // 현재 join 목적보다는 attr 변경 목적으로 사용 중

@@ -6,8 +6,8 @@ import {
   classes,
   html,
 } from '@edybara/ui';
-import { EditorState, PluginKey } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
+import { EditorState, PluginKey } from '@edybara/pm/state';
+import { EditorView } from '@edybara/pm/view';
 import { render } from 'preact';
 import { getMentionRange } from '../utils';
 import { useEffect } from 'preact/hooks';

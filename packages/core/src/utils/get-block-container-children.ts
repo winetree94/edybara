@@ -1,5 +1,5 @@
 import { NodePair } from '../types';
-import { Node } from 'prosemirror-model';
+import { Node } from '@edybara/pm/model';
 
 export const getBlockContainerChildren = (
   doc: Node,

@@ -1,4 +1,4 @@
-import { EditorState } from 'prosemirror-state';
+import { EditorState } from '@edybara/pm/state';
 import { EdybaraHeadingAttrs } from '@edybara/heading';
 
 export const getTextType = (state: EditorState) => {

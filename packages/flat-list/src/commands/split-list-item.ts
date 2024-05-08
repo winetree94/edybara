@@ -1,12 +1,12 @@
-import { Attrs, Fragment, NodeType, Slice } from 'prosemirror-model';
+import { Attrs, Fragment, NodeType, Slice } from '@edybara/pm/model';
 import {
   Command,
   EditorState,
   NodeSelection,
   Selection,
   Transaction,
-} from 'prosemirror-state';
-import { canSplit } from 'prosemirror-transform';
+} from '@edybara/pm/state';
+import { canSplit } from '@edybara/pm/transform';
 
 /// Build a command that splits a non-empty textblock at the top level
 /// of a list item by also splitting that list item.

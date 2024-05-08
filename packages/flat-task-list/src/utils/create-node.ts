@@ -1,4 +1,4 @@
-import { Node } from 'prosemirror-model';
+import { Node } from '@edybara/pm/model';
 import { EdybaraFlatTaskListItemAttrs } from '../schemas';
 
 export const createNode = (node: Node) => {

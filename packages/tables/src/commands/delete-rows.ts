@@ -1,1 +1,1 @@
-export { deleteRow } from 'prosemirror-tables';
+export { deleteRow } from '@edybara/pm/tables';

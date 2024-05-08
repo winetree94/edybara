@@ -1,5 +1,5 @@
-import { Command } from 'prosemirror-state';
-import { Attrs, NodeType } from 'prosemirror-model';
+import { Command } from '@edybara/pm/state';
+import { Attrs, NodeType } from '@edybara/pm/model';
 import { liftOut } from '../transforms';
 import { getBlockContainerChildren } from '../utils';
 

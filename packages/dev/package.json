@@ -26,6 +26,7 @@
     "@edybara/mention": "*",
     "@edybara/menubar": "*",
     "@edybara/paragraph": "*",
+    "@edybara/pm": "*",
     "@edybara/preset": "*",
     "@edybara/strikethrough": "*",
     "@edybara/subscript": "*",
@@ -33,12 +34,7 @@
     "@edybara/tables": "*",
     "@edybara/text-color": "*",
     "@edybara/ui": "*",
-    "@edybara/underline": "*",
-    "prosemirror-commands": "*",
-    "prosemirror-model": "*",
-    "prosemirror-state": "*",
-    "prosemirror-transform": "*",
-    "prosemirror-view": "*"
+    "@edybara/underline": "*"
   },
   "devDependencies": {
     "typescript": "^5.2.2",

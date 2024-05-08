@@ -1,5 +1,5 @@
-import { EditorState } from 'prosemirror-state';
-import { Mark, MarkType, Node } from 'prosemirror-model';
+import { EditorState } from '@edybara/pm/state';
+import { Mark, MarkType, Node } from '@edybara/pm/model';
 import { findParentNode } from 'prosemirror-utils';
 import { rangeBetween } from '../utils';
 

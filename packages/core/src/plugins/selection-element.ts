@@ -1,5 +1,5 @@
-import { Plugin as PMPlugin } from 'prosemirror-state';
-import { Decoration, DecorationSet } from 'prosemirror-view';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
+import { Decoration, DecorationSet } from '@edybara/pm/view';
 import { isTextSelection } from '../utils';
 
 export const edybaraSelectionElementPlugins = (): PMPlugin[] => {

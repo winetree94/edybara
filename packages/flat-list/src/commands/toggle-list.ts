@@ -1,5 +1,5 @@
-import { Fragment, NodeType } from 'prosemirror-model';
-import { Command } from 'prosemirror-state';
+import { Fragment, NodeType } from '@edybara/pm/model';
+import { Command } from '@edybara/pm/state';
 import { getBlockContainerChildren, liftOut } from '@edybara/core';
 
 const allowedContentTypes = [

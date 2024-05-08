@@ -1,5 +1,5 @@
-import { Node as PMNode } from 'prosemirror-model';
-import { EditorView, NodeView } from 'prosemirror-view';
+import { Node as PMNode } from '@edybara/pm/model';
+import { EditorView, NodeView } from '@edybara/pm/view';
 import { html } from '@edybara/ui';
 import { createRef, render } from 'preact';
 import { forwardRef, useImperativeHandle, useRef } from 'preact/compat';

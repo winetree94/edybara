@@ -1,9 +1,9 @@
-import { NodeSpec } from 'prosemirror-model';
+import { NodeSpec } from '@edybara/pm/model';
 import {
   createImagePlaceholderPlugin,
   ImagePlaceholderViewProvider,
 } from './placeholder';
-import { EditorView } from 'prosemirror-view';
+import { EditorView } from '@edybara/pm/view';
 
 export interface ImageAttrs {
   src: string;

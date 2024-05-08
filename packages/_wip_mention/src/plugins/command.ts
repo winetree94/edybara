@@ -1,5 +1,5 @@
-import { Plugin as PMPlugin, PluginKey, PluginView } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
+import { Plugin as PMPlugin, PluginKey, PluginView } from '@edybara/pm/state';
+import { EditorView } from '@edybara/pm/view';
 import { getMentionRange } from '../utils';
 
 export interface MentionPluginState {

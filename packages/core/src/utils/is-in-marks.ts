@@ -1,4 +1,4 @@
-import { Attrs, Mark, MarkType } from 'prosemirror-model';
+import { Attrs, Mark, MarkType } from '@edybara/pm/model';
 
 /**
  * Returns the presence of the specified MarkType within the current selection range.

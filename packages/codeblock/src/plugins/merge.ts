@@ -1,4 +1,4 @@
-import { NodeType } from 'prosemirror-model';
+import { NodeType } from '@edybara/pm/model';
 import { edybaraMergeAdjacentNodePlugins } from '@edybara/core';
 
 export interface EdybaraCodeBlockMergePluginConfigs {

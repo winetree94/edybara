@@ -1,6 +1,6 @@
-import { Command, Transaction } from 'prosemirror-state';
+import { Command, Transaction } from '@edybara/pm/state';
 import { NodePair } from '../types';
-import { Attrs } from 'prosemirror-model';
+import { Attrs } from '@edybara/pm/model';
 
 export const TEXT_ALIGNMENT = {
   LEFT: 'left',

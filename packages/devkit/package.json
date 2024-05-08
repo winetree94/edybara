@@ -17,20 +17,10 @@
   "dependencies": {
     "@codemirror/lang-json": "^6.0.1",
     "@codemirror/state": "^6.4.1",
+    "@edybara/pm": "*",
     "@edybara/ui": "*",
     "codemirror": "^6.0.1",
-    "preact": "^10.20.1",
-    "prosemirror-commands": "*",
-    "prosemirror-dropcursor": "*",
-    "prosemirror-gapcursor": "*",
-    "prosemirror-history": "*",
-    "prosemirror-inputrules": "*",
-    "prosemirror-keymap": "*",
-    "prosemirror-model": "*",
-    "prosemirror-state": "*",
-    "prosemirror-transform": "*",
-    "prosemirror-utils": "*",
-    "prosemirror-view": "*"
+    "preact": "^10.20.1"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",

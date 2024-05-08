@@ -1,6 +1,6 @@
-import { MarkType } from 'prosemirror-model';
-import { Command } from 'prosemirror-state';
-import { toggleMark } from 'prosemirror-commands';
+import { MarkType } from '@edybara/pm/model';
+import { Command } from '@edybara/pm/state';
+import { toggleMark } from '@edybara/pm/commands';
 import { toggleMarkWithAttrs } from '@edybara/core';
 import { EdybaraTextColorAttrs } from 'schemas';
 

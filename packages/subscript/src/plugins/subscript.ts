@@ -1,4 +1,4 @@
-import { MarkType } from 'prosemirror-model';
+import { MarkType } from '@edybara/pm/model';
 import { edybaraSubscriptKeymapPlugins } from './keymap';
 
 export interface EdybaraSubscriptPluginConfigs {

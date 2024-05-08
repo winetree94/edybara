@@ -1,4 +1,4 @@
-import { Plugin as PMPlugin, TextSelection } from 'prosemirror-state';
+import { Plugin as PMPlugin, TextSelection } from '@edybara/pm/state';
 
 /**
  * Remove the StoredMark when the text corresponding to the Mark range is deleted.

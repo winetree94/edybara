@@ -1,4 +1,4 @@
-import { Plugin as PMPlugin } from 'prosemirror-state';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
 
 /**
  * Provides a feature to unmention when text with mention formatting is partially deleted.

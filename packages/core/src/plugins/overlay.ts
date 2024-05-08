@@ -1,4 +1,4 @@
-import { Plugin as PMPlugin, PluginKey } from 'prosemirror-state';
+import { Plugin as PMPlugin, PluginKey } from '@edybara/pm/state';
 
 export interface EdybaraOverlayPluginState {
   overlayElement: HTMLDivElement;

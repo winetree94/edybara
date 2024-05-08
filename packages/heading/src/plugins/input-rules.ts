@@ -1,6 +1,6 @@
-import { Plugin as PMPlugin } from 'prosemirror-state';
-import { NodeType } from 'prosemirror-model';
-import { inputRules, textblockTypeInputRule } from 'prosemirror-inputrules';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
+import { NodeType } from '@edybara/pm/model';
+import { inputRules, textblockTypeInputRule } from '@edybara/pm/inputrules';
 import { EdybaraHeadingNodeSpec } from '../schemas';
 
 export interface EdybaraHeadingInputRulePluginConfigs {

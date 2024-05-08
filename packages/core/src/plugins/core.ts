@@ -1,4 +1,4 @@
-import { Plugin as PMPlugin } from 'prosemirror-state';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { edybaraBasicKeymapPlugins } from './keymap';
 import { edybaraHistoryPlugins } from './history';
 import { edybaraVirtualCursorPlugins } from './virtual-cursor';

@@ -1,8 +1,8 @@
 import React from 'react';
 import { classes } from '@edybara/ui';
-import { EditorView } from 'prosemirror-view';
+import { EditorView } from '@edybara/pm/view';
 import { useEffect, useRef } from 'react';
-import { EditorState } from 'prosemirror-state';
+import { EditorState } from '@edybara/pm/state';
 
 export interface ProseMirrorProps {
   className?: string;

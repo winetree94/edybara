@@ -1,4 +1,4 @@
-import { NodeSpec } from 'prosemirror-model';
+import { NodeSpec } from '@edybara/pm/model';
 
 export const EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME = 'ordered_list';
 

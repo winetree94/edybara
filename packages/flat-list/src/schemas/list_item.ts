@@ -1,4 +1,4 @@
-import { NodeSpec } from 'prosemirror-model';
+import { NodeSpec } from '@edybara/pm/model';
 import {
   isQuillTaskList,
   parseQuillIndent,

@@ -1,7 +1,7 @@
 import { EdybaraButton, html } from '@edybara/ui';
 import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
-import { setBlockType } from 'prosemirror-commands';
+import { setBlockType } from '@edybara/pm/commands';
 
 export const EdybaraMenubarBlockquoteToggleButtons = () => {
   const context = useContext(EdybaraMenubarContext);

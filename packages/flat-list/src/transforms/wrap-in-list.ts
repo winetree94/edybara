@@ -1,4 +1,4 @@
-import { Transaction } from 'prosemirror-state';
+import { Transaction } from '@edybara/pm/state';
 import {
   Attrs,
   Fragment,
@@ -6,12 +6,12 @@ import {
   NodeType,
   ResolvedPos,
   Slice,
-} from 'prosemirror-model';
+} from '@edybara/pm/model';
 import {
   canSplit,
   findWrapping,
   ReplaceAroundStep,
-} from 'prosemirror-transform';
+} from '@edybara/pm/transform';
 
 export const doWrapInFlatList = (
   tr: Transaction,

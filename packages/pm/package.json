@@ -143,6 +143,7 @@
     "prosemirror-tables": "*",
     "prosemirror-trailing-node": "*",
     "prosemirror-transform": "*",
+    "prosemirror-utils": "*",
     "prosemirror-view": "*"
   },
   "repository": {

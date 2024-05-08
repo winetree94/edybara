@@ -1,4 +1,4 @@
-import { MarkType } from 'prosemirror-model';
+import { MarkType } from '@edybara/pm/model';
 import { edybaraBoldKeymapPlugins } from './keymap';
 
 export interface EdybaraBoldPluginConfigs {

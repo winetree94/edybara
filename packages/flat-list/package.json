@@ -16,14 +16,8 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@edybara/core": "*",
-    "orderedmap": "*",
-    "prosemirror-commands": "*",
-    "prosemirror-inputrules": "*",
-    "prosemirror-keymap": "*",
-    "prosemirror-model": "*",
-    "prosemirror-state": "*",
-    "prosemirror-transform": "*",
-    "prosemirror-utils": "*"
+    "@edybara/pm": "*",
+    "orderedmap": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",

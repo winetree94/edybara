@@ -1,5 +1,5 @@
-import { Fragment, Node } from 'prosemirror-model';
-import { Command, TextSelection } from 'prosemirror-state';
+import { Fragment, Node } from '@edybara/pm/model';
+import { Command, TextSelection } from '@edybara/pm/state';
 
 export const insertTable = (): Command => {
   return (state, dispatch) => {

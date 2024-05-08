@@ -1,5 +1,5 @@
-import { NodeType } from 'prosemirror-model';
-import { Plugin as PMPlugin } from 'prosemirror-state';
+import { NodeType } from '@edybara/pm/model';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { edybaraBlockquoteInputRulePlugins } from './input-rules';
 import { edybaraBlockquoteKeymapPlugins } from './keymaps';
 import { edybaraBlockQuoteMergePlugins } from './merge';

@@ -1,4 +1,4 @@
-import { NodeSpec } from 'prosemirror-model';
+import { NodeSpec } from '@edybara/pm/model';
 import { isQuillTaskList } from '@edybara/core';
 
 export const EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME = 'bullet_list';

@@ -1,4 +1,4 @@
-import { MarkSpec, NodeSpec, Schema } from 'prosemirror-model';
+import { MarkSpec, NodeSpec, Schema } from '@edybara/pm/model';
 import { edybaraBaseNodes } from '@edybara/core';
 import {
   EdybaraHeadingNodeConfigs,

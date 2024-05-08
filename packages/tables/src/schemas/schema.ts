@@ -1,5 +1,5 @@
-import { AttributeSpec, Attrs, Node, NodeSpec } from 'prosemirror-model';
-import { MutableAttrs, TableRole } from 'prosemirror-tables';
+import { AttributeSpec, Attrs, Node, NodeSpec } from '@edybara/pm/model';
+import { MutableAttrs, TableRole } from '@edybara/pm/tables';
 
 export const EDIM_TABLE_DEFAULT_NODE_NAME = 'table';
 export const EDIM_TABLE_ROW_DEFAULT_NODE_NAME = 'table_row';

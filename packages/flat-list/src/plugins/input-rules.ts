@@ -1,6 +1,6 @@
-import { inputRules, wrappingInputRule } from 'prosemirror-inputrules';
-import { NodeType } from 'prosemirror-model';
-import { Plugin as PMPlugin } from 'prosemirror-state';
+import { inputRules, wrappingInputRule } from '@edybara/pm/inputrules';
+import { NodeType } from '@edybara/pm/model';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
 
 export interface EdybaraFlatListInputRulePluginConfigs {
   orderListNodeType?: NodeType;

@@ -1,5 +1,5 @@
-import { Node, NodeType } from 'prosemirror-model';
-import { Command, EditorState, Transaction } from 'prosemirror-state';
+import { Node, NodeType } from '@edybara/pm/model';
+import { Command, EditorState, Transaction } from '@edybara/pm/state';
 import { liftOutOfFlatList } from '../transforms';
 
 export interface IndentListItemCommandConfigs {

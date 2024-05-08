@@ -1,7 +1,7 @@
-import type { ResolvedPos } from 'prosemirror-model';
-import { Mark } from 'prosemirror-model';
-import type { Selection } from 'prosemirror-state';
-import { Plugin as PMPlugin, TextSelection } from 'prosemirror-state';
+import type { ResolvedPos } from '@edybara/pm/model';
+import { Mark } from '@edybara/pm/model';
+import type { Selection } from '@edybara/pm/state';
+import { Plugin as PMPlugin, TextSelection } from '@edybara/pm/state';
 
 /**
  * Origin Project & License

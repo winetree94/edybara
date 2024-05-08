@@ -1,7 +1,7 @@
 import { keymap } from 'prosemirror-keymap';
 import { indentListItem, listItemBackspace, splitListItem } from '../commands';
-import { Plugin as PMPlugin } from 'prosemirror-state';
-import { NodeType } from 'prosemirror-model';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
+import { NodeType } from '@edybara/pm/model';
 
 export interface EdybaraFlatListKeymapPluginConfigs {
   orderListNodeType?: NodeType;

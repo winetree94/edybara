@@ -1,5 +1,5 @@
-import { Attrs, Mark, MarkType } from 'prosemirror-model';
-import { EditorState } from 'prosemirror-state';
+import { Attrs, Mark, MarkType } from '@edybara/pm/model';
+import { EditorState } from '@edybara/pm/state';
 import { isInMarks } from './is-in-marks';
 
 /**

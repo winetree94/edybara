@@ -1,6 +1,6 @@
-import { Plugin as PMPlugin, Transaction } from 'prosemirror-state';
-import { NodeType } from 'prosemirror-model';
-import { canJoin } from 'prosemirror-transform';
+import { Plugin as PMPlugin, Transaction } from '@edybara/pm/state';
+import { NodeType } from '@edybara/pm/model';
+import { canJoin } from '@edybara/pm/transform';
 import { NodePair } from '../types';
 
 export interface EdybaraMergeAdjacentNodeOption {

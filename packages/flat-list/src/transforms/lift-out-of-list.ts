@@ -1,6 +1,6 @@
-import { Fragment, NodeRange, Slice } from 'prosemirror-model';
-import { Transaction } from 'prosemirror-state';
-import { ReplaceAroundStep } from 'prosemirror-transform';
+import { Fragment, NodeRange, Slice } from '@edybara/pm/model';
+import { Transaction } from '@edybara/pm/state';
+import { ReplaceAroundStep } from '@edybara/pm/transform';
 
 export const liftOutOfFlatList = (
   tr: Transaction,

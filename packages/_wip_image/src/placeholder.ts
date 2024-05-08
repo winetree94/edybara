@@ -1,5 +1,5 @@
-import { Plugin, PluginKey } from 'prosemirror-state';
-import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
+import { Plugin, PluginKey } from '@edybara/pm/state';
+import { Decoration, DecorationSet, EditorView } from '@edybara/pm/view';
 
 export interface ImagePlaceholderSpec {
   id: string;

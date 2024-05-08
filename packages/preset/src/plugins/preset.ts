@@ -1,4 +1,4 @@
-import { Plugin as PMPlugin, Plugin } from 'prosemirror-state';
+import { Plugin as PMPlugin, Plugin } from '@edybara/pm/state';
 import { edybaraCorePlugins } from '@edybara/core';
 import {
   EDIM_HEADING_DEFAULT_NODE_NAME,
@@ -85,7 +85,7 @@ import {
   EdybaraMenubarPluginConfigs,
   edybaraMenubarPlugins,
 } from '@edybara/menubar';
-import { Schema } from 'prosemirror-model';
+import { Schema } from '@edybara/pm/model';
 import { EDIM_FONT_FAMILY_DEFAULT_MARK_NAME } from '@edybara/font-family';
 import {
   EDIM_LINK_DEFAULT_MARK_NAME,

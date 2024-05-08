@@ -1,5 +1,5 @@
-import { NodeType } from 'prosemirror-model';
-import { EditorState } from 'prosemirror-state';
+import { NodeType } from '@edybara/pm/model';
+import { EditorState } from '@edybara/pm/state';
 
 export const isInCodeBlock = (state: EditorState, nodeType: NodeType) => {
   const $head = state.selection.$head;

@@ -1,4 +1,4 @@
-import { MarkSpec } from 'prosemirror-model';
+import { MarkSpec } from '@edybara/pm/model';
 
 export const EDIM_STRIKETHROUGH_MARK_NAME = 'strikethrough';
 

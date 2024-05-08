@@ -1,7 +1,7 @@
-import { Plugin as PMPlugin } from 'prosemirror-state';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { keymap } from 'prosemirror-keymap';
-import { MarkType } from 'prosemirror-model';
-import { toggleMark } from 'prosemirror-commands';
+import { MarkType } from '@edybara/pm/model';
+import { toggleMark } from '@edybara/pm/commands';
 
 export interface EdybaraUnderlineKeymapPluginConfigs {
   markType: MarkType;

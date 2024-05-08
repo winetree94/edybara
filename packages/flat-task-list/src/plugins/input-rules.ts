@@ -1,7 +1,7 @@
-import { inputRules } from 'prosemirror-inputrules';
-import { NodeType } from 'prosemirror-model';
+import { inputRules } from '@edybara/pm/inputrules';
+import { NodeType } from '@edybara/pm/model';
 import { wrappingInputRuleWithJoin } from '@edybara/core';
-import { Plugin } from 'prosemirror-state';
+import { Plugin } from '@edybara/pm/state';
 
 export interface EdybaraTaskListInputRulePluginConfigs {
   taskListNodeType: NodeType;

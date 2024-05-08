@@ -1,4 +1,4 @@
-import { Command } from 'prosemirror-state';
+import { Command } from '@edybara/pm/state';
 
 /**
  * Remove all marks from the current selection

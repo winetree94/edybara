@@ -1,5 +1,5 @@
-import { Plugin as PMPlugin, PluginKey } from 'prosemirror-state';
-import { Decoration, DecorationSet } from 'prosemirror-view';
+import { Plugin as PMPlugin, PluginKey } from '@edybara/pm/state';
+import { Decoration, DecorationSet } from '@edybara/pm/view';
 import { findCellClosestToPos } from '../utils';
 
 export const focusedCellPluginKey = new PluginKey<DecorationSet>(

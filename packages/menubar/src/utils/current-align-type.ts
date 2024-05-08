@@ -1,5 +1,5 @@
 import { getBlockContainerChildren } from '@edybara/core';
-import { EditorState } from 'prosemirror-state';
+import { EditorState } from '@edybara/pm/state';
 
 export const getAlignType = (state: EditorState) => {
   const { selection } = state;

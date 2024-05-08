@@ -1,7 +1,7 @@
-import { Rect, TableMap } from 'prosemirror-tables';
+import { Rect, TableMap } from '@edybara/pm/tables';
 import { findParentNode, findParentNodeClosestToPos } from 'prosemirror-utils';
-import { Selection } from 'prosemirror-state';
-import { Node, ResolvedPos } from 'prosemirror-model';
+import { Selection } from '@edybara/pm/state';
+import { Node, ResolvedPos } from '@edybara/pm/model';
 import { isTableNodeSpec } from './is-table-node-spec';
 
 export const findTable = (selection: Selection) =>

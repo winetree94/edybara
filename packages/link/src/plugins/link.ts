@@ -1,6 +1,6 @@
-import { Plugin as PMPlugin } from 'prosemirror-state';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { edybaraLinkFloatingLayerPlugins } from './floating-layer';
-import { MarkType } from 'prosemirror-model';
+import { MarkType } from '@edybara/pm/model';
 
 export interface EdybaraLinkPluginConfigs {
   markType: MarkType;

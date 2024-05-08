@@ -43,9 +43,7 @@
   },
   "dependencies": {
     "@edybara/core": "*",
-    "prosemirror-commands": "*",
-    "prosemirror-keymap": "*",
-    "prosemirror-model": "*"
+    "@edybara/pm": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",

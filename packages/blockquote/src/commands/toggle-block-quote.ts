@@ -1,4 +1,4 @@
-import { Command } from 'prosemirror-state';
+import { Command } from '@edybara/pm/state';
 import { NodePair } from '@edybara/core';
 
 export const toggleBlockquote = (): Command => {

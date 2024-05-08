@@ -1,6 +1,6 @@
 import { keymap } from 'prosemirror-keymap';
-import { baseKeymap } from 'prosemirror-commands';
-import { Plugin } from 'prosemirror-state';
+import { baseKeymap } from '@edybara/pm/commands';
+import { Plugin } from '@edybara/pm/state';
 import { clearMarks } from '../commands';
 
 export const edybaraBasicKeymapPlugins = (): Plugin[] => {

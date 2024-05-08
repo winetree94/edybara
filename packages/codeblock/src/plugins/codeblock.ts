@@ -1,4 +1,4 @@
-import { NodeType } from 'prosemirror-model';
+import { NodeType } from '@edybara/pm/model';
 import { edybaraCodeBlockInputRulePlugins } from './input-rules';
 import { edybaraCodeBlockKeymapPlugins } from './keymap';
 import { edybaraCodeBlockMergePlugins } from './merge';

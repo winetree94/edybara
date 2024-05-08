@@ -17,13 +17,7 @@
   "dependencies": {
     "@edybara/core": "*",
     "@edybara/flat-list": "*",
-    "prosemirror-commands": "*",
-    "prosemirror-inputrules": "*",
-    "prosemirror-keymap": "*",
-    "prosemirror-model": "*",
-    "prosemirror-state": "*",
-    "prosemirror-transform": "*",
-    "prosemirror-utils": "*"
+    "@edybara/pm": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",

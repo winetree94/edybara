@@ -32,18 +32,14 @@
     "@edybara/link": "*",
     "@edybara/menubar": "*",
     "@edybara/paragraph": "*",
+    "@edybara/pm": "*",
     "@edybara/strikethrough": "*",
     "@edybara/subscript": "*",
     "@edybara/superscript": "*",
     "@edybara/tables": "*",
     "@edybara/text-color": "*",
     "@edybara/ui": "*",
-    "@edybara/underline": "*",
-    "prosemirror-commands": "*",
-    "prosemirror-inputrules": "*",
-    "prosemirror-keymap": "*",
-    "prosemirror-model": "*",
-    "prosemirror-state": "*"
+    "@edybara/underline": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",

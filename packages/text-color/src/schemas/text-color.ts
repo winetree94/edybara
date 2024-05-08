@@ -1,4 +1,4 @@
-import { MarkSpec, MarkType } from 'prosemirror-model';
+import { MarkSpec, MarkType } from '@edybara/pm/model';
 
 export const EDIM_TEXT_COLOR_DEFAULT_MARK_NAME = 'text_color';
 

@@ -1,5 +1,5 @@
 import { keymap } from 'prosemirror-keymap';
-import { DOMOutputSpec, NodeSpec, NodeType } from 'prosemirror-model';
+import { DOMOutputSpec, NodeSpec, NodeType } from '@edybara/pm/model';
 
 const hrDOM: DOMOutputSpec = ['hr'];
 export const edybaraHorizontalRuleNodes = (): Record<string, NodeSpec> => ({

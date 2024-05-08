@@ -2,9 +2,9 @@ import {
   ProseMirror,
   ProseMirrorProps,
 } from '@site/src/components/editor/prose-mirror';
-import { EditorState } from 'prosemirror-state';
+import { EditorState } from '@edybara/pm/state';
 import React, { useState } from 'react';
-import { Schema } from 'prosemirror-model';
+import { Schema } from '@edybara/pm/model';
 import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
 import {
   edybaraParagraphNodes,

@@ -1,4 +1,4 @@
-import { EditorState } from 'prosemirror-state';
+import { EditorState } from '@edybara/pm/state';
 
 export const getRangeFirstAlignment = (state: EditorState) => {
   const { from, to } = state.selection;

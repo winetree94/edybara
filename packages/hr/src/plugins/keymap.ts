@@ -1,5 +1,5 @@
 import { keymap } from 'prosemirror-keymap';
-import { NodeType } from 'prosemirror-model';
+import { NodeType } from '@edybara/pm/model';
 
 export interface EdybaraHorizontalKeymapPluginConfigs {
   nodeType: NodeType;

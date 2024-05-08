@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import { render } from 'preact';
-import { EditorState, PluginKey } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
+import { EditorState, PluginKey } from '@edybara/pm/state';
+import { EditorView } from '@edybara/pm/view';
 import { EdybaraCommandPluginState, EdybaraCommandPluginView } from '../plugin';
 import { addMention } from '@edybara/mention';
 import { insertTable } from '@edybara/tables';

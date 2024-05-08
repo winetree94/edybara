@@ -1,5 +1,5 @@
-import { NodeType } from 'prosemirror-model';
-import { Plugin as PMPlugin } from 'prosemirror-state';
+import { NodeType } from '@edybara/pm/model';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { edybaraTaskListInputRulePlugins } from './input-rules';
 import { edybaraFlatTaskListKeymapPlugins } from './keymaps';
 import { edybaraFlatTaskListMergePlugins } from './merge';

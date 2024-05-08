@@ -1,6 +1,6 @@
 import './style.scss';
-import { EditorState } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
+import { EditorState } from '@edybara/pm/state';
+import { EditorView } from '@edybara/pm/view';
 import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara/preset';
 
 const schema = edybaraPresetSchema();

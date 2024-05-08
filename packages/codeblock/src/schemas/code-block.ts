@@ -1,4 +1,4 @@
-import { DOMOutputSpec, NodeSpec } from 'prosemirror-model';
+import { DOMOutputSpec, NodeSpec } from '@edybara/pm/model';
 
 export const EDIM_CODEBLOCK_NODE_NAME = 'code_block';
 

@@ -1,5 +1,5 @@
-import { EditorState, Transaction } from 'prosemirror-state';
-import { liftTarget } from 'prosemirror-transform';
+import { EditorState, Transaction } from '@edybara/pm/state';
+import { liftTarget } from '@edybara/pm/transform';
 import { getBlockContainerChildren } from '../utils';
 import { NodePair } from '../types';
 

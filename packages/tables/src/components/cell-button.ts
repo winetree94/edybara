@@ -1,6 +1,6 @@
 import { html, EdybaraSelect } from '@edybara/ui';
 import { Fragment } from 'preact';
-import { EditorView } from 'prosemirror-view';
+import { EditorView } from '@edybara/pm/view';
 
 export interface EdybaraTableCellButtonWrapperProps {
   editorView: EditorView;

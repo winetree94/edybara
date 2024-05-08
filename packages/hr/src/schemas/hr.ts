@@ -1,4 +1,4 @@
-import { NodeSpec } from 'prosemirror-model';
+import { NodeSpec } from '@edybara/pm/model';
 
 export const EDIM_HORIZONTAL_RULE_NODE_NAME = 'horizontal_rule';
 

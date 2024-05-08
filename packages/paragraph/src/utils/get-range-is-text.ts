@@ -1,5 +1,5 @@
-import { EditorState } from 'prosemirror-state';
-import { Node } from 'prosemirror-model';
+import { EditorState } from '@edybara/pm/state';
+import { Node } from '@edybara/pm/model';
 
 export const getRangeIsText = (state: EditorState) => {
   const { $from, $to } = state.selection;

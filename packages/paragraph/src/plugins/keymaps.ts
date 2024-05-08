@@ -1,6 +1,6 @@
-import { NodeType } from 'prosemirror-model';
+import { NodeType } from '@edybara/pm/model';
 import { keymap } from 'prosemirror-keymap';
-import { setBlockType } from 'prosemirror-commands';
+import { setBlockType } from '@edybara/pm/commands';
 import { mac } from '@edybara/core';
 
 export interface EdybaraParagraphKeymapPluginConfigs {

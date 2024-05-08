@@ -15,17 +15,7 @@
   "style": "styles/core.scss",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "prosemirror-commands": "*",
-    "prosemirror-dropcursor": "*",
-    "prosemirror-gapcursor": "*",
-    "prosemirror-history": "*",
-    "prosemirror-inputrules": "*",
-    "prosemirror-keymap": "*",
-    "prosemirror-model": "*",
-    "prosemirror-state": "*",
-    "prosemirror-transform": "*",
-    "prosemirror-utils": "*",
-    "prosemirror-view": "*"
+    "@edybara/pm": "*"
   },
   "devDependencies": {
     "rimraf": "^5.0.5",

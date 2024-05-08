@@ -1,5 +1,5 @@
-import { MarkType, Node } from 'prosemirror-model';
-import { SelectionRange } from 'prosemirror-state';
+import { MarkType, Node } from '@edybara/pm/model';
+import { SelectionRange } from '@edybara/pm/state';
 
 export const markApplies = (
   doc: Node,

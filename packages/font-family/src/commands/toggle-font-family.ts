@@ -1,7 +1,7 @@
-import { MarkType } from 'prosemirror-model';
+import { MarkType } from '@edybara/pm/model';
 import { toggleMarkWithAttrs } from '@edybara/core';
 import { EdybaraFontFamilyAttrs } from '../schemas';
-import { Command } from 'prosemirror-state';
+import { Command } from '@edybara/pm/state';
 
 export const toggleFontFamily = (
   markType: MarkType,

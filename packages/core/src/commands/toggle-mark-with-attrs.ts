@@ -1,5 +1,5 @@
-import { Attrs, MarkType } from 'prosemirror-model';
-import { Command, TextSelection } from 'prosemirror-state';
+import { Attrs, MarkType } from '@edybara/pm/model';
+import { Command, TextSelection } from '@edybara/pm/state';
 import { isInMarks, markApplies } from '../utils';
 
 /// Create a command function that toggles the given mark with the

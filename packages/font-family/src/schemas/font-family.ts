@@ -1,4 +1,4 @@
-import { MarkSpec, MarkType } from 'prosemirror-model';
+import { MarkSpec, MarkType } from '@edybara/pm/model';
 
 export const EDIM_FONT_FAMILY_DEFAULT_MARK_NAME = 'font_family';
 

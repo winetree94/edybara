@@ -1,4 +1,4 @@
-import { EditorState } from 'prosemirror-state';
+import { EditorState } from '@edybara/pm/state';
 import { ImagePlaceholderSpec, imagePlaceholderPluginKey } from './placeholder';
 
 export const findPlaceholderPos = (state: EditorState, id: string) => {

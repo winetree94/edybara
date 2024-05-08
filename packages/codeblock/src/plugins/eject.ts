@@ -1,5 +1,5 @@
-import { Plugin as PMPlugin, TextSelection } from 'prosemirror-state';
-import { NodeType } from 'prosemirror-model';
+import { Plugin as PMPlugin, TextSelection } from '@edybara/pm/state';
+import { NodeType } from '@edybara/pm/model';
 import { isInCodeBlock } from '../utils';
 import { findParentNode } from 'prosemirror-utils';
 import { keymap } from 'prosemirror-keymap';

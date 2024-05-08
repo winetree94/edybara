@@ -1,5 +1,5 @@
-import { NodeType } from 'prosemirror-model';
-import { inputRules, textblockTypeInputRule } from 'prosemirror-inputrules';
+import { NodeType } from '@edybara/pm/model';
+import { inputRules, textblockTypeInputRule } from '@edybara/pm/inputrules';
 
 export interface EdybaraCodeBlockInputRulePluginConfigs {
   nodeType: NodeType;

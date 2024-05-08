@@ -1,5 +1,5 @@
-import { NodeType } from 'prosemirror-model';
-import { Plugin as PMPlugin } from 'prosemirror-state';
+import { NodeType } from '@edybara/pm/model';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { edybaraMergeAdjacentNodePlugins } from '@edybara/core';
 import { EdybaraMergeAdjacentNodePluginConfigs } from '@edybara/core';
 

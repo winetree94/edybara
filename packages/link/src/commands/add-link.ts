@@ -1,4 +1,4 @@
-import { EditorState, Transaction } from 'prosemirror-state';
+import { EditorState, Transaction } from '@edybara/pm/state';
 
 export const addLink = (
   tr: Transaction,

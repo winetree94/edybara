@@ -1,6 +1,6 @@
-import { inputRules, wrappingInputRule } from 'prosemirror-inputrules';
-import { Plugin as PMPlugin } from 'prosemirror-state';
-import { NodeType } from 'prosemirror-model';
+import { inputRules, wrappingInputRule } from '@edybara/pm/inputrules';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
+import { NodeType } from '@edybara/pm/model';
 
 export interface EdybaraBlockquoteInputRulePluginConfigs {
   nodeType: NodeType;

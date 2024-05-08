@@ -1,6 +1,6 @@
 import { keymap } from 'prosemirror-keymap';
-import { Plugin as PMPlugin } from 'prosemirror-state';
-import { NodeType } from 'prosemirror-model';
+import { Plugin as PMPlugin } from '@edybara/pm/state';
+import { NodeType } from '@edybara/pm/model';
 import {
   splitListItem,
   indentListItem,

@@ -1,4 +1,4 @@
-import { NodeType } from 'prosemirror-model';
+import { NodeType } from '@edybara/pm/model';
 import { edybaraHorizontalKeymapPlugins } from './keymap';
 
 export interface EdybaraHorizontalRulePluginConfigs {

@@ -3,7 +3,7 @@ import {
   ProseMirror,
   ProseMirrorProps,
 } from '@site/src/components/editor/prose-mirror';
-import { EditorState } from 'prosemirror-state';
+import { EditorState } from '@edybara/pm/state';
 import { edybaraPresetSchema, edybaraPresetPlugins } from '@edybara/preset';
 import { edybaraMenubarPlugins } from '@edybara/menubar';
 
