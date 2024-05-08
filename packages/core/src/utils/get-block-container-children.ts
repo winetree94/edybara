@@ -8,10 +8,7 @@ export const getBlockContainerChildren = (
 ) => {
   const nodes: NodePair[] = [];
   doc.nodesBetween(from, to, (node, pos, parent) => {
-    if (
-      parent?.type.spec.group?.includes('block-container') &&
-      node.type.name !== 'table'
-    ) {
+    if (parent?.type.spec.group?.includes('block-container')) {
       nodes.push({ node, pos, parent });
       return false;
     }

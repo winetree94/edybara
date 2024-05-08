@@ -28,7 +28,10 @@ export const transformRangeToBlock =
         if (!nodeType.validContent(node.content)) {
           return tr;
         }
-        tr.setBlockType(pos, pos + node.nodeSize, nodeType, attrs);
+        tr.setBlockType(pos, pos + node.nodeSize, nodeType, {
+          ...node.attrs,
+          ...attrs,
+        });
         return tr;
       }, tr);
     selection = state.selection.map(tr.doc, tr.mapping);
