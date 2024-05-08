@@ -1,7 +1,23 @@
 {
   "name": "@edybara/bold",
+  "description": "rich text editor",
   "version": "1.0.0",
   "license": "MIT",
+  "homepage": "https://edybara.com",
+  "keywords": [
+    "wysiwyg",
+    "text editor",
+    "prosemirror"
+  ],
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/winetree94"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winetree94/edybara",
+    "directory": "packages/bold"
+  },
   "scripts": {
     "start": "tsup --watch --tsconfig tsconfig.build.json",
     "clean:dist": "rimraf dist",
@@ -11,9 +27,20 @@
     "build:style": "sass styles:styles"
   },
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "dependencies": {
     "@edybara/core": "*",
     "prosemirror-commands": "*",

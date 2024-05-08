@@ -10,7 +10,6 @@
     "build:ts": "tsup --tsconfig tsconfig.build.json",
     "build:style": "sass styles:styles"
   },
-  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "style": "styles/link.scss",
