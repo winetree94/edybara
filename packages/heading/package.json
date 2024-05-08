@@ -15,7 +15,6 @@
   "module": "dist/index.js",
   "style": "styles/heading.scss",
   "types": "dist/index.d.ts",
-  "private": true,
   "dependencies": {
     "@edybara/core": "*",
     "prosemirror-commands": "*",

@@ -15,7 +15,6 @@
   "module": "dist/index.js",
   "style": "styles/core.scss",
   "types": "dist/index.d.ts",
-  "private": true,
   "dependencies": {
     "prosemirror-commands": "*",
     "prosemirror-dropcursor": "*",

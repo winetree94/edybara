@@ -15,7 +15,6 @@
   "module": "dist/index.js",
   "style": "styles/menubar.scss",
   "types": "dist/index.d.ts",
-  "private": true,
   "dependencies": {
     "@edybara/blockquote": "*",
     "@edybara/command": "*",
