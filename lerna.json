@@ -5,6 +5,7 @@
     "packages/code",
     "packages/codeblock",
     "packages/core",
+    "packages/devkit",
     "packages/docs",
     "packages/flat-list",
     "packages/flat-task-list",
