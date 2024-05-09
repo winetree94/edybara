@@ -56,3 +56,6 @@ packages/**/*.css.map
 
 #!.yarn/cache
 .pnp.*
+
+# nx
+.nx

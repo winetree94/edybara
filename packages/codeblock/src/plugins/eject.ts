@@ -1,8 +1,8 @@
 import { Plugin as PMPlugin, TextSelection } from '@edybara/pm/state';
 import { NodeType } from '@edybara/pm/model';
 import { isInCodeBlock } from '../utils';
-import { findParentNode } from 'prosemirror-utils';
-import { keymap } from 'prosemirror-keymap';
+import { findParentNode } from '@edybara/pm/utils';
+import { keymap } from '@edybara/pm/keymap';
 import { findNearestBlockContainer } from '@edybara/core';
 
 export interface EdybaraCodeBlockEjectPluginConfigs {

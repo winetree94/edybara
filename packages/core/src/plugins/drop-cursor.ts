@@ -1,4 +1,4 @@
-import { dropCursor } from 'prosemirror-dropcursor';
+import { dropCursor } from '@edybara/pm/dropcursor';
 
 export interface EdybaraDropCursorPluginConfigs {
   /**

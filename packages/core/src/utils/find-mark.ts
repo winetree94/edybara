@@ -1,6 +1,6 @@
 import { EditorState } from '@edybara/pm/state';
 import { Mark, MarkType, Node } from '@edybara/pm/model';
-import { findParentNode } from 'prosemirror-utils';
+import { findParentNode } from '@edybara/pm/utils';
 import { rangeBetween } from '../utils';
 
 export interface FindMarkConfigs {

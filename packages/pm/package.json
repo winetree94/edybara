@@ -103,6 +103,11 @@
       "types": "./view/dist/index.d.ts",
       "import": "./view/dist/index.js",
       "require": "./view/dist/index.cjs"
+    },
+    "./utils": {
+      "types": "./utils/dist/index.d.ts",
+      "import": "./utils/dist/index.js",
+      "require": "./utils/dist/index.cjs"
     }
   },
   "files": [
@@ -123,8 +128,36 @@
     "tables/**",
     "trailing-node/**",
     "transform/**",
-    "view/**"
+    "view/**",
+    "utils/**"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winetree94/edybara",
+    "directory": "packages/pm"
+  },
+  "scripts": {
+    "build": "yarn build:changeset && yarn build:collab && yarn build:commands && yarn build:dropcursor && yarn build:gapcursor && yarn build:history && yarn build:inputrules && yarn build:keymap && yarn build:markdown && yarn build:menu && yarn build:model && yarn build:schema-basic && yarn build:schema-list && yarn build:state && yarn build:tables && yarn build:trailing-node && yarn build:transform && yarn build:view && yarn build:utils",
+    "build:changeset": "tsup \"changeset/index.ts\" --out-dir changeset/dist",
+    "build:collab": "tsup \"collab/index.ts\" --out-dir collab/dist",
+    "build:commands": "tsup \"commands/index.ts\" --out-dir commands/dist",
+    "build:dropcursor": "tsup \"dropcursor/index.ts\" --out-dir dropcursor/dist",
+    "build:gapcursor": "tsup \"gapcursor/index.ts\" --out-dir gapcursor/dist",
+    "build:history": "tsup \"history/index.ts\" --out-dir history/dist",
+    "build:inputrules": "tsup \"inputrules/index.ts\" --out-dir inputrules/dist",
+    "build:keymap": "tsup \"keymap/index.ts\" --out-dir keymap/dist",
+    "build:markdown": "tsup \"markdown/index.ts\" --out-dir markdown/dist",
+    "build:menu": "tsup \"menu/index.ts\" --out-dir menu/dist",
+    "build:model": "tsup \"model/index.ts\" --out-dir model/dist",
+    "build:schema-basic": "tsup \"schema-basic/index.ts\" --out-dir schema-basic/dist",
+    "build:schema-list": "tsup \"schema-list/index.ts\" --out-dir schema-list/dist",
+    "build:state": "tsup \"state/index.ts\" --out-dir state/dist",
+    "build:tables": "tsup \"tables/index.ts\" --out-dir tables/dist",
+    "build:trailing-node": "tsup \"trailing-node/index.ts\" --out-dir trailing-node/dist",
+    "build:transform": "tsup \"transform/index.ts\" --out-dir transform/dist",
+    "build:view": "tsup \"view/index.ts\" --out-dir view/dist",
+    "build:utils": "tsup \"utils/index.ts\" --out-dir utils/dist"
+  },
   "dependencies": {
     "prosemirror-changeset": "*",
     "prosemirror-collab": "*",
@@ -146,30 +179,10 @@
     "prosemirror-utils": "*",
     "prosemirror-view": "*"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/winetree94/edybara",
-    "directory": "packages/pm"
-  },
-  "scripts": {
-    "build": "npm run build:changeset && npm run build:collab && npm run build:commands && npm run build:dropcursor && npm run build:gapcursor && npm run build:history && npm run build:inputrules && npm run build:keymap && npm run build:markdown && npm run build:menu && npm run build:model && npm run build:schema-basic && npm run build:schema-list && npm run build:state && npm run build:tables && npm run build:trailing-node && npm run build:transform && npm run build:view",
-    "build:changeset": "tsup \"changeset/index.ts\" --out-dir changeset/dist",
-    "build:collab": "tsup \"collab/index.ts\" --out-dir collab/dist",
-    "build:commands": "tsup \"commands/index.ts\" --out-dir commands/dist",
-    "build:dropcursor": "tsup \"dropcursor/index.ts\" --out-dir dropcursor/dist",
-    "build:gapcursor": "tsup \"gapcursor/index.ts\" --out-dir gapcursor/dist",
-    "build:history": "tsup \"history/index.ts\" --out-dir history/dist",
-    "build:inputrules": "tsup \"inputrules/index.ts\" --out-dir inputrules/dist",
-    "build:keymap": "tsup \"keymap/index.ts\" --out-dir keymap/dist",
-    "build:markdown": "tsup \"markdown/index.ts\" --out-dir markdown/dist",
-    "build:menu": "tsup \"menu/index.ts\" --out-dir menu/dist",
-    "build:model": "tsup \"model/index.ts\" --out-dir model/dist",
-    "build:schema-basic": "tsup \"schema-basic/index.ts\" --out-dir schema-basic/dist",
-    "build:schema-list": "tsup \"schema-list/index.ts\" --out-dir schema-list/dist",
-    "build:state": "tsup \"state/index.ts\" --out-dir state/dist",
-    "build:tables": "tsup \"tables/index.ts\" --out-dir tables/dist",
-    "build:trailing-node": "tsup \"trailing-node/index.ts\" --out-dir trailing-node/dist",
-    "build:transform": "tsup \"transform/index.ts\" --out-dir transform/dist",
-    "build:view": "tsup \"view/index.ts\" --out-dir view/dist"
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "sass": "^1.69.5",
+    "tsup": "^8.0.1",
+    "typescript": "^5.2.2"
   }
 }

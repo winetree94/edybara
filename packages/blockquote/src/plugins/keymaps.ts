@@ -1,7 +1,7 @@
 import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { NodeType } from '@edybara/pm/model';
 import { wrapIn } from '@edybara/pm/commands';
-import { keymap } from 'prosemirror-keymap';
+import { keymap } from '@edybara/pm/keymap';
 
 export interface EdybaraBlockquoteKeymapPluginConfigs {
   nodeType: NodeType;

@@ -1,4 +1,4 @@
-import { keymap } from 'prosemirror-keymap';
+import { keymap } from '@edybara/pm/keymap';
 import { DOMOutputSpec, NodeSpec, NodeType } from '@edybara/pm/model';
 
 const hrDOM: DOMOutputSpec = ['hr'];

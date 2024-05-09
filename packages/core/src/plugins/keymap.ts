@@ -1,4 +1,4 @@
-import { keymap } from 'prosemirror-keymap';
+import { keymap } from '@edybara/pm/keymap';
 import { baseKeymap } from '@edybara/pm/commands';
 import { Plugin } from '@edybara/pm/state';
 import { clearMarks } from '../commands';

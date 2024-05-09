@@ -1,5 +1,5 @@
-import { history, redo, undo } from 'prosemirror-history';
-import { keymap } from 'prosemirror-keymap';
+import { history, redo, undo } from '@edybara/pm/history';
+import { keymap } from '@edybara/pm/keymap';
 import { Plugin } from '@edybara/pm/state';
 
 export const edybaraHistoryPlugins = (): Plugin[] => {

@@ -2,7 +2,7 @@ import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import { EdybaraButton, EdybaraSeparator, html } from '@edybara/ui';
 import { indentListItem, toggleList } from '@edybara/flat-list';
-import { findParentNode } from 'prosemirror-utils';
+import { findParentNode } from '@edybara/pm/utils';
 
 export const EdybaraMenubarListToggleButtons = () => {
   const context = useContext(EdybaraMenubarContext);

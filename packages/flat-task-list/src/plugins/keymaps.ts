@@ -1,4 +1,4 @@
-import { keymap } from 'prosemirror-keymap';
+import { keymap } from '@edybara/pm/keymap';
 import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { NodeType } from '@edybara/pm/model';
 import {

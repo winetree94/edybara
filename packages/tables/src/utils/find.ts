@@ -1,5 +1,5 @@
 import { Rect, TableMap } from '@edybara/pm/tables';
-import { findParentNode, findParentNodeClosestToPos } from 'prosemirror-utils';
+import { findParentNode, findParentNodeClosestToPos } from '@edybara/pm/utils';
 import { Selection } from '@edybara/pm/state';
 import { Node, ResolvedPos } from '@edybara/pm/model';
 import { isTableNodeSpec } from './is-table-node-spec';

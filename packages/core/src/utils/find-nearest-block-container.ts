@@ -1,5 +1,5 @@
 import { Selection } from '@edybara/pm/state';
-import { findParentNode } from 'prosemirror-utils';
+import { findParentNode } from '@edybara/pm/utils';
 
 const findBlockContainer = findParentNode((node) => {
   return (

@@ -1,5 +1,5 @@
 import { setBlockType } from '@edybara/pm/commands';
-import { keymap } from 'prosemirror-keymap';
+import { keymap } from '@edybara/pm/keymap';
 import { NodeType } from '@edybara/pm/model';
 import { Plugin as PMPlugin, Command } from '@edybara/pm/state';
 import { EdybaraHeadingNodeSpec } from '../schemas';

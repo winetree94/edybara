@@ -1,12 +1,14 @@
 import { MarkType } from '@edybara/pm/model';
-import { keymap } from 'prosemirror-keymap';
+import { keymap } from '@edybara/pm/keymap';
 import { toggleMark } from '@edybara/pm/commands';
 
 export interface EdybaraBoldKeymapPluginConfigs {
   markType: MarkType;
 }
 
-export const edybaraBoldKeymapPlugins = (configs: EdybaraBoldKeymapPluginConfigs) => {
+export const edybaraBoldKeymapPlugins = (
+  configs: EdybaraBoldKeymapPluginConfigs,
+) => {
   return [
     keymap({
       'Mod-b': toggleMark(configs.markType),

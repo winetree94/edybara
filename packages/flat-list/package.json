@@ -22,7 +22,7 @@
     "start": "tsup --watch --tsconfig tsconfig.build.json",
     "clean:dist": "rimraf dist",
     "clean:dependency": "rimraf node_modules",
-    "build": "npm run clean:dist && npm run build:ts && npm run build:style",
+    "build": "yarn clean:dist && yarn build:ts && yarn build:style",
     "build:ts": "tsup --tsconfig tsconfig.build.json",
     "build:style": "sass styles:styles"
   },

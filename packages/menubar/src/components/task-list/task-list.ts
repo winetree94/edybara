@@ -2,7 +2,7 @@ import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import { EdybaraButton, html } from '@edybara/ui';
 import { toggleList } from '@edybara/flat-list';
-import { findParentNode } from 'prosemirror-utils';
+import { findParentNode } from '@edybara/pm/utils';
 
 export const EdybaraMenubarTaskListToggleButtons = () => {
   const context = useContext(EdybaraMenubarContext);
