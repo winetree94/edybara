@@ -4,7 +4,8 @@
     "baseUrl": "./src",
     "outDir": "./dist",
     "resolveJsonModule": true,
-    "paths": {}
+    "paths": {
+      "@edybara/pm/*": ["../../pm/*"],}
   },
   "include": ["src/*"],
   "files": ["./tsup.config.ts"]
