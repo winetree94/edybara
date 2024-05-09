@@ -24,7 +24,9 @@
     "clean:dependency": "rimraf node_modules",
     "build": "yarn clean:dist && yarn build:ts && yarn build:style",
     "build:ts": "tsup --tsconfig tsconfig.build.json",
-    "build:style": "sass styles:styles"
+    "build:style": "sass styles:styles",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix"
   },
   "files": [
     "src",
@@ -46,6 +48,7 @@
     "@edybara/pm": "*"
   },
   "devDependencies": {
+    "eslint": "^8.49.0",
     "rimraf": "^5.0.5",
     "sass": "^1.69.5",
     "tsup": "^8.0.1",

@@ -1,5 +1,5 @@
 import { render } from 'preact';
-import { EditorState, Plugin, PluginKey, PluginView } from '@edybara/pm/state';
+import { Plugin, PluginKey, PluginView } from '@edybara/pm/state';
 import { EditorView } from '@edybara/pm/view';
 import { html } from '@edybara/ui';
 import { EdybaraMenubar } from '../components';
@@ -27,7 +27,6 @@ export interface EdybaraMenubarPluginConfigs {
   textColor?: {
     textColorMarkType: MarkType;
   };
-  align?: {};
   list?: {
     orderedListNodeType: NodeType;
     bulletListNodeType: NodeType;
@@ -52,7 +51,6 @@ export interface EdybaraMenubarPluginConfigs {
   mention?: {
     mentionMarkType: MarkType;
   };
-  translates?: {};
 }
 
 export class EdybaraMenubarView implements PluginView {
@@ -103,7 +101,7 @@ export class EdybaraMenubarView implements PluginView {
     this.render();
   }
 
-  public update(editorView: EditorView, prevState: EditorState) {
+  public update() {
     this.render();
   }
 

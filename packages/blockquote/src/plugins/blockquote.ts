@@ -9,10 +9,11 @@ export interface EdybaraBlockQuotePluginConfigs {
   mergeAdjacentBlockquote?: boolean;
 }
 
-const DEFAULT_CONFIGS: Required<Omit<EdybaraBlockQuotePluginConfigs, 'nodeType'>> =
-  {
-    mergeAdjacentBlockquote: false,
-  };
+const DEFAULT_CONFIGS: Required<
+  Omit<EdybaraBlockQuotePluginConfigs, 'nodeType'>
+> = {
+  mergeAdjacentBlockquote: false,
+};
 
 export const edybaraBlockQuotePlugins = (
   configs: EdybaraBlockQuotePluginConfigs,

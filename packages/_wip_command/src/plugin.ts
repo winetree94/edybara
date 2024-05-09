@@ -46,7 +46,7 @@ export const edybaraCommandPlugins = (config: EdybaraCommandPluginConfigs) => {
             keyword: '',
           };
         },
-        apply: (tr, pluginState, state) => {
+        apply: (tr) => {
           if (tr.selection.$from.parent !== tr.selection.$to.parent) {
             return DefaultCommandPluginState;
           }

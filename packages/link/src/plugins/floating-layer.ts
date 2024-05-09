@@ -31,16 +31,8 @@ export interface edybaraLinkFloatingLayerPluginConfigs {
 const DEFAULT_CONFIGS: Required<
   Omit<edybaraLinkFloatingLayerPluginConfigs, 'markType'>
 > = {
-  view(editorView: EditorView) {
-    const { active } = EDIM_LINK_FLOATING_LAYER_PLUGIN_KEY.getState(
-      editorView.state,
-    ) || { active: null };
+  view() {
     return {
-      update: (view, prevState) => {
-        const { active } = EDIM_LINK_FLOATING_LAYER_PLUGIN_KEY.getState(
-          editorView.state,
-        ) || { active: null };
-      },
       destroy: () => {},
     };
   },

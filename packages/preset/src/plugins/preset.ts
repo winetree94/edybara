@@ -217,7 +217,6 @@ const getDefaultConfigs = (
       textColor: {
         textColorMarkType: schema.marks[EDIM_TEXT_COLOR_DEFAULT_MARK_NAME],
       },
-      align: {},
       list: {
         orderedListNodeType:
           schema.nodes[EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME],
@@ -287,8 +286,8 @@ export const edybaraPresetPlugins = (
   }
 
   if (mergedConfigs.table) {
-    plugins.push(...edybaraTablePlugins(mergedConfigs.table));
-    plugins.push(...edybaraTableEditingPlugins(mergedConfigs.table));
+    plugins.push(...edybaraTablePlugins());
+    plugins.push(...edybaraTableEditingPlugins());
   }
 
   if (mergedConfigs.italic) {

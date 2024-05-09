@@ -1,7 +1,10 @@
 import { render } from 'preact';
 import { html, classes } from '@edybara/ui';
 import { forwardRef } from 'preact/compat';
-import { ImagePlaceholderViewProvider, ImagePlaceholderSpec } from '../placeholder';
+import {
+  ImagePlaceholderViewProvider,
+  ImagePlaceholderSpec,
+} from '../placeholder';
 
 export interface EdybaraImagePlaceholderProps {
   progress: number;

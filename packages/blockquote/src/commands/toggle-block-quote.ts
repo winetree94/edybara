@@ -2,7 +2,7 @@ import { Command } from '@edybara/pm/state';
 import { NodePair } from '@edybara/core';
 
 export const toggleBlockquote = (): Command => {
-  return (state, dispatch) => {
+  return (state) => {
     const selection = state.selection;
     const tr = state.tr;
 

@@ -1,4 +1,4 @@
-import { EditorState, Transaction } from '@edybara/pm/state';
+import { Transaction } from '@edybara/pm/state';
 
 export const addLink = (
   tr: Transaction,

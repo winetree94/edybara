@@ -5,7 +5,7 @@ export const EDIM_PARAGRAPH_NODE: Record<string, NodeSpec> = {
     content: 'inline*',
     group: 'block',
     parseDOM: [{ tag: 'p' }],
-    toDOM(node) {
+    toDOM() {
       return ['p', 0];
     },
   },

@@ -180,6 +180,7 @@
     "prosemirror-view": "*"
   },
   "devDependencies": {
+    "eslint": "^8.49.0",
     "rimraf": "^5.0.5",
     "sass": "^1.69.5",
     "tsup": "^8.0.1",

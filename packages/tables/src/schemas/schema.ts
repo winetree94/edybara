@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { AttributeSpec, Attrs, Node, NodeSpec } from '@edybara/pm/model';
 import { MutableAttrs, TableRole } from '@edybara/pm/tables';
 

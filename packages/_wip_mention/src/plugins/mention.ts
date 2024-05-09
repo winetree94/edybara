@@ -12,17 +12,18 @@ export interface EdybaraMentionPluginConfigs {
   commandView?: EdybaraMentionCommandPluginConfigs['view'];
 }
 
-const DEFAULT_CONFIGS: Required<Omit<EdybaraMentionPluginConfigs, 'markType'>> = {
-  commandView: (view, plugin) => {
-    return new EdybaraMentionView(view, plugin, (keyword) => [
-      {
-        icon: '',
-        id: '1',
-        name: 'Mention Command View Not Provided',
-      },
-    ]);
-  },
-};
+const DEFAULT_CONFIGS: Required<Omit<EdybaraMentionPluginConfigs, 'markType'>> =
+  {
+    commandView: (view, plugin) => {
+      return new EdybaraMentionView(view, plugin, () => [
+        {
+          icon: '',
+          id: '1',
+          name: 'Mention Command View Not Provided',
+        },
+      ]);
+    },
+  };
 
 export const edybaraMentionPlugins = (
   configs: EdybaraMentionPluginConfigs,

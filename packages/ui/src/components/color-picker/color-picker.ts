@@ -23,7 +23,11 @@ export interface EdybaraColorProps extends HTMLAttributes<HTMLSpanElement> {
   color: string;
 }
 
-export const EdybaraColor = ({ className, color, ...props }: EdybaraColorProps) => {
+export const EdybaraColor = ({
+  className,
+  color,
+  ...props
+}: EdybaraColorProps) => {
   return html`
     <span
       class=${classes('edybara-color', className)}
@@ -38,32 +42,34 @@ export interface EdybaraColorPickerProps {
   onChange?(color: string): void;
 }
 
-export const EdybaraColorPicker = forwardRef((props: EdybaraColorPickerProps) => {
-  const chunks = COLORS.reduce<string[][]>((result, color, index) => {
-    if (index % 7 === 0) {
-      result.push([]);
-    }
-    result[result.length - 1].push(color);
-    return result;
-  }, []);
+export const EdybaraColorPicker = forwardRef(
+  (props: EdybaraColorPickerProps) => {
+    const chunks = COLORS.reduce<string[][]>((result, color, index) => {
+      if (index % 7 === 0) {
+        result.push([]);
+      }
+      result[result.length - 1].push(color);
+      return result;
+    }, []);
 
-  return html`
-    <div class=${classes('edybara-color-picker')}>
-      ${chunks.map(
-        (chunk) => html`
-          <div class="edybara-color-group">
-            ${chunk.map(
-              (color) => html`
-                <${EdybaraColor}
-                  color=${color}
-                  className=${props.color === color ? 'selected' : ''}
-                  onClick=${() => props.onChange?.(color)}
-                />
-              `,
-            )}
-          </div>
-        `,
-      )}
-    </div>
-  `;
-});
+    return html`
+      <div class=${classes('edybara-color-picker')}>
+        ${chunks.map(
+          (chunk) => html`
+            <div class="edybara-color-group">
+              ${chunk.map(
+                (color) => html`
+                  <${EdybaraColor}
+                    color=${color}
+                    className=${props.color === color ? 'selected' : ''}
+                    onClick=${() => props.onChange?.(color)}
+                  />
+                `,
+              )}
+            </div>
+          `,
+        )}
+      </div>
+    `;
+  },
+);

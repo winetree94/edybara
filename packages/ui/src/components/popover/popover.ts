@@ -52,7 +52,7 @@ const EdybaraPopoverTrigger = (props: EdybaraPopoverTriggerProps) => {
         triggerRef: element,
       });
     }
-    const onClick = (e: MouseEvent) => {
+    const onClick = () => {
       context.setOpened({
         triggerRef: element,
       });
@@ -91,7 +91,6 @@ export interface EdybaraPopoverContentProps {
 }
 
 const EdybaraPopoverContent = (props: EdybaraPopoverContentProps) => {
-  const context = useContext(EdybaraPopoverContext);
   return html`<div className="edybara-popover-content">${props.children}</div>`;
 };
 

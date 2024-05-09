@@ -11,9 +11,7 @@ export interface EdybaraTableEditingPluginConfigs {
   tableCellNodeType: NodeType;
 }
 
-export const edybaraTableEditingPlugins = (
-  configs: EdybaraTableEditingPluginConfigs,
-) => {
+export const edybaraTableEditingPlugins = () => {
   const plugins: PMPlugin[] = [
     ...edybaraFocusedCellDecorationPlugins(),
     ...edybaraTableCellButtonPlugins(),

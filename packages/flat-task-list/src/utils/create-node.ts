@@ -18,4 +18,4 @@ export const createNode = (node: Node) => {
   li.dataset['indent'] = `${attrs.indent || 1}`;
   li.dataset['checked'] = attrs.checked ? 'true' : 'false';
   return li;
-}
+};

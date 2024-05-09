@@ -6,6 +6,8 @@ export interface EdybaraLinkPluginConfigs {
   markType: MarkType;
 }
 
-export const edybaraLinkPlugins = (configs: EdybaraLinkPluginConfigs): PMPlugin[] => {
+export const edybaraLinkPlugins = (
+  configs: EdybaraLinkPluginConfigs,
+): PMPlugin[] => {
   return [...edybaraLinkFloatingLayerPlugins(configs)];
 };

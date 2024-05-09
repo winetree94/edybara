@@ -9,12 +9,15 @@ export interface EdybaraCodeBlockPluginConfigs {
   mergeAdjacentCodeBlock?: boolean;
 }
 
-const DEFAULT_CONFIGS: Required<Omit<EdybaraCodeBlockPluginConfigs, 'nodeType'>> =
-  {
-    mergeAdjacentCodeBlock: true,
-  };
+const DEFAULT_CONFIGS: Required<
+  Omit<EdybaraCodeBlockPluginConfigs, 'nodeType'>
+> = {
+  mergeAdjacentCodeBlock: true,
+};
 
-export const edybaraCodeBlockPlugins = (configs: EdybaraCodeBlockPluginConfigs) => {
+export const edybaraCodeBlockPlugins = (
+  configs: EdybaraCodeBlockPluginConfigs,
+) => {
   const mergedConfigs = {
     ...DEFAULT_CONFIGS,
     ...configs,

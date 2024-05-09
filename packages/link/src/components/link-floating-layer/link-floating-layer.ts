@@ -11,7 +11,9 @@ export interface EdybaraLinkFloatingLayerProps {
   href: string;
 }
 
-export const EdybaraLinkFloatingLayer = (props: EdybaraLinkFloatingLayerProps) => {
+export const EdybaraLinkFloatingLayer = (
+  props: EdybaraLinkFloatingLayerProps,
+) => {
   return html`
     <${EdybaraOverlay}>
       <${EdybaraLayer} 
@@ -24,8 +26,7 @@ export const EdybaraLinkFloatingLayer = (props: EdybaraLinkFloatingLayerProps) =
           }</${EdybaraAnchor}>
           <${EdybaraAnchor}>Edit</${EdybaraAnchor}>
           <${EdybaraAnchor}
-            onclick=${() => {
-            }}>
+            onclick=${() => {}}>
             Remove
           </${EdybaraAnchor}>
         </${EdybaraParagraph}>

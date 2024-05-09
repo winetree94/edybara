@@ -106,7 +106,7 @@ export interface EdybaraSelectOptionProps {
 }
 
 const EdybaraSelectOption = forwardRef<HTMLLIElement, EdybaraSelectOptionProps>(
-  ({ children, value, className, onClick }, ref) => {
+  ({ children, value, className, onClick }) => {
     const context = useContext(EdybaraSelectContext);
     return html`
       <${EdybaraListItem} 

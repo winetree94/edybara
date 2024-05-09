@@ -55,18 +55,18 @@ export interface EdybaraEmojiPickerProps {
   gap: number;
 }
 
-const CategoryIcons = {
-  Symbols: 'ri-character-recognition-fill',
-  Activities: 'ri-basketball-line',
-  Flags: 'ri-flag-line',
-  'Travel & Places': 'ri-plane-fill',
-  'Food & Drink': 'ri-restaurant-2-fill',
-  'Animals & Nature': 'ri-bug-fill',
-  'People & Body': 'ri-user-fill',
-  Objects: 'ri-umbrella-fill',
-  Components: 'ri-cpu-fill',
-  'Smileys & Emotion': 'ri-smile-2-fill',
-};
+// const CategoryIcons = {
+//   Symbols: 'ri-character-recognition-fill',
+//   Activities: 'ri-basketball-line',
+//   Flags: 'ri-flag-line',
+//   'Travel & Places': 'ri-plane-fill',
+//   'Food & Drink': 'ri-restaurant-2-fill',
+//   'Animals & Nature': 'ri-bug-fill',
+//   'People & Body': 'ri-user-fill',
+//   Objects: 'ri-umbrella-fill',
+//   Components: 'ri-cpu-fill',
+//   'Smileys & Emotion': 'ri-smile-2-fill',
+// };
 
 export const EdybaraEmojiPicker = (props: EdybaraEmojiPickerProps) => {
   const [currentCategory, setCurrentCategory] = useState<string>(

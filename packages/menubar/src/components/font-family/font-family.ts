@@ -20,7 +20,8 @@ export const EdybaraMenubarFontFamilySelect = () => {
   ] as EdybaraFontFamilyMarkType;
   const currentMark = markActive(context.editorView.state, fontFamilyMarkType);
   const currentFont =
-    (currentMark?.attrs as EdybaraFontFamilyAttrs | null)?.fontFamily || 'default';
+    (currentMark?.attrs as EdybaraFontFamilyAttrs | null)?.fontFamily ||
+    'default';
 
   const fontOptions = [
     {

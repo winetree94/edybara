@@ -5,7 +5,9 @@ export interface EdybaraCodeBlockMergePluginConfigs {
   nodeType: NodeType;
 }
 
-export const edybaraCodeBlockMergePlugins = (configs: EdybaraCodeBlockMergePluginConfigs) => {
+export const edybaraCodeBlockMergePlugins = (
+  configs: EdybaraCodeBlockMergePluginConfigs,
+) => {
   return [
     ...edybaraMergeAdjacentNodePlugins({
       specs: [

@@ -3400,6 +3400,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3413,6 +3414,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3426,6 +3428,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3439,6 +3442,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3455,6 +3459,7 @@ __metadata:
     "@edybara/pm": "npm:*"
     "@edybara/tables": "npm:*"
     "@edybara/ui": "npm:*"
+    eslint: "npm:^8.49.0"
     preact: "npm:*"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
@@ -3468,6 +3473,7 @@ __metadata:
   resolution: "@edybara/core@workspace:packages/core"
   dependencies:
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3484,6 +3490,7 @@ __metadata:
     "@edybara/pm": "npm:*"
     "@edybara/ui": "npm:*"
     codemirror: "npm:^6.0.1"
+    eslint: "npm:^8.49.0"
     preact: "npm:^10.20.1"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
@@ -3498,6 +3505,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3511,6 +3519,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     orderedmap: "npm:*"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
@@ -3526,6 +3535,7 @@ __metadata:
     "@edybara/core": "npm:*"
     "@edybara/flat-list": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3539,6 +3549,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3552,6 +3563,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3565,6 +3577,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3579,6 +3592,7 @@ __metadata:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
     "@edybara/ui": "npm:*"
+    eslint: "npm:^8.49.0"
     preact: "npm:*"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
@@ -3593,6 +3607,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3607,6 +3622,7 @@ __metadata:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
     "@edybara/ui": "npm:*"
+    eslint: "npm:^8.49.0"
     preact: "npm:*"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
@@ -3622,6 +3638,7 @@ __metadata:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
     "@edybara/ui": "npm:*"
+    eslint: "npm:^8.49.0"
     preact: "npm:*"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
@@ -3650,6 +3667,7 @@ __metadata:
     "@edybara/text-color": "npm:*"
     "@edybara/ui": "npm:*"
     emoji-datasource: "npm:>=15.0.0"
+    eslint: "npm:^8.49.0"
     htm: "npm:>=3.0.0"
     preact: "npm:>=10.0.0"
     remixicon: "npm:>=3.0.0"
@@ -3666,6 +3684,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     orderedmap: "npm:*"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
@@ -3678,6 +3697,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@edybara/pm@workspace:packages/pm"
   dependencies:
+    eslint: "npm:^8.49.0"
     prosemirror-changeset: "npm:*"
     prosemirror-collab: "npm:*"
     prosemirror-commands: "npm:*"
@@ -3733,6 +3753,7 @@ __metadata:
     "@edybara/text-color": "npm:*"
     "@edybara/ui": "npm:*"
     "@edybara/underline": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3746,6 +3767,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3759,6 +3781,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3772,6 +3795,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3786,6 +3810,7 @@ __metadata:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
     "@edybara/ui": "npm:*"
+    eslint: "npm:^8.49.0"
     preact: "npm:*"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
@@ -3800,6 +3825,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"
@@ -3812,6 +3838,7 @@ __metadata:
   resolution: "@edybara/ui@workspace:packages/ui"
   dependencies:
     emoji-datasource: "npm:>=15.0.0"
+    eslint: "npm:^8.49.0"
     htm: "npm:>=3.0.0"
     preact: "npm:>=10.0.0"
     remixicon: "npm:>=3.0.0"
@@ -3828,6 +3855,7 @@ __metadata:
   dependencies:
     "@edybara/core": "npm:*"
     "@edybara/pm": "npm:*"
+    eslint: "npm:^8.49.0"
     rimraf: "npm:^5.0.5"
     sass: "npm:^1.69.5"
     tsup: "npm:^8.0.1"

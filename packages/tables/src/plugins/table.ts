@@ -7,6 +7,6 @@ export interface EdybaraTablePluginConfigs {
   tableCellNodeType: NodeType;
 }
 
-export const edybaraTablePlugins = (configs: EdybaraTablePluginConfigs) => {
+export const edybaraTablePlugins = () => {
   return [new PMPlugin({})];
 };

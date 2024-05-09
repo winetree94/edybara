@@ -7,7 +7,11 @@ export interface EdybaraInputProps extends HTMLAttributes<HTMLInputElement> {}
 export const EdybaraInput = forwardRef<HTMLInputElement, EdybaraInputProps>(
   ({ className, ...props }, ref) => {
     return html`
-      <input class=${classes('edybara-input', className)} ...${props} ref=${ref} />
+      <input
+        class=${classes('edybara-input', className)}
+        ...${props}
+        ref=${ref}
+      />
     `;
   },
 );
