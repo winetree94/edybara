@@ -77,18 +77,13 @@ body {
   overflow: hidden;
 }
 
-.markdown {
-  .edybara-root {
-    height: 500px;
-  }  
-}
-
 .edybara-root {
   width: 100%;
   border-radius: 8px;
 
   .edybara-view-editor-root {
     border-radius: 8px;
+    max-height: 500px;
   }
 }
 
