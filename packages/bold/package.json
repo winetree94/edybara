@@ -42,7 +42,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/bold.css": "./styles/bold.css"
+    "./styles/bold.css": "./styles/bold.css",
+    "./styles/bold.scss": "./styles/bold.scss"
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

@@ -2,25 +2,17 @@
 
   li.edybara-task-list-item {
     position: relative;
+    margin: 0;
   }
 
   ul.edybara-task-list {
     padding-left: 0;
     list-style-type: none;
+    margin: 0;
 
     li.edybara-task-list-item {
       word-break: break-all;
-      line-height: normal;
       display: flex;
-
-      &:first-child {
-        margin-top: 10px; 
-      }
-      margin: 10px 0;
-
-      p.edybara-paragraph {
-        margin: 0;
-      }
 
       &.edybara-align-center {
         text-align: center;

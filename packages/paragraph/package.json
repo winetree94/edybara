@@ -42,7 +42,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/paragraph.css": "./styles/paragraph.css"
+    "./styles/paragraph.css": "./styles/paragraph.css",
+    "./styles/paragraph.scss": "./styles/paragraph.scss"
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

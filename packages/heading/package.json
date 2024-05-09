@@ -42,7 +42,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/heading.css": "./styles/heading.css"
+    "./styles/heading.css": "./styles/heading.css",
+    "./styles/heading.scss": "./styles/heading.scss"
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

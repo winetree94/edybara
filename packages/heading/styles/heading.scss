@@ -6,6 +6,8 @@
   h5.edybara-heading,
   h6.edybara-heading {
     font-weight: normal;
+    margin: 0;
+
     &.edybara-align-center {
       text-align: center;
     }
@@ -31,14 +33,5 @@
   }
   h6.edybara-heading {
     font-size: 12px;
-  }
-
-  h1.edybara-heading:first-child,
-  h2.edybara-heading:first-child,
-  h3.edybara-heading:first-child,
-  h4.edybara-heading:first-child,
-  h5.edybara-heading:first-child,
-  h6.edybara-heading:first-child {
-    // margin-top: 10px;
   }
 }

@@ -2,30 +2,22 @@
 
   li.edybara-list-item {
     position: relative;
+    margin: 0;
   }
 
   ul.edybara-bullet-list,
   ol.edybara-ordered-list {
     padding-left: 0;
     list-style-type: none;
+    margin: 0;
 
     li.edybara-list-item {
       display: flex;
       word-break: break-all;
-      line-height: normal;
 
       &::before {
         flex-shrink: 0;
-        font-family: auto;
-      }
-
-      &:first-child {
-        margin-top: 10px; 
-      }
-      margin: 10px 0;
-
-      p.edybara-paragraph {
-        margin: 0;
+        font-family: Arial;
       }
 
       &.edybara-align-center {

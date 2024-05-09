@@ -42,7 +42,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/link.css": "./styles/link.css"
+    "./styles/link.css": "./styles/link.css",
+    "./styles/link.scss": "./styles/link.scss"
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

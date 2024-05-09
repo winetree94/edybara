@@ -42,7 +42,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/text-color.css": "./styles/text-color.css"
+    "./styles/text-color.css": "./styles/text-color.css",
+    "./styles/text-color.scss": "./styles/text-color.scss"
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

@@ -42,7 +42,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/superscript.css": "./styles/superscript.css"
+    "./styles/superscript.css": "./styles/superscript.css",
+    "./styles/superscript.scss": "./styles/superscript.scss"
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

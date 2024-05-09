@@ -43,7 +43,9 @@
       "require": "./dist/index.cjs"
     },
     "./styles/gapcursor.css": "./styles/gapcursor.css",
-    "./styles/core.css": "./styles/core.css"
+    "./styles/gapcursor.scss": "./styles/gapcursor.scss",
+    "./styles/core.css": "./styles/core.css",
+    "./styles/core.scss": "./styles/core.scss"
   },
   "dependencies": {
     "@edybara/pm": "^1.0.0"

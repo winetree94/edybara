@@ -42,7 +42,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/subscript.css": "./styles/subscript.css"
+    "./styles/subscript.css": "./styles/subscript.css",
+    "./styles/subscript.scss": "./styles/subscript.scss"
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

@@ -42,7 +42,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/italic.css": "./styles/italic.css"
+    "./styles/italic.css": "./styles/italic.css",
+    "./styles/italic.scss": "./styles/italic.scss"
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

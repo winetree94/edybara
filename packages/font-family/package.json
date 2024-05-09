@@ -42,7 +42,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/font-family.css": "./styles/font-family.css"
+    "./styles/font-family.css": "./styles/font-family.css",
+    "./styles/font-family.scss": "./styles/font-family.scss"
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",
