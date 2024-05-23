@@ -1,1 +1,1 @@
-export * from './toggle-font-family';
+export * from './set-font-family';

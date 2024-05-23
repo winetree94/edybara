@@ -73,7 +73,7 @@ export const edybaraFontFamilyMarks = (
       {
         tag: 'span.edybara-font-family',
         getAttrs: (node) => {
-          const dom = node as HTMLElement;
+          const dom = node;
           const fontFamily = dom.dataset['fontFamily'] || '';
 
           if (!fontFamily) {
@@ -83,6 +83,7 @@ export const edybaraFontFamilyMarks = (
           if (mergedConfigs.fonts && !fontByNames[fontFamily]) {
             return false;
           }
+
           return {
             fontFamily: fontFamily || null,
           };

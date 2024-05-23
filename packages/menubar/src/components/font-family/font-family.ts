@@ -4,7 +4,7 @@ import { EdybaraParagraph, EdybaraSelect, classes, html } from '@edybara/ui';
 import {
   EdybaraFontFamilyAttrs,
   EdybaraFontFamilyMarkType,
-  toggleFontFamily,
+  setFontFamily,
 } from '@edybara/font-family';
 import { markActive } from '@edybara/core';
 
@@ -36,7 +36,7 @@ export const EdybaraMenubarFontFamilySelect = () => {
     ...fontFamilyMarkType.spec.fonts.map((font) => ({
       value: font.fontFamily,
       command: () => {
-        toggleFontFamily(fontFamilyMarkType, {
+        setFontFamily(fontFamilyMarkType, {
           fontFamily: font.fontFamily,
         })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();

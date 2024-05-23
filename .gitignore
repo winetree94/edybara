@@ -59,3 +59,5 @@ packages/**/*.css.map
 
 # nx
 .nx
+
+lerna-debug.log

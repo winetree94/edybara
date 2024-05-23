@@ -11,7 +11,7 @@ import { markActive } from '@edybara/core';
 import {
   EdybaraTextColorAttrs,
   EdybaraTextColorMarkType,
-  toggleTextColorWithAttrs,
+  setTextColor,
 } from '@edybara/text-color';
 
 export const EdybaraMenubarFontColorSelect = () => {
@@ -33,7 +33,7 @@ export const EdybaraMenubarFontColorSelect = () => {
       className="${classes('edybara-menubar-color-select')}"
       value="${'black'}"
       onChange="${(color: string) => {
-        toggleTextColorWithAttrs(textColorMarkType, {
+        setTextColor(textColorMarkType, {
           color,
         })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();

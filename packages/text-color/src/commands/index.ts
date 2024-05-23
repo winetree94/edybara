@@ -1,1 +1,1 @@
-export * from './toggle-text-color';
+export * from './set-text-color';
