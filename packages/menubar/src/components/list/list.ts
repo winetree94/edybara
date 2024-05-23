@@ -29,6 +29,18 @@ export const EdybaraMenubarListToggleButtons = () => {
       listItemType: listItemNodeType,
     })(context.editorView.state);
 
+  const canIndentListItem = indentListItem({
+    listNodeTypes: [bulletListNodeType, orderedListNodeType],
+    listItemNodeType: listItemNodeType,
+    reduce: 1,
+  })(context.editorView.state);
+
+  const canDeindentListItem = indentListItem({
+    listNodeTypes: [bulletListNodeType, orderedListNodeType],
+    listItemNodeType: listItemNodeType,
+    reduce: -1,
+  })(context.editorView.state);
+
   const activeOrderedList =
     orderedListNodeType &&
     !!findParentNode((node) => node.type === orderedListNodeType)(
@@ -102,12 +114,14 @@ export const EdybaraMenubarListToggleButtons = () => {
     }
     <${EdybaraButton}
       className="edybara-icon-button"
+      disabled=${!canDeindentListItem}
       onClick=${() => onDecreaseIndentClick()}
       >
       <i className="ri-indent-decrease" />
     </${EdybaraButton}>
     <${EdybaraButton}
       className="edybara-icon-button"
+      disabled=${!canIndentListItem}
       onClick=${() => onIncreaseIndentClick()}
       >
       <i className="ri-indent-increase" />

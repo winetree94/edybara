@@ -87,6 +87,9 @@ export const toggleList =
       }, tr);
 
     selection = state.selection.map(tr.doc, tr.mapping);
-    dispatch?.(tr.setSelection(selection));
-    return true;
+    tr = tr.setSelection(selection);
+
+    dispatch?.(tr);
+
+    return tr.docChanged;
   };
