@@ -4,7 +4,26 @@
     "baseUrl": "./src",
     "outDir": "./dist",
     "paths": {
-      "@edybara/core": ["../../core/src/index.ts"]
+      "@edybara/core": ["../../core/src/index.ts"],
+      "@edybara/pm/changeset": ["../pm/changeset/index.ts"],
+      "@edybara/pm/collab": ["../pm/collab/index.ts"],
+      "@edybara/pm/commands": ["../pm/commands/index.ts"],
+      "@edybara/pm/dropcursor": ["../pm/dropcursor/index.ts"],
+      "@edybara/pm/gapcursor": ["../pm/gapcursor/index.ts"],
+      "@edybara/pm/history": ["../pm/history/index.ts"],
+      "@edybara/pm/inputrules": ["../pm/inputrules/index.ts"],
+      "@edybara/pm/keymap": ["../pm/keymap/index.ts"],
+      "@edybara/pm/markdown": ["../pm/markdown/index.ts"],
+      "@edybara/pm/menu": ["../pm/menu/index.ts"],
+      "@edybara/pm/model": ["../pm/model/index.ts"],
+      "@edybara/pm/schema-basic": ["../pm/schema-basic/index.ts"],
+      "@edybara/pm/schema-list": ["../pm/schema-list/index.ts"],
+      "@edybara/pm/state": ["../pm/state/index.ts"],
+      "@edybara/pm/tables": ["../pm/tables/index.ts"],
+      "@edybara/pm/trailing-node": ["../pm/trailing-node/index.ts"],
+      "@edybara/pm/transform": ["../pm/transform/index.ts"],
+      "@edybara/pm/utils": ["../pm/utils/index.ts"],
+      "@edybara/pm/view": ["../pm/view/index.ts"]
     }
   },
   "include": ["src/*"],

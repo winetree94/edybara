@@ -1,5 +1,5 @@
 import { parseQuillTextAlign } from '@edybara/core';
-import { NodeSpec } from '@edybara/pm/model';
+import { Attrs, NodeSpec } from '@edybara/pm/model';
 
 export type EdybaraHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 export type EdybaraHeadingAlign = 'left' | 'right' | 'center' | null;
@@ -9,7 +9,7 @@ export const EDYBARA_HEADING_ALLOWED_LEVELS: EdybaraHeadingLevel[] = [
   1, 2, 3, 4, 5, 6,
 ];
 
-export interface EdybaraHeadingAttrs {
+export interface EdybaraHeadingAttrs extends Attrs {
   level: EdybaraHeadingLevel;
   align: EdybaraHeadingAlign;
 }

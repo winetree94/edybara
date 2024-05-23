@@ -8,9 +8,10 @@ import {
   classes,
   html,
 } from '@edybara/ui';
-import { EdybaraHeadingNodeSpec } from '@edybara/heading';
-import { mac, transformRangeToBlock } from '@edybara/core';
+import { EdybaraHeadingNodeSpec, setHeading } from '@edybara/heading';
+import { mac } from '@edybara/core';
 import { getTextType } from '../../utils';
+import { setParagraph } from '../../../../paragraph/src/commands/set-paragraph';
 
 export const EdybaraMenubarTextTypeSelect = () => {
   const context = useContext(EdybaraMenubarContext);
@@ -36,7 +37,7 @@ export const EdybaraMenubarTextTypeSelect = () => {
         </${EdybaraShortCut}> 
       `,
       command: () => {
-        transformRangeToBlock(headingNodeType, {
+        setHeading(headingNodeType, {
           level,
         })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
@@ -50,7 +51,7 @@ export const EdybaraMenubarTextTypeSelect = () => {
         <${EdybaraShortCut}>⌥⌘0</${EdybaraShortCut}> 
       `,
       command: () => {
-        transformRangeToBlock(paragraphNodeType)(
+        setParagraph(paragraphNodeType)(
           context.editorView.state,
           context.editorView.dispatch,
         );
