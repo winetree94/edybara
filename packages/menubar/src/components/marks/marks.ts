@@ -49,7 +49,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-bold',
       label: 'Bold',
-      active: markActive(context.editorView.state, boldMarkType),
+      active: !!markActive(context.editorView.state, boldMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}B
@@ -69,7 +69,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-italic',
       label: 'Italic',
-      active: markActive(context.editorView.state, italicMarkType),
+      active: !!markActive(context.editorView.state, italicMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}I
@@ -89,7 +89,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-underline',
       label: 'Underline',
-      active: markActive(context.editorView.state, underlineMarkType),
+      active: !!markActive(context.editorView.state, underlineMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}U
@@ -109,7 +109,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-strikethrough-2',
       label: 'Strikethrough',
-      active: markActive(context.editorView.state, strikethroughMarkType),
+      active: !!markActive(context.editorView.state, strikethroughMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}S
@@ -129,7 +129,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-code-line',
       label: 'Inline Code',
-      active: markActive(context.editorView.state, codeMarkType),
+      active: !!markActive(context.editorView.state, codeMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}M
@@ -149,7 +149,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-subscript',
       label: 'Subscript',
-      active: markActive(context.editorView.state, subscriptMarkType),
+      active: !!markActive(context.editorView.state, subscriptMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'},
@@ -169,7 +169,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-superscript',
       label: 'Superscript',
-      active: markActive(context.editorView.state, superscriptMarkType),
+      active: !!markActive(context.editorView.state, superscriptMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}.

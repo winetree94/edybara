@@ -1,17 +1,18 @@
 import { keymap } from '@edybara/pm/keymap';
-import { baseKeymap } from '@edybara/pm/commands';
+import {
+  baseKeymap,
+  chainCommands,
+  createParagraphNear,
+  liftEmptyBlock,
+  newlineInCode,
+  splitBlockAs,
+} from '@edybara/pm/commands';
 import { Plugin } from '@edybara/pm/state';
 import { clearMarks } from '../commands';
 
 export const edybaraBasicKeymapPlugins = (): Plugin[] => {
   return [
     keymap({
-      /**
-       * Prevents focus from leaving when the Tab key is pressed.
-       */
-      'Shift-Tab': () => true,
-      Tab: () => true,
-
       /**
        * Switch to the default node of the Schema when the first node is empty.
        */
@@ -66,6 +67,28 @@ export const edybaraBasicKeymapPlugins = (): Plugin[] => {
         return true;
       },
       'Mod-\\': clearMarks(),
+
+      Enter: (state, dispatch) => {
+        const result = chainCommands(
+          newlineInCode,
+          createParagraphNear,
+          liftEmptyBlock,
+          splitBlockAs((node) => {
+            const attrs = node.attrs;
+            if (node.type.name === 'heading') {
+              return state.schema.nodes['paragraph'].create(attrs);
+            }
+            return node;
+          }),
+        )(state, dispatch);
+        return result;
+      },
+
+      /**
+       * Prevents focus from leaving when the Tab key is pressed.
+       */
+      'Shift-Tab': () => true,
+      Tab: () => true,
     }),
     keymap(baseKeymap),
   ];
