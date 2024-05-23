@@ -2,6 +2,7 @@ import { Fragment, NodeType } from '@edybara/pm/model';
 import { Command } from '@edybara/pm/state';
 import { getBlockContainerChildren, liftOut } from '@edybara/core';
 
+// 하드코딩 없도록 고쳐야 함
 const allowedContentTypes = [
   'paragraph',
   'heading',
@@ -44,13 +45,30 @@ export const toggleList =
     tr = getBlockContainerChildren(tr.doc, selection.from, selection.to)
       .slice()
       .reverse()
+      .reduce((tr, { node, pos }) => {
+        tr = tr.setBlockType(
+          pos,
+          pos + node.nodeSize,
+          state.schema.nodes['paragraph'],
+          {
+            ...node.attrs,
+          },
+        );
+        return tr;
+      }, tr);
+
+    tr = getBlockContainerChildren(tr.doc, selection.from, selection.to)
+      .slice()
+      .reverse()
       .reduce((tr, { node, pos }, index) => {
         const $from = tr.doc.resolve(pos);
         const $to = tr.doc.resolve(pos + node.nodeSize);
         const range = $from.blockRange($to)!;
+
         if (!configs.listItemType.validContent(Fragment.from(node))) {
           return tr;
         }
+
         tr = tr.wrap(range, [
           {
             type: configs.listType,
@@ -58,9 +76,13 @@ export const toggleList =
           },
           {
             type: configs.listItemType,
-            attrs: { indent: indents[index] },
+            attrs: {
+              indent: indents[index],
+              align: node.attrs['align'],
+            },
           },
         ]);
+
         return tr;
       }, tr);
 

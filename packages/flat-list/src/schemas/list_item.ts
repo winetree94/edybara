@@ -42,7 +42,7 @@ export const edybaraFlatListItemNodes = (
       {
         tag: 'li',
         getAttrs(node) {
-          const dom = node as HTMLElement;
+          const dom = node;
           const align = dom.getAttribute('data-text-align');
           const quillAlign = parseQuillTextAlign(dom);
           const indent = dom.dataset['indent'];
