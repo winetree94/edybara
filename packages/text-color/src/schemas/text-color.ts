@@ -1,6 +1,6 @@
 import { MarkSpec, MarkType } from '@edybara/pm/model';
 
-export const EDIM_TEXT_COLOR_DEFAULT_MARK_NAME = 'text_color';
+export const EDYBARA_TEXT_COLOR_DEFAULT_MARK_NAME = 'text_color';
 
 export interface EdybaraTextColorAttrs {
   color: string;
@@ -24,7 +24,7 @@ export interface EdybaraTextColorMarkConfigs {
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraTextColorMarkConfigs> = {
-  markName: EDIM_TEXT_COLOR_DEFAULT_MARK_NAME,
+  markName: EDYBARA_TEXT_COLOR_DEFAULT_MARK_NAME,
   colors: [
     '#182B4D',
     '#0055CC',

@@ -1,6 +1,6 @@
 import { MarkSpec, MarkType } from '@edybara/pm/model';
 
-export const EDIM_FONT_FAMILY_DEFAULT_MARK_NAME = 'font_family';
+export const EDYBARA_FONT_FAMILY_DEFAULT_MARK_NAME = 'font_family';
 
 export interface EdybaraFontFamilyAttrs {
   fontFamily: string | null;
@@ -24,7 +24,7 @@ export interface EdybaraFontFamilyMarkConfigs {
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraFontFamilyMarkConfigs> = {
-  markName: EDIM_FONT_FAMILY_DEFAULT_MARK_NAME,
+  markName: EDYBARA_FONT_FAMILY_DEFAULT_MARK_NAME,
   fonts: [
     {
       fontFamily: 'Arial',

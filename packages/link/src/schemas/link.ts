@@ -1,13 +1,13 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDIM_LINK_DEFAULT_MARK_NAME = 'link';
+export const EDYBARA_LINK_DEFAULT_MARK_NAME = 'link';
 
 export interface EdybaraLinkMarkConfigs {
   markName?: string;
 }
 
 const DEFAULT_CONFIGS = {
-  markName: EDIM_LINK_DEFAULT_MARK_NAME,
+  markName: EDYBARA_LINK_DEFAULT_MARK_NAME,
 };
 
 export const edybaraLinkMarks = (

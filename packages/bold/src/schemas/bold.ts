@@ -1,12 +1,12 @@
 import { MarkSpec } from '@edybara/pm/model';
 import { BaseMarkConfigs } from '@edybara/core';
 
-export const EDIM_BOLD_MARK_NAME = 'bold';
+export const EDYBARA_BOLD_MARK_NAME = 'bold';
 
 export interface EdybaraBoldMarkConfigs extends BaseMarkConfigs {}
 
 const DEFAULT_CONFIGS: Required<EdybaraBoldMarkConfigs> = {
-  markName: EDIM_BOLD_MARK_NAME,
+  markName: EDYBARA_BOLD_MARK_NAME,
 };
 
 export const edybaraBoldMarks = (

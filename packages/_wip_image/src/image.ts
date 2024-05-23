@@ -13,7 +13,7 @@ export interface ImageAttrs {
   viewportWidth: number;
 }
 
-export const EDIM_IMAGE_NODES: Record<string, NodeSpec> = {
+export const EDYBARA_IMAGE_NODES: Record<string, NodeSpec> = {
   image: {
     // inline: true,
     attrs: {

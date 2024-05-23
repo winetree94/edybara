@@ -6,7 +6,7 @@ import {
 } from '@edybara/core';
 import { createNode } from '../utils';
 
-export const EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME = 'task_list_item';
+export const EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME = 'task_list_item';
 
 export interface EdybaraFlatTaskListItemAttrs {
   indent: number;
@@ -19,7 +19,7 @@ export interface EdybaraFlatTaskListItemNodeConfigs {
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraFlatTaskListItemNodeConfigs> = {
-  nodeName: EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME,
+  nodeName: EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME,
 };
 
 export const edybaraFlatTaskListItemNodes = (

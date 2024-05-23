@@ -22,7 +22,7 @@ export interface EdybaraCommandItem {
   action: (view: EditorView, standalone?: boolean) => void;
 }
 
-export const EDIM_DEFAULT_COMMAND_LIST: EdybaraCommandItem[] = [
+export const EDYBARA_DEFAULT_COMMAND_LIST: EdybaraCommandItem[] = [
   {
     icon: 'ri-at-line',
     title: 'Mention',
@@ -117,7 +117,7 @@ export class EdybaraCommandView implements EdybaraCommandPluginView {
     editorState: EditorState,
     pluginState: EdybaraCommandPluginState,
   ): void {
-    const commands = EDIM_DEFAULT_COMMAND_LIST.filter((item) => {
+    const commands = EDYBARA_DEFAULT_COMMAND_LIST.filter((item) => {
       if (!pluginState.keyword) {
         return true;
       }
@@ -180,7 +180,7 @@ export class EdybaraCommandView implements EdybaraCommandPluginView {
       return false;
     }
 
-    const commands = EDIM_DEFAULT_COMMAND_LIST.filter((item) => {
+    const commands = EDYBARA_DEFAULT_COMMAND_LIST.filter((item) => {
       if (!pluginState.keyword) {
         return true;
       }

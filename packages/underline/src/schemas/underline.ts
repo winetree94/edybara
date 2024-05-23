@@ -1,13 +1,13 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDIM_UNDERLINE_MARK_NAME = 'underline';
+export const EDYBARA_UNDERLINE_MARK_NAME = 'underline';
 
 export interface EdybaraUnderlineMarkConfigs {
   markName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraUnderlineMarkConfigs> = {
-  markName: EDIM_UNDERLINE_MARK_NAME,
+  markName: EDYBARA_UNDERLINE_MARK_NAME,
 };
 
 export const edybaraUnderlineMarks = (

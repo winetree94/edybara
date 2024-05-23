@@ -1,13 +1,13 @@
 import { NodeSpec } from '@edybara/pm/model';
 
-export const EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME = 'ordered_list';
+export const EDYBARA_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME = 'ordered_list';
 
 export interface EdybaraFlatOrderedListNodeConfigs {
   nodeName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraFlatOrderedListNodeConfigs> = {
-  nodeName: EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME,
+  nodeName: EDYBARA_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME,
 };
 
 export const edybaraFlatOrderedListNodes = (

@@ -1,13 +1,13 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDIM_CODE_MARK_NAME = 'code';
+export const EDYBARA_CODE_MARK_NAME = 'code';
 
 export interface EdybaraCodeMarkConfigs {
   markName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraCodeMarkConfigs> = {
-  markName: EDIM_CODE_MARK_NAME,
+  markName: EDYBARA_CODE_MARK_NAME,
 };
 
 export const edybaraCodeMarks = (

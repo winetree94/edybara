@@ -1,3 +1,12 @@
+:root {
+  --heading-1-font-size: 32px;
+  --heading-2-font-size: 24px;
+  --heading-3-font-size: 20px;
+  --heading-4-font-size: 16px;
+  --heading-5-font-size: 14px;
+  --heading-6-font-size: 12px;
+}
+
 .ProseMirror {
   h1.edybara-heading,
   h2.edybara-heading,
@@ -7,6 +16,7 @@
   h6.edybara-heading {
     font-weight: normal;
     margin: 0;
+    padding: 0;
 
     &.edybara-align-center {
       text-align: center;
@@ -17,21 +27,21 @@
   }
 
   h1.edybara-heading {
-    font-size: 32px;
+    font-size: var(--heading-1-font-size);
   }
   h2.edybara-heading {
-    font-size: 24px;
+    font-size: var(--heading-2-font-size);
   }
   h3.edybara-heading {
-    font-size: 20px;
+    font-size: var(--heading-3-font-size);
   }
   h4.edybara-heading {
-    font-size: 16px;
+    font-size: var(--heading-4-font-size);
   }
   h5.edybara-heading {
-    font-size: 14px;
+    font-size: var(--heading-5-font-size);
   }
   h6.edybara-heading {
-    font-size: 12px;
+    font-size: var(--heading-6-font-size);
   }
 }

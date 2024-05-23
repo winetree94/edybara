@@ -1,14 +1,14 @@
 import { NodeSpec } from '@edybara/pm/model';
 import { isQuillTaskList } from '@edybara/core';
 
-export const EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME = 'task_list';
+export const EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME = 'task_list';
 
 export interface EdybaraFlatTaskListNodeConfigs {
   nodeName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraFlatTaskListNodeConfigs> = {
-  nodeName: EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME,
+  nodeName: EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME,
 };
 
 export const edybaraFlatTaskListNodes = (

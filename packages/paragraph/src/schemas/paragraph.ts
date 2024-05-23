@@ -1,7 +1,7 @@
 import { NodeSpec } from '@edybara/pm/model';
 import { parseQuillTextAlign } from '@edybara/core';
 
-export const EDIM_PARAGRAPH_DEFAULT_NODE_NAME = 'paragraph';
+export const EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME = 'paragraph';
 
 export interface EdybaraParagraphAttributes {
   align: 'left' | 'right' | 'center' | null;
@@ -25,7 +25,7 @@ export interface EdybaraParagraphNodeConfigs {
 
 const DEFAULT_CONFIGS: Required<EdybaraParagraphNodeConfigs> = {
   allowAlign: true,
-  nodeName: EDIM_PARAGRAPH_DEFAULT_NODE_NAME,
+  nodeName: EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME,
 };
 
 export const edybaraParagraphNodes = (

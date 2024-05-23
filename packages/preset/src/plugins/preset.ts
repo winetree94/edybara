@@ -1,82 +1,82 @@
 import { Plugin as PMPlugin, Plugin } from '@edybara/pm/state';
 import { edybaraCorePlugins } from '@edybara/core';
 import {
-  EDIM_HEADING_DEFAULT_NODE_NAME,
+  EDYBARA_HEADING_DEFAULT_NODE_NAME,
   EdybaraHeadingPluginConfigs,
   edybaraHeadingPlugins,
 } from '@edybara/heading';
 import {
-  EDIM_PARAGRAPH_DEFAULT_NODE_NAME,
+  EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME,
   EdybaraParagraphPluginConfigs,
   edybaraParagraphPlugins,
 } from '@edybara/paragraph';
 import {
-  EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME,
-  EDIM_FLAT_LIST_ITEM_DEFAULT_NODE_NAME,
-  EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME,
+  EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME,
+  EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME,
+  EDYBARA_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME,
   EdybaraFlatListPluginConfigs,
   edybaraFlatListPlugins,
 } from '@edybara/flat-list';
 import {
-  EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME,
-  EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME,
+  EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME,
+  EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME,
   EdybaraFlatTaskListPluginConfigs,
   edybaraFlatTaskListPlugins,
 } from '@edybara/flat-task-list';
 import {
-  EDIM_HORIZONTAL_RULE_NODE_NAME,
+  EDYBARA_HORIZONTAL_RULE_NODE_NAME,
   EdybaraHorizontalRulePluginConfigs,
   edybaraHorizontalRulePlugins,
 } from '@edybara/hr';
 import {
-  EDIM_BOLD_MARK_NAME,
+  EDYBARA_BOLD_MARK_NAME,
   EdybaraBoldPluginConfigs,
   edybaraBoldPlugins,
 } from '@edybara/bold';
 import {
-  EDIM_CODE_MARK_NAME,
+  EDYBARA_CODE_MARK_NAME,
   EdybaraCodePluginConfigs,
   edybaraCodePlugins,
 } from '@edybara/code';
 import {
-  EDIM_ITALIC_MARK_NAME,
+  EDYBARA_ITALIC_MARK_NAME,
   EdybaraItalicPluginConfigs,
   edybaraItalicPlugins,
 } from '@edybara/italic';
 import {
-  EDIM_STRIKETHROUGH_MARK_NAME,
+  EDYBARA_STRIKETHROUGH_MARK_NAME,
   EdybaraStrikethroughPluginConfigs,
   edybaraStrikethroughPlugins,
 } from '@edybara/strikethrough';
 import {
-  EDIM_SUBSCRIPT_MARK_NAME,
+  EDYBARA_SUBSCRIPT_MARK_NAME,
   EdybaraSubscriptPluginConfigs,
   edybaraSubscriptPlugins,
 } from '@edybara/subscript';
 import {
-  EDIM_SUPERSCRIPT_MARK_NAME,
+  EDYBARA_SUPERSCRIPT_MARK_NAME,
   EdybaraSuperscriptPluginConfigs,
   edybaraSuperscriptPlugins,
 } from '@edybara/superscript';
 import {
-  EDIM_UNDERLINE_MARK_NAME,
+  EDYBARA_UNDERLINE_MARK_NAME,
   EdybaraUnderlinePluginConfigs,
   edybaraUnderlinePlugins,
 } from '@edybara/underline';
 import {
-  EDIM_BLOCKQUOTE_NODE_NAME,
+  EDYBARA_BLOCKQUOTE_NODE_NAME,
   EdybaraBlockQuotePluginConfigs,
   edybaraBlockQuotePlugins,
 } from '@edybara/blockquote';
 import {
-  EDIM_CODEBLOCK_NODE_NAME,
+  EDYBARA_CODEBLOCK_NODE_NAME,
   EdybaraCodeBlockPluginConfigs,
   edybaraCodeBlockPlugins,
 } from '@edybara/codeblock';
 import {
-  EDIM_TABLE_CELL_DEFAULT_NODE_NAME,
-  EDIM_TABLE_DEFAULT_NODE_NAME,
-  EDIM_TABLE_ROW_DEFAULT_NODE_NAME,
+  EDYBARA_TABLE_CELL_DEFAULT_NODE_NAME,
+  EDYBARA_TABLE_DEFAULT_NODE_NAME,
+  EDYBARA_TABLE_ROW_DEFAULT_NODE_NAME,
   EdybaraTableEditingPluginConfigs,
   edybaraTableEditingPlugins,
   edybaraTablePlugins,
@@ -86,18 +86,18 @@ import {
   edybaraMenubarPlugins,
 } from '@edybara/menubar';
 import { Schema } from '@edybara/pm/model';
-import { EDIM_FONT_FAMILY_DEFAULT_MARK_NAME } from '@edybara/font-family';
+import { EDYBARA_FONT_FAMILY_DEFAULT_MARK_NAME } from '@edybara/font-family';
 import {
-  EDIM_LINK_DEFAULT_MARK_NAME,
+  EDYBARA_LINK_DEFAULT_MARK_NAME,
   EdybaraLinkPluginConfigs,
   edybaraLinkPlugins,
 } from '@edybara/link';
 // import {
-//   EDIM_MENTION_DEFAULT_MARK_NAME,
+//   EDYBARA_MENTION_DEFAULT_MARK_NAME,
 //   EdybaraMentionPluginConfigs,
 //   edybaraMentionPlugins,
 // } from '@edybara/mention';
-import { EDIM_TEXT_COLOR_DEFAULT_MARK_NAME } from '@edybara/text-color';
+import { EDYBARA_TEXT_COLOR_DEFAULT_MARK_NAME } from '@edybara/text-color';
 
 /**
  * @see https://edybara.me/docs/packages/menubar
@@ -139,110 +139,110 @@ const getDefaultConfigs = (
 ): Required<Omit<EdybaraPresetPluginConfigs, 'schema'>> => {
   return {
     paragraph: {
-      nodeType: schema.nodes[EDIM_PARAGRAPH_DEFAULT_NODE_NAME],
+      nodeType: schema.nodes[EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME],
     },
     heading: {
-      nodeType: schema.nodes[EDIM_HEADING_DEFAULT_NODE_NAME],
+      nodeType: schema.nodes[EDYBARA_HEADING_DEFAULT_NODE_NAME],
     },
     flatTaskList: {
-      taskListNodeType: schema.nodes[EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME],
+      taskListNodeType: schema.nodes[EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME],
       taskListItemNodeType:
-        schema.nodes[EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME],
+        schema.nodes[EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME],
     },
     flatList: {
-      bulletListNodeType: schema.nodes[EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME],
+      bulletListNodeType: schema.nodes[EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME],
       orderedListNodeType:
-        schema.nodes[EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME],
-      listItemNodeType: schema.nodes[EDIM_FLAT_LIST_ITEM_DEFAULT_NODE_NAME],
+        schema.nodes[EDYBARA_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME],
+      listItemNodeType: schema.nodes[EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME],
     },
     blockquote: {
-      nodeType: schema.nodes[EDIM_BLOCKQUOTE_NODE_NAME],
+      nodeType: schema.nodes[EDYBARA_BLOCKQUOTE_NODE_NAME],
     },
     horizontalRule: {
-      nodeType: schema.nodes[EDIM_HORIZONTAL_RULE_NODE_NAME],
+      nodeType: schema.nodes[EDYBARA_HORIZONTAL_RULE_NODE_NAME],
     },
     codeblock: {
-      nodeType: schema.nodes[EDIM_CODEBLOCK_NODE_NAME],
+      nodeType: schema.nodes[EDYBARA_CODEBLOCK_NODE_NAME],
     },
     table: {
-      tableNodeType: schema.nodes[EDIM_TABLE_DEFAULT_NODE_NAME],
-      tableRowNodeType: schema.nodes[EDIM_TABLE_ROW_DEFAULT_NODE_NAME],
-      tableCellNodeType: schema.nodes[EDIM_TABLE_CELL_DEFAULT_NODE_NAME],
+      tableNodeType: schema.nodes[EDYBARA_TABLE_DEFAULT_NODE_NAME],
+      tableRowNodeType: schema.nodes[EDYBARA_TABLE_ROW_DEFAULT_NODE_NAME],
+      tableCellNodeType: schema.nodes[EDYBARA_TABLE_CELL_DEFAULT_NODE_NAME],
     },
     italic: {
-      markType: schema.marks[EDIM_ITALIC_MARK_NAME],
+      markType: schema.marks[EDYBARA_ITALIC_MARK_NAME],
     },
     bold: {
-      markType: schema.marks[EDIM_BOLD_MARK_NAME],
+      markType: schema.marks[EDYBARA_BOLD_MARK_NAME],
     },
     code: {
-      markType: schema.marks[EDIM_CODE_MARK_NAME],
+      markType: schema.marks[EDYBARA_CODE_MARK_NAME],
     },
     underline: {
-      markType: schema.marks[EDIM_UNDERLINE_MARK_NAME],
+      markType: schema.marks[EDYBARA_UNDERLINE_MARK_NAME],
     },
     strikethrough: {
-      markType: schema.marks[EDIM_STRIKETHROUGH_MARK_NAME],
+      markType: schema.marks[EDYBARA_STRIKETHROUGH_MARK_NAME],
     },
     subscript: {
-      markType: schema.marks[EDIM_SUBSCRIPT_MARK_NAME],
+      markType: schema.marks[EDYBARA_SUBSCRIPT_MARK_NAME],
     },
     superscript: {
-      markType: schema.marks[EDIM_SUPERSCRIPT_MARK_NAME],
+      markType: schema.marks[EDYBARA_SUPERSCRIPT_MARK_NAME],
     },
     link: {
-      markType: schema.marks[EDIM_LINK_DEFAULT_MARK_NAME],
+      markType: schema.marks[EDYBARA_LINK_DEFAULT_MARK_NAME],
     },
     // mention: {
-    //   markType: schema.marks[EDIM_MENTION_DEFAULT_MARK_NAME],
+    //   markType: schema.marks[EDYBARA_MENTION_DEFAULT_MARK_NAME],
     // },
     menubar: {
       textType: {
-        paragraphNodeType: schema.nodes[EDIM_PARAGRAPH_DEFAULT_NODE_NAME],
-        headingNodeType: schema.nodes[EDIM_HEADING_DEFAULT_NODE_NAME],
+        paragraphNodeType: schema.nodes[EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME],
+        headingNodeType: schema.nodes[EDYBARA_HEADING_DEFAULT_NODE_NAME],
       },
       fontFamily: {
-        fontFamilyMarkType: schema.marks[EDIM_FONT_FAMILY_DEFAULT_MARK_NAME],
+        fontFamilyMarkType: schema.marks[EDYBARA_FONT_FAMILY_DEFAULT_MARK_NAME],
       },
       textStyles: {
-        boldMarkType: schema.marks[EDIM_BOLD_MARK_NAME],
-        italicMarkType: schema.marks[EDIM_ITALIC_MARK_NAME],
-        underlineMarkType: schema.marks[EDIM_UNDERLINE_MARK_NAME],
-        strikethroughMarkType: schema.marks[EDIM_STRIKETHROUGH_MARK_NAME],
-        codeMarkType: schema.marks[EDIM_CODE_MARK_NAME],
-        subscriptMarkType: schema.marks[EDIM_SUBSCRIPT_MARK_NAME],
-        superscriptMarkType: schema.marks[EDIM_SUPERSCRIPT_MARK_NAME],
+        boldMarkType: schema.marks[EDYBARA_BOLD_MARK_NAME],
+        italicMarkType: schema.marks[EDYBARA_ITALIC_MARK_NAME],
+        underlineMarkType: schema.marks[EDYBARA_UNDERLINE_MARK_NAME],
+        strikethroughMarkType: schema.marks[EDYBARA_STRIKETHROUGH_MARK_NAME],
+        codeMarkType: schema.marks[EDYBARA_CODE_MARK_NAME],
+        subscriptMarkType: schema.marks[EDYBARA_SUBSCRIPT_MARK_NAME],
+        superscriptMarkType: schema.marks[EDYBARA_SUPERSCRIPT_MARK_NAME],
         useClearButton: true,
       },
       textColor: {
-        textColorMarkType: schema.marks[EDIM_TEXT_COLOR_DEFAULT_MARK_NAME],
+        textColorMarkType: schema.marks[EDYBARA_TEXT_COLOR_DEFAULT_MARK_NAME],
       },
       list: {
         orderedListNodeType:
-          schema.nodes[EDIM_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME],
+          schema.nodes[EDYBARA_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME],
         bulletListNodeType:
-          schema.nodes[EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME],
-        listItemNodeType: schema.nodes[EDIM_FLAT_LIST_ITEM_DEFAULT_NODE_NAME],
+          schema.nodes[EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME],
+        listItemNodeType: schema.nodes[EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME],
       },
       taskList: {
-        taskListNodeType: schema.nodes[EDIM_DEFAULT_FLAT_TASK_LIST_NODE_NAME],
+        taskListNodeType: schema.nodes[EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME],
         taskListItemNodeType:
-          schema.nodes[EDIM_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME],
+          schema.nodes[EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME],
       },
       blockquote: {
-        blockQuoteNodeType: schema.nodes[EDIM_BLOCKQUOTE_NODE_NAME],
+        blockQuoteNodeType: schema.nodes[EDYBARA_BLOCKQUOTE_NODE_NAME],
       },
       codeblock: {
-        codeBlockNodeType: schema.nodes[EDIM_CODEBLOCK_NODE_NAME],
+        codeBlockNodeType: schema.nodes[EDYBARA_CODEBLOCK_NODE_NAME],
       },
       table: {
-        tableNodeType: schema.nodes[EDIM_TABLE_DEFAULT_NODE_NAME],
+        tableNodeType: schema.nodes[EDYBARA_TABLE_DEFAULT_NODE_NAME],
       },
       link: {
-        linkMarkType: schema.marks[EDIM_LINK_DEFAULT_MARK_NAME],
+        linkMarkType: schema.marks[EDYBARA_LINK_DEFAULT_MARK_NAME],
       },
       // mention: {
-      //   mentionMarkType: schema.marks[EDIM_MENTION_DEFAULT_MARK_NAME],
+      //   mentionMarkType: schema.marks[EDYBARA_MENTION_DEFAULT_MARK_NAME],
       // },
     },
   };

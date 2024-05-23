@@ -10,10 +10,6 @@ import {
 export const EdybaraMenubarTextAlignSelect = () => {
   const context = useContext(EdybaraMenubarContext);
 
-  if (!context.options.align) {
-    return null;
-  }
-
   const firstAlignment =
     getRangeFirstAlignment(context.editorView.state) || 'left';
 

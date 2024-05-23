@@ -1,6 +1,6 @@
 import { NodeSpec } from '@edybara/pm/model';
 
-export const EDIM_PARAGRAPH_NODE: Record<string, NodeSpec> = {
+export const EDYBARA_PARAGRAPH_NODE: Record<string, NodeSpec> = {
   paragraph: {
     content: 'inline*',
     group: 'block',

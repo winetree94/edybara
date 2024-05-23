@@ -1,13 +1,13 @@
 import { NodeSpec } from '@edybara/pm/model';
 
-export const EDIM_HORIZONTAL_RULE_NODE_NAME = 'horizontal_rule';
+export const EDYBARA_HORIZONTAL_RULE_NODE_NAME = 'horizontal_rule';
 
 export interface EdybaraHorizontalRuleNodeConfigs {
   nodeName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraHorizontalRuleNodeConfigs> = {
-  nodeName: EDIM_HORIZONTAL_RULE_NODE_NAME,
+  nodeName: EDYBARA_HORIZONTAL_RULE_NODE_NAME,
 };
 
 export const edybaraHorizontalRuleNodes = (

@@ -4,7 +4,7 @@ export interface EmojiAttribute {
   data_id: string;
 }
 
-export const EDIM_EMOJI_NODE: Record<string, NodeSpec> = {
+export const EDYBARA_EMOJI_NODE: Record<string, NodeSpec> = {
   emoji: {
     inclusive: false,
     inline: true,

@@ -1,13 +1,13 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDIM_ITALIC_MARK_NAME = 'em';
+export const EDYBARA_ITALIC_MARK_NAME = 'em';
 
 export interface EdybaraItalicMarkConfigs {
   markName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraItalicMarkConfigs> = {
-  markName: EDIM_ITALIC_MARK_NAME,
+  markName: EDYBARA_ITALIC_MARK_NAME,
 };
 
 export const edybaraItalicMarks = (

@@ -5,7 +5,7 @@ import {
   parseQuillTextAlign,
 } from '@edybara/core';
 
-export const EDIM_FLAT_LIST_ITEM_DEFAULT_NODE_NAME = 'list_item';
+export const EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME = 'list_item';
 
 export interface ListItemAttrs {
   indent: number;
@@ -17,7 +17,7 @@ export interface EdybaraFlatListItemNodeConfigs {
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraFlatListItemNodeConfigs> = {
-  nodeName: EDIM_FLAT_LIST_ITEM_DEFAULT_NODE_NAME,
+  nodeName: EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME,
 };
 
 export const edybaraFlatListItemNodes = (

@@ -1,6 +1,6 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDIM_MENTION_DEFAULT_MARK_NAME = 'mention';
+export const EDYBARA_MENTION_DEFAULT_MARK_NAME = 'mention';
 
 export interface MentionAttrs {
   data_id: string;
@@ -11,7 +11,7 @@ export interface EdybaraMentionMarkConfigs {
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraMentionMarkConfigs> = {
-  markName: EDIM_MENTION_DEFAULT_MARK_NAME,
+  markName: EDYBARA_MENTION_DEFAULT_MARK_NAME,
 };
 
 export const edybaraMentionMarks = (

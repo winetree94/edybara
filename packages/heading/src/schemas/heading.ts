@@ -4,8 +4,8 @@ import { NodeSpec } from '@edybara/pm/model';
 export type EdybaraHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 export type EdybaraHeadingAlign = 'left' | 'right' | 'center' | null;
 
-export const EDIM_HEADING_DEFAULT_NODE_NAME = 'heading';
-export const EDIM_HEADING_ALLOWED_LEVELS: EdybaraHeadingLevel[] = [
+export const EDYBARA_HEADING_DEFAULT_NODE_NAME = 'heading';
+export const EDYBARA_HEADING_ALLOWED_LEVELS: EdybaraHeadingLevel[] = [
   1, 2, 3, 4, 5, 6,
 ];
 
@@ -34,23 +34,24 @@ export interface EdybaraHeadingNodeConfigs {
   nodeName?: string;
 }
 
-const EDIM_DEFAULT_HEADING_NODE_CONFIGS: Required<EdybaraHeadingNodeConfigs> = {
-  allowAlign: true,
-  levels: EDIM_HEADING_ALLOWED_LEVELS.slice(),
-  nodeName: EDIM_HEADING_DEFAULT_NODE_NAME,
-};
+const EDYBARA_DEFAULT_HEADING_NODE_CONFIGS: Required<EdybaraHeadingNodeConfigs> =
+  {
+    allowAlign: true,
+    levels: EDYBARA_HEADING_ALLOWED_LEVELS.slice(),
+    nodeName: EDYBARA_HEADING_DEFAULT_NODE_NAME,
+  };
 
 export const edybaraHeadingNodes = (
   configs?: EdybaraHeadingNodeConfigs,
 ): Record<string, EdybaraHeadingNodeSpec> => {
   const mergedConfigs = {
-    ...EDIM_DEFAULT_HEADING_NODE_CONFIGS,
+    ...EDYBARA_DEFAULT_HEADING_NODE_CONFIGS,
     ...configs,
   };
 
   if (
     !mergedConfigs.levels.every((level) =>
-      EDIM_HEADING_ALLOWED_LEVELS.includes(level),
+      EDYBARA_HEADING_ALLOWED_LEVELS.includes(level),
     )
   ) {
     throw new Error('Invalid heading levels');
@@ -74,7 +75,7 @@ export const edybaraHeadingNodes = (
     parseDOM: mergedConfigs.levels.map((level) => ({
       tag: `h${level}`,
       getAttrs: (node) => {
-        const dom = node as HTMLElement;
+        const dom = node;
         const align = dom.getAttribute('data-text-align');
         const quillAlign = parseQuillTextAlign(dom);
 

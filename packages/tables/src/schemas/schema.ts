@@ -3,9 +3,9 @@
 import { AttributeSpec, Attrs, Node, NodeSpec } from '@edybara/pm/model';
 import { MutableAttrs, TableRole } from '@edybara/pm/tables';
 
-export const EDIM_TABLE_DEFAULT_NODE_NAME = 'table';
-export const EDIM_TABLE_ROW_DEFAULT_NODE_NAME = 'table_row';
-export const EDIM_TABLE_CELL_DEFAULT_NODE_NAME = 'table_cell';
+export const EDYBARA_TABLE_DEFAULT_NODE_NAME = 'table';
+export const EDYBARA_TABLE_ROW_DEFAULT_NODE_NAME = 'table_row';
+export const EDYBARA_TABLE_CELL_DEFAULT_NODE_NAME = 'table_cell';
 
 export interface TableNodeSpec extends NodeSpec {
   tableRole: TableRole;
@@ -87,9 +87,9 @@ export interface EdybaraTableNodeConfigs {
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraTableNodeConfigs> = {
-  tableNodeName: EDIM_TABLE_DEFAULT_NODE_NAME,
-  tableRowNodeName: EDIM_TABLE_ROW_DEFAULT_NODE_NAME,
-  tableCellNodeName: EDIM_TABLE_CELL_DEFAULT_NODE_NAME,
+  tableNodeName: EDYBARA_TABLE_DEFAULT_NODE_NAME,
+  tableRowNodeName: EDYBARA_TABLE_ROW_DEFAULT_NODE_NAME,
+  tableCellNodeName: EDYBARA_TABLE_CELL_DEFAULT_NODE_NAME,
 };
 
 export const edybaraTableNodes = (

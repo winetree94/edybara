@@ -1,13 +1,13 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDIM_STRIKETHROUGH_MARK_NAME = 'strikethrough';
+export const EDYBARA_STRIKETHROUGH_MARK_NAME = 'strikethrough';
 
 export interface EdybaraStrikethroughMarkConfigs {
   markName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraStrikethroughMarkConfigs> = {
-  markName: EDIM_STRIKETHROUGH_MARK_NAME,
+  markName: EDYBARA_STRIKETHROUGH_MARK_NAME,
 };
 
 export const edybaraStrikethroughMarks = (

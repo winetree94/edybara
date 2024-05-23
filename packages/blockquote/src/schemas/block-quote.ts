@@ -1,6 +1,6 @@
 import { NodeSpec } from '@edybara/pm/model';
 
-export const EDIM_BLOCKQUOTE_NODE_NAME = 'blockquote';
+export const EDYBARA_BLOCKQUOTE_NODE_NAME = 'blockquote';
 
 export interface EdybaraBlockquoteNodeConfigs {
   multiline?: boolean;
@@ -9,7 +9,7 @@ export interface EdybaraBlockquoteNodeConfigs {
 
 const DEFAULT_CONFIGS: Required<EdybaraBlockquoteNodeConfigs> = {
   multiline: true,
-  nodeName: EDIM_BLOCKQUOTE_NODE_NAME,
+  nodeName: EDYBARA_BLOCKQUOTE_NODE_NAME,
 };
 
 export const edybaraBlockquoteNodes = (

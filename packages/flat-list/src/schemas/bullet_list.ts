@@ -1,14 +1,14 @@
 import { NodeSpec } from '@edybara/pm/model';
 import { isQuillTaskList } from '@edybara/core';
 
-export const EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME = 'bullet_list';
+export const EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME = 'bullet_list';
 
 export interface EdybaraFlatBulletListNodeConfigs {
   nodeName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraFlatBulletListNodeConfigs> = {
-  nodeName: EDIM_FLAT_BULLET_LIST_DEFAULT_NODE_NAME,
+  nodeName: EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME,
 };
 
 export const edybaraFlatBulletListNodes = (

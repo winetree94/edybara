@@ -18,7 +18,7 @@ const DEFAULT_STATE: Readonly<EdybaraLinkFloatingLayerPluginState> = {
   active: null,
 };
 
-export const EDIM_LINK_FLOATING_LAYER_PLUGIN_KEY =
+export const EDYBARA_LINK_FLOATING_LAYER_PLUGIN_KEY =
   new PluginKey<EdybaraLinkFloatingLayerPluginState>(
     'edybara_link_floating_layer',
   );
@@ -53,7 +53,7 @@ export const edybaraLinkFloatingLayerPlugins = (
 
   const plugin: PMPlugin<EdybaraLinkFloatingLayerPluginState> =
     new PMPlugin<EdybaraLinkFloatingLayerPluginState>({
-      key: EDIM_LINK_FLOATING_LAYER_PLUGIN_KEY,
+      key: EDYBARA_LINK_FLOATING_LAYER_PLUGIN_KEY,
       view: (view) => {
         editorView = view;
         return {};
