@@ -41,6 +41,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./styles/image.css": {
+      "import": "./styles/image.css",
+      "require": "./styles/image.css"
     }
   },
   "dependencies": {

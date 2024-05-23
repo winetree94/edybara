@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/menubar.css": "./styles/menubar.css",
-    "./styles/menubar.scss": "./styles/menubar.scss"
+    "./styles/menubar.css": {
+      "import": "./styles/menubar.css",
+      "require": "./styles/menubar.css"
+    }
   },
   "dependencies": {
     "@edybara/blockquote": "^1.0.0",

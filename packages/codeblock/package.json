@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/codeblock.css": "./styles/codeblock.css",
-    "./styles/codeblock.scss": "./styles/codeblock.scss"
+    "./styles/codeblock.css": {
+      "import": "./styles/codeblock.css",
+      "require": "./styles/codeblock.css"
+    }
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

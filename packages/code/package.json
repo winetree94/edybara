@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/code.css": "./styles/code.css",
-    "./styles/code.scss": "./styles/code.scss"
+    "./styles/code.css": {
+      "import": "./styles/code.css",
+      "require": "./styles/code.css"
+    }
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

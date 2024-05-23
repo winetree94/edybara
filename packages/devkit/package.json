@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/devkit.css": "./styles/devkit.css",
-    "./styles/devkit.scss": "./styles/devkit.scss"
+    "./styles/devkit.css": {
+      "import": "./styles/devkit.css",
+      "require": "./styles/devkit.css"
+    }
   },
   "dependencies": {
     "@codemirror/lang-json": "^6.0.0",

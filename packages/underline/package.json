@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/underline.css": "./styles/underline.css",
-    "./styles/underline.scss": "./styles/underline.scss"
+    "./styles/underline.css": {
+      "import": "./styles/underline.css",
+      "require": "./styles/underline.css"
+    }
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

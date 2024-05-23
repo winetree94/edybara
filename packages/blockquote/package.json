@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/blockquote.css": "./styles/blockquote.css",
-    "./styles/blockquote.scss": "./styles/blockquote.scss"
+    "./styles/blockquote.css": {
+      "import": "./styles/blockquote.css",
+      "require": "./styles/blockquote.css"
+    }
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

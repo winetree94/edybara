@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/strikethrough.css": "./styles/strikethrough.css",
-    "./styles/strikethrough.scss": "./styles/strikethrough.scss"
+    "./styles/strikethrough.css": {
+      "import": "./styles/strikethrough.css",
+      "require": "./styles/strikethrough.css"
+    }
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

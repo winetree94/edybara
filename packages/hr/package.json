@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/hr.css": "./styles/hr.css",
-    "./styles/hr.scss": "./styles/hr.scss"
+    "./styles/hr.css": {
+      "import": "./styles/hr.css",
+      "require": "./styles/hr.css"
+    }
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

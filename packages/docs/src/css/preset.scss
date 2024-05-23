@@ -1,0 +1,26 @@
+// core
+@import '@edybara/core/styles/core.scss';
+@import '@edybara/ui/styles/ui.scss';
+@import '@edybara/menubar/styles/menubar.scss';
+
+// nodes
+@import '@edybara/paragraph/styles/paragraph.scss';
+@import '@edybara/heading/styles/heading.scss';
+@import '@edybara/flat-list/styles/flat-list.scss';
+@import '@edybara/flat-task-list/styles/flat-task-list.scss';
+@import '@edybara/blockquote/styles/blockquote.scss';
+@import '@edybara/hr/styles/hr.scss';
+@import '@edybara/codeblock/styles/codeblock.scss';
+@import '@edybara/tables/styles/tables.scss';
+
+// marks
+@import '@edybara/bold/styles/bold.scss';
+@import '@edybara/italic/styles/italic.scss';
+@import '@edybara/underline/styles/underline.scss';
+@import '@edybara/strikethrough/styles/strikethrough.scss';
+@import '@edybara/code/styles/code.scss';
+@import '@edybara/subscript/styles/subscript.scss';
+@import '@edybara/superscript/styles/superscript.scss';
+@import '@edybara/font-family/styles/font-family.scss';
+@import '@edybara/text-color/styles/text-color.scss';
+@import '@edybara/link/styles/link.scss';

@@ -41,6 +41,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./styles/mention.css": {
+      "import": "./styles/mention.css",
+      "require": "./styles/mention.css"
     }
   },
   "dependencies": {

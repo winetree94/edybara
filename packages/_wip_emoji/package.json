@@ -41,6 +41,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./styles/emoji.css": {
+      "import": "./styles/emoji.css",
+      "require": "./styles/emoji.css"
     }
   },
   "dependencies": {

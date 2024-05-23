@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/tables.css": "./styles/tables.css",
-    "./styles/tables.scss": "./styles/tables.scss"
+    "./styles/tables.css": {
+      "import": "./styles/tables.css",
+      "require": "./styles/tables.css"
+    }
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

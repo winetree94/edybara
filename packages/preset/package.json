@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/preset.css": "./styles/preset.css",
-    "./styles/preset.scss": "./styles/preset.scss"
+    "./styles/preset.css": {
+      "import": "./styles/preset.css",
+      "require": "./styles/preset.css"
+    }
   },
   "dependencies": {
     "@edybara/blockquote": "^1.0.0",

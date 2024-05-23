@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/flat-list.css": "./styles/flat-list.css",
-    "./styles/flat-list.scss": "./styles/flat-list.scss"
+    "./styles/flat-list.css": {
+      "import": "./styles/flat-list.css",
+      "require": "./styles/flat-list.css"
+    }
   },
   "dependencies": {
     "@edybara/core": "^1.0.0",

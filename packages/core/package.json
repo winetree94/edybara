@@ -42,10 +42,14 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/gapcursor.css": "./styles/gapcursor.css",
-    "./styles/gapcursor.scss": "./styles/gapcursor.scss",
-    "./styles/core.css": "./styles/core.css",
-    "./styles/core.scss": "./styles/core.scss"
+    "./styles/gapcursor.css": {
+      "import": "./styles/gapcursor.css",
+      "require": "./styles/gapcursor.css"
+    },
+    "./styles/core.css": {
+      "import": "./styles/core.css",
+      "require": "./styles/core.css"
+    }
   },
   "dependencies": {
     "@edybara/pm": "^1.0.0"

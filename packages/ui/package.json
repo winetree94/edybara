@@ -42,8 +42,10 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./styles/ui.css": "./styles/ui.css",
-    "./styles/ui.scss": "./styles/ui.scss"
+    "./styles/ui.css": {
+      "import": "./styles/ui.css",
+      "require": "./styles/ui.css"
+    }
   },
   "dependencies": {
     "emoji-datasource": ">=15.0.0",
