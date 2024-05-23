@@ -11,7 +11,7 @@ import {
 import { EdybaraHeadingNodeSpec, setHeading } from '@edybara/heading';
 import { mac } from '@edybara/core';
 import { getTextType } from '../../utils';
-import { setParagraph } from '../../../../paragraph/src/commands/set-paragraph';
+import { setParagraph } from '@edybara/paragraph';
 
 export const EdybaraMenubarTextTypeSelect = () => {
   const context = useContext(EdybaraMenubarContext);
