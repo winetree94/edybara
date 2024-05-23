@@ -45,6 +45,11 @@
     "./styles/preset.css": {
       "import": "./styles/preset.css",
       "require": "./styles/preset.css"
+    },
+    "./styles/preset.scss": {
+      "import": "./styles/preset.scss",
+      "require": "./styles/preset.scss",
+      "sass": "./styles/preset.scss"
     }
   },
   "dependencies": {

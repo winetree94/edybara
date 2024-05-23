@@ -45,6 +45,11 @@
     "./styles/ui.css": {
       "import": "./styles/ui.css",
       "require": "./styles/ui.css"
+    },
+    "./styles/ui.scss": {
+      "import": "./styles/ui.scss",
+      "require": "./styles/ui.scss",
+      "sass": "./styles/ui.scss"
     }
   },
   "dependencies": {

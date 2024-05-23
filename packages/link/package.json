@@ -45,6 +45,11 @@
     "./styles/link.css": {
       "import": "./styles/link.css",
       "require": "./styles/link.css"
+    },
+    "./styles/link.scss": {
+      "import": "./styles/link.scss",
+      "require": "./styles/link.scss",
+      "sass": "./styles/link.scss"
     }
   },
   "dependencies": {

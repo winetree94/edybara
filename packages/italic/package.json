@@ -45,6 +45,11 @@
     "./styles/italic.css": {
       "import": "./styles/italic.css",
       "require": "./styles/italic.css"
+    },
+    "./styles/italic.scss": {
+      "import": "./styles/italic.scss",
+      "require": "./styles/italic.scss",
+      "sass": "./styles/italic.scss"
     }
   },
   "dependencies": {

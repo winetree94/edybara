@@ -45,6 +45,11 @@
     "./styles/bold.css": {
       "import": "./styles/bold.css",
       "require": "./styles/bold.css"
+    },
+    "./styles/bold.scss": {
+      "import": "./styles/bold.scss",
+      "require": "./styles/bold.scss",
+      "sass": "./styles/bold.scss"
     }
   },
   "dependencies": {

@@ -69,7 +69,8 @@ module.exports = {
         100: '100%',
       },
       backgroundImage: {
-        'homepage-1': 'url("/img/backgrounds/hipo.svg")',
+        'homepage-1': 'url("/img/backgrounds/PC_1-1.png")',
+        'homepage-2': 'url("/img/backgrounds/PC_5-1.png")',
       },
     },
   },

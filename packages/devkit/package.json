@@ -45,6 +45,11 @@
     "./styles/devkit.css": {
       "import": "./styles/devkit.css",
       "require": "./styles/devkit.css"
+    },
+    "./styles/devkit.scss": {
+      "import": "./styles/devkit.scss",
+      "require": "./styles/devkit.scss",
+      "sass": "./styles/devkit.scss"
     }
   },
   "dependencies": {

@@ -45,6 +45,11 @@
     "./styles/code.css": {
       "import": "./styles/code.css",
       "require": "./styles/code.css"
+    },
+    "./styles/code.scss": {
+      "import": "./styles/code.scss",
+      "require": "./styles/code.scss",
+      "sass": "./styles/code.scss"
     }
   },
   "dependencies": {

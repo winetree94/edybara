@@ -45,6 +45,11 @@
     "./styles/superscript.css": {
       "import": "./styles/superscript.css",
       "require": "./styles/superscript.css"
+    },
+    "./styles/superscript.scss": {
+      "import": "./styles/superscript.scss",
+      "require": "./styles/superscript.scss",
+      "sass": "./styles/superscript.scss"
     }
   },
   "dependencies": {

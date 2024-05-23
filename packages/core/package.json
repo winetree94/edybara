@@ -44,11 +44,17 @@
     },
     "./styles/gapcursor.css": {
       "import": "./styles/gapcursor.css",
-      "require": "./styles/gapcursor.css"
+      "require": "./styles/gapcursor.css",
+      "sass": "./styles/gapcursor.css"
     },
     "./styles/core.css": {
       "import": "./styles/core.css",
       "require": "./styles/core.css"
+    },
+    "./styles/core.scss": {
+      "import": "./styles/core.scss",
+      "require": "./styles/core.scss",
+      "sass": "./styles/core.scss"
     }
   },
   "dependencies": {

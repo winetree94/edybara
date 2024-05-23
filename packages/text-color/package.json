@@ -45,6 +45,11 @@
     "./styles/text-color.css": {
       "import": "./styles/text-color.css",
       "require": "./styles/text-color.css"
+    },
+    "./styles/text-color.scss": {
+      "import": "./styles/text-color.scss",
+      "require": "./styles/text-color.scss",
+      "sass": "./styles/text-color.scss"
     }
   },
   "dependencies": {

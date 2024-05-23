@@ -45,6 +45,11 @@
     "./styles/image.css": {
       "import": "./styles/image.css",
       "require": "./styles/image.css"
+    },
+    "./styles/image.scss": {
+      "import": "./styles/image.scss",
+      "require": "./styles/image.scss",
+      "sass": "./styles/image.scss"
     }
   },
   "dependencies": {

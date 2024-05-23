@@ -45,6 +45,11 @@
     "./styles/paragraph.css": {
       "import": "./styles/paragraph.css",
       "require": "./styles/paragraph.css"
+    },
+    "./styles/paragraph.scss": {
+      "import": "./styles/paragraph.scss",
+      "require": "./styles/paragraph.scss",
+      "sass": "./styles/paragraph.scss"
     }
   },
   "dependencies": {

@@ -45,6 +45,11 @@
     "./styles/heading.css": {
       "import": "./styles/heading.css",
       "require": "./styles/heading.css"
+    },
+    "./styles/heading.scss": {
+      "import": "./styles/heading.scss",
+      "require": "./styles/heading.scss",
+      "sass": "./styles/heading.scss"
     }
   },
   "dependencies": {

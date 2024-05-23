@@ -41,10 +41,10 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #1781FE;
-  --ifm-color-primary-dark: #1781FE;
-  --ifm-color-primary-darker: #1781FE;
-  --ifm-color-primary-darkest: #1781FE;
+  --ifm-color-primary: #1781fe;
+  --ifm-color-primary-dark: #1781fe;
+  --ifm-color-primary-darker: #1781fe;
+  --ifm-color-primary-darkest: #1781fe;
   --ifm-color-primary-light: #d6e9ff;
   --ifm-color-primary-lighter: #d6e9ff;
   --ifm-color-primary-lightest: #d6e9ff;
@@ -77,13 +77,15 @@ body {
   overflow: hidden;
 }
 
-.edybara-root {
-  width: 100%;
-  border-radius: 8px;
-
-  .edybara-view-editor-root {
+:not(.homepage) {
+  .edybara-root {
+    width: 100%;
     border-radius: 8px;
-    max-height: 500px;
+
+    .edybara-view-editor-root {
+      border-radius: 8px;
+      max-height: 500px;
+    }
   }
 }
 

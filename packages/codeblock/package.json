@@ -45,6 +45,11 @@
     "./styles/codeblock.css": {
       "import": "./styles/codeblock.css",
       "require": "./styles/codeblock.css"
+    },
+    "./styles/codeblock.scss": {
+      "import": "./styles/codeblock.scss",
+      "require": "./styles/codeblock.scss",
+      "sass": "./styles/codeblock.scss"
     }
   },
   "dependencies": {

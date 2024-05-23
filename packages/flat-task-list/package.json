@@ -45,6 +45,11 @@
     "./styles/flat-task-list.css": {
       "import": "./styles/flat-task-list.css",
       "require": "./styles/flat-task-list.css"
+    },
+    "./styles/flat-task-list.scss": {
+      "import": "./styles/flat-task-list.scss",
+      "require": "./styles/flat-task-list.scss",
+      "sass": "./styles/flat-task-list.scss"
     }
   },
   "dependencies": {

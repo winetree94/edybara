@@ -45,6 +45,11 @@
     "./styles/tables.css": {
       "import": "./styles/tables.css",
       "require": "./styles/tables.css"
+    },
+    "./styles/tables.scss": {
+      "import": "./styles/tables.scss",
+      "require": "./styles/tables.scss",
+      "sass": "./styles/tables.scss"
     }
   },
   "dependencies": {

@@ -11,7 +11,7 @@ export default function Home(): JSX.Element {
       description="It has only the advantages of a complete editor and a non-completed editor."
       wrapperClassName="tw-items-center"
     >
-      <div className="tw-w-full tw-flex tw-flex-col tw-items-center">
+      <div className="homepage tw-w-full tw-flex tw-flex-col tw-items-center">
         {/* Intro */}
         <div className="tw-w-full ">
           <div className="tw-flex tw-flex-col tw-items-center tw-w-full tw-px-30 tw-pt-70 tw-pb-[482px] tw-bg-100 tw-bg-homepage-1 tw-bg-no-repeat tw-bg-center">
@@ -53,7 +53,11 @@ export default function Home(): JSX.Element {
                 const {
                   Maximum,
                 } = require('@site/src/components/examples/getting-started/maximum');
-                return <Maximum className={'tw-rounded-8 tw-shadow-black'} />;
+                return (
+                  <Maximum
+                    className={'tw-rounded-8 tw-h-[600px] tw-shadow-black'}
+                  />
+                );
               }}
             </BrowserOnly>
           </div>
@@ -206,7 +210,7 @@ export default function Home(): JSX.Element {
             </div>
           </div>
         </div>
-        <div className="tw-bg-blue-500 tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-20">
+        <div className="tw-bg-blue-500 tw-w-full tw-flex tw-flex-col tw-items-center tw-py-100 tw-px-20 tw-bg-homepage-2 tw-bg-no-repeat tw-bg-center tw-bg-contain">
           <h1 className="tw-text-38 tw-font-800 tw-text-white tw-text-center tw-break-keep">
             <Translate>home.try.title</Translate>
           </h1>

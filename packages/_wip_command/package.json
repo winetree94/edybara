@@ -45,6 +45,11 @@
     "./styles/command.css": {
       "import": "./styles/command.css",
       "require": "./styles/command.css"
+    },
+    "./styles/command.scss": {
+      "import": "./styles/command.scss",
+      "require": "./styles/command.scss",
+      "sass": "./styles/command.scss"
     }
   },
   "dependencies": {

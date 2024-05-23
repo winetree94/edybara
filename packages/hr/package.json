@@ -45,6 +45,11 @@
     "./styles/hr.css": {
       "import": "./styles/hr.css",
       "require": "./styles/hr.css"
+    },
+    "./styles/hr.scss": {
+      "import": "./styles/hr.scss",
+      "require": "./styles/hr.scss",
+      "sass": "./styles/hr.scss"
     }
   },
   "dependencies": {

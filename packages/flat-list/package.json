@@ -45,6 +45,11 @@
     "./styles/flat-list.css": {
       "import": "./styles/flat-list.css",
       "require": "./styles/flat-list.css"
+    },
+    "./styles/flat-list.scss": {
+      "import": "./styles/flat-list.scss",
+      "require": "./styles/flat-list.scss",
+      "sass": "./styles/flat-list.scss"
     }
   },
   "dependencies": {

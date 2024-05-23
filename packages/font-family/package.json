@@ -45,6 +45,11 @@
     "./styles/font-family.css": {
       "import": "./styles/font-family.css",
       "require": "./styles/font-family.css"
+    },
+    "./styles/font-family.scss": {
+      "import": "./styles/font-family.scss",
+      "require": "./styles/font-family.scss",
+      "sass": "./styles/font-family.scss"
     }
   },
   "dependencies": {

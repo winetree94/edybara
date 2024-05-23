@@ -45,6 +45,11 @@
     "./styles/mention.css": {
       "import": "./styles/mention.css",
       "require": "./styles/mention.css"
+    },
+    "./styles/mention.scss": {
+      "import": "./styles/mention.scss",
+      "require": "./styles/mention.scss",
+      "sass": "./styles/mention.scss"
     }
   },
   "dependencies": {

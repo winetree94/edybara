@@ -45,6 +45,11 @@
     "./styles/blockquote.css": {
       "import": "./styles/blockquote.css",
       "require": "./styles/blockquote.css"
+    },
+    "./styles/blockquote.scss": {
+      "import": "./styles/blockquote.scss",
+      "require": "./styles/blockquote.scss",
+      "sass": "./styles/blockquote.scss"
     }
   },
   "dependencies": {

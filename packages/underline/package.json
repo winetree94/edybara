@@ -45,6 +45,11 @@
     "./styles/underline.css": {
       "import": "./styles/underline.css",
       "require": "./styles/underline.css"
+    },
+    "./styles/underline.scss": {
+      "import": "./styles/underline.scss",
+      "require": "./styles/underline.scss",
+      "sass": "./styles/underline.scss"
     }
   },
   "dependencies": {

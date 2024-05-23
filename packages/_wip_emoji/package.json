@@ -45,6 +45,11 @@
     "./styles/emoji.css": {
       "import": "./styles/emoji.css",
       "require": "./styles/emoji.css"
+    },
+    "./styles/emoji.scss": {
+      "import": "./styles/emoji.scss",
+      "require": "./styles/emoji.scss",
+      "sass": "./styles/emoji.scss"
     }
   },
   "dependencies": {

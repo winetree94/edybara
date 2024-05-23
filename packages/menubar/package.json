@@ -45,6 +45,11 @@
     "./styles/menubar.css": {
       "import": "./styles/menubar.css",
       "require": "./styles/menubar.css"
+    },
+    "./styles/menubar.scss": {
+      "import": "./styles/menubar.scss",
+      "require": "./styles/menubar.scss",
+      "sass": "./styles/menubar.scss"
     }
   },
   "dependencies": {

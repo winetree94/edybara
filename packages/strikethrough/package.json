@@ -45,6 +45,11 @@
     "./styles/strikethrough.css": {
       "import": "./styles/strikethrough.css",
       "require": "./styles/strikethrough.css"
+    },
+    "./styles/strikethrough.scss": {
+      "import": "./styles/strikethrough.scss",
+      "require": "./styles/strikethrough.scss",
+      "sass": "./styles/strikethrough.scss"
     }
   },
   "dependencies": {

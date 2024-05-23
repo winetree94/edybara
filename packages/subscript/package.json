@@ -45,6 +45,11 @@
     "./styles/subscript.css": {
       "import": "./styles/subscript.css",
       "require": "./styles/subscript.css"
+    },
+    "./styles/subscript.scss": {
+      "import": "./styles/subscript.scss",
+      "require": "./styles/subscript.scss",
+      "sass": "./styles/subscript.scss"
     }
   },
   "dependencies": {
