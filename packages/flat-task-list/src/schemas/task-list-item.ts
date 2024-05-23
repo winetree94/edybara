@@ -6,30 +6,13 @@ import {
 } from '@edybara/core';
 import { createNode } from '../utils';
 
-export const EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME = 'task_list_item';
-
 export interface EdybaraFlatTaskListItemAttrs {
   indent: number;
   align: 'left' | 'right' | 'center' | null;
   checked: boolean;
 }
 
-export interface EdybaraFlatTaskListItemNodeConfigs {
-  nodeName?: string;
-}
-
-const DEFAULT_CONFIGS: Required<EdybaraFlatTaskListItemNodeConfigs> = {
-  nodeName: EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME,
-};
-
-export const edybaraFlatTaskListItemNodes = (
-  configs?: EdybaraFlatTaskListItemNodeConfigs,
-): Record<string, NodeSpec> => {
-  const mergedConfigs = {
-    ...DEFAULT_CONFIGS,
-    ...configs,
-  };
-
+export const edybaraFlatTaskListItemNodes = (): Record<string, NodeSpec> => {
   const nodeSpec: NodeSpec = {
     content: 'paragraph',
     attrs: {
@@ -86,6 +69,6 @@ export const edybaraFlatTaskListItemNodes = (
   };
 
   return {
-    [mergedConfigs.nodeName]: nodeSpec,
+    task_list_item: nodeSpec,
   };
 };

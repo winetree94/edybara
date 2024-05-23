@@ -21,11 +21,7 @@ const schema = new Schema({
   nodes: {
     ...edybaraBaseNodes(),
     ...edybaraParagraphNodes(),
-    ...edybaraTableNodes({
-      tableNodeName: 'table',
-      tableRowNodeName: 'table_row',
-      tableCellNodeName: 'table_cell',
-    }),
+    ...edybaraTableNodes(),
   },
 });
 
@@ -33,16 +29,8 @@ const plugins: Plugin[] = [
   ...edybaraParagraphPlugins({
     nodeType: schema.nodes.paragraph,
   }),
-  ...edybaraTablePlugins({
-    tableNodeType: schema.nodes.table,
-    tableRowNodeType: schema.nodes.table_row,
-    tableCellNodeType: schema.nodes.table_cell,
-  }),
-  ...edybaraTableEditingPlugins({
-    tableNodeType: schema.nodes.table,
-    tableRowNodeType: schema.nodes.table_row,
-    tableCellNodeType: schema.nodes.table_cell,
-  }),
+  ...edybaraTablePlugins(),
+  ...edybaraTableEditingPlugins(),
   ...edybaraMenubarPlugins({
     table: {
       tableNodeType: schema.nodes.table,

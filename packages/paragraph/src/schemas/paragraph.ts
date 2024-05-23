@@ -1,8 +1,6 @@
 import { NodeSpec } from '@edybara/pm/model';
 import { parseQuillTextAlign } from '@edybara/core';
 
-export const EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME = 'paragraph';
-
 export interface EdybaraParagraphAttrs {
   align: 'left' | 'right' | 'center' | null;
 }
@@ -14,18 +12,10 @@ export interface EdybaraParagraphNodeConfigs {
    * @default true
    */
   allowAlign?: boolean;
-
-  /**
-   * node name
-   *
-   * @default "paragraph"
-   */
-  nodeName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraParagraphNodeConfigs> = {
   allowAlign: true,
-  nodeName: EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME,
 };
 
 export const edybaraParagraphNodes = (
@@ -44,7 +34,7 @@ export const edybaraParagraphNodes = (
       {
         tag: 'p',
         getAttrs: (node) => {
-          const dom = node as HTMLElement;
+          const dom = node;
           const align = dom.getAttribute('data-text-align');
           const quillAlign = parseQuillTextAlign(dom);
           const indent = dom.getAttribute('data-indent');
@@ -79,6 +69,6 @@ export const edybaraParagraphNodes = (
   }
 
   return {
-    [mergedConfigs.nodeName]: nodeSpec,
+    paragraph: nodeSpec,
   };
 };

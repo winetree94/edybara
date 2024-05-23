@@ -9,9 +9,7 @@ import {
   edybaraParagraphNodes,
 } from '@edybara/paragraph';
 import {
-  EdybaraFlatBulletListNodeConfigs,
   EdybaraFlatListItemNodeConfigs,
-  EdybaraFlatOrderedListNodeConfigs,
   edybaraFlatBulletListNodes,
   edybaraFlatListItemNodes,
   edybaraFlatOrderedListNodes,
@@ -19,25 +17,17 @@ import {
 import {
   edybaraFlatTaskListNodes,
   edybaraFlatTaskListItemNodes,
-  EdybaraFlatTaskListNodeConfigs,
-  EdybaraFlatTaskListItemNodeConfigs,
 } from '@edybara/flat-task-list';
-import {
-  EdybaraHorizontalRuleNodeConfigs,
-  edybaraHorizontalRuleNodes,
-} from '@edybara/hr';
-import { EdybaraLinkMarkConfigs, edybaraLinkMarks } from '@edybara/link';
-import { EdybaraBoldMarkConfigs, edybaraBoldMarks } from '@edybara/bold';
-import { EdybaraCodeMarkConfigs, edybaraCodeMarks } from '@edybara/code';
+import { edybaraHorizontalRuleNodes } from '@edybara/hr';
+import { edybaraLinkMarks } from '@edybara/link';
+import { edybaraBoldMarks } from '@edybara/bold';
+import { edybaraCodeMarks } from '@edybara/code';
 import {
   EdybaraFontFamilyMarkConfigs,
   edybaraFontFamilyMarks,
 } from '@edybara/font-family';
-import { EdybaraItalicMarkConfigs, edybaraItalicMarks } from '@edybara/italic';
-import {
-  EdybaraStrikethroughMarkConfigs,
-  edybaraStrikethroughMarks,
-} from '@edybara/strikethrough';
+import { edybaraItalicMarks } from '@edybara/italic';
+import { edybaraStrikethroughMarks } from '@edybara/strikethrough';
 import {
   EdybaraSubscriptMarkConfigs,
   edybaraSubscriptMarks,
@@ -50,70 +40,59 @@ import {
   EdybaraTextColorMarkConfigs,
   edybaraTextColorMarks,
 } from '@edybara/text-color';
-import {
-  EdybaraUnderlineMarkConfigs,
-  edybaraUnderlineMarks,
-} from '@edybara/underline';
+import { edybaraUnderlineMarks } from '@edybara/underline';
 import {
   EdybaraBlockquoteNodeConfigs,
   edybaraBlockquoteNodes,
 } from '@edybara/blockquote';
-import {
-  EdybaraCodeBlockNodeConfigs,
-  edybaraCodeBlockNodes,
-} from '@edybara/codeblock';
-// import {
-//   EdybaraMentionMarkConfigs,
-//   edybaraMentionMarks,
-// } from '@edybara/mention';
-import { EdybaraTableNodeConfigs, edybaraTableNodes } from '@edybara/tables';
+import { edybaraCodeBlockNodes } from '@edybara/codeblock';
+import { edybaraTableNodes } from '@edybara/tables';
 
 export interface EdybaraPresetSchemaConfigs {
   paragraph?: EdybaraParagraphNodeConfigs | null;
   heading?: EdybaraHeadingNodeConfigs | null;
-  flatTaskList?: EdybaraFlatTaskListNodeConfigs | null;
-  flatTaskListItem?: EdybaraFlatTaskListItemNodeConfigs | null;
-  flatBulletList?: EdybaraFlatBulletListNodeConfigs | null;
-  flatOrderedList?: EdybaraFlatOrderedListNodeConfigs | null;
+  flatTaskList?: boolean | null;
+  flatTaskListItem?: boolean | null;
+  flatBulletList?: boolean | null;
+  flatOrderedList?: boolean | null;
   flatListItem?: EdybaraFlatListItemNodeConfigs | null;
   blockquote?: EdybaraBlockquoteNodeConfigs | null;
-  horizontalRule?: EdybaraHorizontalRuleNodeConfigs | null;
-  codeblock?: EdybaraCodeBlockNodeConfigs | null;
-  table?: EdybaraTableNodeConfigs | null;
+  horizontalRule?: boolean | null;
+  codeblock?: boolean | null;
+  table?: boolean | null;
 
-  bold?: EdybaraBoldMarkConfigs | null;
-  italic?: EdybaraItalicMarkConfigs | null;
-  underline?: EdybaraUnderlineMarkConfigs | null;
-  strikethrough?: EdybaraStrikethroughMarkConfigs | null;
-  code?: EdybaraCodeMarkConfigs | null;
+  bold?: boolean | null;
+  italic?: boolean | null;
+  underline?: boolean | null;
+  strikethrough?: boolean | null;
+  code?: boolean | null;
   subscript?: EdybaraSubscriptMarkConfigs | null;
   superscript?: EdybaraSuperscriptMarkConfigs | null;
   fontFamily?: EdybaraFontFamilyMarkConfigs | null;
   textColor?: EdybaraTextColorMarkConfigs | null;
-  link?: EdybaraLinkMarkConfigs | null;
-  // mention?: EdybaraMentionMarkConfigs | null;
+  link?: boolean | null;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraPresetSchemaConfigs> = {
   // nodes
   paragraph: {},
   heading: {},
-  flatTaskList: {},
-  flatTaskListItem: {},
-  flatBulletList: {},
-  flatOrderedList: {},
+  flatTaskList: true,
+  flatTaskListItem: true,
+  flatBulletList: true,
+  flatOrderedList: true,
   flatListItem: {},
   blockquote: {},
-  horizontalRule: {},
-  codeblock: {},
-  table: {},
+  horizontalRule: true,
+  codeblock: true,
+  table: true,
 
   // marks
-  bold: {},
-  italic: {},
-  underline: {},
-  strikethrough: {},
-  code: {},
+  bold: true,
+  italic: true,
+  underline: true,
+  strikethrough: true,
+  code: true,
   subscript: {
     superscriptMarkName: 'superscript',
   },
@@ -122,7 +101,7 @@ const DEFAULT_CONFIGS: Required<EdybaraPresetSchemaConfigs> = {
   },
   fontFamily: {},
   textColor: {},
-  link: {},
+  link: true,
   // mention: {},
 };
 
@@ -159,28 +138,28 @@ export const edybaraPresetSchema = (configs?: EdybaraPresetSchemaConfigs) => {
   if (mergedConfigs.flatTaskList) {
     spec.nodes = {
       ...spec.nodes,
-      ...edybaraFlatTaskListNodes(mergedConfigs.flatTaskList),
+      ...edybaraFlatTaskListNodes(),
     };
   }
 
   if (mergedConfigs.flatTaskListItem) {
     spec.nodes = {
       ...spec.nodes,
-      ...edybaraFlatTaskListItemNodes(mergedConfigs.flatTaskListItem),
+      ...edybaraFlatTaskListItemNodes(),
     };
   }
 
   if (mergedConfigs.flatBulletList) {
     spec.nodes = {
       ...spec.nodes,
-      ...edybaraFlatBulletListNodes(mergedConfigs.flatBulletList),
+      ...edybaraFlatBulletListNodes(),
     };
   }
 
   if (mergedConfigs.flatOrderedList) {
     spec.nodes = {
       ...spec.nodes,
-      ...edybaraFlatOrderedListNodes(mergedConfigs.flatOrderedList),
+      ...edybaraFlatOrderedListNodes(),
     };
   }
 
@@ -201,56 +180,56 @@ export const edybaraPresetSchema = (configs?: EdybaraPresetSchemaConfigs) => {
   if (mergedConfigs.horizontalRule) {
     spec.nodes = {
       ...spec.nodes,
-      ...edybaraHorizontalRuleNodes(mergedConfigs.horizontalRule),
+      ...edybaraHorizontalRuleNodes(),
     };
   }
 
   if (mergedConfigs.codeblock) {
     spec.nodes = {
       ...spec.nodes,
-      ...edybaraCodeBlockNodes(mergedConfigs.codeblock),
+      ...edybaraCodeBlockNodes(),
     };
   }
 
   if (mergedConfigs.table) {
     spec.nodes = {
       ...spec.nodes,
-      ...edybaraTableNodes(mergedConfigs.table),
+      ...edybaraTableNodes(),
     };
   }
 
   if (mergedConfigs.bold) {
     spec.marks = {
       ...spec.marks,
-      ...edybaraBoldMarks(mergedConfigs.bold),
+      ...edybaraBoldMarks(),
     };
   }
 
   if (mergedConfigs.italic) {
     spec.marks = {
       ...spec.marks,
-      ...edybaraItalicMarks(mergedConfigs.italic),
+      ...edybaraItalicMarks(),
     };
   }
 
   if (mergedConfigs.underline) {
     spec.marks = {
       ...spec.marks,
-      ...edybaraUnderlineMarks(mergedConfigs.underline),
+      ...edybaraUnderlineMarks(),
     };
   }
 
   if (mergedConfigs.strikethrough) {
     spec.marks = {
       ...spec.marks,
-      ...edybaraStrikethroughMarks(mergedConfigs.strikethrough),
+      ...edybaraStrikethroughMarks(),
     };
   }
 
   if (mergedConfigs.code) {
     spec.marks = {
       ...spec.marks,
-      ...edybaraCodeMarks(mergedConfigs.code),
+      ...edybaraCodeMarks(),
     };
   }
 
@@ -285,7 +264,7 @@ export const edybaraPresetSchema = (configs?: EdybaraPresetSchemaConfigs) => {
   if (mergedConfigs.link) {
     spec.marks = {
       ...spec.marks,
-      ...edybaraLinkMarks(mergedConfigs.link),
+      ...edybaraLinkMarks(),
     };
   }
 

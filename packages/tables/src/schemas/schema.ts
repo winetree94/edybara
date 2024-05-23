@@ -3,10 +3,6 @@
 import { AttributeSpec, Attrs, Node, NodeSpec } from '@edybara/pm/model';
 import { MutableAttrs, TableRole } from '@edybara/pm/tables';
 
-export const EDYBARA_TABLE_DEFAULT_NODE_NAME = 'table';
-export const EDYBARA_TABLE_ROW_DEFAULT_NODE_NAME = 'table_row';
-export const EDYBARA_TABLE_CELL_DEFAULT_NODE_NAME = 'table_cell';
-
 export interface TableNodeSpec extends NodeSpec {
   tableRole: TableRole;
 }
@@ -80,26 +76,7 @@ for (const prop in extraAttrs) {
   cellAttrs[prop] = { default: extraAttrs[prop].default };
 }
 
-export interface EdybaraTableNodeConfigs {
-  tableNodeName?: string;
-  tableRowNodeName?: string;
-  tableCellNodeName?: string;
-}
-
-const DEFAULT_CONFIGS: Required<EdybaraTableNodeConfigs> = {
-  tableNodeName: EDYBARA_TABLE_DEFAULT_NODE_NAME,
-  tableRowNodeName: EDYBARA_TABLE_ROW_DEFAULT_NODE_NAME,
-  tableCellNodeName: EDYBARA_TABLE_CELL_DEFAULT_NODE_NAME,
-};
-
-export const edybaraTableNodes = (
-  configs?: EdybaraTableNodeConfigs,
-): Record<string, NodeSpec> => {
-  const mergedConfigs = {
-    ...DEFAULT_CONFIGS,
-    ...configs,
-  };
-
+export const edybaraTableNodes = (): Record<string, NodeSpec> => {
   const tableNodeSpec: NodeSpec = {
     content: 'table_row+',
     tableRole: 'table',
@@ -163,8 +140,8 @@ export const edybaraTableNodes = (
   };
 
   return {
-    [mergedConfigs.tableNodeName]: tableNodeSpec,
-    [mergedConfigs.tableRowNodeName]: tableRowNodeSpec,
-    [mergedConfigs.tableCellNodeName]: tableCellNodeSpec,
+    table: tableNodeSpec,
+    table_row: tableRowNodeSpec,
+    table_cell: tableCellNodeSpec,
   };
 };

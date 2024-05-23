@@ -1,30 +1,13 @@
 import { NodeSpec } from '@edybara/pm/model';
 import { isQuillTaskList } from '@edybara/core';
 
-export const EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME = 'task_list';
-
-export interface EdybaraFlatTaskListNodeConfigs {
-  nodeName?: string;
-}
-
-const DEFAULT_CONFIGS: Required<EdybaraFlatTaskListNodeConfigs> = {
-  nodeName: EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME,
-};
-
-export const edybaraFlatTaskListNodes = (
-  configs?: EdybaraFlatTaskListNodeConfigs,
-): Record<string, NodeSpec> => {
-  const mergedConfigs = {
-    ...DEFAULT_CONFIGS,
-    ...configs,
-  };
-
+export const edybaraFlatTaskListNodes = (): Record<string, NodeSpec> => {
   const nodeSpec: NodeSpec = {
     parseDOM: [
       {
         tag: 'ul.edybara-task-list',
         getAttrs: (node) => {
-          const dom = node as HTMLElement;
+          const dom = node;
           if (isQuillTaskList(dom)) {
             return {};
           }
@@ -49,6 +32,6 @@ export const edybaraFlatTaskListNodes = (
   };
 
   return {
-    [mergedConfigs.nodeName]: nodeSpec,
+    task_list: nodeSpec,
   };
 };

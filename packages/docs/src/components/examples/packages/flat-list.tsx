@@ -22,15 +22,9 @@ const schema = new Schema({
   nodes: {
     ...edybaraBaseNodes(),
     ...edybaraParagraphNodes(),
-    ...edybaraFlatOrderedListNodes({
-      nodeName: 'ordered_list',
-    }),
-    ...edybaraFlatBulletListNodes({
-      nodeName: 'bullet_list',
-    }),
-    ...edybaraFlatListItemNodes({
-      nodeName: 'list_item',
-    }),
+    ...edybaraFlatOrderedListNodes(),
+    ...edybaraFlatBulletListNodes(),
+    ...edybaraFlatListItemNodes(),
   },
 });
 
@@ -49,7 +43,6 @@ const plugins: Plugin[] = [
       bulletListNodeType: schema.nodes['bullet_list'],
       listItemNodeType: schema.nodes['list_item'],
     },
-    align: {},
   }),
   ...edybaraCorePlugins(),
 ];

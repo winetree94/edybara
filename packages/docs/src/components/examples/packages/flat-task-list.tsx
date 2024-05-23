@@ -21,12 +21,8 @@ const schema = new Schema({
   nodes: {
     ...edybaraBaseNodes(),
     ...edybaraParagraphNodes(),
-    ...edybaraFlatTaskListNodes({
-      nodeName: 'task_list',
-    }),
-    ...edybaraFlatTaskListItemNodes({
-      nodeName: 'task_list_item',
-    }),
+    ...edybaraFlatTaskListNodes(),
+    ...edybaraFlatTaskListItemNodes(),
   },
 });
 
@@ -43,7 +39,6 @@ const plugins: Plugin[] = [
       taskListNodeType: schema.nodes['task_list'],
       taskListItemNodeType: schema.nodes['task_list_item'],
     },
-    align: {},
   }),
   ...edybaraCorePlugins(),
 ];

@@ -1,23 +1,6 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDYBARA_UNDERLINE_MARK_NAME = 'underline';
-
-export interface EdybaraUnderlineMarkConfigs {
-  markName?: string;
-}
-
-const DEFAULT_CONFIGS: Required<EdybaraUnderlineMarkConfigs> = {
-  markName: EDYBARA_UNDERLINE_MARK_NAME,
-};
-
-export const edybaraUnderlineMarks = (
-  configs?: EdybaraUnderlineMarkConfigs,
-): Record<string, MarkSpec> => {
-  const mergedConfigs = {
-    ...DEFAULT_CONFIGS,
-    ...configs,
-  };
-
+export const edybaraUnderlineMarks = (): Record<string, MarkSpec> => {
   const markSpec: MarkSpec = {
     parseDOM: [{ tag: 'u' }],
     toDOM() {
@@ -26,6 +9,6 @@ export const edybaraUnderlineMarks = (
   };
 
   return {
-    [mergedConfigs.markName]: markSpec,
+    underline: markSpec,
   };
 };

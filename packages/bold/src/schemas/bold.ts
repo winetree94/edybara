@@ -1,22 +1,6 @@
 import { MarkSpec } from '@edybara/pm/model';
-import { BaseMarkConfigs } from '@edybara/core';
 
-export const EDYBARA_BOLD_MARK_NAME = 'bold';
-
-export interface EdybaraBoldMarkConfigs extends BaseMarkConfigs {}
-
-const DEFAULT_CONFIGS: Required<EdybaraBoldMarkConfigs> = {
-  markName: EDYBARA_BOLD_MARK_NAME,
-};
-
-export const edybaraBoldMarks = (
-  configs?: EdybaraBoldMarkConfigs,
-): Record<string, MarkSpec> => {
-  const mergedConfigs = {
-    ...DEFAULT_CONFIGS,
-    ...configs,
-  };
-
+export const edybaraBoldMarks = (): Record<string, MarkSpec> => {
   /// A strong mark. Rendered as `<strong>`, parse rules also match
   /// `<b>` and `font-weight: bold`.
   const markSpec: MarkSpec = {
@@ -28,7 +12,7 @@ export const edybaraBoldMarks = (
       {
         tag: 'b',
         getAttrs: (node) => {
-          const dom = node as HTMLElement;
+          const dom = node;
           return dom.style.fontWeight != 'normal' && null;
         },
       },
@@ -36,7 +20,7 @@ export const edybaraBoldMarks = (
       {
         style: 'font-weight',
         getAttrs: (node) => {
-          const value = node as string;
+          const value = node;
           return /^(bold(er)?|[5-9]\d{2,})$/.test(value) && null;
         },
       },
@@ -53,6 +37,6 @@ export const edybaraBoldMarks = (
   };
 
   return {
-    [mergedConfigs.markName]: markSpec,
+    bold: markSpec,
   };
 };

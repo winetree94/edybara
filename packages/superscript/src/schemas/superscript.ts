@@ -1,20 +1,10 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDYBARA_SUPERSCRIPT_MARK_NAME = 'superscript';
-
 export interface EdybaraSuperscriptMarkConfigs {
-  /**
-   * mark name
-   *
-   * @default "subscript"
-   */
-  markName?: string;
-
   subscriptMarkName?: string;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraSuperscriptMarkConfigs> = {
-  markName: EDYBARA_SUPERSCRIPT_MARK_NAME,
   subscriptMarkName: '',
 };
 
@@ -38,6 +28,6 @@ export const edybaraSuperscriptMarks = (
   }
 
   return {
-    [EDYBARA_SUPERSCRIPT_MARK_NAME]: markSpec,
+    superscript: markSpec,
   };
 };

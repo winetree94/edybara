@@ -1,23 +1,6 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDYBARA_LINK_DEFAULT_MARK_NAME = 'link';
-
-export interface EdybaraLinkMarkConfigs {
-  markName?: string;
-}
-
-const DEFAULT_CONFIGS = {
-  markName: EDYBARA_LINK_DEFAULT_MARK_NAME,
-};
-
-export const edybaraLinkMarks = (
-  configs?: EdybaraLinkMarkConfigs,
-): Record<string, MarkSpec> => {
-  const mergedConfigs = {
-    ...DEFAULT_CONFIGS,
-    ...configs,
-  };
-
+export const edybaraLinkMarks = (): Record<string, MarkSpec> => {
   const markSpec: MarkSpec = {
     attrs: {
       href: { default: null },
@@ -28,7 +11,7 @@ export const edybaraLinkMarks = (
       {
         tag: 'a[href]',
         getAttrs(node) {
-          const dom = node as HTMLElement;
+          const dom = node;
           return {
             href: dom.getAttribute('href'),
             title: dom.getAttribute('title'),
@@ -44,6 +27,6 @@ export const edybaraLinkMarks = (
   };
 
   return {
-    [mergedConfigs.markName]: markSpec,
+    link: markSpec,
   };
 };

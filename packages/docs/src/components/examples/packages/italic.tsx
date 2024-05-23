@@ -19,9 +19,7 @@ const schema = new Schema({
     ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edybaraItalicMarks({
-      markName: 'em',
-    }),
+    ...edybaraItalicMarks(),
   },
 });
 
@@ -30,11 +28,11 @@ const plugins: Plugin[] = [
     nodeType: schema.nodes['paragraph'],
   }),
   ...edybaraItalicPlugins({
-    markType: schema.marks['em'],
+    markType: schema.marks['italic'],
   }),
   ...edybaraMenubarPlugins({
     textStyles: {
-      italicMarkType: schema.marks['em'],
+      italicMarkType: schema.marks['italic'],
     },
   }),
   ...edybaraCorePlugins(),

@@ -19,9 +19,7 @@ const schema = new Schema({
     ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edybaraCodeMarks({
-      markName: 'code',
-    }),
+    ...edybaraCodeMarks(),
   },
 });
 

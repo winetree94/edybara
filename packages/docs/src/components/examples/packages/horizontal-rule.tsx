@@ -20,11 +20,8 @@ const schema = new Schema({
     ...edybaraBaseNodes(),
     ...edybaraParagraphNodes({
       allowAlign: true,
-      nodeName: 'paragraph',
     }),
-    ...edybaraHorizontalRuleNodes({
-      nodeName: 'horizontal_rule',
-    }),
+    ...edybaraHorizontalRuleNodes(),
   },
 });
 

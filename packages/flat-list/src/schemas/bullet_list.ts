@@ -1,30 +1,13 @@
 import { NodeSpec } from '@edybara/pm/model';
 import { isQuillTaskList } from '@edybara/core';
 
-export const EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME = 'bullet_list';
-
-export interface EdybaraFlatBulletListNodeConfigs {
-  nodeName?: string;
-}
-
-const DEFAULT_CONFIGS: Required<EdybaraFlatBulletListNodeConfigs> = {
-  nodeName: EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME,
-};
-
-export const edybaraFlatBulletListNodes = (
-  configs?: EdybaraFlatBulletListNodeConfigs,
-): Record<string, NodeSpec> => {
-  const mergedConfigs = {
-    ...DEFAULT_CONFIGS,
-    ...configs,
-  };
-
+export const edybaraFlatBulletListNodes = (): Record<string, NodeSpec> => {
   const nodeSpec: NodeSpec = {
     parseDOM: [
       {
         tag: 'ul',
         getAttrs: (node) => {
-          const dom = node as HTMLElement;
+          const dom = node;
           if (isQuillTaskList(dom)) {
             return false;
           }
@@ -46,6 +29,6 @@ export const edybaraFlatBulletListNodes = (
   };
 
   return {
-    [mergedConfigs.nodeName]: nodeSpec,
+    bullet_list: nodeSpec,
   };
 };

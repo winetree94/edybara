@@ -17,7 +17,6 @@ const schema = new Schema({
     ...edybaraBaseNodes(),
     ...edybaraParagraphNodes({
       allowAlign: true,
-      nodeName: 'paragraph',
     }),
   },
 });
@@ -26,9 +25,7 @@ const plugins: Plugin[] = [
   ...edybaraParagraphPlugins({
     nodeType: schema.nodes['paragraph'],
   }),
-  ...edybaraMenubarPlugins({
-    align: {},
-  }),
+  ...edybaraMenubarPlugins({}),
   ...edybaraCorePlugins(),
 ];
 

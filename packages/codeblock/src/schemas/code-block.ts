@@ -1,7 +1,5 @@
 import { DOMOutputSpec, NodeSpec } from '@edybara/pm/model';
 
-export const EDYBARA_CODEBLOCK_NODE_NAME = 'code_block';
-
 const preDOM: DOMOutputSpec = [
   'pre',
   { class: 'edybara-codeblock-wrapper' },
@@ -14,27 +12,7 @@ const preDOM: DOMOutputSpec = [
   ],
 ];
 
-export interface EdybaraCodeBlockNodeConfigs {
-  /**
-   * node name
-   *
-   * @default "code_block"
-   */
-  nodeName?: string;
-}
-
-const DEFAULT_CONFIGS: Required<EdybaraCodeBlockNodeConfigs> = {
-  nodeName: EDYBARA_CODEBLOCK_NODE_NAME,
-};
-
-export const edybaraCodeBlockNodes = (
-  configs?: EdybaraCodeBlockNodeConfigs,
-): Record<string, NodeSpec> => {
-  const mergedConfigs = {
-    ...DEFAULT_CONFIGS,
-    ...configs,
-  };
-
+export const edybaraCodeBlockNodes = (): Record<string, NodeSpec> => {
   const nodeSpec: NodeSpec = {
     content: 'text*',
     marks: '',
@@ -48,6 +26,6 @@ export const edybaraCodeBlockNodes = (
   };
 
   return {
-    [mergedConfigs.nodeName]: nodeSpec,
+    code_block: nodeSpec,
   };
 };

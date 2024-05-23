@@ -1,83 +1,56 @@
 import { Plugin as PMPlugin, Plugin } from '@edybara/pm/state';
 import { edybaraCorePlugins } from '@edybara/core';
 import {
-  EDYBARA_HEADING_DEFAULT_NODE_NAME,
   EdybaraHeadingPluginConfigs,
   edybaraHeadingPlugins,
 } from '@edybara/heading';
 import {
-  EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME,
   EdybaraParagraphPluginConfigs,
   edybaraParagraphPlugins,
 } from '@edybara/paragraph';
 import {
-  EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME,
-  EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME,
-  EDYBARA_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME,
   EdybaraFlatListPluginConfigs,
   edybaraFlatListPlugins,
 } from '@edybara/flat-list';
 import {
-  EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME,
-  EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME,
   EdybaraFlatTaskListPluginConfigs,
   edybaraFlatTaskListPlugins,
 } from '@edybara/flat-task-list';
 import {
-  EDYBARA_HORIZONTAL_RULE_NODE_NAME,
   EdybaraHorizontalRulePluginConfigs,
   edybaraHorizontalRulePlugins,
 } from '@edybara/hr';
+import { EdybaraBoldPluginConfigs, edybaraBoldPlugins } from '@edybara/bold';
+import { EdybaraCodePluginConfigs, edybaraCodePlugins } from '@edybara/code';
 import {
-  EDYBARA_BOLD_MARK_NAME,
-  EdybaraBoldPluginConfigs,
-  edybaraBoldPlugins,
-} from '@edybara/bold';
-import {
-  EDYBARA_CODE_MARK_NAME,
-  EdybaraCodePluginConfigs,
-  edybaraCodePlugins,
-} from '@edybara/code';
-import {
-  EDYBARA_ITALIC_MARK_NAME,
   EdybaraItalicPluginConfigs,
   edybaraItalicPlugins,
 } from '@edybara/italic';
 import {
-  EDYBARA_STRIKETHROUGH_MARK_NAME,
   EdybaraStrikethroughPluginConfigs,
   edybaraStrikethroughPlugins,
 } from '@edybara/strikethrough';
 import {
-  EDYBARA_SUBSCRIPT_MARK_NAME,
   EdybaraSubscriptPluginConfigs,
   edybaraSubscriptPlugins,
 } from '@edybara/subscript';
 import {
-  EDYBARA_SUPERSCRIPT_MARK_NAME,
   EdybaraSuperscriptPluginConfigs,
   edybaraSuperscriptPlugins,
 } from '@edybara/superscript';
 import {
-  EDYBARA_UNDERLINE_MARK_NAME,
   EdybaraUnderlinePluginConfigs,
   edybaraUnderlinePlugins,
 } from '@edybara/underline';
 import {
-  EDYBARA_BLOCKQUOTE_NODE_NAME,
   EdybaraBlockQuotePluginConfigs,
   edybaraBlockQuotePlugins,
 } from '@edybara/blockquote';
 import {
-  EDYBARA_CODEBLOCK_NODE_NAME,
   EdybaraCodeBlockPluginConfigs,
   edybaraCodeBlockPlugins,
 } from '@edybara/codeblock';
 import {
-  EDYBARA_TABLE_CELL_DEFAULT_NODE_NAME,
-  EDYBARA_TABLE_DEFAULT_NODE_NAME,
-  EDYBARA_TABLE_ROW_DEFAULT_NODE_NAME,
-  EdybaraTableEditingPluginConfigs,
   edybaraTableEditingPlugins,
   edybaraTablePlugins,
 } from '@edybara/tables';
@@ -86,18 +59,7 @@ import {
   edybaraMenubarPlugins,
 } from '@edybara/menubar';
 import { Schema } from '@edybara/pm/model';
-import { EDYBARA_FONT_FAMILY_DEFAULT_MARK_NAME } from '@edybara/font-family';
-import {
-  EDYBARA_LINK_DEFAULT_MARK_NAME,
-  EdybaraLinkPluginConfigs,
-  edybaraLinkPlugins,
-} from '@edybara/link';
-// import {
-//   EDYBARA_MENTION_DEFAULT_MARK_NAME,
-//   EdybaraMentionPluginConfigs,
-//   edybaraMentionPlugins,
-// } from '@edybara/mention';
-import { EDYBARA_TEXT_COLOR_DEFAULT_MARK_NAME } from '@edybara/text-color';
+import { EdybaraLinkPluginConfigs, edybaraLinkPlugins } from '@edybara/link';
 
 /**
  * @see https://edybara.me/docs/packages/menubar
@@ -116,7 +78,7 @@ export interface EdybaraPresetPluginConfigs {
   blockquote?: EdybaraBlockQuotePluginConfigs | null;
   horizontalRule?: EdybaraHorizontalRulePluginConfigs | null;
   codeblock?: EdybaraCodeBlockPluginConfigs | null;
-  table?: EdybaraTableEditingPluginConfigs | null;
+  table?: boolean | null;
 
   italic?: EdybaraItalicPluginConfigs | null;
   bold?: EdybaraBoldPluginConfigs | null;
@@ -139,111 +101,96 @@ const getDefaultConfigs = (
 ): Required<Omit<EdybaraPresetPluginConfigs, 'schema'>> => {
   return {
     paragraph: {
-      nodeType: schema.nodes[EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME],
+      nodeType: schema.nodes['paragraph'],
     },
     heading: {
-      nodeType: schema.nodes[EDYBARA_HEADING_DEFAULT_NODE_NAME],
+      nodeType: schema.nodes['heading'],
     },
     flatTaskList: {
-      taskListNodeType: schema.nodes[EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME],
-      taskListItemNodeType:
-        schema.nodes[EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME],
+      taskListNodeType: schema.nodes['task_list'],
+      taskListItemNodeType: schema.nodes['task_list_item'],
     },
     flatList: {
-      bulletListNodeType: schema.nodes[EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME],
-      orderedListNodeType:
-        schema.nodes[EDYBARA_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME],
-      listItemNodeType: schema.nodes[EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME],
+      bulletListNodeType: schema.nodes['bullet_list'],
+      orderedListNodeType: schema.nodes['ordered_list'],
+      listItemNodeType: schema.nodes['list_item'],
     },
     blockquote: {
-      nodeType: schema.nodes[EDYBARA_BLOCKQUOTE_NODE_NAME],
+      nodeType: schema.nodes['blockquote'],
     },
     horizontalRule: {
-      nodeType: schema.nodes[EDYBARA_HORIZONTAL_RULE_NODE_NAME],
+      nodeType: schema.nodes['hr'],
     },
     codeblock: {
-      nodeType: schema.nodes[EDYBARA_CODEBLOCK_NODE_NAME],
+      nodeType: schema.nodes['code_block'],
     },
-    table: {
-      tableNodeType: schema.nodes[EDYBARA_TABLE_DEFAULT_NODE_NAME],
-      tableRowNodeType: schema.nodes[EDYBARA_TABLE_ROW_DEFAULT_NODE_NAME],
-      tableCellNodeType: schema.nodes[EDYBARA_TABLE_CELL_DEFAULT_NODE_NAME],
-    },
+    table: true,
     italic: {
-      markType: schema.marks[EDYBARA_ITALIC_MARK_NAME],
+      markType: schema.marks['italic'],
     },
     bold: {
-      markType: schema.marks[EDYBARA_BOLD_MARK_NAME],
+      markType: schema.marks['bold'],
     },
     code: {
-      markType: schema.marks[EDYBARA_CODE_MARK_NAME],
+      markType: schema.marks['code'],
     },
     underline: {
-      markType: schema.marks[EDYBARA_UNDERLINE_MARK_NAME],
+      markType: schema.marks['underline'],
     },
     strikethrough: {
-      markType: schema.marks[EDYBARA_STRIKETHROUGH_MARK_NAME],
+      markType: schema.marks['strikethrough'],
     },
     subscript: {
-      markType: schema.marks[EDYBARA_SUBSCRIPT_MARK_NAME],
+      markType: schema.marks['subscript'],
     },
     superscript: {
-      markType: schema.marks[EDYBARA_SUPERSCRIPT_MARK_NAME],
+      markType: schema.marks['superscript'],
     },
     link: {
-      markType: schema.marks[EDYBARA_LINK_DEFAULT_MARK_NAME],
+      markType: schema.marks['link'],
     },
-    // mention: {
-    //   markType: schema.marks[EDYBARA_MENTION_DEFAULT_MARK_NAME],
-    // },
     menubar: {
       textType: {
-        paragraphNodeType: schema.nodes[EDYBARA_PARAGRAPH_DEFAULT_NODE_NAME],
-        headingNodeType: schema.nodes[EDYBARA_HEADING_DEFAULT_NODE_NAME],
+        paragraphNodeType: schema.nodes['paragraph'],
+        headingNodeType: schema.nodes['heading'],
       },
       fontFamily: {
-        fontFamilyMarkType: schema.marks[EDYBARA_FONT_FAMILY_DEFAULT_MARK_NAME],
+        fontFamilyMarkType: schema.marks['font'],
       },
       textStyles: {
-        boldMarkType: schema.marks[EDYBARA_BOLD_MARK_NAME],
-        italicMarkType: schema.marks[EDYBARA_ITALIC_MARK_NAME],
-        underlineMarkType: schema.marks[EDYBARA_UNDERLINE_MARK_NAME],
-        strikethroughMarkType: schema.marks[EDYBARA_STRIKETHROUGH_MARK_NAME],
-        codeMarkType: schema.marks[EDYBARA_CODE_MARK_NAME],
-        subscriptMarkType: schema.marks[EDYBARA_SUBSCRIPT_MARK_NAME],
-        superscriptMarkType: schema.marks[EDYBARA_SUPERSCRIPT_MARK_NAME],
+        boldMarkType: schema.marks['bold'],
+        italicMarkType: schema.marks['italic'],
+        underlineMarkType: schema.marks['underline'],
+        strikethroughMarkType: schema.marks['strikethrough'],
+        codeMarkType: schema.marks['code'],
+        subscriptMarkType: schema.marks['subscript'],
+        superscriptMarkType: schema.marks['superscript'],
         useClearButton: true,
       },
       textColor: {
-        textColorMarkType: schema.marks[EDYBARA_TEXT_COLOR_DEFAULT_MARK_NAME],
+        textColorMarkType: schema.marks['text_color'],
       },
       list: {
-        orderedListNodeType:
-          schema.nodes[EDYBARA_FLAT_ORDERED_LIST_DEFAULT_NODE_NAME],
-        bulletListNodeType:
-          schema.nodes[EDYBARA_FLAT_BULLET_LIST_DEFAULT_NODE_NAME],
-        listItemNodeType: schema.nodes[EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME],
+        orderedListNodeType: schema.nodes['ordered_list'],
+        bulletListNodeType: schema.nodes['bullet_list'],
+        listItemNodeType: schema.nodes['list_item'],
       },
       taskList: {
-        taskListNodeType: schema.nodes[EDYBARA_DEFAULT_FLAT_TASK_LIST_NODE_NAME],
-        taskListItemNodeType:
-          schema.nodes[EDYBARA_DEFAULT_FLAT_TASK_LIST_ITEM_NODE_NAME],
+        taskListNodeType: schema.nodes['task_list'],
+        taskListItemNodeType: schema.nodes['task_list_item'],
       },
       blockquote: {
-        blockQuoteNodeType: schema.nodes[EDYBARA_BLOCKQUOTE_NODE_NAME],
+        blockQuoteNodeType: schema.nodes['blockquote'],
       },
       codeblock: {
-        codeBlockNodeType: schema.nodes[EDYBARA_CODEBLOCK_NODE_NAME],
+        codeBlockNodeType: schema.nodes['code_block'],
       },
       table: {
-        tableNodeType: schema.nodes[EDYBARA_TABLE_DEFAULT_NODE_NAME],
+        tableNodeType: schema.nodes['table'],
       },
       link: {
-        linkMarkType: schema.marks[EDYBARA_LINK_DEFAULT_MARK_NAME],
+        linkMarkType: schema.marks['link'],
       },
-      // mention: {
-      //   mentionMarkType: schema.marks[EDYBARA_MENTION_DEFAULT_MARK_NAME],
-      // },
     },
   };
 };
@@ -321,10 +268,6 @@ export const edybaraPresetPlugins = (
   if (mergedConfigs.link) {
     plugins.push(...edybaraLinkPlugins(mergedConfigs.link));
   }
-
-  // if (mergedConfigs.mention) {
-  //   plugins.push(...edybaraMentionPlugins(mergedConfigs.mention));
-  // }
 
   if (mergedConfigs.menubar) {
     plugins.push(...edybaraMenubarPlugins(mergedConfigs.menubar));

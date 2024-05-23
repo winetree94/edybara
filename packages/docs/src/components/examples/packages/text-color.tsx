@@ -20,7 +20,6 @@ const schema = new Schema({
   },
   marks: {
     ...edybaraTextColorMarks({
-      markName: 'text_color',
       colors: [
         '#182B4D',
         '#0055CC',

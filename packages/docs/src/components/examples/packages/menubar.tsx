@@ -35,7 +35,6 @@ plugins.push(
     textColor: {
       textColorMarkType: schema.marks['text_color'],
     },
-    align: {},
     list: {
       orderedListNodeType: schema.nodes['ordered_list'],
       bulletListNodeType: schema.nodes['bullet_list'],

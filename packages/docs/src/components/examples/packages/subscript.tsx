@@ -22,9 +22,7 @@ const schema = new Schema({
     ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edybaraSubscriptMarks({
-      markName: 'subscript',
-    }),
+    ...edybaraSubscriptMarks(),
   },
 });
 

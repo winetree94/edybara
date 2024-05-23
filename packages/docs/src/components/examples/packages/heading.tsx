@@ -24,7 +24,6 @@ const schema = new Schema({
     ...edybaraBaseNodes(),
     ...edybaraParagraphNodes(),
     ...edybaraHeadingNodes({
-      nodeName: 'heading',
       allowAlign: true,
       levels: [2, 4, 6],
     }),
@@ -51,7 +50,6 @@ const plugins: Plugin[] = [
       headingNodeType: schema.nodes['heading'],
       paragraphNodeType: schema.nodes['paragraph'],
     },
-    align: {},
   }),
   ...edybaraCorePlugins(),
 ];

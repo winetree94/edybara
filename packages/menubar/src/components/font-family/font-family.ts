@@ -2,7 +2,6 @@ import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import { EdybaraParagraph, EdybaraSelect, classes, html } from '@edybara/ui';
 import {
-  EDYBARA_FONT_FAMILY_DEFAULT_MARK_NAME,
   EdybaraFontFamilyAttrs,
   EdybaraFontFamilyMarkType,
   clearFontFamily,
@@ -18,7 +17,7 @@ export const EdybaraMenubarFontFamilySelect = () => {
   }
 
   const fontFamilyMarkType = context.editorView.state.schema.marks[
-    EDYBARA_FONT_FAMILY_DEFAULT_MARK_NAME
+    'font'
   ] as EdybaraFontFamilyMarkType;
   const currentMark = markActive(context.editorView.state, fontFamilyMarkType);
   const currentFont =

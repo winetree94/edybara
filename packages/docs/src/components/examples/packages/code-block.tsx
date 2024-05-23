@@ -20,9 +20,7 @@ const schema = new Schema({
   nodes: {
     ...edybaraBaseNodes(),
     ...edybaraParagraphNodes(),
-    ...edybaraCodeBlockNodes({
-      nodeName: 'code_block',
-    }),
+    ...edybaraCodeBlockNodes(),
   },
 });
 

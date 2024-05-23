@@ -1,7 +1,5 @@
 import { MarkSpec, MarkType } from '@edybara/pm/model';
 
-export const EDYBARA_TEXT_COLOR_DEFAULT_MARK_NAME = 'text_color';
-
 export interface EdybaraTextColorAttrs {
   color: string;
 }
@@ -19,12 +17,10 @@ export interface EdybaraTextColorMarkType extends MarkType {
 }
 
 export interface EdybaraTextColorMarkConfigs {
-  markName?: string;
   colors?: EdybaraTextColor[];
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraTextColorMarkConfigs> = {
-  markName: EDYBARA_TEXT_COLOR_DEFAULT_MARK_NAME,
   colors: [
     '#182B4D',
     '#0055CC',
@@ -90,6 +86,6 @@ export const edybaraTextColorMarks = (
   };
 
   return {
-    [mergedConfigs.markName]: markSpec,
+    text_color: markSpec,
   };
 };

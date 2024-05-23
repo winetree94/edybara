@@ -5,11 +5,3 @@ export interface NodePair {
   pos: number;
   parent: Node | null;
 }
-
-export interface BaseMarkConfigs {
-  markName?: string;
-}
-
-export interface BaseNodeConfigs {
-  nodeName?: string;
-}

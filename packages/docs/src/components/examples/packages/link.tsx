@@ -30,7 +30,7 @@ const plugins: Plugin[] = [
   ...edybaraMenubarPlugins({
     link: {
       linkMarkType: schema.marks.link,
-    }
+    },
   }),
   ...edybaraCorePlugins(),
 ];

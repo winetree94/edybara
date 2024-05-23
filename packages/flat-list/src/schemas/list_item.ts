@@ -5,19 +5,17 @@ import {
   parseQuillTextAlign,
 } from '@edybara/core';
 
-export const EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME = 'list_item';
-
 export interface ListItemAttrs {
   indent: number;
   align: 'left' | 'right' | 'center' | null;
 }
 
 export interface EdybaraFlatListItemNodeConfigs {
-  nodeName?: string;
+  allowAlign?: boolean;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraFlatListItemNodeConfigs> = {
-  nodeName: EDYBARA_FLAT_LIST_ITEM_DEFAULT_NODE_NAME,
+  allowAlign: true,
 };
 
 export const edybaraFlatListItemNodes = (
@@ -77,6 +75,6 @@ export const edybaraFlatListItemNodes = (
   };
 
   return {
-    [mergedConfigs.nodeName]: nodeSpec,
+    list_item: nodeSpec,
   };
 };

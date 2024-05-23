@@ -22,7 +22,6 @@ const schema = new Schema({
     ...edybaraParagraphNodes(),
     ...edybaraBlockquoteNodes({
       multiline: true,
-      nodeName: 'blockquote',
     }),
   },
 });
@@ -39,7 +38,6 @@ const plugins: Plugin[] = [
     blockquote: {
       blockQuoteNodeType: schema.nodes['blockquote'],
     },
-    align: {},
   }),
   ...edybaraCorePlugins(),
 ];

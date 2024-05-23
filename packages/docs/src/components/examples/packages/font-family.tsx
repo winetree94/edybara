@@ -20,7 +20,6 @@ const schema = new Schema({
   },
   marks: {
     ...edybaraFontFamilyMarks({
-      markName: 'font_family',
       fonts: ['Arial', 'Verdana', 'Tahoma', 'Trebuchet MS'].map((font) => ({
         fontFamily: font,
       })),

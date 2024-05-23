@@ -22,9 +22,7 @@ const schema = new Schema({
     ...edybaraParagraphNodes(),
   },
   marks: {
-    ...edybaraUnderlineMarks({
-      markName: 'underline',
-    }),
+    ...edybaraUnderlineMarks(),
   },
 });
 

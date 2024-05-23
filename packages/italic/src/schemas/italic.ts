@@ -1,29 +1,12 @@
 import { MarkSpec } from '@edybara/pm/model';
 
-export const EDYBARA_ITALIC_MARK_NAME = 'em';
-
-export interface EdybaraItalicMarkConfigs {
-  markName?: string;
-}
-
-const DEFAULT_CONFIGS: Required<EdybaraItalicMarkConfigs> = {
-  markName: EDYBARA_ITALIC_MARK_NAME,
-};
-
-export const edybaraItalicMarks = (
-  configs?: EdybaraItalicMarkConfigs,
-): Record<string, MarkSpec> => {
-  const mergedConfigs = {
-    ...DEFAULT_CONFIGS,
-    ...configs,
-  };
-
+export const edybaraItalicMarks = (): Record<string, MarkSpec> => {
   const markSpec: MarkSpec = {
     parseDOM: [
       { tag: 'i' },
       { tag: 'em' },
       { style: 'font-style=italic' },
-      { style: 'font-style=normal', clearMark: (m) => m.type.name == 'em' },
+      { style: 'font-style=normal', clearMark: (m) => m.type.name == 'italic' },
     ],
     toDOM() {
       return ['em', 0];
@@ -31,6 +14,6 @@ export const edybaraItalicMarks = (
   };
 
   return {
-    [mergedConfigs.markName]: markSpec,
+    italic: markSpec,
   };
 };

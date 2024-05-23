@@ -4,7 +4,6 @@ import { Attrs, NodeSpec } from '@edybara/pm/model';
 export type EdybaraHeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 export type EdybaraHeadingAlign = 'left' | 'right' | 'center' | null;
 
-export const EDYBARA_HEADING_DEFAULT_NODE_NAME = 'heading';
 export const EDYBARA_HEADING_ALLOWED_LEVELS: EdybaraHeadingLevel[] = [
   1, 2, 3, 4, 5, 6,
 ];
@@ -31,14 +30,12 @@ export interface EdybaraHeadingNodeSpec extends NodeSpec {
 export interface EdybaraHeadingNodeConfigs {
   allowAlign?: boolean;
   levels?: EdybaraHeadingLevel[];
-  nodeName?: string;
 }
 
 const EDYBARA_DEFAULT_HEADING_NODE_CONFIGS: Required<EdybaraHeadingNodeConfigs> =
   {
     allowAlign: true,
     levels: EDYBARA_HEADING_ALLOWED_LEVELS.slice(),
-    nodeName: EDYBARA_HEADING_DEFAULT_NODE_NAME,
   };
 
 export const edybaraHeadingNodes = (
@@ -103,6 +100,6 @@ export const edybaraHeadingNodes = (
   };
 
   return {
-    [mergedConfigs.nodeName]: nodeSpec,
+    heading: nodeSpec,
   };
 };
