@@ -6,7 +6,11 @@ import {
 import { EditorState, Plugin } from '@edybara/pm/state';
 import React, { useState } from 'react';
 import { Schema } from '@edybara/pm/model';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import {
+  edybaraDocNodes,
+  edybaraTextNodes,
+  edybaraCorePlugins,
+} from '@edybara/core';
 import { edybaraMenubarPlugins } from '@edybara/menubar';
 import {
   edybaraParagraphNodes,
@@ -21,7 +25,8 @@ import {
 
 const schema = new Schema({
   nodes: {
-    ...edybaraBaseNodes(),
+    ...edybaraDocNodes(),
+    ...edybaraTextNodes(),
     ...edybaraParagraphNodes(),
     ...edybaraHeadingNodes({
       allowAlign: true,

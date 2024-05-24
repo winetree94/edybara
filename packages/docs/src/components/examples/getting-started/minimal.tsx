@@ -5,7 +5,11 @@ import {
 import { EditorState } from '@edybara/pm/state';
 import React, { useState } from 'react';
 import { Schema } from '@edybara/pm/model';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import {
+  edybaraDocNodes,
+  edybaraTextNodes,
+  edybaraCorePlugins,
+} from '@edybara/core';
 import {
   edybaraParagraphNodes,
   edybaraParagraphPlugins,
@@ -13,7 +17,8 @@ import {
 
 const schema = new Schema({
   nodes: {
-    ...edybaraBaseNodes(),
+    ...edybaraDocNodes(),
+    ...edybaraTextNodes(),
     ...edybaraParagraphNodes(),
   },
 });

@@ -19,7 +19,6 @@ export interface EdybaraMergeAdjacentNodePluginConfigs {
 export const edybaraMergeAdjacentNodePlugins = (
   configs: EdybaraMergeAdjacentNodePluginConfigs,
 ): PMPlugin[] => {
-  // const types = configs.specs.map((spec) =>  spec.nodeType);
   const plugin = new PMPlugin({
     appendTransaction: (transactions, oldState, newState) => {
       const types = configs.specs.map((spec) => spec.nodeType);

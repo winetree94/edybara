@@ -5,7 +5,11 @@ import {
 import { EditorState } from '@edybara/pm/state';
 import React, { useRef, useState } from 'react';
 import { Schema } from '@edybara/pm/model';
-import { edybaraBaseNodes, edybaraCorePlugins } from '@edybara/core';
+import {
+  edybaraDocNodes,
+  edybaraTextNodes,
+  edybaraCorePlugins,
+} from '@edybara/core';
 import {
   edybaraParagraphNodes,
   edybaraParagraphPlugins,
@@ -16,7 +20,8 @@ export const CoreExample = (props: ProseMirrorProps) => {
   const schema = useRef(
     new Schema({
       nodes: {
-        ...edybaraBaseNodes(),
+        ...edybaraDocNodes(),
+        ...edybaraTextNodes(),
         ...edybaraParagraphNodes(),
       },
     }),

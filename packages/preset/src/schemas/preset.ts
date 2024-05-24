@@ -1,5 +1,5 @@
 import { MarkSpec, NodeSpec, Schema } from '@edybara/pm/model';
-import { edybaraBaseNodes } from '@edybara/core';
+import { edybaraDocNodes, edybaraTextNodes } from '@edybara/core';
 import {
   EdybaraHeadingNodeConfigs,
   edybaraHeadingNodes,
@@ -116,7 +116,8 @@ export const edybaraPresetSchema = (configs?: EdybaraPresetSchemaConfigs) => {
     marks: Record<string, MarkSpec>;
   } = {
     nodes: {
-      ...edybaraBaseNodes(),
+      ...edybaraDocNodes(),
+      ...edybaraTextNodes(),
     },
     marks: {},
   };
