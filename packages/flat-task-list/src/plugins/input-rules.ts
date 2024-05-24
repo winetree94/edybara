@@ -1,6 +1,5 @@
-import { inputRules } from '@edybara/pm/inputrules';
+import { inputRules, wrappingInputRule } from '@edybara/pm/inputrules';
 import { NodeType } from '@edybara/pm/model';
-import { wrappingInputRuleWithJoin } from '@edybara/core';
 import { Plugin } from '@edybara/pm/state';
 
 export interface EdybaraTaskListInputRulePluginConfigs {
@@ -12,29 +11,13 @@ export const edybaraTaskListInputRulePlugins = (
 ): Plugin[] => [
   inputRules({
     rules: [
-      wrappingInputRuleWithJoin(/^\[\]\s$/, configs.taskListNodeType, {
+      wrappingInputRule(/^\[\]\s$/, configs.taskListNodeType, {
         indent: 0,
       }),
-      wrappingInputRuleWithJoin(
-        /^\[x\]\s$/,
-        configs.taskListNodeType,
-        {
-          indent: 0,
-        },
-        null,
-        (wrappings) => {
-          const [list, listItem] = wrappings;
-          return [
-            list,
-            {
-              ...listItem,
-              attrs: {
-                checked: true,
-              },
-            },
-          ];
-        },
-      ),
+      wrappingInputRule(/^\[x\]\s$/, configs.taskListNodeType, {
+        indent: 0,
+        checked: false,
+      }),
     ],
   }),
 ];
