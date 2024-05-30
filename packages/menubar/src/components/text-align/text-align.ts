@@ -3,39 +3,50 @@ import { useContext } from 'preact/hooks';
 import { EdybaraSelect, EdybaraSeparator, classes, html } from '@edybara/ui';
 import {
   TEXT_ALIGNMENT,
-  getRangeFirstAlignment,
+  selectionAlignments,
   setTextAlign,
 } from '@edybara/core';
+
+type ALIGNMENTS = 'left' | 'center' | 'right';
 
 export const EdybaraMenubarTextAlignSelect = () => {
   const context = useContext(EdybaraMenubarContext);
 
-  const firstAlignment =
-    getRangeFirstAlignment(context.editorView.state) || 'left';
+  const alignments = selectionAlignments(context.editorView.state);
+  let alignment: ALIGNMENTS = 'left';
 
-  const alignmentOptions = Object.values(TEXT_ALIGNMENT).map((align) => {
-    return {
-      value: align,
-      icon: html`<i className="ri-align-${align}" />`,
-      command: () => {
-        setTextAlign(align)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
-        context.editorView.focus();
-      },
-    };
-  });
+  if (
+    alignments?.filter((font, index, self) => self.indexOf(font) === index)
+      .length === 1
+  ) {
+    alignment = alignments[0] || 'left';
+  }
+
+  const alignmentOptions = Object.values(TEXT_ALIGNMENT)
+    .filter(Boolean)
+    .map((align) => {
+      return {
+        value: align,
+        icon: html`<i className="ri-align-${align}" />`,
+        command: () => {
+          setTextAlign(align)(
+            context.editorView.state,
+            context.editorView.dispatch,
+          );
+          context.editorView.focus();
+        },
+      };
+    });
 
   return html`
     <${EdybaraSelect.Root} 
       className="${classes(
         'edybara-menubar-align-select',
-        firstAlignment !== 'left' ? 'edybara-menubar-align-active' : '',
+        alignment !== 'left' ? 'edybara-menubar-align-active' : '',
       )}"
-      value="${firstAlignment}">
+      value="${alignment}">
       <${EdybaraSelect.Text}>
-        <i className="ri-align-${firstAlignment}" />
+        <i className="ri-align-${alignment}" />
       </${EdybaraSelect.Text}>
       <${EdybaraSelect.OptionGroup} 
         matchWidth="${true}"

@@ -59,6 +59,7 @@ export function toggleMark(
                     ),
                   )
                 );
+              return;
             });
             return !missing;
           });

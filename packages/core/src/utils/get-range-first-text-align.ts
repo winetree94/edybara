@@ -1,14 +1,18 @@
 import { EditorState } from '@edybara/pm/state';
+import { Alignable, TEXT_ALIGNMENT, TEXT_ALIGNMENTS } from '../types';
 
-export const getRangeFirstAlignment = (state: EditorState) => {
+export const selectionAlignments = (
+  state: EditorState,
+): TEXT_ALIGNMENTS[] | void => {
   const { from, to } = state.selection;
-  const aligns: ('left' | 'right' | 'center')[] = [];
+  const aligns: TEXT_ALIGNMENTS[] = [];
   state.doc.nodesBetween(from, to, (node) => {
     if (node.type.spec.attrs?.['align']) {
-      aligns.push(node.attrs['align'] as 'left' | 'right' | 'center');
+      const attrs = node.attrs as Alignable;
+      aligns.push(attrs.align || TEXT_ALIGNMENT.DEFAULT);
       return false;
     }
     return true;
   });
-  return aligns.length === 0 ? null : aligns[0];
+  return aligns.length === 0 ? undefined : aligns;
 };

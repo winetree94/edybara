@@ -1,9 +1,7 @@
 import { NodeSpec } from '@edybara/pm/model';
-import { parseQuillTextAlign } from '@edybara/core';
+import { Alignable, parseQuillTextAlign } from '@edybara/core';
 
-export interface EdybaraParagraphAttrs {
-  align: 'left' | 'right' | 'center' | null;
-}
+export interface EdybaraParagraphAttrs extends Alignable {}
 
 export interface EdybaraParagraphNodeConfigs {
   /**

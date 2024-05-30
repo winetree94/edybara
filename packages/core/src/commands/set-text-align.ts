@@ -1,15 +1,6 @@
 import { Command, Transaction } from '@edybara/pm/state';
-import { NodePair } from '../types';
+import { NodePair, TEXT_ALIGNMENTS } from '../types';
 import { Attrs } from '@edybara/pm/model';
-
-export const TEXT_ALIGNMENT = {
-  LEFT: 'left',
-  CENTER: 'center',
-  RIGHT: 'right',
-} as const;
-
-export type TEXT_ALIGNMENTS =
-  (typeof TEXT_ALIGNMENT)[keyof typeof TEXT_ALIGNMENT];
 
 /**
  * Specify the text alignment of the current selection. Only applicable nodes will be affected.
