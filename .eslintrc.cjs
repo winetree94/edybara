@@ -17,7 +17,9 @@ module.exports = {
     },
     plugins: ['@typescript-eslint'],
     rules: {
-      "prettier/prettier": "error",
+      "prettier/prettier": ["error", {
+          "endOfLine": "auto"
+      }],
       "curly": "error",
       "no-unused-vars": "off",
       "@typescript-eslint/no-var-requires": "off",
