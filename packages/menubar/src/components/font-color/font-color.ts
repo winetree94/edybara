@@ -7,7 +7,7 @@ import {
   classes,
   html,
 } from '@edybara/ui';
-import { markActive } from '@edybara/core';
+import { hasMark } from '@edybara/core';
 import {
   EdybaraTextColorAttrs,
   EdybaraTextColorMarkType,
@@ -24,7 +24,7 @@ export const EdybaraMenubarFontColorSelect = () => {
   const textColorMarkType = context.options.textColor
     .textColorMarkType as EdybaraTextColorMarkType;
 
-  const currentMark = markActive(context.editorView.state, textColorMarkType);
+  const currentMark = hasMark(context.editorView.state, textColorMarkType);
   const currentColor =
     (currentMark?.attrs as EdybaraTextColorAttrs | null)?.color || null;
 

@@ -1,6 +1,6 @@
 import { Attrs, MarkType } from '@edybara/pm/model';
 import { Command, TextSelection } from '@edybara/pm/state';
-import { isInMarks, markApplies } from '../utils';
+import { markApplies } from '../utils';
 
 /// Create a command function that toggles the given mark with the
 /// given attributes. Will return `false` when the current selection
@@ -9,7 +9,7 @@ import { isInMarks, markApplies } from '../utils';
 /// selection is empty, this applies to the [stored
 /// marks](#state.EditorState.storedMarks) instead of a range of the
 /// document.
-export const toggleMarkWithAttrs = (
+export function toggleMark(
   markType: MarkType,
   attrs: Attrs | null = null,
   options?: {
@@ -18,23 +18,22 @@ export const toggleMarkWithAttrs = (
     /// default) or added (`false`).
     removeWhenPresent: boolean;
   },
-): Command => {
+): Command {
   const removeWhenPresent = (options && options.removeWhenPresent) !== false;
-  return (state, dispatch) => {
+  return function (state, dispatch) {
     const { empty, $cursor, ranges } = state.selection as TextSelection;
     if ((empty && !$cursor) || !markApplies(state.doc, ranges, markType)) {
       return false;
     }
     if (dispatch) {
       if ($cursor) {
-        const marks = state.storedMarks || $cursor.marks();
-        if (isInMarks(marks, markType, attrs)) {
+        if (markType.isInSet(state.storedMarks || $cursor.marks())) {
           dispatch(state.tr.removeStoredMark(markType));
         } else {
           dispatch(state.tr.addStoredMark(markType.create(attrs)));
         }
       } else {
-        let add: boolean;
+        let add;
         const tr = state.tr;
         if (removeWhenPresent) {
           add = !ranges.some((r) =>
@@ -47,9 +46,8 @@ export const toggleMarkWithAttrs = (
               if (missing) {
                 return false;
               }
-
               missing =
-                !isInMarks(node.marks, markType, attrs) &&
+                !markType.isInSet(node.marks) &&
                 !!parent &&
                 parent.type.allowsMarkType(markType) &&
                 !(
@@ -61,7 +59,6 @@ export const toggleMarkWithAttrs = (
                     ),
                   )
                 );
-              return undefined;
             });
             return !missing;
           });
@@ -71,10 +68,10 @@ export const toggleMarkWithAttrs = (
           if (!add) {
             tr.removeMark($from.pos, $to.pos, markType);
           } else {
-            let from = $from.pos;
-            let to = $to.pos;
-            const start = $from.nodeAfter;
-            const end = $to.nodeBefore;
+            let from = $from.pos,
+              to = $to.pos;
+            const start = $from.nodeAfter,
+              end = $to.nodeBefore;
             const spaceStart =
               start && start.isText ? /^\s*/.exec(start.text!)![0].length : 0;
             const spaceEnd =
@@ -91,4 +88,4 @@ export const toggleMarkWithAttrs = (
     }
     return true;
   };
-};
+}

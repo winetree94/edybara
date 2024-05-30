@@ -7,7 +7,7 @@ import {
   clearFontFamily,
   setFontFamily,
 } from '@edybara/font-family';
-import { markActive } from '@edybara/core';
+import { hasMark } from '@edybara/core';
 
 export const EdybaraMenubarFontFamilySelect = () => {
   const context = useContext(EdybaraMenubarContext);
@@ -19,7 +19,7 @@ export const EdybaraMenubarFontFamilySelect = () => {
   const fontFamilyMarkType = context.editorView.state.schema.marks[
     'font'
   ] as EdybaraFontFamilyMarkType;
-  const currentMark = markActive(context.editorView.state, fontFamilyMarkType);
+  const currentMark = hasMark(context.editorView.state, fontFamilyMarkType);
   const currentFont =
     (currentMark?.attrs as EdybaraFontFamilyAttrs | null)?.fontFamily ||
     'default';

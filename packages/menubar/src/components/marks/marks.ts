@@ -8,8 +8,7 @@ import {
   EdybaraShortCut,
   html,
 } from '@edybara/ui';
-import { toggleMark } from '@edybara/pm/commands';
-import { clearMarks, mac, markActive } from '@edybara/core';
+import { clearMarks, hasMarkAll, mac, toggleMark } from '@edybara/core';
 import { Attributes, VNode } from 'preact';
 
 export interface EdybaraMenubarMarkButton {
@@ -22,9 +21,12 @@ export interface EdybaraMenubarMarkButton {
 
 export const EdybaraMenubarMarkToggleButtons = () => {
   const context = useContext(EdybaraMenubarContext);
+  const {
+    editorView: { state, dispatch },
+  } = context;
 
   if (!context.options.textStyles) {
-    return null;
+    return html`<></>`;
   }
 
   const boldMarkType = context.options.textStyles.boldMarkType;
@@ -40,7 +42,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
   const hasMark = !!Object.values(context.editorState.schema.marks).length;
 
   if (!hasMark) {
-    return null;
+    return html`<></>`;
   }
 
   const buttons: EdybaraMenubarMarkButton[] = [];
@@ -49,17 +51,16 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-bold',
       label: 'Bold',
-      active: !!markActive(context.editorView.state, boldMarkType),
+      active: hasMarkAll(context.editorView.state, boldMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}B
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(boldMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(boldMarkType, null, {
+          removeWhenPresent: false,
+        })(state, dispatch);
         context.editorView.focus();
       },
     });
@@ -69,17 +70,16 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-italic',
       label: 'Italic',
-      active: !!markActive(context.editorView.state, italicMarkType),
+      active: hasMarkAll(context.editorView.state, italicMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}I
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(italicMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(italicMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -89,17 +89,16 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-underline',
       label: 'Underline',
-      active: !!markActive(context.editorView.state, underlineMarkType),
+      active: hasMarkAll(context.editorView.state, underlineMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}U
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(underlineMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(underlineMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -109,17 +108,16 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-strikethrough-2',
       label: 'Strikethrough',
-      active: !!markActive(context.editorView.state, strikethroughMarkType),
+      active: hasMarkAll(context.editorView.state, strikethroughMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}S
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(strikethroughMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(strikethroughMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -129,17 +127,16 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-code-line',
       label: 'Inline Code',
-      active: !!markActive(context.editorView.state, codeMarkType),
+      active: hasMarkAll(context.editorView.state, codeMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}M
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(codeMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(codeMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -149,17 +146,16 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-subscript',
       label: 'Subscript',
-      active: !!markActive(context.editorView.state, subscriptMarkType),
+      active: hasMarkAll(context.editorView.state, subscriptMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'},
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(subscriptMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(subscriptMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -169,17 +165,16 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-superscript',
       label: 'Superscript',
-      active: !!markActive(context.editorView.state, superscriptMarkType),
+      active: hasMarkAll(context.editorView.state, superscriptMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}.
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(superscriptMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(superscriptMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
