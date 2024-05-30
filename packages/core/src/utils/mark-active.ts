@@ -15,7 +15,7 @@ export const markActive = (
   state: EditorState,
   type: MarkType,
   attrs?: Attrs | null,
-) => {
+): void | Mark => {
   const { from, $from, to, empty } = state.selection;
   if (empty) {
     const marks = state.storedMarks || $from.marks();
@@ -28,5 +28,25 @@ export const markActive = (
       }
     });
     return isInMarks(marks, type, attrs);
+  }
+};
+
+export const selectionAllHasMark = (
+  state: EditorState,
+  type: MarkType,
+  attrs?: Attrs | null,
+): boolean => {
+  const { from, $from, to, empty } = state.selection;
+  if (empty) {
+    const marks = state.storedMarks || $from.marks();
+    return !!isInMarks(marks, type, attrs);
+  } else {
+    const marks: Mark[] = [];
+    state.doc.nodesBetween(from, to, (node) => {
+      if (node.isInline) {
+        marks.push(...node.marks);
+      }
+    });
+    return !!isInMarks(marks, type, attrs);
   }
 };

@@ -8,9 +8,16 @@ import {
   EdybaraShortCut,
   html,
 } from '@edybara/ui';
-import { toggleMark } from '@edybara/pm/commands';
-import { clearMarks, mac, markActive } from '@edybara/core';
+import {
+  clearMarks,
+  mac,
+  markActive,
+  selectionAllHasMark,
+  toggleMark,
+} from '@edybara/core';
 import { Attributes, VNode } from 'preact';
+import { EditorState } from '@edybara/pm/state';
+import { MarkType } from '@edybara/pm/model';
 
 export interface EdybaraMenubarMarkButton {
   iconName: string;
@@ -20,11 +27,30 @@ export interface EdybaraMenubarMarkButton {
   command: () => void;
 }
 
+// 선택된 범위 내 모든 노드가 특정 mark를 포함하는지 확인하는 함수
+function allNodesHaveMark(state: EditorState, markType: MarkType) {
+  const { from, to } = state.selection;
+  let hasMark = true;
+
+  state.doc.nodesBetween(from, to, (node) => {
+    if (node.isText && !markType.isInSet(node.marks)) {
+      hasMark = false;
+      return false; // stop iteration
+    }
+    return true; // continue iteration
+  });
+
+  return hasMark;
+}
+
 export const EdybaraMenubarMarkToggleButtons = () => {
   const context = useContext(EdybaraMenubarContext);
+  const {
+    editorView: { state, dispatch },
+  } = context;
 
   if (!context.options.textStyles) {
-    return null;
+    return html`<></>`;
   }
 
   const boldMarkType = context.options.textStyles.boldMarkType;
@@ -40,26 +66,27 @@ export const EdybaraMenubarMarkToggleButtons = () => {
   const hasMark = !!Object.values(context.editorState.schema.marks).length;
 
   if (!hasMark) {
-    return null;
+    return html`<></>`;
   }
 
   const buttons: EdybaraMenubarMarkButton[] = [];
+
+  state.doc;
 
   if (boldMarkType) {
     buttons.push({
       iconName: 'ri-bold',
       label: 'Bold',
-      active: !!markActive(context.editorView.state, boldMarkType),
+      active: allNodesHaveMark(context.editorView.state, boldMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}B
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(boldMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(boldMarkType, null, {
+          removeWhenPresent: false,
+        })(state, dispatch);
         context.editorView.focus();
       },
     });
@@ -76,10 +103,9 @@ export const EdybaraMenubarMarkToggleButtons = () => {
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(italicMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(italicMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -96,10 +122,9 @@ export const EdybaraMenubarMarkToggleButtons = () => {
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(underlineMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(underlineMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -116,10 +141,9 @@ export const EdybaraMenubarMarkToggleButtons = () => {
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(strikethroughMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(strikethroughMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -136,10 +160,9 @@ export const EdybaraMenubarMarkToggleButtons = () => {
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(codeMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(codeMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -156,10 +179,9 @@ export const EdybaraMenubarMarkToggleButtons = () => {
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(subscriptMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(subscriptMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
@@ -176,10 +198,9 @@ export const EdybaraMenubarMarkToggleButtons = () => {
         </${EdybaraShortCut}>
       `,
       command: () => {
-        toggleMark(superscriptMarkType)(
-          context.editorView.state,
-          context.editorView.dispatch,
-        );
+        toggleMark(superscriptMarkType, null, {
+          removeWhenPresent: false,
+        })(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();
       },
     });
