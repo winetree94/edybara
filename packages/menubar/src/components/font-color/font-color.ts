@@ -7,7 +7,7 @@ import {
   classes,
   html,
 } from '@edybara/ui';
-import { hasMark } from '@edybara/core';
+import { selectionAllTextHasMark } from '@edybara/core';
 import {
   EdybaraTextColorAttrs,
   EdybaraTextColorMarkType,
@@ -24,9 +24,21 @@ export const EdybaraMenubarFontColorSelect = () => {
   const textColorMarkType = context.options.textColor
     .textColorMarkType as EdybaraTextColorMarkType;
 
-  const currentMark = hasMark(context.editorView.state, textColorMarkType);
-  const currentColor =
-    (currentMark?.attrs as EdybaraTextColorAttrs | null)?.color || null;
+  const colorMarks = selectionAllTextHasMark(
+    context.editorView.state,
+    textColorMarkType,
+  );
+
+  let currentColor: string | null = null;
+
+  if (
+    colorMarks
+      ?.map((mark) => (mark.attrs as EdybaraTextColorAttrs).color)
+      .filter((color, index, self) => self.indexOf(color) === index).length ===
+    1
+  ) {
+    currentColor = (colorMarks[0].attrs as EdybaraTextColorAttrs).color;
+  }
 
   return html`
     <${EdybaraSelect.Root} 

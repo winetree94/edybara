@@ -8,7 +8,12 @@ import {
   EdybaraShortCut,
   html,
 } from '@edybara/ui';
-import { clearMarks, hasMarkAll, mac, toggleMark } from '@edybara/core';
+import {
+  clearMarks,
+  selectionAllTextHasMark,
+  mac,
+  toggleMark,
+} from '@edybara/core';
 import { Attributes, VNode } from 'preact';
 
 export interface EdybaraMenubarMarkButton {
@@ -51,7 +56,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-bold',
       label: 'Bold',
-      active: hasMarkAll(context.editorView.state, boldMarkType),
+      active: !!selectionAllTextHasMark(context.editorView.state, boldMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}B
@@ -70,7 +75,10 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-italic',
       label: 'Italic',
-      active: hasMarkAll(context.editorView.state, italicMarkType),
+      active: !!selectionAllTextHasMark(
+        context.editorView.state,
+        italicMarkType,
+      ),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}I
@@ -89,7 +97,10 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-underline',
       label: 'Underline',
-      active: hasMarkAll(context.editorView.state, underlineMarkType),
+      active: !!selectionAllTextHasMark(
+        context.editorView.state,
+        underlineMarkType,
+      ),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘' : 'Ctrl+'}U
@@ -108,7 +119,10 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-strikethrough-2',
       label: 'Strikethrough',
-      active: hasMarkAll(context.editorView.state, strikethroughMarkType),
+      active: !!selectionAllTextHasMark(
+        context.editorView.state,
+        strikethroughMarkType,
+      ),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}S
@@ -127,7 +141,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-code-line',
       label: 'Inline Code',
-      active: hasMarkAll(context.editorView.state, codeMarkType),
+      active: !!selectionAllTextHasMark(context.editorView.state, codeMarkType),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}M
@@ -146,7 +160,10 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-subscript',
       label: 'Subscript',
-      active: hasMarkAll(context.editorView.state, subscriptMarkType),
+      active: !!selectionAllTextHasMark(
+        context.editorView.state,
+        subscriptMarkType,
+      ),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'},
@@ -165,7 +182,10 @@ export const EdybaraMenubarMarkToggleButtons = () => {
     buttons.push({
       iconName: 'ri-superscript',
       label: 'Superscript',
-      active: hasMarkAll(context.editorView.state, superscriptMarkType),
+      active: !!selectionAllTextHasMark(
+        context.editorView.state,
+        superscriptMarkType,
+      ),
       shortcut: html`
         <${EdybaraShortCut}>
           ${mac ? '⌘⇧' : 'Ctrl+Shift+'}.
