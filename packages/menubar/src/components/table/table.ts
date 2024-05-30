@@ -13,7 +13,6 @@ export const EdybaraMenubarTableButtons = () => {
   return html`
     <${EdybaraButton}
       className="edybara-icon-button"
-      disabled="true"
       onClick=${() => {
         insertTable()(context.editorView.state, context.editorView.dispatch);
         context.editorView.focus();

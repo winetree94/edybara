@@ -5,6 +5,7 @@ export const insertTable = (): Command => {
   return (state, dispatch) => {
     const offset: number = state.tr.selection.anchor + 1;
     const transaction = state.tr;
+
     const cell: Node = state.schema.nodes[
       'table_cell'
     ].createAndFill() as unknown as Node;

@@ -23,6 +23,7 @@ export const setTextAlign = (align: TEXT_ALIGNMENTS | null): Command => {
     const { from, to } = state.selection;
 
     const targetNodes: NodePair[] = [];
+
     state.doc.nodesBetween(from, to, (node, pos, parent) => {
       if (node.type.spec.attrs?.['align']) {
         targetNodes.push({ node, pos, parent });
@@ -45,6 +46,6 @@ export const setTextAlign = (align: TEXT_ALIGNMENTS | null): Command => {
     selection = state.selection.map(tr.doc, tr.mapping);
     dispatch?.(tr.setSelection(selection));
 
-    return true;
+    return tr.docChanged;
   };
 };
