@@ -1,7 +1,7 @@
 import { EdybaraButton, html } from '@edybara/ui';
 import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
-import { setBlockType } from '@edybara/pm/commands';
+import { setBlockquote } from '@edybara/blockquote';
 
 export const EdybaraMenubarBlockquoteToggleButtons = () => {
   const context = useContext(EdybaraMenubarContext);
@@ -16,7 +16,7 @@ export const EdybaraMenubarBlockquoteToggleButtons = () => {
     <${EdybaraButton}
       className="edybara-icon-button"
       onClick=${() => {
-        setBlockType(blockquoteNodeType)(
+        setBlockquote(blockquoteNodeType)(
           context.editorView.state,
           context.editorView.dispatch,
         );

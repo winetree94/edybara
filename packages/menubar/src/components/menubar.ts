@@ -4,7 +4,7 @@ import { EdybaraMenubarContext, EdybaraMenubarContextType } from './context';
 import { EdybaraMenubarTextTypeSelect } from './text-type';
 import { EdybaraMenubarFontFamilySelect } from './font-family';
 import { EdybaraMenubarMarkToggleButtons } from './marks';
-import { EdybaraMenubarFontColorSelect } from './font-color';
+import { EdybaraMenubarTextColorSelect } from './text-color';
 import { EdybaraMenubarTextAlignSelect } from './text-align';
 import { EdybaraMenubarListToggleButtons } from './list';
 import { EdybaraMenubarTaskListToggleButtons } from './task-list';
@@ -37,7 +37,7 @@ export const EdybaraMenubar = forwardRef((props: EdybaraMenubarContextType) => {
             : null
         }
         <${EdybaraMenubarMarkToggleButtons} />
-        <${EdybaraMenubarFontColorSelect} />
+        <${EdybaraMenubarTextColorSelect} />
         <${EdybaraMenubarTextAlignSelect} />
         <${EdybaraMenubarListToggleButtons} />
 

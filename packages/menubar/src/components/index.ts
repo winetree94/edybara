@@ -1,4 +1,4 @@
-export * from './font-color';
+export * from './text-color';
 export * from './text-align';
 export * from './text-type';
 export * from './font-family';

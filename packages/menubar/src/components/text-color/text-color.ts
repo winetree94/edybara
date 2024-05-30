@@ -14,7 +14,7 @@ import {
   setTextColor,
 } from '@edybara/text-color';
 
-export const EdybaraMenubarFontColorSelect = () => {
+export const EdybaraMenubarTextColorSelect = () => {
   const context = useContext(EdybaraMenubarContext);
 
   if (!context.options.textColor) {

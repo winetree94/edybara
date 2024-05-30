@@ -17,18 +17,20 @@ export const selectionTextHasMark = (
   attrs?: Attrs | null,
 ): void | Mark => {
   const { from, $from, to, empty } = state.selection;
+
   if (empty) {
     const marks = state.storedMarks || $from.marks();
     return isInMarks(marks, type, attrs);
-  } else {
-    const marks: Mark[] = [];
-    state.doc.nodesBetween(from, to, (node) => {
-      if (node.isInline) {
-        marks.push(...node.marks);
-      }
-    });
-    return isInMarks(marks, type, attrs);
   }
+
+  const marks: Mark[] = [];
+  state.doc.nodesBetween(from, to, (node) => {
+    if (node.isInline) {
+      marks.push(...node.marks);
+    }
+  });
+
+  return isInMarks(marks, type, attrs);
 };
 
 /**
@@ -68,7 +70,6 @@ export const selectionAllTextHasMark = (
     if (!hasMark) {
       return false;
     }
-
     if (node.type.spec.code) {
       return false;
     }
@@ -76,11 +77,9 @@ export const selectionAllTextHasMark = (
     if (!node.isText) {
       return true;
     }
-
     foundText = true;
 
     const mark = isInMarks(node.marks, markType, attrs);
-
     if (!mark) {
       hasMark = false;
       return false;

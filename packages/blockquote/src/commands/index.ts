@@ -1,1 +1,1 @@
-export * from './toggle-block-quote';
+export * from './set-blockquote';
