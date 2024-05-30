@@ -1,6 +1,6 @@
 import { Fragment, NodeType } from '@edybara/pm/model';
 import { Command } from '@edybara/pm/state';
-import { getBlockContainerChildren, liftOut } from '@edybara/core';
+import { blockContainerChildren, liftOut } from '@edybara/core';
 
 // 하드코딩 없도록 고쳐야 함
 const allowedContentTypes = [
@@ -24,7 +24,7 @@ export const toggleList =
     let tr = state.tr;
     let selection = state.selection;
 
-    const nodes = getBlockContainerChildren(
+    const nodes = blockContainerChildren(
       tr.doc,
       selection.from,
       selection.to,
@@ -42,7 +42,7 @@ export const toggleList =
     tr = liftOutResult.tr;
     selection = state.selection.map(tr.doc, tr.mapping);
 
-    tr = getBlockContainerChildren(tr.doc, selection.from, selection.to)
+    tr = blockContainerChildren(tr.doc, selection.from, selection.to)
       .slice()
       .reverse()
       .reduce((tr, { node, pos }) => {
@@ -57,7 +57,7 @@ export const toggleList =
         return tr;
       }, tr);
 
-    tr = getBlockContainerChildren(tr.doc, selection.from, selection.to)
+    tr = blockContainerChildren(tr.doc, selection.from, selection.to)
       .slice()
       .reverse()
       .reduce((tr, { node, pos }, index) => {

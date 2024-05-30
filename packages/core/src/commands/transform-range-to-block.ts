@@ -1,7 +1,7 @@
 import { Command } from '@edybara/pm/state';
 import { Attrs, NodeType } from '@edybara/pm/model';
 import { liftOut } from '../transforms';
-import { getBlockContainerChildren } from '../utils';
+import { blockContainerChildren } from '../utils';
 
 /**
  * Convert all nodes within the current selection to a specific node.
@@ -21,7 +21,7 @@ export const transformRangeToBlock =
     tr = liftOutResult.tr;
     selection = state.selection.map(tr.doc, tr.mapping);
 
-    tr = getBlockContainerChildren(tr.doc, selection.from, selection.to)
+    tr = blockContainerChildren(tr.doc, selection.from, selection.to)
       .slice()
       .reverse()
       .reduce((tr, { node, pos }) => {

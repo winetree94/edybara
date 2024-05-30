@@ -1,6 +1,6 @@
 import { EditorState, Transaction } from '@edybara/pm/state';
 import { liftTarget } from '@edybara/pm/transform';
-import { getBlockContainerChildren } from '../utils';
+import { blockContainerChildren } from '../utils';
 import { NodePair } from '../types';
 
 export interface LiftOutResult {
@@ -14,7 +14,7 @@ export const liftOut = (
   from: number,
   to: number,
 ): LiftOutResult => {
-  const nodes = getBlockContainerChildren(tr.doc, from, to);
+  const nodes = blockContainerChildren(tr.doc, from, to);
   const indents: number[] = [];
   tr = nodes
     .slice()

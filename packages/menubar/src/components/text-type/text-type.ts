@@ -10,7 +10,7 @@ import {
 } from '@edybara/ui';
 import { EdybaraHeadingNodeSpec, setHeading } from '@edybara/heading';
 import { mac } from '@edybara/core';
-import { getTextType } from '../../utils';
+import { selectionTextType } from '../../utils';
 import { setParagraph } from '@edybara/paragraph';
 
 export const EdybaraMenubarTextTypeSelect = () => {
@@ -24,7 +24,7 @@ export const EdybaraMenubarTextTypeSelect = () => {
   const headingNodeType = context.options.textType.headingNodeType;
   const headingNodeSpec = headingNodeType.spec as EdybaraHeadingNodeSpec;
 
-  const textType = getTextType(context.editorView.state);
+  const textType = selectionTextType(context.editorView.state);
 
   const textTypeOptions = [
     ...headingNodeSpec.meta.levels.map((level) => ({

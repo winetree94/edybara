@@ -1,5 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import {
+  BLOCK_CONTAINER_GROUP,
+  BLOCK_CONTAINER_IGNORE_CHILDREN,
+} from '@edybara/core';
 import { AttributeSpec, Attrs, Node, NodeSpec } from '@edybara/pm/model';
 import { MutableAttrs, TableRole } from '@edybara/pm/tables';
 
@@ -81,7 +85,7 @@ export const edybaraTableNodes = (): Record<string, NodeSpec> => {
     content: 'table_row+',
     tableRole: 'table',
     isolating: true,
-    group: 'block',
+    group: `block ${BLOCK_CONTAINER_IGNORE_CHILDREN}`,
     parseDOM: [
       {
         tag: 'table',
@@ -107,7 +111,7 @@ export const edybaraTableNodes = (): Record<string, NodeSpec> => {
 
   const tableCellNodeSpec: NodeSpec = {
     content: 'block+',
-    group: 'block-container',
+    group: BLOCK_CONTAINER_GROUP,
     attrs: {
       colspan: {
         default: 1,

@@ -1,7 +1,7 @@
 import { EditorState } from '@edybara/pm/state';
 import { EdybaraHeadingAttrs } from '@edybara/heading';
 
-export const getTextType = (state: EditorState) => {
+export const selectionTextType = (state: EditorState) => {
   const { selection } = state;
   const { $from, $to } = selection;
 

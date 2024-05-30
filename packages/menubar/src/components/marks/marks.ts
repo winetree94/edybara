@@ -31,7 +31,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
   } = context;
 
   if (!context.options.textStyles) {
-    return html`<></>`;
+    return html``;
   }
 
   const boldMarkType = context.options.textStyles.boldMarkType;
@@ -47,7 +47,7 @@ export const EdybaraMenubarMarkToggleButtons = () => {
   const hasMark = !!Object.values(context.editorState.schema.marks).length;
 
   if (!hasMark) {
-    return html`<></>`;
+    return html``;
   }
 
   const buttons: EdybaraMenubarMarkButton[] = [];
