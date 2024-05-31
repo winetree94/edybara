@@ -8,12 +8,7 @@
 }
 
 .ProseMirror {
-  h1.edybara-heading,
-  h2.edybara-heading,
-  h3.edybara-heading,
-  h4.edybara-heading,
-  h5.edybara-heading,
-  h6.edybara-heading {
+  .edybara-heading {
     font-weight: normal;
     margin: 0;
     padding: 0;
@@ -23,6 +18,13 @@
     }
     &.edybara-align-right {
       text-align: right;
+    }
+    & {
+      @for $i from 1 through 10 {
+        &.edybara-indent-#{$i} {
+          margin-left: #{$i * 30}px;
+        }
+      }
     }
   }
 
@@ -43,13 +45,5 @@
   }
   h6.edybara-heading {
     font-size: var(--heading-6-font-size);
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @for $i from 1 through 10 {
-      &.edybara-indent-#{$i} {
-        margin-left: #{$i * 30}px;
-      }
-    }
   }
 }
