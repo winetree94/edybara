@@ -8,4 +8,5 @@ export * from './is-in-marks';
 export * from './find-nearest-block-container';
 export * from './is-text-selection';
 export * from './find-mark';
+export * from './selection-all-node';
 export * from './range-between';

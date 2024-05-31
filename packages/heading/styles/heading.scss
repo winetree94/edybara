@@ -44,4 +44,12 @@
   h6.edybara-heading {
     font-size: var(--heading-6-font-size);
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @for $i from 1 through 10 {
+      &.edybara-indent-#{$i} {
+        margin-left: #{$i * 30}px;
+      }
+    }
+  }
 }

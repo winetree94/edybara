@@ -1,7 +1,15 @@
 import { NodeSpec } from '@edybara/pm/model';
-import { Alignable, parseQuillTextAlign } from '@edybara/core';
+import {
+  AlignableAttrs,
+  AlignableNodeSpec,
+  IndentableAttrs,
+  IndentableNodeSpec,
+  parseQuillTextAlign,
+} from '@edybara/core';
 
-export interface EdybaraParagraphAttrs extends Alignable {}
+export type EdybaraParagraphAttrs = AlignableAttrs & IndentableAttrs;
+
+export type EdybaraParagraphNodeSpec = AlignableNodeSpec & IndentableNodeSpec;
 
 export interface EdybaraParagraphNodeConfigs {
   /**
@@ -10,10 +18,18 @@ export interface EdybaraParagraphNodeConfigs {
    * @default true
    */
   allowAlign?: boolean;
+
+  /**
+   * max indent
+   *
+   * @default 8
+   */
+  maxIndent?: number;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraParagraphNodeConfigs> = {
   allowAlign: true,
+  maxIndent: 8,
 };
 
 export const edybaraParagraphNodes = (
@@ -24,10 +40,17 @@ export const edybaraParagraphNodes = (
     ...configs,
   };
 
-  const nodeSpec: NodeSpec = {
+  const nodeSpec: EdybaraParagraphNodeSpec = {
     content: 'inline*',
     group: 'block',
-    attrs: {},
+    attrs: {
+      align: { default: null },
+      indent: { default: 0 },
+    },
+    meta: {
+      maxIndent: mergedConfigs.maxIndent,
+      allowAlign: mergedConfigs.allowAlign,
+    },
     parseDOM: [
       {
         tag: 'p',
@@ -49,10 +72,14 @@ export const edybaraParagraphNodes = (
       if (attrs.align) {
         classes.push(`edybara-align-${attrs.align}`);
       }
+      if (attrs.indent !== 0) {
+        classes.push(`edybara-indent-${attrs.indent}`);
+      }
       return [
         'p',
         {
           class: classes.join(' '),
+          'data-indent': attrs.indent || 0,
           'data-text-align': attrs.align || 'left',
         },
         0,
@@ -61,7 +88,7 @@ export const edybaraParagraphNodes = (
   };
 
   if (mergedConfigs.allowAlign) {
-    nodeSpec.attrs!['align'] = {
+    nodeSpec.attrs['align'] = {
       default: 'left',
     };
   }

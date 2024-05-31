@@ -11,5 +11,10 @@
     &.edybara-align-right {
       text-align: right;
     }
+    @for $i from 1 through 10 {
+      &.edybara-indent-#{$i} {
+        margin-left: #{$i * 30}px;
+      }
+    }
   }
 }

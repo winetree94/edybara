@@ -1,19 +1,48 @@
 import { NodeSpec } from '@edybara/pm/model';
 import {
+  AlignableAttrs,
+  AlignableNodeSpec,
+  IndentableAttrs,
+  IndentableNodeSpec,
   isQuillTaskList,
   parseQuillIndent,
   parseQuillTextAlign,
 } from '@edybara/core';
 import { createNode } from '../utils';
 
-export interface EdybaraFlatTaskListItemAttrs {
-  indent: number;
-  align: 'left' | 'right' | 'center' | null;
+export type EdybaraFlatTaskListItemAttrs = {
   checked: boolean;
+} & AlignableAttrs &
+  IndentableAttrs;
+
+export type EdybaraFlatTaskListItemNodeSpec = {
+  attrs: {
+    checked: {
+      default: boolean;
+    };
+  };
+} & AlignableNodeSpec &
+  IndentableNodeSpec;
+
+export interface EdybaraFlatTaskListItemNodeConfigs {
+  maxIndent?: number;
+  allowAlign?: boolean;
 }
 
-export const edybaraFlatTaskListItemNodes = (): Record<string, NodeSpec> => {
-  const nodeSpec: NodeSpec = {
+const DEFAULT_CONFIGS: Required<EdybaraFlatTaskListItemNodeConfigs> = {
+  maxIndent: 6,
+  allowAlign: true,
+};
+
+export const edybaraFlatTaskListItemNodes = (
+  configs?: EdybaraFlatTaskListItemNodeConfigs,
+): Record<string, NodeSpec> => {
+  const mergedConfigs = {
+    ...DEFAULT_CONFIGS,
+    ...configs,
+  };
+
+  const nodeSpec: EdybaraFlatTaskListItemNodeSpec = {
     content: 'paragraph',
     attrs: {
       indent: {
@@ -25,6 +54,10 @@ export const edybaraFlatTaskListItemNodes = (): Record<string, NodeSpec> => {
       checked: {
         default: false,
       },
+    },
+    meta: {
+      allowAlign: mergedConfigs.allowAlign,
+      maxIndent: mergedConfigs.maxIndent,
     },
     parseDOM: [
       {

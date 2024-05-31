@@ -1,4 +1,6 @@
-export interface Alignable {
+import { NodeSpec } from '@edybara/pm/model';
+
+export interface AlignableAttrs {
   align: TEXT_ALIGNMENTS;
 }
 
@@ -11,3 +13,14 @@ export const TEXT_ALIGNMENT = {
 
 export type TEXT_ALIGNMENTS =
   (typeof TEXT_ALIGNMENT)[keyof typeof TEXT_ALIGNMENT];
+
+export interface AlignableNodeSpec extends NodeSpec {
+  attrs: {
+    align: {
+      default: TEXT_ALIGNMENTS;
+    };
+  };
+  meta: {
+    allowAlign: boolean;
+  };
+}

@@ -1,5 +1,5 @@
 import { EditorState } from '@edybara/pm/state';
-import { Alignable, TEXT_ALIGNMENT, TEXT_ALIGNMENTS } from '../types';
+import { AlignableAttrs, TEXT_ALIGNMENT, TEXT_ALIGNMENTS } from '../types';
 
 export const selectionAlignments = (
   state: EditorState,
@@ -8,7 +8,7 @@ export const selectionAlignments = (
   const aligns: TEXT_ALIGNMENTS[] = [];
   state.doc.nodesBetween(from, to, (node) => {
     if (node.type.spec.attrs?.['align']) {
-      const attrs = node.attrs as Alignable;
+      const attrs = node.attrs as AlignableAttrs;
       aligns.push(attrs.align || TEXT_ALIGNMENT.DEFAULT);
       return false;
     }

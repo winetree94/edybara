@@ -1,20 +1,25 @@
 import { NodeSpec } from '@edybara/pm/model';
 import {
+  AlignableAttrs,
+  AlignableNodeSpec,
+  IndentableAttrs,
+  IndentableNodeSpec,
   isQuillTaskList,
   parseQuillIndent,
   parseQuillTextAlign,
 } from '@edybara/core';
 
-export interface ListItemAttrs {
-  indent: number;
-  align: 'left' | 'right' | 'center' | null;
-}
+export type EdybaraListItemAttrs = AlignableAttrs & IndentableAttrs;
+
+export type EdybaraListItemNodeSpec = AlignableNodeSpec & IndentableNodeSpec;
 
 export interface EdybaraFlatListItemNodeConfigs {
+  maxIndent?: number;
   allowAlign?: boolean;
 }
 
 const DEFAULT_CONFIGS: Required<EdybaraFlatListItemNodeConfigs> = {
+  maxIndent: 6,
   allowAlign: true,
 };
 
@@ -26,7 +31,7 @@ export const edybaraFlatListItemNodes = (
     ...configs,
   };
 
-  const nodeSpec: NodeSpec = {
+  const nodeSpec: EdybaraListItemNodeSpec = {
     content: 'paragraph',
     attrs: {
       indent: {
@@ -35,6 +40,10 @@ export const edybaraFlatListItemNodes = (
       align: {
         default: 'left',
       },
+    },
+    meta: {
+      allowAlign: mergedConfigs.allowAlign,
+      maxIndent: mergedConfigs.maxIndent,
     },
     parseDOM: [
       {
@@ -58,7 +67,7 @@ export const edybaraFlatListItemNodes = (
       },
     ],
     toDOM(node) {
-      const attrs = node.attrs as ListItemAttrs;
+      const attrs = node.attrs as EdybaraListItemAttrs;
       return [
         'li',
         {

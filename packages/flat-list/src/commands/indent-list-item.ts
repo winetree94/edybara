@@ -54,6 +54,7 @@ export const indentListItem = (
             return tr;
           }
           return tr.setNodeMarkup(tr.mapping.map(pos), node.type, {
+            ...node.attrs,
             indent: targetIndent,
           });
         }

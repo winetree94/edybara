@@ -3,6 +3,7 @@ import { useContext } from 'preact/hooks';
 import { EdybaraButton, EdybaraSeparator, html } from '@edybara/ui';
 import { indentListItem, toggleList } from '@edybara/flat-list';
 import { findParentNode } from '@edybara/pm/utils';
+import { selectionAllIsNode } from '@edybara/core';
 
 export const EdybaraMenubarListToggleButtons = () => {
   const context = useContext(EdybaraMenubarContext);
@@ -43,15 +44,11 @@ export const EdybaraMenubarListToggleButtons = () => {
 
   const activeOrderedList =
     orderedListNodeType &&
-    !!findParentNode((node) => node.type === orderedListNodeType)(
-      context.editorView.state.selection,
-    );
+    selectionAllIsNode(context.editorView.state, orderedListNodeType);
 
   const activeUnorderedList =
     bulletListNodeType &&
-    !!findParentNode((node) => node.type === bulletListNodeType)(
-      context.editorView.state.selection,
-    );
+    selectionAllIsNode(context.editorView.state, bulletListNodeType);
 
   const onOrderedListClick = (): void => {
     toggleList({
