@@ -45,11 +45,13 @@ const config: Config = {
     // eslint-disable-next-line @typescript-eslint/require-await
     async function myPlugin() {
       return {
-        name: 'docusaurus-tailwindcss',
+        name: 'tailwind-plugin',
         configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require('tailwindcss'));
-          postcssOptions.plugins.push(require('autoprefixer'));
+          postcssOptions.plugins = [
+            require('postcss-import'),
+            require('tailwindcss'),
+            require('autoprefixer'),
+          ];
           return postcssOptions;
         },
       };
