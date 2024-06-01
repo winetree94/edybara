@@ -8,10 +8,14 @@ import {
   splitBlockAs,
 } from '@edybara/pm/commands';
 import { Plugin } from '@edybara/pm/state';
-import { clearMarks } from '../commands';
+import { clearMarks, insertIndent } from '../commands';
 
 export const edybaraBasicKeymapPlugins = (): Plugin[] => {
   return [
+    keymap({
+      Tab: insertIndent(),
+      // 'Shift-Tab': deleteIndent(),
+    }),
     keymap({
       /**
        * Switch to the default node of the Schema when the first node is empty.

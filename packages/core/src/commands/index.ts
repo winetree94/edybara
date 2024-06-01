@@ -3,3 +3,5 @@ export * from './set-text-align';
 export * from './clear-marks';
 export * from './toggle-mark-with-attrs';
 export * from './set-mark-with-attrs';
+export * from './insert-indent';
+export * from './delete-indent';

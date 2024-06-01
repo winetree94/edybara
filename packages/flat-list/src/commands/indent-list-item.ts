@@ -1,5 +1,10 @@
 import { Node, NodeType } from '@edybara/pm/model';
-import { Command, EditorState, Transaction } from '@edybara/pm/state';
+import {
+  Command,
+  EditorState,
+  TextSelection,
+  Transaction,
+} from '@edybara/pm/state';
 import { liftOutOfFlatList } from '../transforms';
 
 export interface IndentListItemCommandConfigs {
@@ -18,6 +23,17 @@ export const indentListItem = (
     let tr = state.tr;
     let selection = state.selection;
     const { $from, $to } = selection;
+
+    // 다중 선택이 아닌 경우 리스트 아이템의 첫 번째 커서 위치에서만 동작
+    if (
+      selection.empty &&
+      selection instanceof TextSelection &&
+      selection.$cursor &&
+      selection.$cursor.parentOffset !== 0
+    ) {
+      console.log('cancel');
+      return false;
+    }
 
     const indentableNodes: {
       node: Node;
@@ -77,9 +93,9 @@ export const indentListItem = (
         });
       }, tr);
 
-    if (!tr.docChanged) {
-      return false;
-    }
+    // if (!tr.docChanged) {
+    //   return false;
+    // }
 
     selection = state.selection.map(tr.doc, tr.mapping);
     dispatch?.(tr);
