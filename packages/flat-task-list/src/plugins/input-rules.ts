@@ -1,4 +1,5 @@
-import { inputRules, wrappingInputRule } from '@edybara/pm/inputrules';
+import { wrappingFlatListInputRule } from '@edybara/flat-list';
+import { inputRules } from '@edybara/pm/inputrules';
 import { NodeType } from '@edybara/pm/model';
 import { Plugin } from '@edybara/pm/state';
 
@@ -11,12 +12,11 @@ export const edybaraTaskListInputRulePlugins = (
 ): Plugin[] => [
   inputRules({
     rules: [
-      wrappingInputRule(/^\[\]\s$/, configs.taskListNodeType, {
-        indent: 0,
-      }),
-      wrappingInputRule(/^\[x\]\s$/, configs.taskListNodeType, {
-        indent: 0,
+      wrappingFlatListInputRule(/^\[\]\s$/, configs.taskListNodeType, {
         checked: false,
+      }),
+      wrappingFlatListInputRule(/^\[x\]\s$/, configs.taskListNodeType, {
+        checked: true,
       }),
     ],
   }),

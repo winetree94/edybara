@@ -1,6 +1,7 @@
-import { inputRules, wrappingInputRule } from '@edybara/pm/inputrules';
+import { inputRules } from '@edybara/pm/inputrules';
 import { NodeType } from '@edybara/pm/model';
 import { Plugin as PMPlugin } from '@edybara/pm/state';
+import { wrappingFlatListInputRule } from '../inputrules';
 
 export interface EdybaraFlatListInputRulePluginConfigs {
   orderListNodeType?: NodeType;
@@ -16,9 +17,7 @@ export const edybaraFlatListInputRulePlugins = (
     plugins.push(
       inputRules({
         rules: [
-          wrappingInputRule(/^(\d+)\.\s$/, configs.orderListNodeType, {
-            indent: 0,
-          }),
+          wrappingFlatListInputRule(/^(\d+)\.\s$/, configs.orderListNodeType),
         ],
       }),
     );
@@ -28,9 +27,10 @@ export const edybaraFlatListInputRulePlugins = (
     plugins.push(
       inputRules({
         rules: [
-          wrappingInputRule(/^\s*([-+*])\s$/, configs.bulletListNodeType, {
-            indent: 0,
-          }),
+          wrappingFlatListInputRule(
+            /^\s*([-+*])\s$/,
+            configs.bulletListNodeType,
+          ),
         ],
       }),
     );
