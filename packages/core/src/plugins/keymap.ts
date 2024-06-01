@@ -78,11 +78,16 @@ export const edybaraBasicKeymapPlugins = (): Plugin[] => {
           createParagraphNear,
           liftEmptyBlock,
           splitBlockAs((node) => {
-            const attrs = node.attrs;
+            const attrs = {
+              ...node.attrs,
+            };
+            if (attrs['indent']) {
+              attrs['indent'] = 0;
+            }
             if (node.type.name === 'heading') {
               return state.schema.nodes['paragraph'].create(attrs);
             }
-            return node;
+            return node.type.create(attrs);
           }),
         )(state, dispatch);
         return result;
