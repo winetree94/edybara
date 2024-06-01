@@ -1,11 +1,7 @@
 import { keymap } from '@edybara/pm/keymap';
 import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { NodeType } from '@edybara/pm/model';
-import {
-  splitListItem,
-  indentListItem,
-  listItemBackspace,
-} from '@edybara/flat-list';
+import { splitListItem } from '@edybara/flat-list';
 
 export interface EdybaraFlatTaskListKeymapPluginConfigs {
   taskListNodeType: NodeType;
@@ -19,20 +15,6 @@ export const edybaraFlatTaskListKeymapPlugins = (
     keymap({
       Enter: splitListItem(configs.taskListItemNodeType),
       'Shift-Enter': splitListItem(configs.taskListItemNodeType),
-      Tab: indentListItem({
-        listNodeTypes: [configs.taskListNodeType],
-        listItemNodeType: configs.taskListItemNodeType,
-        reduce: 1,
-      }),
-      'Shift-Tab': indentListItem({
-        listNodeTypes: [configs.taskListNodeType],
-        listItemNodeType: configs.taskListItemNodeType,
-        reduce: -1,
-      }),
-      Backspace: listItemBackspace({
-        listNodeTypes: [configs.taskListNodeType],
-        listItemNodeType: configs.taskListItemNodeType,
-      }),
     }),
   ];
 };

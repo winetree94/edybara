@@ -4,6 +4,7 @@ import {
   AlignableNodeSpec,
   IndentableAttrs,
   IndentableNodeSpec,
+  LIST_ITEM_GROUP,
   isQuillTaskList,
   parseQuillIndent,
   parseQuillTextAlign,
@@ -32,6 +33,7 @@ export const edybaraFlatListItemNodes = (
   };
 
   const nodeSpec: EdybaraListItemNodeSpec = {
+    group: `${LIST_ITEM_GROUP}`,
     content: 'paragraph',
     attrs: {
       indent: {

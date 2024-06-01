@@ -1,9 +1,8 @@
 import { EdybaraMenubarContext } from '../context';
 import { useContext } from 'preact/hooks';
 import { EdybaraButton, EdybaraSeparator, html } from '@edybara/ui';
-import { indentListItem, toggleList } from '@edybara/flat-list';
-import { findParentNode } from '@edybara/pm/utils';
-import { selectionAllIsNode } from '@edybara/core';
+import { toggleList } from '@edybara/flat-list';
+import { selectionAllIsNode, indent } from '@edybara/core';
 
 export const EdybaraMenubarListToggleButtons = () => {
   const context = useContext(EdybaraMenubarContext);
@@ -30,15 +29,11 @@ export const EdybaraMenubarListToggleButtons = () => {
       listItemType: listItemNodeType,
     })(context.editorView.state);
 
-  const canIndentListItem = indentListItem({
-    listNodeTypes: [bulletListNodeType, orderedListNodeType],
-    listItemNodeType: listItemNodeType,
+  const canIndentListItem = indent({
     reduce: 1,
   })(context.editorView.state);
 
-  const canDeindentListItem = indentListItem({
-    listNodeTypes: [bulletListNodeType, orderedListNodeType],
-    listItemNodeType: listItemNodeType,
+  const canDeindentListItem = indent({
     reduce: -1,
   })(context.editorView.state);
 
@@ -67,18 +62,14 @@ export const EdybaraMenubarListToggleButtons = () => {
   };
 
   const onIncreaseIndentClick = (): void => {
-    indentListItem({
-      listNodeTypes: [bulletListNodeType, orderedListNodeType],
-      listItemNodeType: listItemNodeType,
+    indent({
       reduce: 1,
     })(context.editorView.state, context.editorView.dispatch);
     context.editorView.focus();
   };
 
   const onDecreaseIndentClick = (): void => {
-    indentListItem({
-      listNodeTypes: [bulletListNodeType, orderedListNodeType],
-      listItemNodeType: listItemNodeType,
+    indent({
       reduce: -1,
     })(context.editorView.state, context.editorView.dispatch);
     context.editorView.focus();

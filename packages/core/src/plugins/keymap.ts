@@ -7,11 +7,51 @@ import {
   newlineInCode,
   splitBlockAs,
 } from '@edybara/pm/commands';
-import { Plugin } from '@edybara/pm/state';
-import { clearMarks, insertIndent } from '../commands';
+import { Plugin, TextSelection } from '@edybara/pm/state';
+import {
+  clearMarks,
+  indent,
+  insertIndent,
+  listItemBackspace,
+} from '../commands';
 
 export const edybaraBasicKeymapPlugins = (): Plugin[] => {
+  const cmd = {
+    indent: indent({
+      reduce: 1,
+    }),
+    unindent: indent({
+      reduce: -1,
+    }),
+  };
   return [
+    keymap({
+      Tab: (state, dispatch) => {
+        const selection = state.selection;
+        if (
+          selection.empty &&
+          selection instanceof TextSelection &&
+          selection.$cursor &&
+          selection.$cursor.parentOffset !== 0
+        ) {
+          return false;
+        }
+        return cmd.indent(state, dispatch);
+      },
+      'Shift-Tab': (state, dispatch) => {
+        const selection = state.selection;
+        if (
+          selection.empty &&
+          selection instanceof TextSelection &&
+          selection.$cursor &&
+          selection.$cursor.parentOffset !== 0
+        ) {
+          return false;
+        }
+        return cmd.unindent(state, dispatch);
+      },
+      Backspace: listItemBackspace(),
+    }),
     keymap({
       Tab: insertIndent(),
       // 'Shift-Tab': deleteIndent(),

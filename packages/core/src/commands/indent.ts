@@ -1,21 +1,13 @@
-import { Node, NodeType } from '@edybara/pm/model';
-import {
-  Command,
-  EditorState,
-  TextSelection,
-  Transaction,
-} from '@edybara/pm/state';
+import { Node } from '@edybara/pm/model';
+import { Command, EditorState, Transaction } from '@edybara/pm/state';
 import { liftOutOfFlatList } from '../transforms';
+import { LIST_GROUP, LIST_ITEM_GROUP } from '../types';
 
-export interface IndentListItemCommandConfigs {
-  listNodeTypes: NodeType[];
-  listItemNodeType: NodeType;
+export interface IndentConfigs {
   reduce: number;
 }
 
-export const indentListItem = (
-  configs: IndentListItemCommandConfigs,
-): Command => {
+export const indent = (configs: IndentConfigs): Command => {
   return (
     state: EditorState,
     dispatch?: (tr: Transaction) => void,
@@ -24,16 +16,13 @@ export const indentListItem = (
     let selection = state.selection;
     const { $from, $to } = selection;
 
-    // 다중 선택이 아닌 경우 리스트 아이템의 첫 번째 커서 위치에서만 동작
-    if (
-      selection.empty &&
-      selection instanceof TextSelection &&
-      selection.$cursor &&
-      selection.$cursor.parentOffset !== 0
-    ) {
-      console.log('cancel');
-      return false;
-    }
+    const nodes = Object.values(state.schema.nodes);
+    const listNodeTypes = nodes.filter((node) => {
+      return node.spec.group?.split(' ').includes(LIST_GROUP);
+    });
+    const listItemNodeTypes = nodes.filter((node) => {
+      return node.spec.group?.split(' ').includes(LIST_ITEM_GROUP);
+    });
 
     const indentableNodes: {
       node: Node;
@@ -64,7 +53,7 @@ export const indentListItem = (
           6,
         );
 
-        if (node.type !== configs.listItemNodeType) {
+        if (!listItemNodeTypes.includes(node.type)) {
           const targetIndent = Math.max(expectedIndent, 0);
           if (targetIndent === originIndent) {
             return tr;
@@ -79,7 +68,7 @@ export const indentListItem = (
           const range = tr.doc
             .resolve(pos)
             .blockRange(tr.doc.resolve(pos + node.nodeSize), (node) => {
-              return configs.listNodeTypes.includes(node.type);
+              return listNodeTypes.includes(node.type);
             });
           return liftOutOfFlatList(tr, range!)!;
         }
@@ -93,9 +82,9 @@ export const indentListItem = (
         });
       }, tr);
 
-    // if (!tr.docChanged) {
-    //   return false;
-    // }
+    if (!tr.docChanged) {
+      return false;
+    }
 
     selection = state.selection.map(tr.doc, tr.mapping);
     dispatch?.(tr);

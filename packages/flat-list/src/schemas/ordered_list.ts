@@ -1,3 +1,4 @@
+import { LIST_GROUP } from '@edybara/core';
 import { NodeSpec } from '@edybara/pm/model';
 
 export const edybaraFlatOrderedListNodes = (): Record<string, NodeSpec> => {
@@ -11,7 +12,7 @@ export const edybaraFlatOrderedListNodes = (): Record<string, NodeSpec> => {
       },
     ],
     content: 'list_item*',
-    group: 'block list',
+    group: `block ${LIST_GROUP}`,
     toDOM() {
       return [
         'ol',

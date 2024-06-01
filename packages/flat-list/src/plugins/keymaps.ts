@@ -1,5 +1,5 @@
 import { keymap } from '@edybara/pm/keymap';
-import { indentListItem, listItemBackspace, splitListItem } from '../commands';
+import { splitListItem } from '../commands';
 import { Plugin as PMPlugin } from '@edybara/pm/state';
 import { NodeType } from '@edybara/pm/model';
 
@@ -19,24 +19,11 @@ export const edybaraFlatListKeymapPlugins = (
   if (configs.orderListNodeType) {
     listTypes.push(configs.orderListNodeType);
   }
+
   return [
     keymap({
       Enter: splitListItem(configs.listItemNodeType),
       'Shift-Enter': splitListItem(configs.listItemNodeType),
-      Tab: indentListItem({
-        listNodeTypes: listTypes,
-        listItemNodeType: configs.listItemNodeType,
-        reduce: 1,
-      }),
-      'Shift-Tab': indentListItem({
-        listNodeTypes: listTypes,
-        listItemNodeType: configs.listItemNodeType,
-        reduce: -1,
-      }),
-      Backspace: listItemBackspace({
-        listNodeTypes: listTypes,
-        listItemNodeType: configs.listItemNodeType,
-      }),
     }),
   ];
 };

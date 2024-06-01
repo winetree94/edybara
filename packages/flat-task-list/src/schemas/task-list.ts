@@ -1,5 +1,5 @@
 import { NodeSpec } from '@edybara/pm/model';
-import { isQuillTaskList } from '@edybara/core';
+import { LIST_GROUP, isQuillTaskList } from '@edybara/core';
 
 export const edybaraFlatTaskListNodes = (): Record<string, NodeSpec> => {
   const nodeSpec: NodeSpec = {
@@ -19,7 +19,7 @@ export const edybaraFlatTaskListNodes = (): Record<string, NodeSpec> => {
       },
     ],
     content: 'task_list_item*',
-    group: 'block list',
+    group: `block ${LIST_GROUP}`,
     toDOM() {
       return [
         'ul',

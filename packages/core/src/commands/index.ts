@@ -1,4 +1,6 @@
+export * from './backspace';
 export * from './transform-range-to-block';
+export * from './indent';
 export * from './set-text-align';
 export * from './clear-marks';
 export * from './toggle-mark-with-attrs';
