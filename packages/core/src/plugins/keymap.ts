@@ -23,6 +23,7 @@ export const edybaraBasicKeymapPlugins = (): Plugin[] => {
     unindent: indent({
       reduce: -1,
     }),
+    backspace: listItemBackspace(),
   };
   return [
     keymap({
@@ -50,7 +51,25 @@ export const edybaraBasicKeymapPlugins = (): Plugin[] => {
         }
         return cmd.unindent(state, dispatch);
       },
-      Backspace: listItemBackspace(),
+      Backspace: (state, dispatch) => {
+        const selection = state.selection;
+        if (
+          selection.empty &&
+          selection instanceof TextSelection &&
+          selection.$cursor &&
+          selection.$cursor.parentOffset === 0 &&
+          selection.$cursor.parent.type.spec.attrs?.['indent'] &&
+          selection.$cursor.parent.attrs['indent'] > 0
+        ) {
+          const tr = state.tr.setNodeMarkup(selection.from - 1, null, {
+            ...selection.$cursor.parent.attrs,
+            indent: selection.$cursor.parent.attrs['indent'] - 1,
+          });
+          dispatch?.(tr);
+          return true;
+        }
+        return cmd.backspace(state, dispatch);
+      },
     }),
     keymap({
       Tab: insertIndent(),
@@ -84,29 +103,21 @@ export const edybaraBasicKeymapPlugins = (): Plugin[] => {
 
         let tr = state.tr.setStoredMarks([]);
 
-        const firstNodeFromSchema = Object.values(state.schema.nodes).find(
-          (type) =>
-            type.spec.group === 'block' &&
-            type.spec.content?.includes('inline'),
-        );
+        const paragraph = state.schema.nodes['paragraph'];
 
-        if (!firstNodeFromSchema) {
-          throw new Error('Cannot find first block node from schema');
-        }
-
-        if (firstNodeFromSchema === firstNode.type) {
+        if (paragraph === firstNode.type) {
           dispatch?.(tr);
           return true;
         }
 
-        const newNode = firstNodeFromSchema.createAndFill();
+        const newNode = paragraph.createAndFill();
 
         if (!newNode) {
           dispatch?.(tr);
           return true;
         }
 
-        tr = tr.setNodeMarkup(0, firstNodeFromSchema);
+        tr = tr.setNodeMarkup(0, paragraph);
         dispatch?.(tr);
         return true;
       },
