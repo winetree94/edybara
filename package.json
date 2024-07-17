@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "start": "yarn workspace docs start",
+    "start:new": "yarn workspace docs-new start",
     "lint": "lerna run lint",
     "lint:fix": "lerna run lint:fix",
     "clean": "yarn run clean:dist && yarn run clean:dependency",
