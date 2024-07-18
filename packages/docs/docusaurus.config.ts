@@ -106,12 +106,12 @@ const config: Config = {
         src: 'img/edybara.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'docsSidebar',
-          position: 'right',
-          label: 'Docs',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'docsSidebar',
+        //   position: 'right',
+        //   label: 'Docs',
+        // },
         {
           type: 'localeDropdown',
           position: 'right',
@@ -134,15 +134,15 @@ const config: Config = {
         height: 47,
       },
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/introduction',
-            },
-          ],
-        },
+        // {
+        //   title: 'Docs',
+        //   items: [
+        //     {
+        //       label: 'Tutorial',
+        //       to: '/docs/introduction',
+        //     },
+        //   ],
+        // },
         // {
         //   title: 'Community',
         //   items: [

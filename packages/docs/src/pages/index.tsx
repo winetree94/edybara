@@ -32,8 +32,8 @@ export default function Home(): JSX.Element {
               </Translate>
             </p>
             <Link
-              to={'/docs/introduction'}
-              className="tw-text-26 tw-font-700 tw-py-8 tw-px-24 tw-bg-blue-500 tw-text-white tw-rounded-8 tw-mt-50 tw-cursor-pointer hover:tw-text-white hover:tw-no-underline"
+              to={'/'}
+              className="tw-text-26 tw-font-700 tw-py-8 tw-px-24 tw-bg-blue-300 tw-text-white tw-rounded-8 tw-mt-50 hover:tw-text-white hover:tw-no-underline tw-cursor-default"
             >
               <Translate description="Main Start Button">
                 home.main.start
@@ -215,8 +215,8 @@ export default function Home(): JSX.Element {
             <Translate>home.try.title</Translate>
           </h1>
           <Link
-            to={'/docs/introduction'}
-            className="tw-bg-white tw-text-blue-500 tw-py-8 tw-px-14 tw-rounded-8 tw-text-20 tw-font-600 tw-mt-40 tw-cursor-pointer hover:tw-text-blue-500 hover:tw-no-underline"
+            to={'/'}
+            className="tw-bg-white tw-text-blue-300 tw-py-8 tw-px-14 tw-rounded-8 tw-text-20 tw-font-600 tw-mt-40 hover:tw-text-blue-300 hover:tw-no-underline tw-cursor-default"
           >
             <Translate>home.try.start</Translate>
           </Link>
