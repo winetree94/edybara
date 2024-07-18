@@ -1,5 +1,24 @@
 import StarlightTailwindPlugin from '@astrojs/starlight-tailwind';
 
+// Generated color palettes
+const accent = {
+  200: '#accbf6',
+  600: '#0067d4',
+  900: '#063065',
+  950: '#0b2344',
+};
+
+const gray = {
+  100: '#f5f6f8',
+  200: '#eceef2',
+  300: '#c0c2c7',
+  400: '#888b96',
+  500: '#545861',
+  700: '#353841',
+  800: '#24272f',
+  900: '#17181c',
+};
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   prefix: 'tw-',
@@ -74,6 +93,7 @@ module.exports = {
         'homepage-1': 'url("/img/backgrounds/PC_1-1.png")',
         'homepage-2': 'url("/img/backgrounds/PC_5-1.png")',
       },
+      colors: { accent, gray },
     },
   },
   plugins: [StarlightTailwindPlugin()],

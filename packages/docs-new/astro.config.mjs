@@ -49,6 +49,12 @@ export default defineConfig({
           lang: 'ko-KR',
         },
       },
+      components: {
+        // force light theme
+        ThemeProvider: './src/components/ThemeProvider.astro',
+        // hide theme selector
+        ThemeSelect: './src/components/ThemeSelect.astro',
+      },
     }),
     tailwind({
       applyBaseStyles: false,
