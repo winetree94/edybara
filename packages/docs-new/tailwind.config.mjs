@@ -1,7 +1,9 @@
+import StarlightTailwindPlugin from '@astrojs/starlight-tailwind';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   prefix: 'tw-',
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     borderRadius: {
       8: '8px',
@@ -74,5 +76,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [StarlightTailwindPlugin()],
 };

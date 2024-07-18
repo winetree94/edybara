@@ -11,6 +11,10 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Edybara',
+      customCss: [
+        // Path to your Tailwind base styles:
+        './src/tailwind.css',
+      ],
       social: {
         github: 'https://github.com/winetree94/edybara',
       },
@@ -32,7 +36,22 @@ export default defineConfig({
           },
         },
       ],
+      defaultLocale: 'root',
+      locales: {
+        // English docs in `src/content/docs/en/`
+        root: {
+          label: 'English',
+          lang: 'en', // lang is required for root locales
+        },
+        // Simplified Chinese docs in `src/content/docs/zh-cn/`
+        ko: {
+          label: '한국어',
+          lang: 'ko-KR',
+        },
+      },
     }),
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
   ],
 });

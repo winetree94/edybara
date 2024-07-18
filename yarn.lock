@@ -360,6 +360,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/starlight-tailwind@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "@astrojs/starlight-tailwind@npm:2.0.3"
+  peerDependencies:
+    "@astrojs/starlight": ">=0.9.0"
+    "@astrojs/tailwind": ^5.0.0
+    tailwindcss: ^3.3.3
+  checksum: 10c0/45b8c967e685bf3dc2e4d012b1c14728f407cc5939ba7a187895d708fdd8cb097993addcd59eddbe761c84135def26afa61ed2b6bcd376f34b630f4445b586f4
+  languageName: node
+  linkType: hard
+
 "@astrojs/starlight@npm:^0.25.1":
   version: 0.25.1
   resolution: "@astrojs/starlight@npm:0.25.1"
@@ -10361,6 +10372,7 @@ __metadata:
   dependencies:
     "@astrojs/check": "npm:^0.8.2"
     "@astrojs/starlight": "npm:^0.25.1"
+    "@astrojs/starlight-tailwind": "npm:^2.0.3"
     "@astrojs/tailwind": "npm:^5.1.0"
     astro: "npm:^4.10.2"
     sharp: "npm:^0.32.5"
