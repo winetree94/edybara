@@ -22,6 +22,10 @@ export const ProseMirror = (props: ProseMirrorProps) => {
       attributes: {
         spellcheck: 'false',
       },
+      dispatchTransaction(tr) {
+        console.log(tr.doc.toJSON());
+        view.updateState(view.state.apply(tr));
+      },
     });
     editorViewRef.current = view;
     return () => {
